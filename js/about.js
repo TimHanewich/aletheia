@@ -6,7 +6,8 @@ function PlugInStat_SecFilingsProcessed()
     {
         if (req.readyState == 4 && req.status == 200)
         {
-            document.getElementById("stat_SecFilingsProcessed").innerText = req.responseText;
+            var asint = parseInt(req.responseText);
+            document.getElementById("stat_SecFilingsProcessed").innerText = asint.toLocaleString();
         }
     }
     req.send();
@@ -20,7 +21,8 @@ function PlugInStat_TransactionsProcessed()
     {
         if (req.readyState == 4 && req.status == 200)
         {
-            document.getElementById("stat_TransactionsCount").innerText = req.responseText;
+            var asint = parseInt(req.responseText);
+            document.getElementById("stat_TransactionsCount").innerText = asint.toLocaleString();
         }
     }
     req.send();
@@ -34,7 +36,8 @@ function PlugInStat_InsideTraders()
     {
         if (req.readyState == 4 && req.status == 200)
         {
-            document.getElementById("stat_InsiderTraders").innerText = req.responseText;
+            var asint = parseInt(req.responseText);
+            document.getElementById("stat_InsiderTraders").innerText = asint.toLocaleString();
         }
     }
     req.send();
@@ -48,7 +51,8 @@ function PlugInStat_CompanyCount()
     {
         if (req.readyState == 4 && req.status == 200)
         {
-            document.getElementById("stat_CompanyCount").innerText = req.responseText;
+            var asint = parseInt(req.responseText);
+            document.getElementById("stat_CompanyCount").innerText = asint.toLocaleString();
         }
     }
     req.send();
