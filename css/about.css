@@ -40,3 +40,67 @@ body
     margin-top: 15px;
     margin-bottom: 0px;
 }
+
+.center-section-title
+{
+    font-weight: lighter;
+    color: #A5A5A3;
+    font-size: 23px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.butterfly-split-pane
+{
+    display: grid;
+    width: 100%;
+    grid-template-areas: "left right";
+    grid-template-columns: 50% 50%;
+    margin-top: 30px;
+}
+
+.butterfly-left
+{
+    width: auto;
+    grid-area: left;
+}
+
+.butterfly-right
+{
+    height: 100%;
+    width: 100%;
+    grid-area: right;
+}
+
+.stat-grid
+{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "title"
+    "value";
+    grid-template-rows: auto auto;
+}
+
+.stat-txt
+{
+    margin: 0px;
+    position: relative;
+    text-align: center;
+}
+
+.stat-title
+{
+    
+    grid-area: title;
+}
+
+.stat-value
+{
+    grid-area: value;
+    font-size: 40px;
+    line-height: 48px;
+}
