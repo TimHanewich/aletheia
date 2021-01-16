@@ -113,3 +113,16 @@ body
     font-size: 40px;
     line-height: 48px;
 }
+
+.copyright-msg
+{
+    position: fixed;
+    bottom: 0px;
+    margin: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 8;
+    color: #A5A5A3;
+    font-weight: lighter;
+}
