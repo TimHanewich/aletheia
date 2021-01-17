@@ -1,27 +1,6 @@
-@font-face
-{
-    font-family: Cairo;
-    src: url(../assets/fonts/Cairo/Cairo-Regular.ttf);
-}
-
-*
-{
-    font-family: Cairo;
-    color: #1c1c1c;
-}
-
 body
 {
     background-color: #fdfdfd;
-}
-
-.center-container
-{
-    position: relative;
-    width: 65%;
-    top: 0px;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .page-title
