@@ -18,3 +18,11 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+.page-title
+{
+    text-align: center;
+    font-size: 80px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
