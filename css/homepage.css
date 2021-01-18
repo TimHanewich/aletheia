@@ -71,6 +71,32 @@
     grid-area: search;
     border-radius: 10px;
     border-width: 1px;
-    padding: 5px;
     outline: none;
+    padding: 5px;
 }
+
+.search-results-master-cont
+{
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.results-title
+{
+    color: #a5a5a3;
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.line-sep
+{
+    background-color: #a5a5a3;
+    height: 1px;
+    width: 100%;
+}
+
