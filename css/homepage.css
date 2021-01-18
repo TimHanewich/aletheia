@@ -123,6 +123,8 @@
     text-align: center;
     line-height: 45px;
     font-size: 20px;
+    text-overflow: clip;
+    white-space: nowrap;
 }
 
 .search-result-col1
