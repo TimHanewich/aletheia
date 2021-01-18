@@ -100,3 +100,53 @@
     width: 100%;
 }
 
+.search-results-list-cont
+{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.search-result-entry
+{
+    width: 100%;
+    height: 45px;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-areas: "col1 col2 col3 col4 col5";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.search-result-txt
+{
+    margin: 0px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 20px;
+}
+
+.search-result-col1
+{
+    grid-area: col1;
+}
+
+.search-result-col2
+{
+    grid-area: col2;
+}
+
+.search-result-col3
+{
+    grid-area: col3;
+}
+
+.search-result-col4
+{
+    grid-area: col4;
+}
+
+.search-result-col5
+{
+    grid-area: col5;
+}
+
