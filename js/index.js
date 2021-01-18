@@ -55,10 +55,15 @@ function addResultToSearchResults(item, index)
         ele.appendChild(p_entityType);
 
         //Full name
+        var person_name = item.FullName;
+        if (person_name.length > 15)
+        {
+            person_name = person_name.substring(0, 15) + "...";
+        }
         var p_name = document.createElement("p");
         p_name.classList.add("search-result-txt");
         p_name.classList.add("search-result-col3");
-        p_name.innerText = item.FullName;
+        p_name.innerText = person_name;
         ele.appendChild(p_name);
     }
     else if (ENT_TYPE == "Company")
@@ -71,10 +76,15 @@ function addResultToSearchResults(item, index)
         ele.appendChild(p_entityType);
 
         //Company name
+        var co_name = item.Name;
+        if (co_name.length > 15)
+        {    
+            co_name = co_name.substring(0, 15) + "...";
+        }
         var p_name = document.createElement("p");
         p_name.classList.add("search-result-txt");
         p_name.classList.add("search-result-col3");
-        p_name.innerText = item.Name;
+        p_name.innerText = co_name;
         ele.appendChild(p_name);
 
         //Trading symbol
