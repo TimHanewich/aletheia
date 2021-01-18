@@ -1,0 +1,42 @@
+.tab-menu
+{
+    width: 100%;
+    height: 55px;
+    position: relative;
+    border-color: #FFD858;
+    border-style: solid;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    margin-top: 12px;
+
+    display: grid;
+    grid-template-areas: "tab1 tab2 tab3 remainder";
+    grid-template-columns: 170px 170px 170px auto;
+}
+
+.tab-button
+{
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 55px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.tab-home
+{
+    grid-area: tab1;
+}
+
+.tab-api
+{
+    grid-area: tab2;
+}
+
+.tab-about
+{
+    grid-area: tab3;
+}
