@@ -9,7 +9,7 @@ function searchEntities()
     if (search_txt != "")
     { 
         //clear out the result content
-        document.getElementById("").innerHTML = "";
+        document.getElementById("search-results-list-cont").innerHTML = "";
 
         var url = "https://aletheia.azurewebsites.net/api/SearchEntities?term=" + search_txt;
         var req = new XMLHttpRequest();
