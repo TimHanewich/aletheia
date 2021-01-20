@@ -4,6 +4,11 @@
     src: url(../assets/fonts/Cairo/Cairo-Regular.ttf);
 }
 
+body
+{
+    background-color: #FDFDFD;
+}
+
 *
 {
     font-family: Cairo;
