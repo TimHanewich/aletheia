@@ -19,7 +19,6 @@
     min-width: 300px;
     width: 70%;
     max-width: 1300px;
-    height: 400px;
     left: 50%;
     transform: translateX(-50%);
     position: relative;
@@ -27,7 +26,7 @@
     display: grid;
     grid-template-areas: "control"
     "list";
-    grid-template-rows: 50px 100%;
+    grid-template-rows: 50px 400px;
     border-style: solid;
     border-width: 2px;
     border-color: #A5A5A3;
@@ -92,4 +91,26 @@
 #recent-filings-sellsBTN
 {
     grid-area: sells;
+}
+
+#recent-transactions-loading-pane
+{
+    grid-area: list;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-areas: "empty1"
+    "content"
+    "empty2";
+    grid-template-rows: 1fr 30px 1fr;
+}
+
+#recent-transactions-loading-txt
+{
+    grid-area: content;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-style: italic;
+    text-align: center;
 }
