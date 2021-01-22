@@ -83,7 +83,85 @@ function AddTransactionToList(transaction)
     var ele_transactiontype = document.createElement("div");
     ele_transactiontype.classList.add("st-col");
     ele_transactiontype.classList.add("st-col4");
-    ele_transactiontype.innerText = transaction.TransactionCode;
+    var transcode = transaction.TransactionCode;
+    var trans_str = "";
+    if (transcode == 0)
+    {
+        trans_str = "Purchase";
+    }
+    else if (transcode == 1)
+    {
+        trans_str = "Sale";
+    }
+    else if (transcode == 2)
+    {
+        trans_str = "Early Report";
+    }
+    else if (transcode == 3)
+    {
+        trans_str = "Grant";
+    }
+    else if (transcode == 4)
+    {
+        trans_str = "Sale to Company";
+    }
+    else if (transcode == 5)
+    {
+        trans_str = "Payment of Tax";
+    }
+    else if (transcode == 6)
+    {
+        trans_str = "Discretionary";
+    }
+    else if (transcode == 7)
+    {
+        trans_str = "Derivative Conv";
+    }
+    else if (transcode == 8)
+    {
+        trans_str = "Derivative Conv";
+    }
+    else if (transcode == 9)
+    {
+        trans_str = "Derivative Expiration";
+    }
+    else if (transcode == 10)
+    {
+        trans_str = "Derivative Expiration";
+    }
+    else if (transcode == 11)
+    {
+        trans_str = "Derivative Excercise";
+    }
+    else if (transcode == 12)
+    {
+        trans_str = "Derivative Excercise";
+    }
+    else if (transcode == 13)
+    {
+        trans_str = "Gift";
+    }
+    else if (transcode == 14)
+    {
+        trans_str = "Small Acq";
+    }
+    else if (transcode == 15)
+    {
+        trans_str = "Disposition";
+    }
+    else if (transcode == 16)
+    {
+        trans_str = "Trust Deposit";
+    }
+    else if (transcode == 17)
+    {
+        trans_str = "Other";
+    }
+    else if (transcode == 18)
+    {
+        trans_str = "Equity Swap";
+    }
+    ele_transactiontype.innerText = trans_str;
     ele.appendChild(ele_transactiontype);
 
     //Title
