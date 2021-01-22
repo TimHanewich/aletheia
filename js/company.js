@@ -3,6 +3,9 @@ var qs = window.location.search;
 var sp = new URLSearchParams(qs);
 var CO_ID = sp.get("cik");
 
+//Plug in the company name
+
+
 function Req_AllTransactions()
 {
     var url = "https://aletheia.azurewebsites.net/api/TransactionsByCompany?cik=" + CO_ID + "&top=10";
