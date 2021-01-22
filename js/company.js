@@ -74,6 +74,13 @@ function AddTransactionToList(transaction)
     ele_quantity.innerText = transaction.Quantity;
     ele.appendChild(ele_quantity);
 
+    //Select button
+    var ele_select = document.createElement("div");
+    ele_select.classList.add("st-col");
+    ele_select.classList.add("st-col6");
+    ele_select.innerText = "+";
+    ele.appendChild(ele_select);
+
     //Now add the element to the list
     document.getElementById("results-list-cont").appendChild(ele);
 }
