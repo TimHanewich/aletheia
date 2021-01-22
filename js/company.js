@@ -46,38 +46,55 @@ function AddTransactionToList(transaction)
     ele_date.innerText = dt.getMonth() + "/" + dt.getDay() + "/" + dt.getFullYear();
     ele.appendChild(ele_date);
 
+    //Name
+    var ele_name = document.createElement("div");
+    ele_name.classList.add("st-col");
+    ele_name.classList.add("st-col2");
+    var personname = transaction.OwnedBy.FullName;
+    if (personname.length > 13)
+    {
+        personname = personname.substring(0, 13) + "...";
+    }
+    ele_name.innerText = personname;
+    ele.appendChild(ele_name);
+
     //Security
     var ele_securitytype = document.createElement("div");
     ele_securitytype.classList.add("st-col");
-    ele_securitytype.classList.add("st-col2");
+    ele_securitytype.classList.add("st-col3");
     ele_securitytype.innerText = transaction.SubjectSecurity.SecurityType;
     ele.appendChild(ele_securitytype);
 
     //Transaction type
     var ele_transactiontype = document.createElement("div");
     ele_transactiontype.classList.add("st-col");
-    ele_transactiontype.classList.add("st-col3");
+    ele_transactiontype.classList.add("st-col4");
     ele_transactiontype.innerText = transaction.TransactionCode;
     ele.appendChild(ele_transactiontype);
 
     //Title
     var ele_securitytitle = document.createElement("div");
     ele_securitytitle.classList.add("st-col");
-    ele_securitytitle.classList.add("st-col4");
-    ele_securitytitle.innerText = transaction.SubjectSecurity.Title;
+    ele_securitytitle.classList.add("st-col5");
+    var securitytitle = transaction.SubjectSecurity.Title;
+    if (securitytitle.length > 15)
+    {
+        securitytitle = securitytitle.substring(0, 15) + "...";
+    }
+    ele_securitytitle.innerText = securitytitle;
     ele.appendChild(ele_securitytitle);
 
     //Quantity
     var ele_quantity = document.createElement("div");
     ele_quantity.classList.add("st-col");
-    ele_quantity.classList.add("st-col5");
+    ele_quantity.classList.add("st-col6");
     ele_quantity.innerText = transaction.Quantity;
     ele.appendChild(ele_quantity);
 
     //Select button
     var ele_select = document.createElement("div");
     ele_select.classList.add("st-col");
-    ele_select.classList.add("st-col6");
+    ele_select.classList.add("st-col7");
     ele_select.innerText = "+";
     ele.appendChild(ele_select);
 
