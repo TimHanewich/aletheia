@@ -1,9 +1,43 @@
+//--------------GLOBAL VARIABLES----------------
+var co_CIK = "";
+var co_TradingSymbol = "";
+var co_Name = "";
+
+
+////////////////////////////////////////////////
+
 //Get the CIK from the URL
 var qs = window.location.search;
 var sp = new URLSearchParams(qs);
 var CO_ID = sp.get("cik");
 
 //Plug in the company name
+var cnreq = new XMLHttpRequest();
+cnreq.open("get", "https://aletheia.azurewebsites.net/api/GetCompany?id=" + CO_ID);
+cnreq.onreadystatechange = function()
+{
+    if (cnreq.readyState == 4 && cnreq.status == 200)
+    {
+        var co_obj = JSON.parse(cnreq.responseText);
+        var CIK = co_obj.CIK;
+        var TradingSymbol = co_obj.TradingSymbol;
+        var Name = co_obj.Name;
+
+        //Set the global variables
+        co_CIK = CIK;
+        co_TradingSymbol = TradingSymbol;
+        co_Name = Name;
+
+        document.getElementById("company-title").innerText = Name + " (" + TradingSymbol + ")";
+        document.getElementById("company-cik").innerText = "CIK " + CIK;
+    }
+    else if (cnreq.readyState == 4 && cnreq.status != 200)
+    {
+        window.alert("Unable to find company with CIK or Trading Symbol \"" + CO_ID + "\".");
+    }
+}
+cnreq.send();
+
 
 
 function Req_AllTransactions()
