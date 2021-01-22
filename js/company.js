@@ -33,7 +33,46 @@ function Req_AllTransactions()
 
 function AddTransactionToList(transaction)
 {
-    
+    var ele = document.createElement("div");
+    ele.classList.add("security-transaction");
+
+    //Date
+    var ele_date = document.createElement("div");
+    ele_date.classList.add("st-col");
+    ele_date.classList.add("st-col1");
+    ele_date.innerText = transaction.TransactionDate;
+    ele.appendChild(ele_date);
+
+    //Security
+    var ele_securitytype = document.createElement("div");
+    ele_securitytype.classList.add("st-col");
+    ele_securitytype.classList.add("st-col2");
+    ele_securitytype.innerText = transaction.SubjectSecurity.SecurityType;
+    ele.appendChild(ele_securitytype);
+
+    //Transaction type
+    var ele_transactiontype = document.createElement("div");
+    ele_transactiontype.classList.add("st-col");
+    ele_transactiontype.classList.add("st-col3");
+    ele_transactiontype.innerText = transaction.TransactionCode;
+    ele.appendChild(ele_transactiontype);
+
+    //Title
+    var ele_securitytitle = document.createElement("div");
+    ele_securitytitle.classList.add("st-col");
+    ele_securitytitle.classList.add("st-col4");
+    ele_securitytitle.innerText = transaction.SubjectSecurity.Title;
+    ele.appendChild(ele_securitytitle);
+
+    //Quantity
+    var ele_quantity = document.createElement("div");
+    ele_quantity.classList.add("st-col");
+    ele_quantity.classList.add("st-col5");
+    ele_quantity.innerText = transaction.Quantity;
+    ele.appendChild(ele_quantity);
+
+    //Now add the element to the list
+    document.getElementById("results-list-cont").appendChild(ele);
 }
 
 
