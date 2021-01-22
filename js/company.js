@@ -12,10 +12,6 @@ function Req_AllTransactions()
     {
         if (req.readyState == 4 && req.status == 200)
         {
-            //Hide the list, show the loading pane
-            ShowLoading();
-            HideTransactionsList();
-
             //Clear the contents of the list view
             document.getElementById("results-list-cont").innerHTML = "";
 
@@ -28,6 +24,12 @@ function Req_AllTransactions()
             ShowTransactionsList();
         }
     }
+
+    //Hide the list, show the loading pane
+    ShowLoading();
+    HideTransactionsList();
+
+    //Send it!
     req.send();
 }
 
@@ -40,7 +42,8 @@ function AddTransactionToList(transaction)
     var ele_date = document.createElement("div");
     ele_date.classList.add("st-col");
     ele_date.classList.add("st-col1");
-    ele_date.innerText = transaction.TransactionDate;
+    var dt = new Date(transaction.TransactionDate);
+    ele_date.innerText = dt.getMonth() + "/" + dt.getDay() + "/" + dt.getFullYear();
     ele.appendChild(ele_date);
 
     //Security
