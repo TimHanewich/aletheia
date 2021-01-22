@@ -62,7 +62,21 @@ function AddTransactionToList(transaction)
     var ele_securitytype = document.createElement("div");
     ele_securitytype.classList.add("st-col");
     ele_securitytype.classList.add("st-col3");
-    ele_securitytype.innerText = transaction.SubjectSecurity.SecurityType;
+    var security_type_val = transaction.SubjectSecurity.SecurityType;
+    var security_type_str = "";
+    if (security_type_val == 0)
+    {
+        security_type_str = "Equity"
+    }
+    else if (security_type_val == 1)
+    {
+        security_type_str = "Derivative";
+    }
+    else
+    {
+        security_type_str = "?";
+    }
+    ele_securitytype.innerText = security_type_str;
     ele.appendChild(ele_securitytype);
 
     //Transaction type
