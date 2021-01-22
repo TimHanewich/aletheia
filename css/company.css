@@ -119,7 +119,7 @@
 {
     height: 100%;
     width: 100%;
-    grid-area: list;
+    grid-area: values;
     overflow-y: scroll;
 }
 
@@ -141,6 +141,17 @@
     font-size: 20px;
     line-height: 50px;
     color: #1c1c1c;
+}
+
+.st-header-col
+{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    line-height: 35px;
+    color: #1c1c1c;
+    text-decoration: underline;
 }
 
 .st-col1
@@ -171,4 +182,21 @@
 .st-col6
 {
     grid-area: col6;
+}
+
+#results-pane
+{
+    grid-area: list;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "labels"
+    "values";
+    grid-template-rows: 35px 1fr;
+}
+
+#transactions-column-header
+{
+    height: 100%;
+    width: 100%;
 }
