@@ -25,8 +25,9 @@
     border-radius: 20px;
     display: grid;
     grid-template-areas: "control"
+    "filters"
     "list";
-    grid-template-rows: 50px 400px;
+    grid-template-rows: 50px 50px 400px;
     border-style: solid;
     border-width: 2px;
     border-color: #A5A5A3;
@@ -206,4 +207,12 @@
     width: 98%;
     margin-right: auto;
     left: 0px;
+}
+
+.recent-filings-filters-control
+{
+    grid-area: filters;
+    height: 100%;
+    width: 100%;
+    background-color: purple;
 }
