@@ -42,7 +42,7 @@ cnreq.send();
 
 function Req_AllTransactions()
 {
-    var url = "https://aletheia.azurewebsites.net/api/TransactionsByCompany?cik=" + CO_ID + "&top=10";
+    var url = "https://aletheia.azurewebsites.net/api/LatestTransactions?entity=0&cik=" + CO_ID + "&top=10";
     var req = new XMLHttpRequest();
     req.open("get", url);
     req.onreadystatechange = function()
