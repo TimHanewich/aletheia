@@ -215,6 +215,13 @@
     height: 100%;
     width: 100%;
     position: relative;
+
+    border-color: #A5A5A3;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 2px;
 }
 
 .recent-filings-filters
