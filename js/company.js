@@ -40,9 +40,32 @@ cnreq.send();
 
 
 
-function Req_AllTransactions()
+function ReqTransactions(id)
 {
-    var url = "https://aletheia.azurewebsites.net/api/LatestTransactions?entity=0&cik=" + CO_ID + "&top=10";
+    //The "id" parameter
+    //0 = all transactions
+    //1 = buys
+    //2 = sells
+
+    //Is the "Equity Only" checkbox checked?
+    var eq_only_component = "";
+    if (document.getElementById("equityOnly").checked == true)
+    {
+        eq_only_component = "&securitytype=0";
+    }
+    
+    //Get the transaction type part (i.e. buys only or sells only)
+    var tt_component = "";
+    if (id == 1) //Buys only
+    {
+        tt_component = "&transactiontype=0";
+    }
+    else if (id == 2) //Sells only
+    {
+        tt_component = "&transactiontype=1";
+    }
+
+    var url = "https://aletheia.azurewebsites.net/api/LatestTransactions?entity=0&cik=" + CO_ID + "&top=10" + eq_only_component + tt_component;
     var req = new XMLHttpRequest();
     req.open("get", url);
     req.onreadystatechange = function()
