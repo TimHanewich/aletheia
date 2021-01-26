@@ -65,7 +65,43 @@ function ReqTransactions(id)
         tt_component = "&transactiontype=1";
     }
 
-    var url = "https://aletheia.azurewebsites.net/api/LatestTransactions?entity=0&cik=" + CO_ID + "&top=10" + eq_only_component + tt_component;
+    //Is there a before date filter?
+    var bd_component = "";
+    if (document.getElementById("beforeDate").value != "")
+    {
+        var before_date = new Date(document.getElementById("beforeDate").value);
+        var year = before_date.getUTCFullYear();
+        var month = before_date.getUTCMonth() + 1;
+        var day = before_date.getUTCDate();
+
+        var year_str = year.toString();
+        
+        var month_str = "";
+        if (month < 10)
+        {
+            month_str = "0" + month.toString();
+        }
+        else
+        {
+            month_str = month.toString();
+        }
+
+        var day_str = "";
+        if (day < 10)
+        {
+            day_str = "0" + day.toString();
+        }
+        else
+        {
+            day_str = day.toString();
+        }
+
+        bd_component = "&before=" + year_str + month_str + day_str;
+    }
+    
+
+
+    var url = "https://aletheia.azurewebsites.net/api/LatestTransactions?entity=0&cik=" + CO_ID + "&top=10" + eq_only_component + tt_component + bd_component;
     var req = new XMLHttpRequest();
     req.open("get", url);
     req.onreadystatechange = function()
