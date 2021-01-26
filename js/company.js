@@ -265,9 +265,9 @@ function AddTransactionToList(transaction)
     ele_securitytitle.classList.add("st-col");
     ele_securitytitle.classList.add("st-col5");
     var securitytitle = transaction.SubjectSecurity.Title;
-    if (securitytitle.length > 15)
+    if (securitytitle.length > 13)
     {
-        securitytitle = securitytitle.substring(0, 15) + "...";
+        securitytitle = securitytitle.substring(0, 13) + "...";
     }
     ele_securitytitle.innerText = securitytitle;
     ele.appendChild(ele_securitytitle);
