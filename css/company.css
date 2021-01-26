@@ -239,7 +239,19 @@
     margin-left: auto;
 }
 
-.test
+.il
 {
     display: inline;
+}
+
+.before-date-filter-txt
+{
+    margin-left: 40px;
+}
+
+.before-date-filter
+{
+    height: 60%;
+    width: 130px;
+    margin-left: 4px;
 }
