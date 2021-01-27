@@ -22,72 +22,84 @@
         <!--Company CIK-->
         <h4 id="company-cik">...</h4>
 
-        <!--Recent filings label-->
-        <p class="recent-filings-label">Explore Insider Transactions</p>
+        <!--Insider area (grid from left to right)-->
+        <div class="insider-area">
 
-        <!--Recent Filings control-->
-        <div class="recent-filings-control">
+            <!--Explore Insider Transactions-->
+            <div class="insider-area-explore">
+                <!--Recent filings label-->
+                <p class="recent-filings-label">Explore Insider Transactions</p>
 
-            <!--The controls-->
-            <div class="recent-filings-control-control">
-                <div id="recent-filings-allBTN" class="recent-filings-btn recent-filings-btn-normal" onclick="ReqTransactions(0)">All</div>
-                <div id="recent-filings-buysBTN" class="recent-filings-btn recent-filings-btn-normal" onclick="ReqTransactions(1)">BUYS</div>
-                <div id="recent-filings-sellsBTN" class="recent-filings-btn recent-filings-btn-normal" onclick="ReqTransactions(2)">SELLS</div>
-            </div>
+                <!--Recent Filings control-->
+                <div class="recent-filings-control">
 
-            <!--Filters-->
-            <div class="recent-filings-filters-control-area">
-
-                <div class="recent-filings-filters">
-
-                    <input id="equityOnly" class="il" type="checkbox">
-                    <p class="il">Equity Only</p>
-
-                    <p class="before-date-filter-txt il">Before</p>
-                    <input id="beforeDate" type="date" class="before-date-filter">
-
-                </div>
-
-                
-
-            </div>
-
-            <!--Loading screen-->
-            <div id="recent-transactions-loading-pane">
-                <div id="recent-transactions-loading-txt" class="hidden">Loading...</div>
-            </div>
-
-            <!--RESULTS PANE-->
-            <div id="results-pane">
-
-                <!--Header-->
-                <div id="transactions-column-header" class="security-transaction">
-                    <div class="st-header-col st-col1">Date</div>
-                    <div class="st-header-col st-col2">Name</div>
-                    <div class="st-header-col st-col3">Security Type</div>
-                    <div class="st-header-col st-col4">Transaction</div>
-                    <div class="st-header-col st-col5">Title</div>
-                    <div class="st-header-col st-col6">Quantity</div>
-                    <div class="st-header-col st-col7">Select</div>
-                </div>
-
-
-                <!--The results container-->
-                <div id="results-list-cont">
-
-                    <!--EXAMPLE-->
-                    <!--
-                    <div class="security-transaction">
-                        <div class="st-col st-col1">Date</div>
-                        <div class="st-col st-col2">Name</div>
-                        <div class="st-col st-col3">Security Type</div>
-                        <div class="st-col st-col4">Transaction</div>
-                        <div class="st-col st-col5">Title</div>
-                        <div class="st-col st-col6">Quantity</div>
-                        <div class="st-col st-col7">+</div>
+                    <!--The controls-->
+                    <div class="recent-filings-control-control">
+                        <div id="recent-filings-allBTN" class="recent-filings-btn recent-filings-btn-normal" onclick="ReqTransactions(0)">All</div>
+                        <div id="recent-filings-buysBTN" class="recent-filings-btn recent-filings-btn-normal" onclick="ReqTransactions(1)">BUYS</div>
+                        <div id="recent-filings-sellsBTN" class="recent-filings-btn recent-filings-btn-normal" onclick="ReqTransactions(2)">SELLS</div>
                     </div>
-                    -->
+
+                    <!--Filters-->
+                    <div class="recent-filings-filters-control-area">
+
+                        <div class="recent-filings-filters">
+
+                            <input id="equityOnly" class="il" type="checkbox">
+                            <p class="il">Equity Only</p>
+
+                            <p class="before-date-filter-txt il">Before</p>
+                            <input id="beforeDate" type="date" class="before-date-filter">
+
+                        </div>
+
+                        
+
+                    </div>
+
+                    <!--Loading screen-->
+                    <div id="recent-transactions-loading-pane">
+                        <div id="recent-transactions-loading-txt" class="hidden">Loading...</div>
+                    </div>
+
+                    <!--RESULTS PANE-->
+                    <div id="results-pane">
+
+                        <!--Header-->
+                        <div id="transactions-column-header" class="security-transaction">
+                            <div class="st-header-col st-col1">Date</div>
+                            <div class="st-header-col st-col2">Name</div>
+                            <div class="st-header-col st-col3">Security Type</div>
+                            <div class="st-header-col st-col4">Transaction</div>
+                            <div class="st-header-col st-col5">Title</div>
+                            <div class="st-header-col st-col6">Quantity</div>
+                            <div class="st-header-col st-col7">Select</div>
+                        </div>
+
+
+                        <!--The results container-->
+                        <div id="results-list-cont">
+
+                            <!--EXAMPLE-->
+                            <!--
+                            <div class="security-transaction">
+                                <div class="st-col st-col1">Date</div>
+                                <div class="st-col st-col2">Name</div>
+                                <div class="st-col st-col3">Security Type</div>
+                                <div class="st-col st-col4">Transaction</div>
+                                <div class="st-col st-col5">Title</div>
+                                <div class="st-col st-col6">Quantity</div>
+                                <div class="st-col st-col7">+</div>
+                            </div>
+                            -->
+                            
+
+                        </div>
+
+                    </div>
+
                     
+
 
                 </div>
 
@@ -95,9 +107,11 @@
 
             
 
-
         </div>
 
+        
+
+        
         <!--SCRIPTS-->
         <script src="js/company.js"></script>
     </body>
