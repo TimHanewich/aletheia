@@ -282,3 +282,24 @@
     grid-area: explore;
     position: relative;
 }
+
+.inside-owners
+{
+    grid-area: insiders;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.inside-owners-table
+{
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: auto;
+    width: 60%;
+}
+
+.txt-centered
+{
+    text-align: center;
+}
