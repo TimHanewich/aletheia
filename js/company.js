@@ -38,6 +38,19 @@ cnreq.onreadystatechange = function()
 }
 cnreq.send();
 
+//Get the inside owners
+var ioreq = new XMLHttpRequest();
+ioreq.open("get", "https://aletheia.azurewebsites.net/api/GetOwners?id=" + CO_ID);
+ioreq.onreadystatechange = function()
+{
+    if (ioreq.status == 200 && ioreq.readyState == 4)
+    {
+        var response_json = JSON.parse(ioreq.responseText);
+
+        //Clear out the table contents
+        document.getElementById("").innerHTML = "";
+    }
+}
 
 
 function ReqTransactions(id)
