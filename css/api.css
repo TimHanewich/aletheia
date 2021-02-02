@@ -184,3 +184,9 @@ api-param
 {
     font-weight: bold;
 }
+
+.api-ep-documentation
+{
+    margin-bottom: 50px;
+    width: 100%;
+}
