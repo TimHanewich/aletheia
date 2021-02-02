@@ -96,3 +96,22 @@
     height: 10px;
     width: 100%;
 }
+
+.display-content-area
+{
+    grid-area: display;
+    height: 100%;
+    width: 100%;
+    background-color: yellow;
+    overflow-y: scroll;
+}
+
+.display-content-pane
+{
+    width: 75%;
+    top: 0px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    background-color: aquamarine;
+}
