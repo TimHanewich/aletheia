@@ -81,14 +81,19 @@
                         <p class="api-category-desc">Read and monitor insider transactions for any publically traded company.</p>
                         <h3 class="api-title">Search People</h3>
                         <p class="api-desc">Search the Aletheia database for an insider across all publicly traded companies.</p>
-                        
                         <div class="api-verb-ep-pair">
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep-area code-block">https://aletheia.azurewebsites.net/api/SearchPeople</div>
                         </div>
-
-                        
-
+                        <h4 class="api-sub-header">Parameters</h4>
+                        <div class="api-verb-ep-pair">
+                            <div class="api-verb api-verb-required">Required</div>
+                            <div class="api-ep"><api-param>term</api-param> - The search term</div>
+                        </div>
+                        <h4 class="api-sub-header">Example Requests</h4>
+                        <div class="code-block req-example">https://aletheia.azurewebsites.net/api/SearchPeople?term=smith</div>
+                        <div class="code-block req-example">https://aletheia.azurewebsites.net/api/SearchPeople?term=musk</div>
+                        <div class="code-block req-example">https://aletheia.azurewebsites.net/api/SearchPeople?term=ellison</div>
                     </div>
                 </div>
 
