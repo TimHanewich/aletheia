@@ -209,3 +209,8 @@ api-param
 {
     cursor: pointer;
 }
+
+/* The below will hide the scroll bar (in chrome browsers) for the navitation pane */
+.api-nav-content-pane::-webkit-scrollbar {
+    display: none;
+  }
