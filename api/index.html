@@ -183,10 +183,47 @@
                                     <div class="api-verb api-verb-optional">Optional</div>
                                     <div class="api-ep"><api-param>top</api-param> - How many records you would like returned. Default is 20.</div>
                                 </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>before</api-param> - Filter to transactions only before a particular date.</div>
+                                </div>
+                                <ul class="param-desc">
+                                    <li>Date supplied in format YYYYMMDD. For example, "20191231".</li>
+                                </ul>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>securitytype</api-param> - Filter security type. 0 = non-derivative (equity), 1 = derivative.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>transactiontype</api-param> - Filter to a particular transaction type.</div>
+                                </div>
+                                <ul class="param-desc">
+                                    <li>0 = purchase</li>
+                                    <li>1 = sale</li>
+                                    <li>2 = transaction voluntarily reported earlier than required</li>
+                                    <li>3 = grant or award</li>
+                                    <li>4 = sale back to issuer</li>
+                                    <li>5 = payment of excercise price or tax liability</li>
+                                    <li>6 = discretionary transaction</li>
+                                    <li>7 = excercise or conversion of derivative security</li>
+                                    <li>8 = conversion of derivative security</li>
+                                    <li>9 = expiration of short derivative position</li>
+                                    <li>10 = expiration of long derivative position</li>
+                                    <li>11 = excercise of out-of-the-money derivative</li>
+                                    <li>12 = excercise of in-the-money derivative</li>
+                                    <li>13 = bona fide gift</li>
+                                    <li>14 = small acquisition</li>
+                                    <li>15 = acquisition or disposition by will or laws</li>
+                                    <li>16 = deposit into or withdrawal from voting trust</li>
+                                    <li>17 = other acquisition or disposition</li>
+                                    <li>18 = equity swap</li>
+                                    <li>19 = disposition due to tender of shares</li>
+                                </ul>
                                 <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/GetCompany?id=0000066740</div>
-                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/GetCompany?id=mmm</div>
-                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/GetCompany?id=msft</div>
+                                <div class="code-block req-example" style="font-size: 12px;">https://aletheia.azurewebsites.net/api/LatestTransactions?entity=0&cik=msft&top=10&before=20190101&securitytype=0&transactiontype=0</div>
+                                <div class="code-block req-example" style="font-size: 12px;">https://aletheia.azurewebsites.net/api/LatestTransactions?entity=0&cik=0000789019&top=70&securitytype=1</div>
+                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/LatestTransactions?entity=1&cik=0001576843</div>
                             </div>
 
                         </div>
