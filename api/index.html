@@ -38,27 +38,27 @@
 
                         <!--Insider Trading-->
                         <h3 class="api-header">Insider Trading</h3>
-                        <div class="api-verb-ep-pair">
+                        <div id="navep_SearchPeople" class="api-verb-ep-pair">
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Search People</div>
                         </div>
-                        <div class="api-verb-ep-pair">
+                        <div id="navep_SearchCompanies" class="api-verb-ep-pair">
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Search Companies</div>
                         </div>
-                        <div class="api-verb-ep-pair">
+                        <div id="navep_SearchEntities" class="api-verb-ep-pair">
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Search Entities</div>
                         </div>
-                        <div class="api-verb-ep-pair">
+                        <div id="navep_GetCompany" class="api-verb-ep-pair">
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Get Company</div>
                         </div>
-                        <div class="api-verb-ep-pair">
+                        <div id="navep_LatestTransactions" class="api-verb-ep-pair">
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Latest Transactions</div>
                         </div>
-                        <div class="api-verb-ep-pair">
+                        <div id="navep_GetCompanyOwners" class="api-verb-ep-pair">
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Get Company Owners</div>
                         </div>
@@ -83,7 +83,7 @@
                             
                             <!--Search people-->
                             <div class="api-ep-documentation">
-                                <h3 class="api-title">Search People</h3>
+                                <h3 id="ep_SearchPeople" class="api-title">Search People</h3>
                                 <p class="api-desc">Search the Aletheia database for an insider across all publicly traded companies.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
@@ -102,7 +102,7 @@
                             
                             <!--Search companies-->
                             <div class="api-ep-documentation">
-                                <h3 class="api-title">Search Companies</h3>
+                                <h3 id="ep_SearchCompanies" class="api-title">Search Companies</h3>
                                 <p class="api-desc">Search the Aletheia database for a company (entity that served as an issuer).</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
@@ -124,7 +124,7 @@
 
                             <!--Search entities-->
                             <div class="api-ep-documentation">
-                                <h3 class="api-title">Search Entities</h3>
+                                <h3 id="ep_SearchEntities" class="api-title">Search Entities</h3>
                                 <p class="api-desc">Search the Aletheia database for both a person and company.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
@@ -143,7 +143,7 @@
 
                             <!--Get company-->
                             <div class="api-ep-documentation">
-                                <h3 class="api-title">Get Company</h3>
+                                <h3 id="ep_GetCompany" class="api-title">Get Company</h3>
                                 <p class="api-desc">Download data for a particular company.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
@@ -163,7 +163,7 @@
 
                             <!--Latest Transactions-->
                             <div class="api-ep-documentation">
-                                <h3 class="api-title">Get Latest Transactions</h3>
+                                <h3 id="ep_LatestTransactions" class="api-title">Get Latest Transactions</h3>
                                 <p class="api-desc">Download the latest insider transactions for a person or company.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
@@ -231,7 +231,7 @@
 
                             <!--Get company-->
                             <div class="api-ep-documentation">
-                                <h3 class="api-title">Get Owners</h3>
+                                <h3 id="ep_GetCompany" class="api-title">Get Owners</h3>
                                 <p class="api-desc">List the owners of a company, how many shares they own, and the value of those shares.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
@@ -260,6 +260,8 @@
         </div>
 
         
+        <!--SCRIPTS-->
+        <script src="../js/api.js"></script>
 
     </body>
 </html>
