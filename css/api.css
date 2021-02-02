@@ -32,10 +32,17 @@
     grid-area: nav;
     height: 100%;
     width: 100%;
-    background-color: papayawhip;
     display: grid;
     grid-template-areas: "deadpad content";
     grid-template-columns: 20px 1fr;
+    border-right-width: 2px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    border-style: solid;
+    border-color: #A5A5A3;
+    background-color: #EEEEEE;
+    margin-top: 2px;
 }
 
 .api-nav-content-pane
