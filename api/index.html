@@ -226,6 +226,26 @@
                                 <div class="code-block req-example">https://aletheia.azurewebsites.net/api/LatestTransactions?entity=1&cik=0001576843</div>
                             </div>
 
+
+                            <!--Get company-->
+                            <div class="api-ep-documentation">
+                                <h3 class="api-title">Get Owners</h3>
+                                <p class="api-desc">List the owners of a company, how many shares they own, and the value of those shares.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://aletheia.azurewebsites.net/api/GetOwners</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>id</api-param> - Either the CIK or the trading symbol of the company you are requesting. Provide the CIK for faster performance.</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/GetOwners?id=0000789019</div>
+                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/GetOwners?id=msft</div>
+                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/GetOwners?id=aapl</div>
+                            </div>
+
                         </div>
                         
 
