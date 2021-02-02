@@ -221,3 +221,11 @@ api-param
 .api-nav-content-pane::-webkit-scrollbar {
     display: none;
   }
+
+.response-example
+{
+    background-color: #EEEEEE;
+    padding: 8px;
+    border-radius: 7px;
+    padding: 12px;
+}
