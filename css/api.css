@@ -103,6 +103,12 @@
     color: #fdfdfd;
 }
 
+.api-verb-optional
+{
+    background-color: #EEEEEE;
+    color: #1c1c1c;
+}
+
 .blank-space
 {
     height: 10px;
@@ -189,4 +195,9 @@ api-param
 {
     margin-bottom: 50px;
     width: 100%;
+}
+
+.param-desc
+{
+    margin: 0px;
 }

@@ -120,6 +120,75 @@
                             </div>
 
 
+                            <!--Search entities-->
+                            <div class="api-ep-documentation">
+                                <h3 class="api-title">Search Entities</h3>
+                                <p class="api-desc">Search the Aletheia database for both a person and company.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://aletheia.azurewebsites.net/api/SearchEntities</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>term</api-param> - The search term</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/SearchEntities?term=intc</div>
+                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/SearchEntities?term=amazon</div>
+                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/SearchEntities?term=cook</div>
+                            </div>
+
+                            <!--Get company-->
+                            <div class="api-ep-documentation">
+                                <h3 class="api-title">Get Company</h3>
+                                <p class="api-desc">Download data for a particular company.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://aletheia.azurewebsites.net/api/GetCompany</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>id</api-param> - Either the CIK or the trading symbol of the company you are requesting. Provide the CIK for faster performance.</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/GetCompany?id=0000066740</div>
+                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/GetCompany?id=mmm</div>
+                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/GetCompany?id=msft</div>
+                            </div>
+
+
+                            <!--Latest Transactions-->
+                            <div class="api-ep-documentation">
+                                <h3 class="api-title">Get Latest Transactions</h3>
+                                <p class="api-desc">Download the latest insider transactions for a person or company.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://aletheia.azurewebsites.net/api/LatestTransactions</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>entity</api-param> - The entity type you are searching through. 0 = Company, 1 = Person.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>cik</api-param> - The CIK of either the company or person you are requesting latest transactions for.</div>
+                                </div>
+                                <ul class="param-desc">
+                                    <li>If you are requesting latest transactions for a company, you can supply the trading symbol instead.</li>
+                                </ul>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>top</api-param> - How many records you would like returned. Default is 20.</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/GetCompany?id=0000066740</div>
+                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/GetCompany?id=mmm</div>
+                                <div class="code-block req-example">https://aletheia.azurewebsites.net/api/GetCompany?id=msft</div>
+                            </div>
+
                         </div>
                         
 
