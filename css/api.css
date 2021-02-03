@@ -240,6 +240,11 @@ api-param
     border-radius: 7px;
     padding: 12px;
     letter-spacing: -0.5px;
+    width: 100%;
+    position: relative;
+    overflow-wrap: break-word;
+    text-overflow: clip;
+    word-break: break-all;
 }
 
 .response-example-openclose
