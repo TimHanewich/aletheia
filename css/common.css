@@ -4,6 +4,12 @@
     src: url(../assets/fonts/Cairo/Cairo-Regular.ttf);
 }
 
+@font-face
+{
+    font-family: Consolas;
+    src: url(../assets/fonts/Consolas/Consolas.ttf);
+}
+
 body
 {
     background-color: #FDFDFD;

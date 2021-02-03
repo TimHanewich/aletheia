@@ -222,10 +222,32 @@ api-param
     display: none;
   }
 
+
+.response-example-cont
+{
+    display: grid;
+    grid-template-areas: "openclose"
+    "example";
+    grid-template-rows: auto auto;
+    width: 100%;
+}
+
 .response-example
 {
+    font-family: Consolas;
     background-color: #EEEEEE;
     padding: 8px;
     border-radius: 7px;
     padding: 12px;
+    letter-spacing: -0.5px;
+}
+
+.response-example-openclose
+{
+    grid-area: openclose;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #A5A5A3;
+    margin-top: 5px;
+    cursor: pointer;
 }
