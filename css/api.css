@@ -103,6 +103,12 @@
     color: #fdfdfd;
 }
 
+.api-verb-post
+{
+    background-color: #fca311;
+    color: #1c1c1c;
+}
+
 .api-verb-hook
 {
     background-color: #9341b3;
@@ -261,4 +267,27 @@ api-param
     color: #A5A5A3;
     margin-top: 5px;
     cursor: pointer;
+}
+
+.api-sub-instruction-title
+{
+    font-size: 19px;
+    color: #1c1c1c;
+    margin: 0px;
+    margin-top: 15px;
+}
+
+.body-example
+{
+    font-family: Consolas;
+    background-color: #EEEEEE;
+    padding: 8px;
+    border-radius: 7px;
+    padding: 12px;
+    letter-spacing: -0.5px;
+    width: 100%;
+    position: relative;
+    overflow-wrap: break-word;
+    text-overflow: clip;
+    word-break: break-all;
 }

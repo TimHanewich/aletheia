@@ -77,6 +77,44 @@
                 <!--Display pane-->
                 <div class="display-content-area">
                     <div class="display-content-pane">
+
+                        <!--SEC Filings-->
+                        <div style="width: 100%;">
+                            <div class="blank-space"></div>
+                            <div class="blank-space"></div>
+                            <h2 class="api-category-title">SEC Filings</h2>
+                            <p class="api-category-desc">Access and monitory filings with the Securities Exchange Commission's EDGAR database.</p>
+                        
+                            <!--Latest Filings (Hook)-->
+                            <div class="api-ep-documentation">
+                                <h3 class="api-title">Latest Filings (Webhook)</h3>
+                                <p class="api-desc">You can subscribe your application or web service to be notified of new SEC filings with this webhook.</p>
+                                
+                                <p class="api-sub-instruction-title">Step 1 - Subscribe Your Endpoint</p>
+                                <p class="api-desc">First you must subscribe your endpoint to the new filings webhook service.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-post">POST</div>
+                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/SubscribeToNewFilingsWebhook</div>
+                                </div>
+                                <div class="api-desc">The body must contain the URL endpoint of your API service. The body must be in JSON format with your endpoint stored in the "endpoint" property. Example:</div>
+                                <div class="body-example">{"endpoint": "https://www.myservice.net/myendpoint"}</div>
+                                <div class="api-desc">The subscription endpoint will return a 201 created response. This response will include a "Location" header. The value of this header will be used to unsubscribe from this webhook, so save this for later.</div>
+                            
+                                <p class="api-sub-instruction-title">Step 2 - Receive New Filings!</p>
+                                <p class="api-desc">After subscribing your endpoint to the webhook with step 1, your endpoint will begin to receive HTTP POST requests when a new SEC filing is available.</p>
+                                <p class="api-desc">The following an example of the POST request that will be sent to your registered endpoint:</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-post">POST</div>
+                                    <div class="api-ep-area code-block">(your registered endpoint)</div>
+                                </div>
+                                <div class="body-example">{<br>&nbsp;&nbsp;&nbsp;&nbsp;"EntityTitle":"BlackRock Capital Investment Corp",<br>&nbsp;&nbsp;&nbsp;&nbsp;"EntityCik":1326003,<br>&nbsp;&nbsp;&nbsp;&nbsp;"Filing":"4",<br>&nbsp;&nbsp;&nbsp;&nbsp;"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/1326003/000120919121008361/0001209191-21-008361-index.htm",<br>&nbsp;&nbsp;&nbsp;&nbsp;"Description":"Statement of changes in beneficial ownership of securities Accession Number: 0001209191-21-008361  Size: 9 KB\n",<br>&nbsp;&nbsp;&nbsp;&nbsp;"FilingDate":"2021-02-05T00:00:00"<br>}</div>
+                            
+                                <p class="api-sub-instruction-title">Step 3 - Unsubscribe from the webhook when finished</p>
+                                <p class="api-desc">When you wish to stop receiving posts from this webhook, be sure to formally unsubscribe your endpoint.</p>
+                                <p class="api-desc">When you originally registered your endpoint in step 1, the returned 201 created response contained a "Location" header. The value of this header contains the endpoint that will unsubscribe your endpoint via a DELETE call. The unsubscribe endpoint will look something like this:</p>
+                            </div>
+                        
+                        </div>
                       
                         <!--Insider Transactions-->
                         <div style="width: 100%;">
