@@ -103,6 +103,12 @@
     color: #fdfdfd;
 }
 
+.api-verb-hook
+{
+    background-color: #9341b3;
+    color: #fdfdfd;
+}
+
 .api-verb-required
 {
     background-color: maroon;
