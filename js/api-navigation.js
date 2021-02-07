@@ -39,3 +39,8 @@ $("#navep_LatestFilings").click(function()
 {
     $("#ep_LatestFilings")[0].scrollIntoView();
 });
+
+$("#navep_EntityFilings").click(function()
+{
+    $("#ep_EntityFilings")[0].scrollIntoView();
+});
