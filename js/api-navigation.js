@@ -27,3 +27,8 @@ $("#navep_GetCompanyOwners").click(function()
 {
     $("#ep_GetCompanyOwners")[0].scrollIntoView();
 });
+
+$("#navep_LatestFilings").click(function()
+{
+    $("#ep_LatestFilings")[0].scrollIntoView();
+});
