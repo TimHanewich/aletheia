@@ -303,3 +303,11 @@ custom-txt
     color: blue;
     font-family: inherit;
 }
+
+.scrollable-code
+{
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
+}

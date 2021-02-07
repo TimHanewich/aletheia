@@ -37,6 +37,10 @@
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Entity Filings</div>
                         </div>
+                        <div class="api-verb-ep-pair">
+                            <div class="api-verb api-verb-get">GET</div>
+                            <div class="api-ep">Open Form 4</div>
+                        </div>
 
                         <div class="blank-space"></div>
 
@@ -146,6 +150,27 @@
                                 <div class="code-block req-example">https://www.aletheiaresearch.org/api/EntityFilings?id=msft&filing=10-k</div>
                                 <div class="code-block req-example">https://www.aletheiaresearch.org/api/EntityFilings?id=0000050863&before=20180101</div>
                                 <div class="code-block req-example">https://www.aletheiaresearch.org/api/EntityFilings?id=pg&filing=4&before=20160701</div>
+                            </div>
+
+                            <!--Open form 4-->
+                            <div class="api-ep-documentation">
+                                <h3 class="api-title">Open Form 4</h3>
+                                <p class="api-desc">Open a statement of change in beneficial ownership (form 4) to reveal details of insider trading</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/OpenForm4</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>filingurl</api-param> - the URL of the form 4 filing with the SEC</div>
+                                </div>
+                                <ul>
+                                    <li>Tip: Use the filing url of a form 4 filing that was returned via the "EntityFilings" endpoint (see above)</li>
+                                </ul>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example scrollable-code">https://www.aletheiaresearch.org/api/OpenForm4?filingurl=https://www.sec.gov/Archives/edgar/data/50863/000112760221003952/0001127602-21-003952-index.htm</div>
+                                <div class="code-block req-example scrollable-code">https://www.aletheiaresearch.org/api/OpenForm4?filingurl=https://www.sec.gov/Archives/edgar/data/1318605/000179056521000001/0001790565-21-000001-index.htm</div>
                             </div>
 
                         </div>
