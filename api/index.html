@@ -97,7 +97,7 @@
                                     <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/SubscribeToNewFilingsWebhook</div>
                                 </div>
                                 <div class="api-desc">The body must contain the URL endpoint of your API service. The body must be in JSON format with your endpoint stored in the "endpoint" property. Example:</div>
-                                <div class="body-example">{"endpoint": "https://www.myservice.net/myendpoint"}</div>
+                                <div class="body-example">{"endpoint": "<custom-txt>https://www.myservice.net/myendpoint</custom-txt>"}</div>
                                 <div class="api-desc">The subscription endpoint will return a 201 created response. This response will include a "Location" header. The value of this header will be used to unsubscribe from this webhook, so save this for later.</div>
                             
                                 <p class="api-sub-instruction-title">Step 2 - Receive New Filings!</p>
@@ -112,6 +112,13 @@
                                 <p class="api-sub-instruction-title">Step 3 - Unsubscribe from the webhook when finished</p>
                                 <p class="api-desc">When you wish to stop receiving posts from this webhook, be sure to formally unsubscribe your endpoint.</p>
                                 <p class="api-desc">When you originally registered your endpoint in step 1, the returned 201 created response contained a "Location" header. The value of this header contains the endpoint that will unsubscribe your endpoint via a DELETE call. The unsubscribe endpoint will look something like this:</p>
+                                <div class="body-example">https://www.aletheiaresearch.org/api/UnsubscribeFromNewFilingsWebhookById?id=dd150c44-c42a-4cdd-92f5-b78a23b36c72</div>
+                                <p class="api-desc">To unsubscribe your endpoint from this webhook, call this provided value via a DELETE call.</p>
+                                <p class="api-desc">If you no longer have the provided unsubscribe URL from the original subscription step, you can also unsubscribe by providing your registered endpoint to the 'UnsubscribeFromNewFilingsWebhookByEndpoint' api. For example, see below:</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-delete">DELETE</div>
+                                    <div class="api-ep-area code-block" style="font-size: 13px;">https://www.aletheiaresearch.org/api/UnsubscribeFromNewFilingsWebhookByEndpoint?endpoint=<custom-txt>https://www.myservice.net/myendpoint</custom-txt></div>
+                                </div>
                             </div>
                         
                         </div>

@@ -115,6 +115,12 @@
     color: #fdfdfd;
 }
 
+.api-verb-delete
+{
+    background-color: #d62828;
+    color: #fdfdfd;
+}
+
 .api-verb-required
 {
     background-color: maroon;
@@ -290,4 +296,9 @@ api-param
     overflow-wrap: break-word;
     text-overflow: clip;
     word-break: break-all;
+}
+
+custom-txt
+{
+    color: blue;
 }
