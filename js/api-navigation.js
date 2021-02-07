@@ -44,3 +44,8 @@ $("#navep_EntityFilings").click(function()
 {
     $("#ep_EntityFilings")[0].scrollIntoView();
 });
+
+$("#navep_OpenForm4").click(function()
+{
+    $("#ep_OpenForm4")[0].scrollIntoView();
+});
