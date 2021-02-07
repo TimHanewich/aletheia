@@ -1,3 +1,10 @@
+//Basic way of doing the navigation
+//The navigation verb/name pair has the following format:
+//navep_NAME
+//Then the title of the documentation section for the api has the following name:
+//ep_NAME
+//Then with JQuery (see below), create the click function which scrolls the documentation into view.
+
 $("#navep_SearchPeople").click(function()
 {
     $("#ep_SearchPeople")[0].scrollIntoView();
