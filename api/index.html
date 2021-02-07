@@ -121,6 +121,33 @@
                                 </div>
                             </div>
                         
+                            <!--Entity Filings-->
+                            <div class="api-ep-documentation">
+                                <h3 id="ep_CompanyFilings" class="api-title">Entity Filings</h3>
+                                <p class="api-desc">Query for the latest SEC filings for a the latest filings for a particular company or person.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/EntityFilings</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>id</api-param> - The CIK or trading symbol of the company or person you are searching for</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>filing</api-param> - Filing type filter. For example, 10-K or 10-Q</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>before</api-param> - Filter to filings only before a particular date, in YYYYMMDD format</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/EntityFilings?id=msft&filing=10-k</div>
+                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/EntityFilings?id=0000050863&before=20180101</div>
+                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/EntityFilings?id=pg&filing=4&before=20160701</div>
+                            </div>
+
                         </div>
                       
                         <!--Insider Transactions-->
