@@ -49,3 +49,8 @@ $("#navep_OpenForm4").click(function()
 {
     $("#ep_OpenForm4")[0].scrollIntoView();
 });
+
+$("#navep_OpenCommonFinancials").click(function()
+{
+    $("#ep_OpenCommonFinancials")[0].scrollIntoView();
+});
