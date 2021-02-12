@@ -15,7 +15,7 @@ $("#returning-user").mouseleave(function()
     $("#returning-user")[0].classList.remove("gold-border");
 });
 
-$("#returning-user").click(NavigateToPane_Register);
+$("#new-user").click(NavigateToPane_Register);
 
 $("#new-user").mouseover(function()
 {
