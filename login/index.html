@@ -26,13 +26,23 @@
 
 
         <!--Login pane-->
-        <div id="login-pane">
+        <div id="login-pane" class="rl-pane">
+            <h2 class="pane-title">Login to your Account</h2>
+
+            <p class="txt-box-label">Username</p>
+            <input id="input-li-username" type="text" class="txt-box">
+        
+            <p class="txt-box-label">Password</p>
+            <input id="input-li-password" type="password" class="txt-box">
+            
+            <p id="login-error-msg" class="ri-error-msg">(error msg)</p>
+            <button id="login-button" class="ri-submit-btn">Login</button>
 
         </div>
 
 
         <!--Register pane-->
-        <div id="register-pane">
+        <div id="register-pane" class="rl-pane">
 
             <h2 class="pane-title">Register for an Account</h2>
 
@@ -49,8 +59,8 @@
             <input id="input-password2" type="password" class="txt-box">
 
 
-            <p id="registration-error-msg">(error msg)</p>
-            <button id="register-button">Register</button>
+            <p id="registration-error-msg" class="ri-error-msg">(error msg)</p>
+            <button id="register-button" class="ri-submit-btn">Register</button>
 
         </div>
         

@@ -1,5 +1,6 @@
 //SET BEGINNING OPACITY
 $("#register-pane").css("display", "none");
+$("#login-pane").css("display", "none");
 
 $("#returning-user").mouseover(function()
 {
@@ -16,6 +17,7 @@ $("#returning-user").mouseleave(function()
 });
 
 $("#new-user").click(NavigateToPane_Register);
+$("#returning-user").click(NavigateTo_Login);
 
 $("#new-user").mouseover(function()
 {
@@ -43,4 +45,12 @@ function NavigateToPane_Register()
         $("#register-pane").fadeIn(300);
     });
     
+}
+
+function NavigateTo_Login()
+{
+    $("#iama_pane").fadeOut(300, function()
+    {
+        $("#login-pane").fadeIn(300);
+    });
 }
