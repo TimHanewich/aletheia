@@ -120,7 +120,7 @@ $("#register-button").click(function()
                 EnableTextInput("input-password2");
                 EnableButton("register-button");                
 
-                FlashErrorMsg(req.responseText);
+                FlashErrorMsg("registration-error-msg", req.responseText);
             }
         }
     }
@@ -158,14 +158,14 @@ function EnableButton(ele_name)
     document.getElementById(ele_name).removeAttribute("disabled");
 }
 
-function FlashErrorMsg(error_msg)
+function FlashErrorMsg(err_txt_id, error_msg)
 {
-    document.getElementById("registration-error-msg").innerText = error_msg;
-    $("#registration-error-msg").fadeIn(500, function()
+    document.getElementById(err_txt_id).innerText = error_msg;
+    $("#" + err_txt_id).fadeIn(500, function()
     {
         setTimeout(function()
         {
-            $("#registration-error-msg").fadeOut(500)
+            $("#" + err_txt_id).fadeOut(500)
         }, 3000); 
     });
 }
