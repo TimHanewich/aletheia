@@ -102,6 +102,7 @@
     font-size: 18px;
     padding-left: 5px;
     margin-bottom: 15px;
+    border-style: solid;
 }
 
 #register-button
@@ -113,6 +114,27 @@
     left: 50%;
     transform: translateX(-50%);
     font-size: 20px;
+    box-shadow: none;
+}
+
+.red-border
+{
+    border-color: red;
+}
+
+.disabled-txt-input
+{
+    pointer-events: none;
+    background-color: gainsboro;
+}
+
+#registration-error-msg
+{
+    margin-bottom: 0px;
+    text-align: center;
+    color: red;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 /*This removes the focus border around selected items */
