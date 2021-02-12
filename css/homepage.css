@@ -12,8 +12,8 @@
     margin-top: 12px;
 
     display: grid;
-    grid-template-areas: "tab1 tab2 tab3 remainder";
-    grid-template-columns: 170px 170px 170px auto;
+    grid-template-areas: "tab1 tab2 tab3 remainder farright";
+    grid-template-columns: 170px 170px 170px auto 170px;
 }
 
 .tab-button
@@ -39,6 +39,11 @@
 .tab-about
 {
     grid-area: tab3;
+}
+
+.tab-loginregister
+{
+    grid-area: farright;
 }
 
 .search-desc
