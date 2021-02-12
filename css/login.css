@@ -30,7 +30,7 @@
 {
     color: #1c1c1c;
     position: relative;
-    border: #a5a5a3;
+    
     border-style: solid;
     border-width: 2px;
     border-radius: 15px;
@@ -41,6 +41,7 @@
     text-transform: uppercase;
     font-size: 25px;
     letter-spacing: 2px;
+    background-color: transparent;
 }
 
 .option-left
@@ -53,4 +54,15 @@
 {
     grid-area: right;
     margin-left: 20px;
+}
+
+
+.norm-border
+{
+    border-color: #a5a5a3;
+}
+
+.gold-border
+{
+    border-color: #FFD858;
 }

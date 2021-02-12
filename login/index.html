@@ -4,21 +4,29 @@
         <link rel="stylesheet" href="../css/common.css">
         <link rel="stylesheet" href="../css/branding.css">
         <link rel="stylesheet" href="../css/login.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
 
         <!--Wordmark Title-->
         <h2 class="page-title wordmark">Aletheia</h2>
-
         <div class="single-line"></div>
 
         <!--I am a...-->
-        <h2 class="iama">I am a...</h2>
+        <div id="iama_pane">
 
-        <div class="options-pane">
-            <div class="option option-left">Returning User</div>
-            <div class="option option-right">New User</div>
+            <h2 class="iama">I am a...</h2>
+
+            <div class="options-pane">
+                <div id="returning-user" class="clickable option option-left norm-border">Returning User</div>  
+                <div id="new-user" class="clickable option option-right norm-border">New User</div>
+            </div>
+
         </div>
+        
+
+        <!--SCRIPTS-->
+        <script src="../js/login.js"></script>
 
     </body>
 </html>
