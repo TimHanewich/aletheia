@@ -1,0 +1,56 @@
+.iama
+{
+    text-align: center;
+    color: #a5a5a3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.single-line
+{
+    height: 2px;
+    width: 65%;
+    background-color: #FFD858;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.options-pane
+{
+    width: 60%;
+    transform: translateX(-50%);
+    left: 50%;
+    position: relative;
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 1fr 1fr;
+}
+
+.option
+{
+    color: #1c1c1c;
+    position: relative;
+    border: #a5a5a3;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 15px;
+    line-height: 280px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0px;
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.option-left
+{
+    grid-area: left;
+    margin-right: 20px;
+}
+
+.option-right
+{
+    grid-area: right;
+    margin-left: 20px;
+}
