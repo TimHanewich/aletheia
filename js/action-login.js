@@ -38,7 +38,7 @@ $("#login-button").click(function()
     DisableButton("login-button");
 
     //Make the call
-    var url = "https://aletheia.azurewebsites.net/api/LoginAccount?username=" + ip_username + "&password=" + ip_password;
+    var url = "https://aletheia.azurewebsites.net/api/LoginAccount?username=" + ip_username + "&password=" + ip_password + "&includekeys";
     var req = new XMLHttpRequest();
     req.open("get", url);
     req.onreadystatechange = function()
@@ -47,10 +47,12 @@ $("#login-button").click(function()
         {
             if (req.status == 200)
             {
-                //Store the username as a cookie
-                document.cookie = "aletheiauser=" + ip_username;
+                //Get the response object
+                var account_obj = JSON.parse(req.responseText);
+                StoreAccountToCookie(account_obj);
 
                 //Now navigate to the user account page
+                window.location.href = "../myaccount/index.html";
             }
             else
             {
