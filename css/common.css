@@ -80,3 +80,13 @@ body
 {
     cursor: pointer;
 }
+
+.single-line
+{
+    height: 2px;
+    width: 65%;
+    background-color: #FFD858;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}

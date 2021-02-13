@@ -5,16 +5,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.single-line
-{
-    height: 2px;
-    width: 65%;
-    background-color: #FFD858;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 .options-pane
 {
     width: 60%;
