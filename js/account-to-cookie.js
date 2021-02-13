@@ -1,6 +1,6 @@
 function StoreAccountToCookie(account_obj)
 {
-    document.cookie = "aletheia_account=" + JSON.stringify(account_obj);
+    document.cookie = "aletheia_account=" + JSON.stringify(account_obj) + "; path=/";
     GetAccountFromCookie();
 }
 
