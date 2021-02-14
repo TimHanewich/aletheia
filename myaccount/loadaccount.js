@@ -38,4 +38,10 @@ account_obj.Keys.forEach(function(item)
     ele.appendChild(ele_copybtn);
 
     document.getElementById("my-api-keys").appendChild(ele);
+
+
+    //Now try to run the script that has the mouseover reaction/copy script in it so it reloads and catches this
+    var script_keyreact = document.createElement("script");
+    script_keyreact.src = "../js/myaccount-api-key-nav.js";
+    document.getElementsByTagName("body")[0].appendChild(script_keyreact);
 });
