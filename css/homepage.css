@@ -26,19 +26,14 @@
     text-transform: uppercase;
 }
 
-.tab-home
+.tab-api
 {
     grid-area: tab1;
 }
 
-.tab-api
-{
-    grid-area: tab2;
-}
-
 .tab-about
 {
-    grid-area: tab3;
+    grid-area: tab2;
 }
 
 .tab-loginregister
