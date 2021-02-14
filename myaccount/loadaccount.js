@@ -19,3 +19,23 @@ var d = new Date(account_obj.CreatedAtUtc);
 var d_as_str = monthNames[d.getMonth()]; //Month
 d_as_str = d_as_str + " " + (d.getDay() + 1).toString() + ", " + d.getFullYear();
 document.getElementById("account-created-at").innerText = d_as_str;
+
+//For each API key, create an api key entry
+account_obj.Keys.forEach(function(item)
+{
+    var ele = document.createElement("div");
+    ele.classList.add("api-key-copy-pair");
+
+    var ele_apikey = document.createElement("p");
+    ele_apikey.classList.add("api-key");
+    ele_apikey.innerText = item;
+    ele.appendChild(ele_apikey);
+
+    var ele_copybtn = document.createElement("div");
+    ele_copybtn.classList.add("copy-btn");
+    ele_copybtn.classList.add("copy-btn-norm");
+    ele_copybtn.innerText = "copy";
+    ele.appendChild(ele_copybtn);
+
+    document.getElementById("my-api-keys").appendChild(ele);
+});
