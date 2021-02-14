@@ -106,10 +106,12 @@ $("#register-button").click(function()
         {
             if (req.status == 200)
             {
-                //Store it as a cookie
-                document.cookie = "aletheiauser=" + ip_username;
+                //Get the response object
+                var account_obj = JSON.parse(req.responseText);
+                StoreAccountToCookie(account_obj);
 
-                //Now just need to navigate to the user account page once I make that.
+                //Now navigate to the user account page
+                window.location.href = "../myaccount/index.html";
             }
             else
             {
