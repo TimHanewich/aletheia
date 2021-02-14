@@ -1,0 +1,137 @@
+.iama
+{
+    text-align: center;
+    color: #a5a5a3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.options-pane
+{
+    width: 60%;
+    transform: translateX(-50%);
+    left: 50%;
+    position: relative;
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 1fr 1fr;
+}
+
+.option
+{
+    color: #1c1c1c;
+    position: relative;
+    
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 15px;
+    line-height: 280px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0px;
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 2px;
+    background-color: transparent;
+}
+
+.option-left
+{
+    grid-area: left;
+    margin-right: 20px;
+}
+
+.option-right
+{
+    grid-area: right;
+    margin-left: 20px;
+}
+
+
+.norm-border
+{
+    border-color: #a5a5a3;
+}
+
+.gold-border
+{
+    border-color: #FFD858;
+}
+
+.rl-pane
+{
+    width: 42%;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    margin-top: 30px;
+}
+
+#register-pane
+{ 
+    height: 300px;  
+}
+
+.pane-title
+{
+    text-align: center;
+    color: #1c1c1c;
+    font-weight: lighter;
+}
+
+.txt-box-label
+{
+    color: #a5a5a3;
+    font-size: 18px;
+    text-align: left;
+    margin: 0px;
+}
+
+.txt-box
+{
+    width: 98%;
+    height: 35px;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 10px;
+    font-size: 18px;
+    padding-left: 5px;
+    margin-bottom: 15px;
+    border-style: solid;
+}
+
+.red-border
+{
+    border-color: red;
+}
+
+.disabled-txt-input
+{
+    pointer-events: none;
+    background-color: gainsboro;
+}
+
+.ri-error-msg
+{
+    margin-bottom: 0px;
+    text-align: center;
+    color: red;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.ri-submit-btn
+{
+    margin-top: 20px;
+    width: 170px;
+    height: 50px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    box-shadow: none;
+}
+
+/*This removes the focus border around selected items */
+textarea:focus, input:focus{
+    outline: none;
+}

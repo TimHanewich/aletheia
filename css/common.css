@@ -1,0 +1,92 @@
+@font-face
+{
+    font-family: Cairo;
+    src: url(../assets/fonts/Cairo/Cairo-Regular.ttf);
+}
+
+@font-face
+{
+    font-family: Consolas;
+    src: url(../assets/fonts/Consolas/Consolas.ttf);
+}
+
+body
+{
+    background-color: #FDFDFD;
+}
+
+*
+{
+    font-family: Cairo;
+    color: #1c1c1c;
+}
+
+.center-container
+{
+    position: relative;
+    width: 65%;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.page-title
+{
+    text-align: center;
+    font-size: 80px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.top-site-nav
+{
+    width: 100%;
+    height: 70px;
+    left: 0px;
+    top: 0px;
+    position: relative;
+    display: grid;
+    grid-template-areas: "branding home";
+    grid-template-columns: 250px 100px;
+    border-bottom-color: #A5A5A3;
+    border-style: solid;
+    border-bottom-width: 2px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+
+.top-site-nav-branding
+{
+    width: 100%;
+    height: 100%;
+    grid-area: branding;
+}
+
+.top-site-nav-wordmark
+{
+    line-height: 70px;
+    margin: 0px;
+    text-align: center;
+    font-size: 65px;
+}
+
+.clickable
+{
+    cursor: pointer;
+}
+
+.single-line
+{
+    height: 2px;
+    width: 65%;
+    background-color: #FFD858;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}

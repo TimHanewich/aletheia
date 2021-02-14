@@ -1,0 +1,308 @@
+.full-page-content
+{
+    display: grid;
+    grid-template-areas: "header"
+    "content";
+    grid-template-rows: 70px 1fr;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+.inside-header-area
+{
+    grid-area: header;
+}
+
+.api-page-grid
+{
+    grid-area: content;
+    display: grid;
+    grid-template-areas: "nav display";
+    grid-template-columns: 300px 1fr;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.api-nav
+{
+    grid-area: nav;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "deadpad content";
+    grid-template-columns: 20px 1fr;
+    border-right-width: 2px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    border-style: solid;
+    border-color: #A5A5A3;
+    background-color: #EEEEEE;
+    margin-top: 2px;
+}
+
+.api-nav-content-pane
+{
+    grid-area: content;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.api-header
+{
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 3px;
+}
+
+.api-verb-ep-pair
+{
+    width: 100%;
+    min-height: 30px;
+    display: grid;
+    grid-template-areas: "verb ep";
+    grid-template-columns: 70px 1fr;
+    margin-bottom: 5px;
+}
+
+.api-ep-area
+{
+    grid-area: ep;
+    margin-left: 5px;
+}
+
+.api-ep
+{
+    vertical-align: middle;
+    line-height: 30px;
+    margin-left: 6px;
+    grid-area: ep;
+}
+
+.api-verb
+{
+    max-height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    grid-area: verb;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.api-verb-get
+{  
+    background-color: #118AB2;
+    color: #fdfdfd;
+}
+
+.api-verb-post
+{
+    background-color: #fca311;
+    color: #1c1c1c;
+}
+
+.api-verb-hook
+{
+    background-color: #9341b3;
+    color: #fdfdfd;
+}
+
+.api-verb-delete
+{
+    background-color: #d62828;
+    color: #fdfdfd;
+}
+
+.api-verb-required
+{
+    background-color: maroon;
+    color: #fdfdfd;
+}
+
+.api-verb-optional
+{
+    background-color: #EEEEEE;
+    color: #1c1c1c;
+}
+
+.blank-space
+{
+    height: 10px;
+    width: 100%;
+}
+
+.display-content-area
+{
+    grid-area: display;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.display-content-pane
+{
+    width: 75%;
+    top: 0px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+.api-category-title
+{
+    margin: 0px;
+    font-size: 36px;
+}
+
+.api-category-desc
+{
+    font-size: 22px;
+    margin: 0px;
+    color: #A5A5A3;
+}
+
+.api-title
+{
+    font-size: 25px;
+    font-weight: lighter;
+    margin-bottom: 0px;
+}
+
+.api-desc
+{
+    font-size: 19px;
+    color: #A5A5A3;
+    font-weight: lighter;
+    margin: 0px;
+}
+
+.code-block
+{
+    width: 100%;
+    text-align: center;
+    background-color: #EEEEEE;
+    line-height: 35px;
+    vertical-align: middle;
+    font-size: 18px;
+    border-radius: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-size-10px
+{
+    font-size: 10px;
+}
+
+.req-example
+{
+    margin-bottom: 7px;
+}
+
+.api-sub-header
+{
+    font-size: 19px;
+    font-weight: lighter;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+api-param
+{
+    font-weight: bold;
+}
+
+.api-ep-documentation
+{
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.param-desc
+{
+    margin: 0px;
+}
+
+/* The below will hide the scroll bar (in chrome browsers) for the navitation pane */
+.api-nav-content-pane::-webkit-scrollbar {
+    display: none;
+  }
+
+
+.response-example-cont
+{
+    display: grid;
+    grid-template-areas: "openclose"
+    "example";
+    grid-template-rows: auto auto;
+    width: 100%;
+}
+
+.response-example
+{
+    font-family: Consolas;
+    background-color: #EEEEEE;
+    padding: 8px;
+    border-radius: 7px;
+    padding: 12px;
+    letter-spacing: -0.5px;
+    width: 100%;
+    position: relative;
+    overflow-wrap: break-word;
+    text-overflow: clip;
+    word-break: break-all;
+}
+
+.response-example-openclose
+{
+    grid-area: openclose;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #A5A5A3;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.api-sub-instruction-title
+{
+    font-size: 19px;
+    color: #1c1c1c;
+    margin: 0px;
+    margin-top: 15px;
+}
+
+.body-example
+{
+    font-family: Consolas;
+    background-color: #EEEEEE;
+    padding: 8px;
+    border-radius: 7px;
+    padding: 12px;
+    letter-spacing: -0.5px;
+    width: 98%;
+    position: relative;
+    overflow-wrap: break-word;
+    text-overflow: clip;
+    word-break: break-all;
+}
+
+custom-txt
+{
+    color: blue;
+    font-family: inherit;
+}
+
+.scrollable-code
+{
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
+}

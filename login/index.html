@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/branding.css">
+        <link rel="stylesheet" href="../css/login.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <!--Wordmark Title-->
+        <h2 class="page-title wordmark">Aletheia</h2>
+        <div class="single-line"></div>
+
+        <!--I am a...-->
+        <div id="iama_pane">
+
+            <h2 class="iama">I am a...</h2>
+
+            <div class="options-pane">
+                <div id="returning-user" class="clickable option option-left norm-border">Returning User</div>  
+                <div id="new-user" class="clickable option option-right norm-border">New User</div>
+            </div>
+
+        </div>
+
+
+        <!--Login pane-->
+        <div id="login-pane" class="rl-pane">
+            <h2 class="pane-title">Login to your Account</h2>
+
+            <p class="txt-box-label">Username</p>
+            <input id="input-li-username" type="text" class="txt-box">
+        
+            <p class="txt-box-label">Password</p>
+            <input id="input-li-password" type="password" class="txt-box">
+            
+            <p id="login-error-msg" class="ri-error-msg">(error msg)</p>
+            <button id="login-button" class="ri-submit-btn">Login</button>
+
+        </div>
+
+
+        <!--Register pane-->
+        <div id="register-pane" class="rl-pane">
+
+            <h2 class="pane-title">Register for an Account</h2>
+
+            <p class="txt-box-label">Username</p>
+            <input id="input-username" type="text" class="txt-box">
+
+            <p class="txt-box-label">Email</p>
+            <input id="input-email" type="text" class="txt-box">
+
+            <p class="txt-box-label">Password</p>
+            <input id="input-password" type="password" class="txt-box">
+
+            <p class="txt-box-label">Confirm Password</p>
+            <input id="input-password2" type="password" class="txt-box">
+
+
+            <p id="registration-error-msg" class="ri-error-msg">(error msg)</p>
+            <button id="register-button" class="ri-submit-btn">Register</button>
+
+        </div>
+        
+
+        <!--SCRIPTS-->
+        <script src="../js/login-nav.js"></script>
+        <script src="../js/action-register.js"></script>
+        <script src="../js/action-login.js"></script>
+        <script src="../js/account-to-cookie.js"></script>
+
+    </body>
+</html>

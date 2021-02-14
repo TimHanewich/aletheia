@@ -1,11 +1,153 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/branding.css">
+        <link rel="stylesheet" href="css/homepage.css">
+        <link rel="stylesheet" href="css/about.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
 
+        <!--Wordmark Title-->
+        <h2 class="page-title wordmark">Aletheia</h2>
+
+        <!--Center container-->
+        <div class="center-container">
+
+            <!--Tab menu-->
+            <div class="tab-menu">
+
+                <!--API tab-->
+                <div id="tab_API" class="tab-button tab-api clickable">
+                    API
+                </div>
+
+                <!--About-->
+                <!--Disabled on 2/13/2021 because I am temporarily pasting the about page in the home page while i make an actual home page-->
+                <!--
+                <div id="tab_About" class="tab-button tab-about clickable">
+                    ABOUT
+                </div>
+                -->
+
+                <!--Login/Register-->
+                <div id="tab_LoginRegister" class=" tab-button tab-loginregister clickable">
+                    LOGIN/REGISTER
+                </div>
+
+            </div>
+
+
+            <!--Some blank space to separate  the tabs from the temporary about information-->
+            <div style="width: 100%; height: 20px; background-color: transparent;"></div>
+
+            <!--Service into-->
+            <h3 class="service-intro">Aletheia is a financial web service and API that provides meaningful information about any publicly traded company</h3>
+
+            <!--Services description-->
+            <p>Our service processes hundreds of thousands of filings with the Securities Exchange Commission, logs notable data points, and then transforms these datapoints into insights that better inform your investment decisions.</p>
+        
+            <!--Project progress-->
+            <h4 class="center-section-title">Project Progress</h4>
+
+            <div class="statistical-center-pane">
+
+                <!--Butterly Split Pane 1 with statistical data-->
+                <div class="butterfly-split-pane">
+                    <div class="butterfly-left">
+
+                        <!--SEC Filings Processed-->
+                        <div class="stat-grid">
+                            <p class="stat-txt stat-title">SEC Filings Processed</p>
+                            <p id="stat_SecFilingsProcessed" class="stat-txt stat-value">...</p>
+                        </div>
+                        
+                    </div>
+                    <div class="butterly-right">
+
+                        <!--Transactions Count-->
+                        <div class="stat-grid">
+                            <p class="stat-txt stat-title">Transactions Processed</p>
+                            <p id="stat_TransactionsCount" class="stat-txt stat-value">...</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--Butterly Split Pane 2 with statistical data-->
+                <div class="butterfly-split-pane">
+                    <div class="butterfly-left">
+
+                        <!--Insider Traders-->
+                        <div class="stat-grid">
+                            <p class="stat-txt stat-title">Inside Traders</p>
+                            <p id="stat_InsiderTraders" class="stat-txt stat-value">...</p>
+                        </div>
+                        
+                    </div>
+                    <div class="butterly-right">
+
+                        <!--Companies-->
+                        <div class="stat-grid">
+                            <p class="stat-txt stat-title">Companies</p>
+                            <p id="stat_CompanyCount" class="stat-txt stat-value">...</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!--Hiding the search bar from now because it is not operational yet (it works but on bad data using bad endpoints - need to rework this)-->
+            <!--
+            <h3 class="search-desc">Search for any publicly traded company or related person</h3>
+
+            
+            <div class="search-bar-cont">
+
+                
+                <input id="searchBar" type="text" onkeyup="searchEntities()">
+                
+            </div>
+
+            
+            <div id="search-results-master-cont" class="hidden">
+
+                
+                <h4 class="results-title">Results</h4>
+
+                
+                <div class="line-sep"></div>
+
+                
+                <div id="search-results-list-cont">
+
+                    
+                    
+                    <div class="search-result-entry">
+                        <p class="search-result-txt search-result-col1">Person</p>
+                        <p class="search-result-txt search-result-col2">000042323</p>
+                        <p class="search-result-txt search-result-col3">General Electric</p>
+                        <p class="search-result-txt search-result-col4">GE</p>
+                        <p class="search-result-txt search-result-col5"><a href="">Select</a></p>
+                    </div>
+                    
+                    
+
+                </div>
+
+            </div>
+
+            -->
+            
+
+        </div>
+
         <!--SCRIPTS-->
         <script src="js/index.js"></script>
+        <script src="js/homepage-nav.js"></script>
+        <script src="js/about.js"></script>
     </body>
 </html>

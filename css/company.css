@@ -1,0 +1,305 @@
+#company-title
+{
+    text-align: center;
+    display: block;
+    font-size: 35px;
+    letter-spacing: 1px;
+    margin: 0px;
+}
+
+#company-cik
+{
+    font-size: 20px;
+    text-align: center;
+    margin: 0px;
+}
+
+.recent-filings-label
+{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    font-weight: lighter;
+}
+
+.recent-filings-control
+{
+    min-width: 300px;
+    width: 100%;
+    max-width: 1300px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+    display: grid;
+    grid-template-areas: "control"
+    "filters"
+    "list";
+    grid-template-rows: 50px 30px 400px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #A5A5A3;
+    position: relative;
+}
+
+.recent-filings-control-control
+{
+    grid-area: control;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: grid;
+    grid-template-areas: "all buys sells";
+    grid-template-columns: 200px 200px 200px 1fr;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 2px;
+    border-style: solid;
+    border-color: #A5A5A3;
+}
+
+.recent-filings-btn
+{
+    text-align: center;
+    font-size: 18px;
+    line-height: 50px;
+    text-transform: uppercase;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    border-right-width: 2px;
+    border-style: solid;
+    border-color: #A5A5A3;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+}
+
+.recent-filings-btn-normal
+{
+    color: #1c1c1c;
+}
+
+.recent-filings-btn-selected
+{
+    color: #FFD858;
+}
+
+#recent-filings-allBTN
+{
+    grid-area: all; 
+}
+
+#recent-filings-buysBTN
+{
+    grid-area: buys;
+}
+
+#recent-filings-sellsBTN
+{
+    grid-area: sells;
+}
+
+#recent-transactions-loading-pane
+{
+    grid-area: list;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-areas: "empty1"
+    "content"
+    "empty2";
+    grid-template-rows: 1fr 30px 1fr;
+}
+
+#recent-transactions-loading-txt
+{
+    grid-area: content;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-style: italic;
+    text-align: center;
+}
+
+#results-list-cont
+{
+    height: 100%;
+    width: 100%;
+    grid-area: values;
+    overflow-y: scroll;
+}
+
+.security-transaction
+{
+    width: 100%;
+    height: 50px;
+    position: relative;
+    display: grid;
+    grid-template-areas: "col1 col2 col3 col4 col5 col6 col7";
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 60px;
+}
+
+.st-col
+{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
+    color: #1c1c1c;
+}
+
+.st-header-col
+{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    line-height: 35px;
+    color: #1c1c1c;
+    text-decoration: underline;
+}
+
+.st-col1
+{
+    grid-area: col1;
+}
+
+.st-col2
+{
+    grid-area: col2;
+}
+
+.st-col3
+{
+    grid-area: col3;
+}
+
+.st-col4
+{
+    grid-area: col4;
+}
+
+.st-col5
+{
+    grid-area: col5;
+}
+
+.st-col6
+{
+    grid-area: col6;
+}
+
+.st-col7
+{
+    grid-area: col7;
+}
+
+#results-pane
+{
+    grid-area: list;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "labels"
+    "values";
+    grid-template-rows: 35px 1fr;
+}
+
+#transactions-column-header
+{
+    height: 100%;
+    width: 98%;
+    margin-right: auto;
+    left: 0px;
+}
+
+.recent-filings-filters-control-area
+{
+    grid-area: filters;
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    border-color: #A5A5A3;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 2px;
+}
+
+.recent-filings-filters
+{
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.il
+{
+    display: inline;
+}
+
+.before-date-filter-txt
+{
+    margin-left: 40px;
+}
+
+.before-date-filter
+{
+    height: 60%;
+    width: 130px;
+    margin-left: 4px;
+}
+
+.insider-area
+{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-areas: "insiders explore";
+    grid-template-columns: 40% 60%;
+}
+
+.insider-area-explore
+{
+    grid-area: explore;
+    position: relative;
+}
+
+.inside-owners
+{
+    grid-area: insiders;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#inside-owners-table
+{
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: auto;
+    width: 60%;
+}
+
+.txt-centered
+{
+    text-align: center;
+}
