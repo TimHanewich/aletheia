@@ -1,3 +1,8 @@
+body
+{
+    margin: 0px;
+}
+
 .tab-menu
 {
     width: 100%;
@@ -161,13 +166,9 @@
     position: relative;
     left: 0px;
     background-color: black;
-    
-    border-style: solid;
-    border-color: pink;
-    border-width: 2px;
 }
 
-.showcase-bg-img
+#showcase-bg-img
 {
     position: absolute;
     top: 0px;
