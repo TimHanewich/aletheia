@@ -151,3 +151,39 @@
     grid-area: col5;
 }
 
+.showcase
+{
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 380px;
+    width: 100%;
+    position: relative;
+    left: 0px;
+    background-color: black;
+}
+
+.showcase-bg-img
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    background-color: blue;
+    object-fit: cover;
+}
+
+.showcase-bg-img-buzz
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    z-index: 1;
+    left: 0px;
+    top: 0px;
+    opacity: 100%;
+}
+
