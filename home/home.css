@@ -243,7 +243,17 @@
     height: 100%;
     width: 70%;
     left: 0px;
+    
+}
+
+.service-preview-symb-norm
+{
     background-color: #1c1c1c;
+}
+
+.service-preview-symb-gold
+{
+    background-color: #FFD858;
 }
 
 .service-preview-txt
