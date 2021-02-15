@@ -158,10 +158,10 @@ body
 
 .showcase
 {
-    margin-top: 20px;
+    margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    height: 500px;
+    height: 800px;
     width: 100%;
     position: relative;
     left: 0px;
@@ -194,12 +194,10 @@ body
 
 .showcase-content
 {
-    position: absolute;
-    top: 70px;
+    position: relative;
     left: 80px;
-    height: 100%;
-    width: 100%;
-    z-index: 2;
+    margin-top: 50px;
+    margin-left: 80px;
 }
 
 .splash-text
@@ -272,6 +270,19 @@ body
     font-size: 22px;
     word-wrap: break-word;
     width: 85%;
+}
+
+.aletheia-header
+{
+    position: relative;
+}
+
+.hp-content
+{
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    width: 100%;
 }
 
 
