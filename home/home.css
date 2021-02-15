@@ -264,4 +264,13 @@
     display: inline;
 }
 
+#service-description
+{
+    text-align: left;
+    margin-top: 10px;
+    font-size: 22px;
+    word-wrap: break-word;
+    width: 85%;
+}
+
 
