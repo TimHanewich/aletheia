@@ -156,11 +156,15 @@
     margin-top: 20px;
     margin-left: 0px;
     margin-right: 0px;
-    height: 380px;
+    height: 500px;
     width: 100%;
     position: relative;
     left: 0px;
     background-color: black;
+    
+    border-style: solid;
+    border-color: pink;
+    border-width: 2px;
 }
 
 .showcase-bg-img
@@ -185,5 +189,39 @@
     left: 0px;
     top: 0px;
     opacity: 100%;
+}
+
+.showcase-content
+{
+    position: absolute;
+    top: 70px;
+    left: 80px;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.splash-text
+{
+    position: relative;
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    margin: 0px;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+
+.splash-text-desc
+{
+    position: relative;
+    font-size: 30px;
+    font-weight: normal;
+    color: #a5a5a3;
+    z-index: 2;
+    margin-top: 6px;
+    margin-bottom: 0px;
+    line-height: 30px;
+    text-transform: uppercase;
 }
 
