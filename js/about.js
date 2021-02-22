@@ -1,7 +1,7 @@
 function PlugInStat_SecFilingsProcessed()
 {
     var req = new XMLHttpRequest();
-    req.open("get", "https://aletheia.azurewebsites.net/api/CountForm4Documents?");
+    req.open("get", "https://www.aletheiaresearch.org/api/CountSecFilings");
     req.onreadystatechange = function()
     {
         if (req.readyState == 4 && req.status == 200)
@@ -16,7 +16,7 @@ function PlugInStat_SecFilingsProcessed()
 function PlugInStat_TransactionsProcessed()
 {
     var req = new XMLHttpRequest();
-    req.open("get", "https://aletheia.azurewebsites.net/api/CountSecurityTransactions?");
+    req.open("get", "https://www.aletheiaresearch.org/api/CountTransactions");
     req.onreadystatechange = function()
     {
         if (req.readyState == 4 && req.status == 200)
@@ -28,37 +28,23 @@ function PlugInStat_TransactionsProcessed()
     req.send();
 }
 
-function PlugInStat_InsideTraders()
+function PlugInStat_SecEntities()
 {
     var req = new XMLHttpRequest();
-    req.open("get", "https://aletheia.azurewebsites.net/api/CountPeople?");
+    req.open("get", "https://www.aletheiaresearch.org/api/CountSecEntities");
     req.onreadystatechange = function()
     {
         if (req.readyState == 4 && req.status == 200)
         {
             var asint = parseInt(req.responseText);
-            document.getElementById("stat_InsiderTraders").innerText = asint.toLocaleString();
+            document.getElementById("stat_SecEntities").innerText = asint.toLocaleString();
         }
     }
     req.send();
 }
 
-function PlugInStat_CompanyCount()
-{
-    var req = new XMLHttpRequest();
-    req.open("get", "https://aletheia.azurewebsites.net/api/CountCompanies?");
-    req.onreadystatechange = function()
-    {
-        if (req.readyState == 4 && req.status == 200)
-        {
-            var asint = parseInt(req.responseText);
-            document.getElementById("stat_CompanyCount").innerText = asint.toLocaleString();
-        }
-    }
-    req.send();
-}
+
 
 PlugInStat_SecFilingsProcessed();
 PlugInStat_TransactionsProcessed();
-PlugInStat_InsideTraders();
-PlugInStat_CompanyCount();
+PlugInStat_SecEntities();
