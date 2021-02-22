@@ -50,29 +50,25 @@
 
                         <!--Insider Trading-->
                         <h3 class="api-header">Insider Trading</h3>
-                        <div id="navep_SearchPeople" class="api-verb-ep-pair clickable">
-                            <div class="api-verb api-verb-get">GET</div>
-                            <div class="api-ep">Search People</div>
-                        </div>
-                        <div id="navep_SearchCompanies" class="api-verb-ep-pair clickable">
-                            <div class="api-verb api-verb-get">GET</div>
-                            <div class="api-ep">Search Companies</div>
-                        </div>
                         <div id="navep_SearchEntities" class="api-verb-ep-pair clickable">
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Search Entities</div>
                         </div>
-                        <div id="navep_GetCompany" class="api-verb-ep-pair clickable">
+                        <div id="navep_SearchEntities" class="api-verb-ep-pair clickable">
                             <div class="api-verb api-verb-get">GET</div>
-                            <div class="api-ep">Get Company</div>
+                            <div class="api-ep">Get Entity</div>
+                        </div>
+                        <div id="navep_SearchEntities" class="api-verb-ep-pair clickable">
+                            <div class="api-verb api-verb-get">GET</div>
+                            <div class="api-ep">Get Filing</div>
                         </div>
                         <div id="navep_LatestTransactions" class="api-verb-ep-pair clickable">
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Latest Transactions</div>
                         </div>
-                        <div id="navep_GetCompanyOwners" class="api-verb-ep-pair clickable">
+                        <div id="navep_SearchEntities" class="api-verb-ep-pair clickable">
                             <div class="api-verb api-verb-get">GET</div>
-                            <div class="api-ep">Get Company Owners</div>
+                            <div class="api-ep">Affiliated Owners</div>
                         </div>
 
                         <div class="blank-space"></div>
@@ -251,57 +247,10 @@
                             <h2 class="api-category-title">Insider Trading</h2>
                             <p class="api-category-desc">Read and monitor insider transactions for any publically traded company.</p>
                             
-                            <!--Search people-->
-                            <div class="api-ep-documentation">
-                                <h3 id="ep_SearchPeople" class="api-title">Search People</h3>
-                                <p class="api-desc">Search the Aletheia database for an insider across all publicly traded companies.</p>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/SearchPeople</div>
-                                </div>
-                                <h4 class="api-sub-header">Parameters</h4>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-required">Required</div>
-                                    <div class="api-ep"><api-param>term</api-param> - The search term</div>
-                                </div>
-                                <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/SearchPeople?term=smith</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/SearchPeople?term=musk</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/SearchPeople?term=ellison</div>
-                                <div class="response-example-cont">
-                                    <div class="response-example-openclose">+ Example Response</div>
-                                    <div class="response-example">[{"CIK":"0000901999","FullName":"Lawrence Joseph Ellison"},{"CIK":"0001350382","FullName":"Marvin R Ellison"}]</div>
-                                </div>
-                            </div>
-                            
-                            <!--Search companies-->
-                            <div class="api-ep-documentation">
-                                <h3 id="ep_SearchCompanies" class="api-title">Search Companies</h3>
-                                <p class="api-desc">Search the Aletheia database for a company (entity that served as an issuer).</p>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/SearchCompanies</div>
-                                </div>
-                                <h4 class="api-sub-header">Parameters</h4>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-required">Required</div>
-                                    <div class="api-ep"><api-param>term</api-param> - The search term</div>
-                                </div>
-                                <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/SearchCompanies?term=mmm</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/SearchCompanies?term=3m</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/SearchCompanies?term=microsoft</div>
-                                <div class="response-example-cont">
-                                    <div class="response-example-openclose">+ Example Response</div>
-                                    <div class="response-example">[{"CIK":"0000002488","TradingSymbol":"AMD","Name":"Advanced Micro Devices Inc"},{"CIK":"0000002969","TradingSymbol":"APD","Name":"Air Products & Chemicals Inc /de/"},{"CIK":"0000004281","TradingSymbol":"HWM","Name":"Howmet Aerospace Inc."},{"CIK":"0000004904","TradingSymbol":"AEP","Name":"American Electric Power Co Inc"},{"CIK":"0000004962","TradingSymbol":"AXP","Name":"American Express Co"},{"CIK":"0000005272","TradingSymbol":"AIG","Name":"American International Group Inc"},{"CIK":"0000006201","TradingSymbol":"AAL","Name":"American Airlines Group Inc."},{"CIK":"0000006951","TradingSymbol":"AMAT","Name":"Applied Materials Inc /de"},{"CIK":"0000007084","TradingSymbol":"ADM","Name":"Archer-daniels-midland Co"},{"CIK":"0000008670","TradingSymbol":"ADP","Name":"Automatic Data Processing Inc"},{"CIK":"0000014272","TradingSymbol":"BMY","Name":"Bristol Myers Squibb Co"},{"CIK":"0000016732","TradingSymbol":"CPB","Name":"Campbell Soup Co"},{"CIK":"0000018926","TradingSymbol":"LUMN","Name":"Centurylink, Inc"},{"CIK":"0000019617","TradingSymbol":"JPM","Name":"Jpmorgan Chase & Co"},{"CIK":"0000024545","TradingSymbol":"TAP","Name":"Molson Coors Beverage Co"},{"CIK":"0000029989","TradingSymbol":"OMC","Name":"Omnicom Group Inc."},{"CIK":"0000031791","TradingSymbol":"PKI","Name":"Perkinelmer Inc"},{"CIK":"0000034088","TradingSymbol":"XOM","Name":"Exxon Mobil Corp"},{"CIK":"0000034903","TradingSymbol":"FRT","Name":"Federal Realty Investment Trust"},{"CIK":"0000036270","TradingSymbol":"MTB","Name":"M&t Bank Corp"}]</div>
-                                </div>
-                            </div>
-
-
                             <!--Search entities-->
                             <div class="api-ep-documentation">
                                 <h3 id="ep_SearchEntities" class="api-title">Search Entities</h3>
-                                <p class="api-desc">Search the Aletheia database for both a person and company.</p>
+                                <p class="api-desc">Search the Aletheia database for an entity. An entity represents either a company (serving as an security issuer) or a person (serving as a security owner).</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
                                     <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/SearchEntities</div>
@@ -311,13 +260,17 @@
                                     <div class="api-verb api-verb-required">Required</div>
                                     <div class="api-ep"><api-param>term</api-param> - The search term</div>
                                 </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>top</api-param> - Limit the number of results returned. Fewer results will return faster.</div>
+                                </div>
                                 <h4 class="api-sub-header">Example Requests</h4>
                                 <div class="code-block req-example">https://www.aletheiaresearch.org/api/SearchEntities?term=intc</div>
                                 <div class="code-block req-example">https://www.aletheiaresearch.org/api/SearchEntities?term=amazon</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/SearchEntities?term=cook</div>
+                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/SearchEntities?term=cook&top=3</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
-                                    <div class="response-example">[{"CIK":"0001134632","FullName":"John Chapple","entityType":"Person"},{"CIK":"0001202354","FullName":"Steven R Appleton","entityType":"Person"},{"CIK":"0001246128","FullName":"Steven L Applewick","entityType":"Person"},{"CIK":"0000320193","TradingSymbol":"AAPL","Name":"Apple Inc.","entityType":"Company"}]</div>
+                                    <div class="response-example">[{"Cik":1168017,"Name":"COOK J MICHAEL"},{"Cik":1227246,"Name":"COOK IAN M"},{"Cik":1270438,"Name":"COOK LINDA Z"}]</div>
                                 </div>
                             </div>
 
