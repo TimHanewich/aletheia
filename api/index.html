@@ -54,11 +54,11 @@
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Search Entities</div>
                         </div>
-                        <div id="navep_SearchEntities" class="api-verb-ep-pair clickable">
+                        <div id="navep_GetEntity" class="api-verb-ep-pair clickable">
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Get Entity</div>
                         </div>
-                        <div id="navep_SearchEntities" class="api-verb-ep-pair clickable">
+                        <div id="navep_GetFiling" class="api-verb-ep-pair clickable">
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Get Filing</div>
                         </div>
@@ -66,7 +66,7 @@
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Latest Transactions</div>
                         </div>
-                        <div id="navep_SearchEntities" class="api-verb-ep-pair clickable">
+                        <div id="navep_AffiliatedOwners" class="api-verb-ep-pair clickable">
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Affiliated Owners</div>
                         </div>
@@ -276,7 +276,7 @@
 
                             <!--Get Entity-->
                             <div class="api-ep-documentation">
-                                <h3 id="ep_GetCompany" class="api-title">Get Entity</h3>
+                                <h3 id="ep_GetEntity" class="api-title">Get Entity</h3>
                                 <p class="api-desc">Get details of a company or insider from their Central Index Key (CIK), a unique ID assigned by the Securities Exchange Commission.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
@@ -299,7 +299,7 @@
 
                             <!--Get Filing-->
                             <div class="api-ep-documentation">
-                                <h3 id="ep_GetCompany" class="api-title">Get Filing</h3>
+                                <h3 id="ep_GetFiling" class="api-title">Get Filing</h3>
                                 <p class="api-desc">Get details of a particular SEC filing that has already been processed by our servers.</p>
                                 <p class="api-desc-please-note">! Please note that this endpoint will not access any filing with the SEC, but rather only queries filings that have already been scanned and processed and thus exist in our database.</p>
                                 <div class="api-verb-ep-pair">
@@ -404,7 +404,7 @@
 
                             <!--Affiliated Owners-->
                             <div class="api-ep-documentation">
-                                <h3 id="ep_GetCompanyOwners" class="api-title">Affiliated Owners</h3>
+                                <h3 id="ep_AffiliatedOwners" class="api-title">Affiliated Owners</h3>
                                 <p class="api-desc">List the insiders who at some point in the time held or made transactions with a particular company.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
@@ -436,7 +436,7 @@
 
                             <!--API Version-->
                             <div class="api-ep-documentation">
-                                <h3 id="ep_LatestTransactions" class="api-title">API Version</h3>
+                                <h3 id="ep_Version" class="api-title">API Version</h3>
                                 <p class="api-desc">Get the actively deployed version of the Aletheia API service</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
@@ -446,7 +446,7 @@
 
                             <!--Count Entities-->
                             <div class="api-ep-documentation">
-                                <h3 id="ep_LatestTransactions" class="api-title">Count Entities</h3>
+                                <h3 id="ep_CountEntities" class="api-title">Count Entities</h3>
                                 <p class="api-desc">Count the number of SEC entities that have been processed and collected.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
@@ -456,7 +456,7 @@
 
                             <!--Count Filings-->
                             <div class="api-ep-documentation">
-                                <h3 id="ep_LatestTransactions" class="api-title">Count Filings</h3>
+                                <h3 id="ep_CountFilings" class="api-title">Count Filings</h3>
                                 <p class="api-desc">Count the number of SEC filings that have been processed and collected.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
@@ -466,7 +466,7 @@
 
                             <!--Count Transactions-->
                             <div class="api-ep-documentation">
-                                <h3 id="ep_LatestTransactions" class="api-title">Count Transactions</h3>
+                                <h3 id="ep_CountTransactions" class="api-title">Count Transactions</h3>
                                 <p class="api-desc">Count the number of transactions that have been processed and collected from from 3, 4, and 5's from the SEC.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
