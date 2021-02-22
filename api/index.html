@@ -402,13 +402,13 @@
                             </div>
 
 
-                            <!--Get Owners-->
+                            <!--Affiliated Owners-->
                             <div class="api-ep-documentation">
-                                <h3 id="ep_GetCompanyOwners" class="api-title">Get Company Owners</h3>
-                                <p class="api-desc">List the owners of a company, how many shares they own, and the value of those shares.</p>
+                                <h3 id="ep_GetCompanyOwners" class="api-title">Affiliated Owners</h3>
+                                <p class="api-desc">List the insiders who at some point in the time held or made transactions with a particular company.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/GetOwners</div>
+                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/AffiliatedOwners</div>
                                 </div>
                                 <h4 class="api-sub-header">Parameters</h4>
                                 <div class="api-verb-ep-pair">
@@ -416,9 +416,13 @@
                                     <div class="api-ep"><api-param>id</api-param> - Either the CIK or the trading symbol of the company you are requesting. Provide the CIK for faster performance.</div>
                                 </div>
                                 <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetOwners?id=0000789019</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetOwners?id=msft</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetOwners?id=aapl</div>
+                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/AffiliatedOwners?id=789019</div>
+                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/AffiliatedOwners?id=msft</div>
+                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/AffiliatedOwners?id=aapl</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">(coming soon)</div>
+                                </div>
                             </div>
 
                         </div>
