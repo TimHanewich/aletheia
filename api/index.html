@@ -274,26 +274,55 @@
                                 </div>
                             </div>
 
-                            <!--Get company-->
+                            <!--Get Entity-->
                             <div class="api-ep-documentation">
-                                <h3 id="ep_GetCompany" class="api-title">Get Company</h3>
-                                <p class="api-desc">Download data for a particular company.</p>
+                                <h3 id="ep_GetCompany" class="api-title">Get Entity</h3>
+                                <p class="api-desc">Get details of a company or insider from their Central Index Key (CIK), a unique ID assigned by the Securities Exchange Commission.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/GetCompany</div>
+                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/GetEntity</div>
                                 </div>
                                 <h4 class="api-sub-header">Parameters</h4>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-required">Required</div>
-                                    <div class="api-ep"><api-param>id</api-param> - Either the CIK or the trading symbol of the company you are requesting. Provide the CIK for faster performance.</div>
+                                    <div class="api-ep"><api-param>id</api-param> - Either the CIK or the trading symbol of the entity you are requesting. Provide the CIK for faster performance.</div>
                                 </div>
                                 <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetCompany?id=0000066740</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetCompany?id=mmm</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetCompany?id=msft</div>
+                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetEntity?id=66740</div>
+                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetEntity?id=mmm</div>
+                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetEntity?id=msft</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
-                                    <div class="response-example">{"CIK":"0000001800","TradingSymbol":"ABT","Name":"Abbott Laboratories"}</div>
+                                    <div class="response-example">{"Cik":66740,"Name":"3M CO","TradingSymbol":"MMM"}</div>
+                                </div>
+                            </div>
+
+                            <!--Get Filing-->
+                            <div class="api-ep-documentation">
+                                <h3 id="ep_GetCompany" class="api-title">Get Filing</h3>
+                                <p class="api-desc">Get details of a particular SEC filing that has already been processed by our servers.</p>
+                                <p class="api-desc-please-note">! Please note that this endpoint will not access any filing with the SEC, but rather only queries filings that have already been scanned and processed and thus exist in our database.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/GetFiling</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>id</api-param> - The Aletheia-assigned unique ID of the filing. Note that this ID does not correspond to an SEC filing, but is rather an ID that we assigned to the filing in our database.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>url</api-param> - If you instead want to find details of the filing via the filing URL, specify the full filing URL.</div>
+                                </div>
+                                <p class="api-desc-please-note">! While the above parameters are optional, you must specify at least one.</p>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetFiling?id=70ebab7c-af6e-47e2-963a-0000b688ca7e</div>
+                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetFiling?id=123c236790fe4328b85800013a5f7491</div>
+                                <div class="code-block req-example scrollable-code">https://www.aletheiaresearch.org/api/GetFiling?url=https://www.sec.gov/Archives/edgar/data/885725/000122520815006628/0001225208-15-006628-index.htm</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">{"Id":"70ebab7c-af6e-47e2-963a-0000b688ca7e","FilingUrl":"https://www.sec.gov/Archives/edgar/data/885725/000122520815006628/0001225208-15-006628-index.htm","AccessionP1":1225208,"AccessionP2":15,"AccessionP3":6628,"FilingType":0,"ReportedOn":"2015-02-27T00:00:00","Issuer":885725,"_Issuer":null,"Owner":1533022,"_Owner":null}</div>
                                 </div>
                             </div>
 
