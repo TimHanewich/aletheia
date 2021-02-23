@@ -130,7 +130,7 @@
                                 <p class="api-desc">First you must subscribe your endpoint to the new filings webhook service.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-post">POST</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/SubscribeToNewFilingsWebhook</div>
+                                    <div class="api-ep-area code-block">https://www.onaletheia.com/api/SubscribeToNewFilingsWebhook</div>
                                 </div>
                                 <div class="api-desc">The body must contain the URL endpoint of your API service. The body must be in JSON format with your endpoint stored in the "endpoint" property. Example:</div>
                                 <div class="body-example">{"endpoint": "<custom-txt>https://www.myservice.net/myendpoint</custom-txt>"}</div>
@@ -148,12 +148,12 @@
                                 <p class="api-sub-instruction-title">Step 3 - Unsubscribe from the webhook when finished</p>
                                 <p class="api-desc">When you wish to stop receiving posts from this webhook, be sure to formally unsubscribe your endpoint.</p>
                                 <p class="api-desc">When you originally registered your endpoint in step 1, the returned 201 created response contained a "Location" header. The value of this header contains the endpoint that will unsubscribe your endpoint via a DELETE call. The unsubscribe endpoint will look something like this:</p>
-                                <div class="body-example">https://www.aletheiaresearch.org/api/UnsubscribeFromNewFilingsWebhookById?id=dd150c44-c42a-4cdd-92f5-b78a23b36c72</div>
+                                <div class="body-example">https://www.onaletheia.com/api/UnsubscribeFromNewFilingsWebhookById?id=dd150c44-c42a-4cdd-92f5-b78a23b36c72</div>
                                 <p class="api-desc">To unsubscribe your endpoint from this webhook, call this provided value via a DELETE call.</p>
                                 <p class="api-desc">If you no longer have the provided unsubscribe URL from the original subscription step, you can also unsubscribe by providing your registered endpoint to the 'UnsubscribeFromNewFilingsWebhookByEndpoint' api. For example, see below:</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-delete">DELETE</div>
-                                    <div class="api-ep-area code-block" style="font-size: 13px;">https://www.aletheiaresearch.org/api/UnsubscribeFromNewFilingsWebhookByEndpoint?endpoint=<custom-txt>https://www.myservice.net/myendpoint</custom-txt></div>
+                                    <div class="api-ep-area code-block" style="font-size: 13px;">https://www.onaletheia.com/api/UnsubscribeFromNewFilingsWebhookByEndpoint?endpoint=<custom-txt>https://www.myservice.net/myendpoint</custom-txt></div>
                                 </div>
                             </div>
                         
@@ -163,7 +163,7 @@
                                 <p class="api-desc">Query for the latest SEC filings for a the latest filings for a particular company or person.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/EntityFilings</div>
+                                    <div class="api-ep-area code-block">https://www.onaletheia.com/api/EntityFilings</div>
                                 </div>
                                 <h4 class="api-sub-header">Parameters</h4>
                                 <div class="api-verb-ep-pair">
@@ -179,9 +179,9 @@
                                     <div class="api-ep"><api-param>before</api-param> - Filter to filings only before a particular date, in YYYYMMDD format</div>
                                 </div>
                                 <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/EntityFilings?id=msft&filing=10-k</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/EntityFilings?id=0000050863&before=20180101</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/EntityFilings?id=pg&filing=4&before=20160701</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/EntityFilings?id=msft&filing=10-k</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/EntityFilings?id=0000050863&before=20180101</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/EntityFilings?id=pg&filing=4&before=20160701</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
                                     <div class="response-example">[{"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001564590-20-034944&xbrl_type=v","Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000156459020034944/0001564590-20-034944-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001564590-20-034944&nbsp;(34 Act)&nbsp; Size: 27 MB","FilingDate":"2020-07-30T00:00:00"},{"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001564590-19-027952&xbrl_type=v","Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000156459019027952/0001564590-19-027952-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001564590-19-027952&nbsp;(34 Act)&nbsp; Size: 26 MB","FilingDate":"2019-08-01T00:00:00"},{"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001564590-18-019062&xbrl_type=v","Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000156459018019062/0001564590-18-019062-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001564590-18-019062&nbsp;(34 Act)&nbsp; Size: 29 MB","FilingDate":"2018-08-03T00:00:00"},{"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001564590-17-014900&xbrl_type=v","Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000156459017014900/0001564590-17-014900-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001564590-17-014900&nbsp;(34 Act)&nbsp; Size: 28 MB","FilingDate":"2017-08-02T00:00:00"},{"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001193125-16-662209&xbrl_type=v","Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312516662209/0001193125-16-662209-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-16-662209&nbsp;(34 Act)&nbsp; Size: 13 MB","FilingDate":"2016-07-28T00:00:00"},{"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001193125-15-272806&xbrl_type=v","Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312515272806/0001193125-15-272806-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-15-272806&nbsp;(34 Act)&nbsp; Size: 14 MB","FilingDate":"2015-07-31T00:00:00"},{"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001193125-14-289961&xbrl_type=v","Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312514289961/0001193125-14-289961-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-14-289961&nbsp;(34 Act)&nbsp; Size: 18 MB","FilingDate":"2014-07-31T00:00:00"},{"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001193125-13-310206&xbrl_type=v","Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312513310206/0001193125-13-310206-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-13-310206&nbsp;(34 Act)&nbsp; Size: 24 MB","FilingDate":"2013-07-30T00:00:00"},{"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001193125-12-316848&xbrl_type=v","Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312512316848/0001193125-12-316848-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-12-316848&nbsp;(34 Act)&nbsp; Size: 17 MB","FilingDate":"2012-07-26T00:00:00"},{"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001193125-11-200680&xbrl_type=v","Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312511200680/0001193125-11-200680-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-11-200680&nbsp;(34 Act)&nbsp; Size: 16 MB","FilingDate":"2011-07-28T00:00:00"},{"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001193125-10-171791&xbrl_type=v","Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312510171791/0001193125-10-171791-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-10-171791&nbsp;(34 Act)&nbsp; Size: 20 MB","FilingDate":"2010-07-30T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312509158735/0001193125-09-158735-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-09-158735&nbsp;(34 Act)&nbsp; Size: 1 MB","FilingDate":"2009-07-30T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312508162768/0001193125-08-162768-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-08-162768&nbsp;(34 Act)&nbsp; Size: 1 MB","FilingDate":"2008-07-31T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312507170817/0001193125-07-170817-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-07-170817&nbsp;(34 Act)&nbsp; Size: 1 MB","FilingDate":"2007-08-03T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312506180008/0001193125-06-180008-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-06-180008&nbsp;(34 Act)&nbsp; Size: 1 MB","FilingDate":"2006-08-25T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312505174825/0001193125-05-174825-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-05-174825&nbsp;(34 Act)&nbsp; Size: 1 MB","FilingDate":"2005-08-26T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312504150689/0001193125-04-150689-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-04-150689 Size: 1 MB","FilingDate":"2004-09-01T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312503045632/0001193125-03-045632-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001193125-03-045632 Size: 1 MB","FilingDate":"2003-09-05T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000103221002001351/0001032210-02-001351-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001032210-02-001351 Size: 1 MB","FilingDate":"2002-09-06T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000103221001501099/0001032210-01-501099-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001032210-01-501099 Size: 261 KB","FilingDate":"2001-09-18T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000103221000001961/0001032210-00-001961-index.htm","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001032210-00-001961 Size: 457 KB","FilingDate":"2000-09-28T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/0001032210-99-001375-index.html","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001032210-99-001375 Size: 289 KB","FilingDate":"1999-09-28T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/0001032210-98-001067-index.html","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001032210-98-001067 Size: 178 KB","FilingDate":"1998-09-25T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/0001017062-97-001764-index.html","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001017062-97-001764 Size: 198 KB","FilingDate":"1997-09-29T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/0000891020-96-001130-index.html","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0000891020-96-001130 Size: 147 KB","FilingDate":"1996-09-27T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/0000891020-95-000433-index.html","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0000891020-95-000433 Size: 189 KB","FilingDate":"1995-09-25T00:00:00"},{"InteractiveDataUrl":null,"Filing":"10-K","DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/0000891020-94-000175-index.html","Description":"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0000891020-94-000175 Size: 442 KB","FilingDate":"1994-09-27T00:00:00"}]</div>
@@ -194,7 +194,7 @@
                                 <p class="api-desc">Open a statement of change in beneficial ownership (form 4) to reveal details of insider trading</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/OpenForm4</div>
+                                    <div class="api-ep-area code-block">https://www.onaletheia.com/api/OpenForm4</div>
                                 </div>
                                 <h4 class="api-sub-header">Parameters</h4>
                                 <div class="api-verb-ep-pair">
@@ -205,8 +205,8 @@
                                     <li>Tip: Use the filing url of a form 4 filing that was returned via the "EntityFilings" endpoint (see above)</li>
                                 </ul>
                                 <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example scrollable-code">https://www.aletheiaresearch.org/api/OpenForm4?filingurl=https://www.sec.gov/Archives/edgar/data/50863/000112760221003952/0001127602-21-003952-index.htm</div>
-                                <div class="code-block req-example scrollable-code">https://www.aletheiaresearch.org/api/OpenForm4?filingurl=https://www.sec.gov/Archives/edgar/data/1318605/000179056521000001/0001790565-21-000001-index.htm</div>
+                                <div class="code-block req-example scrollable-code">https://www.onaletheia.com/api/OpenForm4?filingurl=https://www.sec.gov/Archives/edgar/data/50863/000112760221003952/0001127602-21-003952-index.htm</div>
+                                <div class="code-block req-example scrollable-code">https://www.onaletheia.com/api/OpenForm4?filingurl=https://www.sec.gov/Archives/edgar/data/1318605/000179056521000001/0001790565-21-000001-index.htm</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
                                     <div class="response-example">{"SchemaVersion":"X0306","PeriodOfReport":"2021-02-02T00:00:00","IssuerCik":"0000050863","IssuerName":"INTEL CORP","IssuerTradingSymbol":"INTC","OwnerName":"McBride Kevin Thomas","OwnerCik":"0001723374","OwnerStreet1":"C/O INTEL CORPORATION","OwnerStreet2":"2200 MISSION COLLEGE BLVD","OwnerCity":"SANTA CLARA","OwnerStateCode":"CA","OwnerZipCode":"95054","OwnerIsOfficer":true,"OwnerOfficerTitle":"VP Finance, Corp. Controller","NonDerivativeTransactions":[{"SecurityTitle":"Common Stock","SecuritiesOwnedFollowingTransaction":14214.0,"DirectOrIndirectOwnership":0,"TransactionDate":"2021-02-02T00:00:00","TransactionCode":1,"TransactionQuantity":589.0,"TransactionPricePerSecurity":57.17,"AcquiredOrDisposed":1}],"DerivativeTransactions":null}</div>
@@ -219,7 +219,7 @@
                                 <p class="api-desc">Open a financial report document (10-K or 10-Q) filing to a financial statement.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/OpenCommonFinancials</div>
+                                    <div class="api-ep-area code-block">https://www.onaletheia.com/api/OpenCommonFinancials</div>
                                 </div>
                                 <h4 class="api-sub-header">Parameters</h4>
                                 <div class="api-verb-ep-pair">
@@ -230,8 +230,8 @@
                                     <li>Tip: Use the filing url of a 10-K/10-Q filing that was returned via the "EntityFilings" endpoint (see above)</li>
                                 </ul>
                                 <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example scrollable-code">https://www.aletheiaresearch.org/api/OpenCommonFinancials?filingurl=https://www.sec.gov/Archives/edgar/data/789019/000156459020034944/0001564590-20-034944-index.htm</div>
-                                <div class="code-block req-example scrollable-code">https://www.aletheiaresearch.org/api/OpenCommonFinancials?filingurl=https://www.sec.gov/Archives/edgar/data/1326801/000132680120000084/0001326801-20-000084-index.htm</div>
+                                <div class="code-block req-example scrollable-code">https://www.onaletheia.com/api/OpenCommonFinancials?filingurl=https://www.sec.gov/Archives/edgar/data/789019/000156459020034944/0001564590-20-034944-index.htm</div>
+                                <div class="code-block req-example scrollable-code">https://www.onaletheia.com/api/OpenCommonFinancials?filingurl=https://www.sec.gov/Archives/edgar/data/1326801/000132680120000084/0001326801-20-000084-index.htm</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
                                     <div class="response-example">{"PeriodStart":"2019-07-01T00:00:00","PeriodEnd":"2020-06-30T00:00:00","Revenue":1.43015E+11,"SellingGeneralAndAdministrativeExpense":null,"ResearchAndDevelopmentExpense":1.9269E+10,"OperatingIncome":5.2959E+10,"NetIncome":4.4281E+10,"Assets":3.01311E+11,"Liabilities":1.83007E+11,"Equity":1.18304E+11,"Cash":1.3575999E+10,"CurrentAssets":1.81915E+11,"CurrentLiabilities":7.231E+10,"RetainedEarnings":3.4566E+10,"CommonStockSharesOutstanding":7570999808,"OperatingCashFlows":6.0675E+10,"InvestingCashFlows":-1.2223E+10,"FinancingCashFlows":-4.6031E+10,"ProceedsFromIssuanceOfDebt":0.0,"PaymentsOfDebt":5.518E+09,"DividendsPaid":1.5137E+10}</div>
@@ -253,7 +253,7 @@
                                 <p class="api-desc">Search the Aletheia database for an entity. An entity represents either a company (serving as an security issuer) or a person (serving as a security owner).</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/SearchEntities</div>
+                                    <div class="api-ep-area code-block">https://www.onaletheia.com/api/SearchEntities</div>
                                 </div>
                                 <h4 class="api-sub-header">Parameters</h4>
                                 <div class="api-verb-ep-pair">
@@ -265,9 +265,9 @@
                                     <div class="api-ep"><api-param>top</api-param> - Limit the number of results returned. Fewer results will return faster.</div>
                                 </div>
                                 <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/SearchEntities?term=intc</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/SearchEntities?term=amazon</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/SearchEntities?term=cook&top=3</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/SearchEntities?term=intc</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/SearchEntities?term=amazon</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/SearchEntities?term=cook&top=3</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
                                     <div class="response-example">[{"Cik":1168017,"Name":"COOK J MICHAEL"},{"Cik":1227246,"Name":"COOK IAN M"},{"Cik":1270438,"Name":"COOK LINDA Z"}]</div>
@@ -280,7 +280,7 @@
                                 <p class="api-desc">Get details of a company or insider from their Central Index Key (CIK), a unique ID assigned by the Securities Exchange Commission.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/GetEntity</div>
+                                    <div class="api-ep-area code-block">https://www.onaletheia.com/api/GetEntity</div>
                                 </div>
                                 <h4 class="api-sub-header">Parameters</h4>
                                 <div class="api-verb-ep-pair">
@@ -288,9 +288,9 @@
                                     <div class="api-ep"><api-param>id</api-param> - Either the CIK or the trading symbol of the entity you are requesting. Provide the CIK for faster performance.</div>
                                 </div>
                                 <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetEntity?id=66740</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetEntity?id=mmm</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetEntity?id=msft</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/GetEntity?id=66740</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/GetEntity?id=mmm</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/GetEntity?id=msft</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
                                     <div class="response-example">{"Cik":66740,"Name":"3M CO","TradingSymbol":"MMM"}</div>
@@ -304,7 +304,7 @@
                                 <p class="api-desc-please-note">! Please note that this endpoint will not access any filing with the SEC, but rather only queries filings that have already been scanned and processed and thus exist in our database.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/GetFiling</div>
+                                    <div class="api-ep-area code-block">https://www.onaletheia.com/api/GetFiling</div>
                                 </div>
                                 <h4 class="api-sub-header">Parameters</h4>
                                 <div class="api-verb-ep-pair">
@@ -317,9 +317,9 @@
                                 </div>
                                 <p class="api-desc-please-note">! While the above parameters are optional, you must specify at least one.</p>
                                 <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetFiling?id=70ebab7c-af6e-47e2-963a-0000b688ca7e</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/GetFiling?id=123c236790fe4328b85800013a5f7491</div>
-                                <div class="code-block req-example scrollable-code">https://www.aletheiaresearch.org/api/GetFiling?url=https://www.sec.gov/Archives/edgar/data/885725/000122520815006628/0001225208-15-006628-index.htm</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/GetFiling?id=70ebab7c-af6e-47e2-963a-0000b688ca7e</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/GetFiling?id=123c236790fe4328b85800013a5f7491</div>
+                                <div class="code-block req-example scrollable-code">https://www.onaletheia.com/api/GetFiling?url=https://www.sec.gov/Archives/edgar/data/885725/000122520815006628/0001225208-15-006628-index.htm</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
                                     <div class="response-example">{"Id":"70ebab7c-af6e-47e2-963a-0000b688ca7e","FilingUrl":"https://www.sec.gov/Archives/edgar/data/885725/000122520815006628/0001225208-15-006628-index.htm","AccessionP1":1225208,"AccessionP2":15,"AccessionP3":6628,"FilingType":0,"ReportedOn":"2015-02-27T00:00:00","Issuer":885725,"_Issuer":null,"Owner":1533022,"_Owner":null}</div>
@@ -333,7 +333,7 @@
                                 <p class="api-desc">Download the latest insider transactions for a person or company.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/LatestTransactions</div>
+                                    <div class="api-ep-area code-block">https://www.onaletheia.com/api/LatestTransactions</div>
                                 </div>
                                 <h4 class="api-sub-header">Parameters</h4>
                                 <div class="api-verb-ep-pair">
@@ -392,9 +392,9 @@
                                 </div>
                                 <p class="api-desc-please-note">! Due to the larger quantity quantity of data being accessed, cascade querying may be noticeably slower.</p>
                                 <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example scrollable-code">https://www.aletheiaresearch.org/api/LatestTransactions?issuer=1800&top=5</div>
-                                <div class="code-block req-example scrollable-code">https://www.aletheiaresearch.org/api/LatestTransactions?issuer=1800&owner=1783147&before=20181231&securitytype=0&transactiontype=3</div>
-                                <div class="code-block req-example scrollable-code">https://www.aletheiaresearch.org/api/LatestTransactions?owner=1783147&securitytype=1&transactiontype=0</div>
+                                <div class="code-block req-example scrollable-code">https://www.onaletheia.com/api/LatestTransactions?issuer=1800&top=5</div>
+                                <div class="code-block req-example scrollable-code">https://www.onaletheia.com/api/LatestTransactions?issuer=1800&owner=1783147&before=20181231&securitytype=0&transactiontype=3</div>
+                                <div class="code-block req-example scrollable-code">https://www.onaletheia.com/api/LatestTransactions?owner=1783147&securitytype=1&transactiontype=0</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
                                     <div class="response-example">[{"Id":"e3fd7062-5190-43a5-9aa0-26ce8ce2ddea","FromFiling":"c42b0232-45d3-48e6-8f27-b97621947d3b","EntryType":0,"QuantityOwnedFollowingTransaction":0.0,"DirectIndirect":1,"SecurityTitle":"Common Stock","SecurityType":0,"AcquiredDisposed":1,"Quantity":50.0,"PricePerSecurity":null,"TransactionDate":"2021-02-17T00:00:00","TransactionCode":1,"ConversionOrExcercisePrice":null,"ExcercisableDate":null,"ExpirationDate":null,"UnderlyingSecurityTitle":null,"UnderlyingSecurityQuantity":null},{"Id":"bf6b3afc-2591-48e6-8dda-0b62903fd38d","FromFiling":"01bf4617-5f19-4319-b378-c16a9d12190a","EntryType":0,"QuantityOwnedFollowingTransaction":1508.4543,"DirectIndirect":0,"SecurityTitle":"Common Stock","SecurityType":0,"AcquiredDisposed":0,"Quantity":289.0,"PricePerSecurity":null,"TransactionDate":"2021-02-05T00:00:00","TransactionCode":7,"ConversionOrExcercisePrice":null,"ExcercisableDate":null,"ExpirationDate":null,"UnderlyingSecurityTitle":null,"UnderlyingSecurityQuantity":null},{"Id":"d24bc278-dbc6-4d7f-a144-69bdcd81ad38","FromFiling":"d5ba901e-5002-413c-9358-b3445b66ccae","EntryType":0,"QuantityOwnedFollowingTransaction":252.47,"DirectIndirect":0,"SecurityTitle":"Common Stock","SecurityType":0,"AcquiredDisposed":0,"Quantity":252.47,"PricePerSecurity":null,"TransactionDate":"2021-02-05T00:00:00","TransactionCode":3,"ConversionOrExcercisePrice":null,"ExcercisableDate":null,"ExpirationDate":null,"UnderlyingSecurityTitle":null,"UnderlyingSecurityQuantity":null},{"Id":"0f73a4db-d887-4e90-bd54-7787fcc83cfd","FromFiling":"951ecf4e-b6be-405b-aef6-d474ddc01707","EntryType":0,"QuantityOwnedFollowingTransaction":50.0,"DirectIndirect":0,"SecurityTitle":"Common Stock","SecurityType":0,"AcquiredDisposed":1,"Quantity":21.0,"PricePerSecurity":null,"TransactionDate":"2021-02-05T00:00:00","TransactionCode":5,"ConversionOrExcercisePrice":null,"ExcercisableDate":null,"ExpirationDate":null,"UnderlyingSecurityTitle":null,"UnderlyingSecurityQuantity":null},{"Id":"8461e4a9-cd0f-48dd-beac-d3d274676b17","FromFiling":"01bf4617-5f19-4319-b378-c16a9d12190a","EntryType":0,"QuantityOwnedFollowingTransaction":1381.4543,"DirectIndirect":0,"SecurityTitle":"Common Stock","SecurityType":0,"AcquiredDisposed":1,"Quantity":127.0,"PricePerSecurity":null,"TransactionDate":"2021-02-05T00:00:00","TransactionCode":5,"ConversionOrExcercisePrice":null,"ExcercisableDate":null,"ExpirationDate":null,"UnderlyingSecurityTitle":null,"UnderlyingSecurityQuantity":null}]</div>
@@ -408,7 +408,7 @@
                                 <p class="api-desc">List the insiders who at some point in the time held or made transactions with a particular company.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/AffiliatedOwners</div>
+                                    <div class="api-ep-area code-block">https://www.onaletheia.com/api/AffiliatedOwners</div>
                                 </div>
                                 <h4 class="api-sub-header">Parameters</h4>
                                 <div class="api-verb-ep-pair">
@@ -416,9 +416,9 @@
                                     <div class="api-ep"><api-param>id</api-param> - Either the CIK or the trading symbol of the company you are requesting. Provide the CIK for faster performance.</div>
                                 </div>
                                 <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/AffiliatedOwners?id=789019</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/AffiliatedOwners?id=msft</div>
-                                <div class="code-block req-example">https://www.aletheiaresearch.org/api/AffiliatedOwners?id=aapl</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/AffiliatedOwners?id=789019</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/AffiliatedOwners?id=msft</div>
+                                <div class="code-block req-example">https://www.onaletheia.com/api/AffiliatedOwners?id=aapl</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
                                     <div class="response-example">(coming soon)</div>
@@ -440,7 +440,7 @@
                                 <p class="api-desc">Get the actively deployed version of the Aletheia API service</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/version</div>
+                                    <div class="api-ep-area code-block">https://www.onaletheia.com/api/version</div>
                                 </div>
                             </div>
 
@@ -450,7 +450,7 @@
                                 <p class="api-desc">Count the number of SEC entities that have been processed and collected.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/CountSecEntities</div>
+                                    <div class="api-ep-area code-block">https://www.onaletheia.com/api/CountSecEntities</div>
                                 </div>
                             </div>
 
@@ -460,7 +460,7 @@
                                 <p class="api-desc">Count the number of SEC filings that have been processed and collected.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/CountSecFilings</div>
+                                    <div class="api-ep-area code-block">https://www.onaletheia.com/api/CountSecFilings</div>
                                 </div>
                             </div>
 
@@ -470,7 +470,7 @@
                                 <p class="api-desc">Count the number of transactions that have been processed and collected from from 3, 4, and 5's from the SEC.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://www.aletheiaresearch.org/api/CountTransactions</div>
+                                    <div class="api-ep-area code-block">https://www.onaletheia.com/api/CountTransactions</div>
                                 </div>
                             </div>
 
