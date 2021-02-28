@@ -54,9 +54,16 @@ $(".service-preview").mouseover(function()
         SwitchServiceBackgroundImage(bg_img_src);
         SwitchServiceDescription(descCont);
 
-        //Reaplce the Get, Call, Receive area
-        ManagedSwitchGetCallReceive(gcr_ToGetContent, gcr_YouCallContent, gcr_AndReceiveContent);
-
+        //If content data exists for the get, call, and receive content, show it. if not, hide it!
+        if (gcr_ToGetContent != "" && gcr_YouCallContent != "" && gcr_AndReceiveContent != "")
+        {
+            ManagedSwitchGetCallReceive(gcr_ToGetContent, gcr_YouCallContent, gcr_AndReceiveContent);
+        }
+        else
+        {
+            $(".get-call-receive").fadeOut(500);
+        }
+        
     }
 
     
