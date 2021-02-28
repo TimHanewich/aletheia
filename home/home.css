@@ -196,7 +196,9 @@ body
 {
     position: relative;
     margin-top: 50px;
-    margin-left: 160px;
+    width: 75%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .splash-text
@@ -283,5 +285,105 @@ body
     top: 0px;
     width: 100%;
 }
+
+.want-call-grid
+{
+    display: grid;
+    grid-template-areas: "want-title call-title"
+    "want call";
+    grid-template-rows: 45px 1fr;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    position: relative;
+}
+
+.want-call-area-title
+{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.wc-want-title
+{
+    grid-area: want-title;
+}
+
+.wc-call-title
+{
+    grid-area: call-title;
+}
+
+.wc-response-title
+{
+    grid-area: response-title;
+}
+
+.wc-want
+{
+    grid-area: want;
+}
+
+.wc-call
+{
+    grid-area: call;
+}
+
+.wc-response
+{
+    grid-area: response;
+}
+
+.wc-content
+{
+    margin: 0px;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    word-wrap: break-word;
+}
+
+.colored-background
+{
+    background-color: rgba(255, 216, 88, 0.1);
+    border-radius: 20px;
+    padding: 12px;
+}
+
+.response-example-cont
+{  
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+    width: max-content;
+}
+
+.response-example
+{
+    text-align: left;
+    margin: 0px;
+    font-size: 20px;
+    word-wrap: break-word;
+    font-family: consolas;
+}
+
+tabspace
+{
+    display: inline-block;
+    width: 30px;
+    position: relative;
+    background-color: brown;
+}
+
+response-example-comment
+{
+    display: inline-block;
+    color: red;
+    font-weight: bold;
+}
+
 
 
