@@ -28,6 +28,13 @@
 
                     <div class="api-nav-content-pane">
 
+                        <!--Stock Data-->
+                        <h3 class="api-header">Stock Data</h3>
+                        <div id="navep_StockData" class="api-verb-ep-pair clickable">
+                            <div class="api-verb api-verb-get">GET</div>
+                            <div class="api-ep">Stock Data</div>
+                        </div>
+
                         <!--SEC Filings-->
                         <h3 class="api-header">SEC Filings</h3>
                         <div id="navep_LatestFilings" class="api-verb-ep-pair clickable">
@@ -113,6 +120,133 @@
                             <p class="api-sub-instruction-title">How to provide your key</p>
                             <p class="api-desc">Your key will look like this: 333acb16de254844ab64783232d2ba66</p>
                             <p class="api-desc">Include your API key as a header to your request with the label 'key'</p>
+                        </div>
+
+                        <!--Stock Data-->
+                        <div style="width: 100%;">
+                            <div class="blank-space"></div>
+                            <div class="blank-space"></div>
+                            <h2 class="api-category-title">Stock Data</h2>
+                            <p class="api-category-desc">Access data for any publically traded security, including stock, bonds, options, crypto, and more.</p>
+                            
+                            <!--Stock Data-->
+                            <div class="api-ep-documentation">
+                                <h3 id="ep_StockData" class="api-title">Stock Data</h3>
+                                <p class="api-desc">Access summary or statistical data for stocks, bonds, options, crpto, and more.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.onaletheia.com/api/StockData</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>symbol</api-param> - the symbol of the security you are requesting data for.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>summary</api-param> - Include this label to include summary data in the response. This does not require a value, only a label.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>statistics</api-param> - Include this label to include statistical data in the response. This does not require a value, only a label.</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://api.onaletheia.com/api/StockData?symbol=msft&summary</div>
+                                <div class="code-block req-example">https://api.onaletheia.com/api/StockData?symbol=msft&summary&statistics</div>
+                                <div class="code-block req-example">https://api.onaletheia.com/api/StockData?symbol=aapl&statistics</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">
+                                        {<br>
+                                            <tabspace></tabspace>"Symbol": "PG",<br>
+                                            <tabspace></tabspace>"Summary": {<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Name": "The Procter & Gamble Company",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"StockSymbol": "PG",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Price": 123.53,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DollarChange": -3.05,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"PercentChange": -0.0241,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"PreviousClose": 126.58,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Open": 126.54,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"BidPrice": 123.36,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"BidQuantity": 900,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"AskPrice": 123.55,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"AskQuantity": 1200,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DayRangeLow": 121.82,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DayRangeHigh": 126.93,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"YearRangeLow": 94.34,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"YearRangeHigh": 146.92,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Volume": 17718787,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"AverageVolume": 7562403,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"MarketCap": 304189997056.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Beta": 0.41,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"PriceEarningsRatio": 23.34,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"EarningsPerShare": 5.29,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"EarningsDate": "2021-04-20T00:00:00",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ForwardDividend": 3.16,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ForwardDividendYield": 0.0256,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ExDividendDate": "2021-01-21T00:00:00",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"YearTargetEstimate": 150.56,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"QueriedSymbol": "PG",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DataCollectedOn": "2021-02-28T23:33:18.8109488+00:00"<br>
+                                            <tabspace></tabspace>},<br>
+                                            <tabspace></tabspace>"Statistics": {<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"FiscalYearEnds": "2020-06-29T00:00:00",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"MostRecentQuarter": "2020-12-30T00:00:00",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ProfitMargin": 0.1872,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"OperatingMargin": 0.24129999,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ReturnOnAssets": 0.0962,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ReturnOnEquity": 0.2951,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Revenue": 73969999872,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"RevenuePerShare": 29.83,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"QuarterlyRevenueGrowth": 0.083000004,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"GrossProfit": 36309999616,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"EBITDA": 20800000000,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"NetIncomeAvailableToCommon": 13580000256,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DilutedEps": 5.29,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"QuarterlyEarningsGrowth": 0.037,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"TotalCash": 11939999744,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"TotalCashPerShare": 4.85,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"TotalDebt": 31100000256,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"TotalDebtEquityRatio": 64.07,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"CurrentRatio": 0.78,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"BookValuePerShare": 19.21,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"OperatingCashFlow": 19030001664,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"LeveredFreeCashFlow": 13899999232,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Beta": 0.41,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"YearChange": 0.0332,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"SP500YearChange": 0.2392,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"YearHigh": 146.92,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"YearLow": 94.34,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"MovingAverage50Day": 130.11,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"MovingAverage200Day": 136.83,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"AverageVolume3Month": 7560000,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"AverageVolume10Day": 9300000,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"SharesOutstanding": 2460000000,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Float": 2460000000,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"PercentHeldByInsiders": 0.0011,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"PercentHeldByInstitutions": 0.66110003,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"SharesShort": 14840000,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ShortRatio": 1.95,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ShortPercentOfFloat": 0.0061000003,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ShortPercentOfSharesOutstanding": 0.006,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ForwardAnnualDividend": 3.16,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ForwardAnnualDividendYield": 0.0256,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"TrailingAnnualDividend": 3.12,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"TrailingAnnualDividendYield": 0.024600001,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"FiveYearAverageDividendYield": 2.9,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DividendPayoutRatio": 0.5894,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DividendDate": "2021-02-15T00:00:00",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ExDividendDate": "2021-01-20T00:00:00",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"LastSplitFactor": "2:1",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"LastSplitDate": "2004-06-20T00:00:00",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"QueriedSymbol": "PG",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DataCollectedOn": "2021-02-28T23:33:19.287638+00:00"<br>
+                                                <tabspace></tabspace>}<br>
+                                            }
+                                    </div>
+                                </div>
+                            </div>
+                        
                         </div>
 
                         <!--SEC Filings-->

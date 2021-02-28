@@ -90,3 +90,11 @@ body
     left: 50%;
     transform: translateX(-50%);
 }
+
+tabspace
+{
+    display: inline-block;
+    width: 30px;
+    position: relative;
+    background-color: brown;
+}

@@ -363,13 +363,7 @@ body
     font-family: consolas;
 }
 
-tabspace
-{
-    display: inline-block;
-    width: 30px;
-    position: relative;
-    background-color: brown;
-}
+
 
 response-example-comment
 {
