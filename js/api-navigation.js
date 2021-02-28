@@ -70,4 +70,9 @@ $("#navep_CountTransactions").click(function()
     $("#ep_CountTransactions")[0].scrollIntoView();
 });
 
+$("#navep_StockData").click(function()
+{
+    $("#ep_StockData")[0].scrollIntoView();
+})
+
 
