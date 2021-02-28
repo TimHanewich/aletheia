@@ -14,8 +14,8 @@ $(".service-preview").mouseover(function()
     {
         
         //Set the description content and background image src
-        var descCont = "";
-        var bg_img_src = "";
+        var descCont = ""; //The preview description text
+        var bg_img_src = ""; //The background image url
         if (ele_id == "sp_StockData")
         {
             descCont = "Retrieve technical data for a particular stock. Data is provided in real time and reflects present market conditions. You can request basic data such as stock price, day volume, and P/E ratio, and can also request complex data like held by institutions, dividends, and moving averages."
