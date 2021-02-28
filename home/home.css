@@ -286,56 +286,48 @@ body
     width: 100%;
 }
 
-.want-call-grid
+.get-call-receive
+{
+    width: 100%;
+}
+
+.get-call-grid
 {
     display: grid;
-    grid-template-areas: "want-title call-title"
-    "want call";
-    grid-template-rows: 45px 1fr;
+    grid-template-areas: "get call";
     grid-template-columns: 1fr 1fr;
     width: 100%;
     position: relative;
 }
 
-.want-call-area-title
+.demo-content-title
 {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
     margin: 0px;
+    line-height: 45px;
 }
 
-.wc-want-title
+.demo-content-cont
 {
-    grid-area: want-title;
+    display: grid;
+    grid-template-areas: "title"
+    "content";
+    grid-template-rows: 45px 1fr;
 }
 
-.wc-call-title
+.get-area
 {
-    grid-area: call-title;
+    grid-area: get;
 }
 
-.wc-response-title
-{
-    grid-area: response-title;
-}
-
-.wc-want
-{
-    grid-area: want;
-}
-
-.wc-call
+.call-area
 {
     grid-area: call;
 }
 
-.wc-response
-{
-    grid-area: response;
-}
-
-.wc-content
+.demo-content
 {
     margin: 0px;
     text-align: center;
