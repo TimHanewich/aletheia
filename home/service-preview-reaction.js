@@ -93,3 +93,6 @@ async function SwitchServiceDescription(service_desc)
     });
 
 }
+
+//Fade the get, call, receive section out because it will be blank by default when the page first loads
+$(".get-call-receive").fadeOut(1);
