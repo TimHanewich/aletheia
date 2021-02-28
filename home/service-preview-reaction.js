@@ -16,6 +16,10 @@ $(".service-preview").mouseover(function()
         //Set the description content and background image src
         var descCont = ""; //The preview description text
         var bg_img_src = ""; //The background image url
+        var gcr_ToGetContent = "";
+        var gcr_YouCallContent = "";
+        var gcr_AndReceiveContent = "";
+
         if (ele_id == "sp_StockData")
         {
             descCont = "Retrieve technical data for a particular stock. Data is provided in real time and reflects present market conditions. You can request basic data such as stock price, day volume, and P/E ratio, and can also request complex data like held by institutions, dividends, and moving averages."
@@ -30,6 +34,10 @@ $(".service-preview").mouseover(function()
         {
             descCont = "Retrieve historical insider trading records for any company and any individual. Hundreds of thousands of SEC filings at your fingertips with one query.";
             bg_img_src = "https://rethinkwaste.org/wp-content/uploads/2019/11/BODMeeting-1920x698.jpg";
+        
+            gcr_ToGetContent = "Elon Musks's trades of $TSLA stock";
+            gcr_YouCallContent = "api.onaletheia.com/api/LatestTransactions?issuer=TSLA&owner=0123456";
+            gcr_AndReceiveContent = "[<br><tabspace></tabspace>{<br><tabspace></tabspace><tabspace></tabspace>\"Id\": \"54fc3cf0-edf2-44a1-8cca-7fdeab9fbebb\",<br><tabspace></tabspace><tabspace></tabspace>\"FromFiling\": \"19025d3c-0858-400a-bfad-675f759e1ce1\",<br><tabspace></tabspace><tabspace></tabspace>\"EntryType\": 0,<response-example-comment>&nbsp;-&nbsp;a transaction</response-example-comment><br><tabspace></tabspace><tabspace></tabspace>\"QuantityOwnedFollowingTransaction\": 34098596.0,<br><tabspace></tabspace><tabspace></tabspace>\"DirectIndirect\": 1,<br><tabspace></tabspace><tabspace></tabspace>\"SecurityTitle\": \"Common Stock\",<br><tabspace></tabspace><tabspace></tabspace>\"SecurityType\": 0,<response-example-comment>&nbsp;-&nbsp;equity (non-derivative)</response-example-comment><br><tabspace></tabspace><tabspace></tabspace>\"AcquiredDisposed\": 0,<response-example-comment>&nbsp;-&nbsp;An acquisition</response-example-comment><br><tabspace></tabspace><tabspace></tabspace>\"Quantity\": 13037.0,<br><tabspace></tabspace><tabspace></tabspace>\"PricePerSecurity\": null,<br><tabspace></tabspace><tabspace></tabspace>\"TransactionDate\": \"2020-02-14T00:00:00\",<br><tabspace></tabspace><tabspace></tabspace>\"TransactionCode\": 0,<response-example-comment>&nbsp;-&nbsp;an open-market purchase</response-example-comment><br><tabspace></tabspace>},<br><tabspace></tabspace>...<response-example-comment>&nbsp;-&nbsp;full history of trades</response-example-comment><br>]";
         }
         else if (ele_id == "sp_EarningsAnalysis")
         {
@@ -45,6 +53,9 @@ $(".service-preview").mouseover(function()
         //Fade out the old stuff, in the new stuff
         SwitchServiceBackgroundImage(bg_img_src);
         SwitchServiceDescription(descCont);
+
+        //Reaplce the Get, Call, Receive area
+        ManagedSwitchGetCallReceive(gcr_ToGetContent, gcr_YouCallContent, gcr_AndReceiveContent);
 
     }
 

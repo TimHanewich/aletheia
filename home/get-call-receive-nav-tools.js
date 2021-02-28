@@ -42,8 +42,9 @@ function FadeInGetCallReceive(fade_time)
 
 function ManagedSwitchGetCallReceive(part_get, part_call, part_response)
 {
-    FadeOutGetCallReceive(1000, function()
+    FadeOutGetCallReceive(500, function()
     {
-        FadeInGetCallReceive(1000);
+        SetGetCallResponseInnerHtmlContent(part_get, part_call, part_response);
+        FadeInGetCallReceive(500);
     });
 }
