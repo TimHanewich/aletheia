@@ -315,6 +315,7 @@ body
     grid-template-areas: "title"
     "content";
     grid-template-rows: 45px 1fr;
+    position: relative;
 }
 
 .get-area
