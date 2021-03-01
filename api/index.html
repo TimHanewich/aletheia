@@ -144,16 +144,16 @@
                                 </div>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>summary</api-param> - Include this label to include summary data in the response. This does not require a value, only a label.</div>
+                                    <div class="api-ep"><api-param>summary</api-param> - Specifies if you would like to have stock summary data returned in the payload. Either 'true' or 'false'.</div>
                                 </div>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>statistics</api-param> - Include this label to include statistical data in the response. This does not require a value, only a label.</div>
+                                    <div class="api-ep"><api-param>statistics</api-param> - Specifies if you would like to have stock statistical data returned in the payload. Either 'true' or 'false'.</div>
                                 </div>
                                 <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://api.onaletheia.com/api/StockData?symbol=msft&summary</div>
-                                <div class="code-block req-example">https://api.onaletheia.com/api/StockData?symbol=msft&summary&statistics</div>
-                                <div class="code-block req-example">https://api.onaletheia.com/api/StockData?symbol=aapl&statistics</div>
+                                <div class="code-block req-example">https://api.onaletheia.com/api/StockData?symbol=msft&summary=true</div>
+                                <div class="code-block req-example">https://api.onaletheia.com/api/StockData?symbol=msft&summary=true&statistics=true</div>
+                                <div class="code-block req-example">https://api.onaletheia.com/api/StockData?symbol=aapl&summary=false&statistics=true</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
                                     <div class="response-example">
