@@ -23,7 +23,7 @@ $(".service-preview").mouseover(function()
         if (ele_id == "sp_StockData")
         {
             descCont = "Retrieve technical data for a particular stock. Data is provided in real time and reflects present market conditions. You can request basic data such as stock price, day volume, and P/E ratio, and can also request complex data like held by institutions, dividends, and moving averages."
-            bg_img_src = "https://api.time.com/wp-content/uploads/2015/09/gettyimages-487733796.jpg";
+            bg_img_src = "home/wallpaper_background/StockData.jpg";
         
             gcr_ToGetContent = "Stock data for Apple ($AAPL)"
             gcr_YouCallContent = "api.onaletheia.com/api/StockData?symbol=aapl";
@@ -32,12 +32,12 @@ $(".service-preview").mouseover(function()
         else if (ele_id == "sp_Fundamentals")
         {
             descCont = "Our service scans hundreds of thousands of financial statement filings and presents these financial statements in an easily accessible and interpretable manner. Financial data between any two companies will be congruent in format to allow for direct comparison."
-            bg_img_src = "https://d13gx6itgg3b2j.cloudfront.net/img/2016/12/03174627/Thinkstock-programmer.jpg";
+            bg_img_src = "home/wallpaper_background/Fundamentals.jpg";
         }
         else if (ele_id == "sp_InsiderTrading")
         {
             descCont = "Retrieve historical insider trading records for any company and any individual. Hundreds of thousands of SEC filings at your fingertips with one query.";
-            bg_img_src = "https://rethinkwaste.org/wp-content/uploads/2019/11/BODMeeting-1920x698.jpg";
+            bg_img_src = "home/wallpaper_background/BoardMeeting.jpg";
         
             gcr_ToGetContent = "Elon Musks's trades of $TSLA stock";
             gcr_YouCallContent = "api.onaletheia.com/api/LatestTransactions?issuer=TSLA&owner=0123456";
@@ -46,12 +46,12 @@ $(".service-preview").mouseover(function()
         else if (ele_id == "sp_EarningsAnalysis")
         {
             descCont = "We provide sentimental analysis of earnings calls by turning quotes into meaning.";
-            bg_img_src = "https://nypost.com/wp-content/uploads/sites/2/2020/02/satya-nadella.jpg?quality=80&strip=all";
+            bg_img_src = "home/wallpaper_background/EarningsAnalysis.jpg";
         }
         else if (ele_id == "sp_SecFilings")
         {
             descCont = "Access millions of filing documents with the Securities Exchange Commission (SEC) for any publically traded company. In addition to this, our service also provides the ability to transform common financial filings (i.e. 10-K, 10-Q, Form 4) into meaningful readable data.";
-            bg_img_src = "https://s.wsj.net/public/resources/images/BN-WB880_WHISTL_GR_20171110133826.jpg";
+            bg_img_src = "home/wallpaper_background/SEC.jpg";
         }
 
         //Fade out the old stuff, in the new stuff
