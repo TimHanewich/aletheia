@@ -5,34 +5,14 @@
 //ep_NAME
 //Then with JQuery (see below), create the click function which scrolls the documentation into view.
 
-$("#navep_SearchPeople").click(function()
-{
-    $("#ep_SearchPeople")[0].scrollIntoView();
-});
-
-$("#navep_SearchCompanies").click(function()
-{
-    $("#ep_SearchCompanies")[0].scrollIntoView();
-});
-
 $("#navep_SearchEntities").click(function()
 {
     $("#ep_SearchEntities")[0].scrollIntoView();
 });
 
-$("#navep_GetCompany").click(function()
-{
-    $("#ep_GetCompany")[0].scrollIntoView();
-});
-
 $("#navep_LatestTransactions").click(function()
 {
     $("#ep_LatestTransactions")[0].scrollIntoView();
-});
-
-$("#navep_GetCompanyOwners").click(function()
-{
-    $("#ep_GetCompanyOwners")[0].scrollIntoView();
 });
 
 $("#navep_LatestFilings").click(function()
@@ -54,3 +34,45 @@ $("#navep_OpenCommonFinancials").click(function()
 {
     $("#ep_OpenCommonFinancials")[0].scrollIntoView();
 });
+
+$("#navep_GetEntity").click(function()
+{
+    $("#ep_GetEntity")[0].scrollIntoView();
+});
+
+$("#navep_GetFiling").click(function()
+{
+    $("#ep_GetFiling")[0].scrollIntoView();
+});
+
+$("#navep_AffiliatedOwners").click(function()
+{
+    $("#ep_AffiliatedOwners")[0].scrollIntoView();
+});
+
+$("#navep_Version").click(function()
+{
+    $("#ep_Version")[0].scrollIntoView();
+});
+
+$("#navep_CountEntities").click(function()
+{
+    $("#ep_CountEntities")[0].scrollIntoView();
+});
+
+$("#navep_CountFilings").click(function()
+{
+    $("#ep_CountFilings")[0].scrollIntoView();
+});
+
+$("#navep_CountTransactions").click(function()
+{
+    $("#ep_CountTransactions")[0].scrollIntoView();
+});
+
+$("#navep_StockData").click(function()
+{
+    $("#ep_StockData")[0].scrollIntoView();
+})
+
+

@@ -1,153 +1,151 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="assets/designs/Icon/Aletheia-Icon-Inverted-Circle.png">
         <link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/branding.css">
-        <link rel="stylesheet" href="css/homepage.css">
-        <link rel="stylesheet" href="css/about.css">
+        <link rel="stylesheet" href="home/home.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
 
-        <!--Wordmark Title-->
-        <h2 class="page-title wordmark">Aletheia</h2>
-
-        <!--Center container-->
-        <div class="center-container">
-
-            <!--Tab menu-->
-            <div class="tab-menu">
-
-                <!--API tab-->
-                <div id="tab_API" class="tab-button tab-api clickable">
-                    API
-                </div>
-
-                <!--About-->
-                <!--Disabled on 2/13/2021 because I am temporarily pasting the about page in the home page while i make an actual home page-->
-                <!--
-                <div id="tab_About" class="tab-button tab-about clickable">
-                    ABOUT
-                </div>
-                -->
-
-                <!--Login/Register-->
-                <div id="tab_LoginRegister" class=" tab-button tab-loginregister clickable">
-                    LOGIN/REGISTER
-                </div>
-
-            </div>
-
-
-            <!--Some blank space to separate  the tabs from the temporary about information-->
-            <div style="width: 100%; height: 20px; background-color: transparent;"></div>
-
-            <!--Service into-->
-            <h3 class="service-intro">Aletheia is a financial web service and API that provides meaningful information about any publicly traded company</h3>
-
-            <!--Services description-->
-            <p>Our service processes hundreds of thousands of filings with the Securities Exchange Commission, logs notable data points, and then transforms these datapoints into insights that better inform your investment decisions.</p>
         
-            <!--Project progress-->
-            <h4 class="center-section-title">Project Progress</h4>
 
-            <div class="statistical-center-pane">
+        <!--Showcase-->
+        <div class="showcase">     
+            <img id="showcase-bg-img" src="https://wallpaperaccess.com/full/2847912.jpg">
+            <img class="showcase-bg-img-buzz" src="home/white-buzz2.png">
+        </div>
 
-                <!--Butterly Split Pane 1 with statistical data-->
-                <div class="butterfly-split-pane">
-                    <div class="butterfly-left">
+        <!--Content-->
+        <div class="hp-content">
 
-                        <!--SEC Filings Processed-->
-                        <div class="stat-grid">
-                            <p class="stat-txt stat-title">SEC Filings Processed</p>
-                            <p id="stat_SecFilingsProcessed" class="stat-txt stat-value">...</p>
+            <!--Header (Logo and navigation bar)-->
+            <div class="aletheia-header">
+
+                <!--Wordmark Title-->
+                <h2 class="page-title wordmark">Aletheia</h2>
+
+                <!--Center container-->
+                <div class="center-container">
+
+                    <!--Tab menu-->
+                    <div class="tab-menu">
+
+                        <!--API tab-->
+                        <div id="tab_API" class="tab-button tab-api clickable">
+                            API
+                        </div>
+
+                        <!--About-->
+                        <!--Disabled on 2/13/2021 because I am temporarily pasting the about page in the home page while i make an actual home page-->
+                        <!--
+                        <div id="tab_About" class="tab-button tab-about clickable">
+                            ABOUT
+                        </div>
+                        -->
+
+                        <!--Login/Register-->
+                        <div id="tab_LoginRegister" class=" tab-button tab-loginregister clickable">
+                            LOGIN/REGISTER
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!--The showcase content (service preview)-->
+            <div class="showcase-content">
+
+                <h2 class="splash-text">make informed<br>investment decisions</h2>  
+                <h3 class="splash-text-desc">preview our services below</h3>
+
+                <!--Stock Data-->
+                <div id="sp_StockData" class="service-preview">
+                    <div class="service-preview-symb service-preview-symb-norm"></div>
+                    <div class="service-preview-txt">Stock Data</div>
+                </div>
+
+                <!--Fundamentals-->
+                <div id="sp_Fundamentals" class="service-preview" style="margin-left: 20px;">
+                    <div class="service-preview-symb service-preview-symb-norm"></div>
+                    <div class="service-preview-txt">Fundamentals</div>
+                </div>
+
+                <!--Insider Trading-->
+                <div id="sp_InsiderTrading" class="service-preview" style="margin-left: 20px;">
+                    <div class="service-preview-symb service-preview-symb-norm"></div>
+                    <div class="service-preview-txt">Insider Trading</div>
+                </div>
+
+                <!--Earnings Analysis-->
+                <div id="sp_EarningsAnalysis" class="service-preview" style="margin-left: 20px;">
+                    <div class="service-preview-symb service-preview-symb-norm"></div>
+                    <div class="service-preview-txt">Earnings Analysis</div>
+                </div>
+
+                <!--SEC Filings-->
+                <div id="sp_SecFilings" class="service-preview" style="margin-left: 20px;">
+                    <div class="service-preview-symb service-preview-symb-norm"></div>
+                    <div class="service-preview-txt">SEC Filings</div>
+                </div>
+
+
+                <!--Description-->
+                <p id="service-description"></p>
+
+                <!--To Get, You Call, And Receive-->
+                <div class="get-call-receive">
+
+                    <!--get & call (split 50/50 horizontal)-->
+                    <div class="get-call-grid">
+
+                        <!--To get-->
+                        <div id="gcr_Get" class="demo-content-cont get-area">
+                            <h3 class="demo-content-title">To Get</h3>
+                            <p id="gcr_GetContent" class="demo-content colored-background"></p>
+                        </div>
+
+                        <!--You call-->
+                        <div id="gcr_Call" class="demo-content-cont call-area">
+                            <h3 class="demo-content-title">You Call</h3>
+                            <p id="gcr_CallContent" class="demo-content colored-background"></p>
                         </div>
                         
                     </div>
-                    <div class="butterly-right">
+                    
+                    <!--Receive-->
+                    <div id="gcr_Receive" class="demo-content-cont">
+                        <!--Response Title-->
+                        <h3 class="demo-content-title">And Receive</h3>
 
-                        <!--Transactions Count-->
-                        <div class="stat-grid">
-                            <p class="stat-txt stat-title">Transactions Processed</p>
-                            <p id="stat_TransactionsCount" class="stat-txt stat-value">...</p>
+                        <!--Response Container-->
+                        <div class="demo-content response-example-cont colored-background">
+
+                            <p id="gcr_ResponseContent" class="response-example">
+                                
+                            </p>
+
                         </div>
-
                     </div>
-                </div>
 
-                <!--Butterly Split Pane 2 with statistical data-->
-                <div class="butterfly-split-pane">
-                    <div class="butterfly-left">
-
-                        <!--Insider Traders-->
-                        <div class="stat-grid">
-                            <p class="stat-txt stat-title">Inside Traders</p>
-                            <p id="stat_InsiderTraders" class="stat-txt stat-value">...</p>
-                        </div>
-                        
-                    </div>
-                    <div class="butterly-right">
-
-                        <!--Companies-->
-                        <div class="stat-grid">
-                            <p class="stat-txt stat-title">Companies</p>
-                            <p id="stat_CompanyCount" class="stat-txt stat-value">...</p>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-
-            <!--Hiding the search bar from now because it is not operational yet (it works but on bad data using bad endpoints - need to rework this)-->
-            <!--
-            <h3 class="search-desc">Search for any publicly traded company or related person</h3>
-
-            
-            <div class="search-bar-cont">
-
-                
-                <input id="searchBar" type="text" onkeyup="searchEntities()">
-                
-            </div>
-
-            
-            <div id="search-results-master-cont" class="hidden">
-
-                
-                <h4 class="results-title">Results</h4>
-
-                
-                <div class="line-sep"></div>
-
-                
-                <div id="search-results-list-cont">
-
-                    
-                    
-                    <div class="search-result-entry">
-                        <p class="search-result-txt search-result-col1">Person</p>
-                        <p class="search-result-txt search-result-col2">000042323</p>
-                        <p class="search-result-txt search-result-col3">General Electric</p>
-                        <p class="search-result-txt search-result-col4">GE</p>
-                        <p class="search-result-txt search-result-col5"><a href="">Select</a></p>
-                    </div>
-                    
-                    
 
                 </div>
 
-            </div>
+                
 
-            -->
-            
+                
+
+                
+
+            </div>
 
         </div>
 
         <!--SCRIPTS-->
         <script src="js/index.js"></script>
         <script src="js/homepage-nav.js"></script>
-        <script src="js/about.js"></script>
+        <script src="home/service-preview-reaction.js"></script>
+        <script src="home/get-call-receive-nav-tools.js"></script>
     </body>
 </html>
