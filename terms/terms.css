@@ -1,0 +1,21 @@
+.pg-title
+{
+    font-size: 35px;
+    margin: 0px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.sec-title
+{
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+.sec-content
+{
+    margin-top: 0px;
+    font-size: 16.5px;
+    line-height: 28px;
+}
