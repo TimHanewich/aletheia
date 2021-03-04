@@ -371,5 +371,49 @@ response-example-comment
     font-weight: bold;
 }
 
+.we-have-processed
+{
+    text-align: left;
+    font-weight: normal;
+    font-size: 35px;
+    margin: 0px;
+    line-height: 30px;
+}
 
+.service-stats
+{
+    display: grid;
+    grid-template-areas: "stat1 stat2 stat3 stat4";
+    grid-template-columns: 25% 25% 25% 25%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.service-stat
+{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.service-stat-val
+{
+    text-align: left;
+    font-size: 48px;
+    font-weight: bolder;
+    margin: 0px;
+    line-height: 48px;
+}
+
+.service-stat-title
+{
+    text-align: left;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 25px;
+    margin: 0px;
+    margin-top: 5px;
+}
 
