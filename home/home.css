@@ -36,6 +36,11 @@ body
     grid-area: tab1;
 }
 
+.tab-terms-of-service
+{
+    grid-area: tab2;
+}
+
 .tab-about
 {
     grid-area: tab2;
