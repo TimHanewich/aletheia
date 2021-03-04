@@ -43,6 +43,8 @@
     border-color: #A5A5A3;
     background-color: #EEEEEE;
     margin-top: 2px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .api-nav-content-pane
@@ -50,8 +52,6 @@
     grid-area: content;
     height: 100%;
     width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 .api-header
