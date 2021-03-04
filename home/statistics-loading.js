@@ -11,13 +11,13 @@ function LoadStats()
 {
     //Sec Entities - Companies & Insiders
     var req_entities = new XMLHttpRequest();
-    req_entities.open("get", "https://api.onaletheia.com/api/CountSecEntities");
+    req_entities.open("get", "https://api.aletheiaapi.com/CountSecEntities");
     req_entities.onreadystatechange = function()
     {
         if (req_entities.readyState == 4 && req_entities.status == 200)
         {
             var req_entities_companies = new XMLHttpRequest();
-            req_entities_companies.open("get", "https://api.onaletheia.com/api/CountSecEntities?onlyco=true");
+            req_entities_companies.open("get", "https://api.aletheiaapi.com/CountSecEntities?onlyco=true");
             req_entities_companies.onreadystatechange = function()
             {
                 console.log("yadayada");
@@ -44,7 +44,7 @@ function LoadStats()
 
     //Sec Filings
     var req_filings = new XMLHttpRequest();
-    req_filings.open("get", "https://api.onaletheia.com/api/CountSecFilings");
+    req_filings.open("get", "https://api.aletheiaapi.com/CountSecFilings");
     req_filings.onreadystatechange = function()
     {
         if (req_filings.readyState == 4 && req_filings.status == 200)
@@ -59,7 +59,7 @@ function LoadStats()
 
     //Transactions
     var req_transactions = new XMLHttpRequest();
-    req_transactions.open("get", "https://api.onaletheia.com/api/CountTransactions");
+    req_transactions.open("get", "https://api.aletheiaapi.com/CountTransactions");
     req_transactions.onreadystatechange = function()
     {
         if (req_transactions.readyState == 4 && req_transactions.status == 200)
