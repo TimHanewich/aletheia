@@ -140,46 +140,7 @@ $("#register-button").click(function()
             }
         }
     };
-    evi_req.send();
-
-
-
-    //////READY TO TRY TO CALL!
-    
-    
-
-    // var url = "https://aletheia.azurewebsites.net/api/RegisterAccount?";
-    // var payload = {"username": ip_username, "email": ip_email, "password": ip_password}
-    // var req = new XMLHttpRequest();
-    // req.open("post", url);
-    // req.onreadystatechange = function()
-    // {
-    //     if (req.readyState == 4)
-    //     {
-    //         if (req.status == 200)
-    //         {
-    //             //Get the response object
-    //             var account_obj = JSON.parse(req.responseText);
-    //             StoreAccountToCookie(account_obj);
-
-    //             //Now navigate to the user account page
-    //             window.location.href = "../myaccount/index.html";
-    //         }
-    //         else
-    //         {
-    //             //Enable all
-    //             EnableTextInput("input-username");
-    //             EnableTextInput("input-email");
-    //             EnableTextInput("input-password");
-    //             EnableTextInput("input-password2");
-    //             EnableButton("register-button");                
-
-    //             FlashErrorMsg("registration-error-msg", req.responseText);
-    //         }
-    //     }
-    // }
-    // req.send(JSON.stringify(payload));
-    
+    evi_req.send();    
 });
 
 $("#verify-email-button").click(function()
