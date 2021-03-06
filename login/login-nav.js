@@ -1,6 +1,7 @@
 //SET BEGINNING OPACITY
 $("#register-pane").css("display", "none");
 $("#login-pane").css("display", "none");
+$("#verify-email-pane").css("display", "none");
 
 $("#returning-user").mouseover(function()
 {
@@ -52,5 +53,13 @@ function NavigateTo_Login()
     $("#iama_pane").fadeOut(300, function()
     {
         $("#login-pane").fadeIn(300);
+    });
+}
+
+function NavigateTo_VerifyEmail()
+{
+    $("#register-pane").fadeOut(300, function()
+    {
+        $("#verify-email-pane").fadeIn(300);
     });
 }

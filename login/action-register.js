@@ -1,9 +1,18 @@
+/////// GLOBAL VARIABLES //////
+
+var reg_username = "";
+var reg_email = "";
+var reg_password = "";
+
+///////////////////////////////
+
 //Clear the error message
 $("#registration-error-msg").css("display", "none");
 
 
 $("#register-button").click(function()
 {
+
     //Get the values
     var ip_username = document.getElementById("input-username").value;
     var ip_email = document.getElementById("input-email").value;
@@ -85,10 +94,10 @@ $("#register-button").click(function()
     }
     
     
+    //// We are ready to initiate the email verification process
 
 
-    //////READY TO TRY TO CALL!
-    
+    //Disable all
     //Disable
     DisableTextInput("input-username");
     DisableTextInput("input-email");
@@ -96,15 +105,116 @@ $("#register-button").click(function()
     DisableTextInput("input-password2");
     DisableButton("register-button");
 
-    var url = "https://aletheia.azurewebsites.net/api/RegisterAccount?";
-    var payload = {"username": ip_username, "email": ip_email, "password": ip_password}
+    var ev_url = "https://aletheia.azurewebsites.net/InitiateEmailVerification?email=" + ip_email;
+    var evi_req = new XMLHttpRequest();
+    evi_req.open("get", ev_url);
+    evi_req.onreadystatechange = function()
+    { 
+        if (evi_req.readyState == 4)
+        {
+            if (evi_req.status == 201)
+            {
+                //It worked! The verification email was sent
+
+                //Save the inputs to the registration variables
+                reg_username = ip_username;
+                reg_email = ip_email;
+                reg_password = ip_password;
+
+                //Before navigating to that pane, fill in their email in the span
+                document.getElementById("your-email-we-verify").innerText = ip_email;
+
+                //Navigate to the verification pane
+                NavigateTo_VerifyEmail();
+            }
+            else
+            {
+                //Enable all
+                EnableTextInput("input-username");
+                EnableTextInput("input-email");
+                EnableTextInput("input-password");
+                EnableTextInput("input-password2");
+                EnableButton("register-button");                
+
+                FlashErrorMsg("registration-error-msg", evi_req.responseText);
+            }
+        }
+    };
+    evi_req.send();
+
+
+
+    //////READY TO TRY TO CALL!
+    
+    
+
+    // var url = "https://aletheia.azurewebsites.net/api/RegisterAccount?";
+    // var payload = {"username": ip_username, "email": ip_email, "password": ip_password}
+    // var req = new XMLHttpRequest();
+    // req.open("post", url);
+    // req.onreadystatechange = function()
+    // {
+    //     if (req.readyState == 4)
+    //     {
+    //         if (req.status == 200)
+    //         {
+    //             //Get the response object
+    //             var account_obj = JSON.parse(req.responseText);
+    //             StoreAccountToCookie(account_obj);
+
+    //             //Now navigate to the user account page
+    //             window.location.href = "../myaccount/index.html";
+    //         }
+    //         else
+    //         {
+    //             //Enable all
+    //             EnableTextInput("input-username");
+    //             EnableTextInput("input-email");
+    //             EnableTextInput("input-password");
+    //             EnableTextInput("input-password2");
+    //             EnableButton("register-button");                
+
+    //             FlashErrorMsg("registration-error-msg", req.responseText);
+    //         }
+    //     }
+    // }
+    // req.send(JSON.stringify(payload));
+    
+});
+
+$("#verify-email-button").click(function()
+{
+    //In this method we attempt to send the registration command to the server.
+    //If it bounces back positive, we navigate to the my account screen
+    //If it comes back failed, we show the message.
+
+    //Get the verification id
+    var ip_verifcode = document.getElementById("email-verif-code").value;
+    if (ip_verifcode == null || ip_verifcode == "") //Stop and show an error red mark if it is blank
+    {
+        MarkBad("email-verif-code");
+        return;
+    }
+    else
+    {
+        RemoveMarkBad("email-verif-code");
+    }
+
+
+    //We are ready to make the call now, so disable the controls
+    DisableTextInput("email-verif-code");
+    DisableButton("verify-email-button");
+
+
+    var url = "https://aletheia.azurewebsites.net/RegisterAccount?";
+    var payload = {"verification": ip_verifcode, "username": reg_username, "email": reg_email, "password": reg_password}
     var req = new XMLHttpRequest();
     req.open("post", url);
     req.onreadystatechange = function()
     {
         if (req.readyState == 4)
         {
-            if (req.status == 200)
+            if (req.status == 201) //201 is the 'creation' response. This is what the registration endpoint returns if successful as of 3/6/2021
             {
                 //Get the response object
                 var account_obj = JSON.parse(req.responseText);
@@ -116,19 +226,16 @@ $("#register-button").click(function()
             else
             {
                 //Enable all
-                EnableTextInput("input-username");
-                EnableTextInput("input-email");
-                EnableTextInput("input-password");
-                EnableTextInput("input-password2");
-                EnableButton("register-button");                
+                EnableTextInput("email-verif-code");
+                EnableButton("verify-email-button");               
 
-                FlashErrorMsg("registration-error-msg", req.responseText);
+                FlashErrorMsg("verify-email-error-msg", req.responseText);
             }
         }
     }
     req.send(JSON.stringify(payload));
-    
 });
+
 
 function MarkBad(ele_name)
 {

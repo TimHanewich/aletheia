@@ -135,3 +135,8 @@
 textarea:focus, input:focus{
     outline: none;
 }
+
+#your-email-we-verify
+{
+    font-weight: bold;
+}
