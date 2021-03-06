@@ -38,7 +38,7 @@ $("#login-button").click(function()
     DisableButton("login-button");
 
     //Make the call
-    var url = "https://aletheia.azurewebsites.net/api/LoginAccount?username=" + ip_username + "&password=" + ip_password + "&includekeys";
+    var url = "https://aletheia.azurewebsites.net/LoginAccount?username=" + ip_username + "&password=" + ip_password + "&includekeys";
     var req = new XMLHttpRequest();
     req.open("get", url);
     req.onreadystatechange = function()
