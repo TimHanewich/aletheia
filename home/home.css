@@ -422,3 +422,87 @@ response-example-comment
     margin-top: 5px;
 }
 
+.no-code-cont
+{
+    width: 100%;
+    background-color: rgb(116, 39, 117);
+    position: relative;
+    overflow-y: visible;
+}
+
+.no-code-title
+{
+    text-align: center;
+    font-size: 40px;
+    color: #FDFDFD;
+    line-height: 40px;
+    margin-top: 0px;
+    margin-bottom: 32px;
+}
+
+#power-platform-examples
+{
+    width: 800px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+}
+
+.low-code-icon-drawer
+{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-areas: "i1 i2 i3 i4"
+    "i1t i2t i3t i4t";
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.icon-img
+{
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icon-desc
+{
+    text-align: center;
+    color: #FDFDFD;
+    font-size: 18px;
+    margin: 0px;
+}
+
+.low-code-desc
+{
+    color: #FDFDFD;
+    font-size: 18px;
+    position: relative;
+    text-align: center;
+    line-height: 23px;
+    margin-bottom: 0px;
+    margin-top: 8px;
+    display: block;
+}
+
+.cc-download
+{
+    text-align: center;
+    text-decoration-style: dotted;
+    color: skyblue;
+    margin-top: 10px;
+}
+
+.cc-note
+{
+    text-align: center;
+    font-size: 14px;
+    color: #a5a5a3;
+    margin: 0px;
+}
+
