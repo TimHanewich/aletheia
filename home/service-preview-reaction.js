@@ -52,6 +52,10 @@ $(".service-preview").mouseover(function()
         {
             descCont = "Access millions of filing documents with the Securities Exchange Commission (SEC) for any publically traded company. In addition to this, our service also provides the ability to transform common financial filings (i.e. 10-K, 10-Q, Form 4) into meaningful readable data.";
             bg_img_src = "home/wallpaper_background/SEC.jpg";
+
+            gcr_ToGetContent = "Tesla's ($TSLA) annual financial result filings (filing 10-K)";
+            gcr_YouCallContent = "https://api.aletheiaapi.com/EntityFilings?id=tsla&filing=10-K";
+            gcr_AndReceiveContent = "[<br><tabspace></tabspace>{<br><tabspace></tabspace><tabspace></tabspace>\"InteractiveDataUrl\": \"https://www.sec.gov/cgi-bin/viewer?action=view&cik=1318605&accession_number=0001564590-21-004599&xbrl_type=v\",<br><tabspace></tabspace><tabspace></tabspace>\"Filing\": \"10-K\",<br><tabspace></tabspace><tabspace></tabspace>\"DocumentsUrl\": \"https://www.sec.gov/Archives/edgar/data/1318605/000156459021004599/0001564590-21-004599-index.htm\",<br><tabspace></tabspace><tabspace></tabspace>\"Description\": \"Annual report [Section 13 and 15(d), not S-K Item 405]<br />Acc-no: 0001564590-21-004599&nbsp;(34 Act)&nbsp; Size: 32 MB\",<br><tabspace></tabspace><tabspace></tabspace>\"FilingDate\": \"2021-02-08T00:00:00\"<br><tabspace></tabspace>},<br><tabspace></tabspace>...<br>]";
         }
 
         //Fade out the old stuff, in the new stuff
