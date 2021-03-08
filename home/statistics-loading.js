@@ -20,7 +20,6 @@ function LoadStats()
             req_entities_companies.open("get", "https://api.aletheiaapi.com/CountSecEntities?onlyco=true");
             req_entities_companies.onreadystatechange = function()
             {
-                console.log("yadayada");
                 if (req_entities_companies.readyState == 4 && req_entities_companies.status == 200)
                 {
                     //Get the # of entities in total
