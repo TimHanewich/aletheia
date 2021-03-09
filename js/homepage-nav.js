@@ -17,3 +17,8 @@ $("#tab_LoginRegister").click(function()
 {
     window.location.href = "login";
 });
+
+$("#tab_PrivacyPolicy").click(function()
+{
+    window.location.href = "privacy";
+});

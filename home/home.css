@@ -41,6 +41,11 @@ body
     grid-area: tab2;
 }
 
+.tab-privacy-policy
+{
+    grid-area: tab3;
+}
+
 .tab-about
 {
     grid-area: tab2;
