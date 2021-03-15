@@ -33,6 +33,9 @@ function LoadStats()
                     //Set
                     document.getElementById("stat_Insiders").innerText = stat_Insiders.toLocaleString('en');
                     document.getElementById("stat_Companies").innerText = stat_Companies.toLocaleString('en');
+
+                    StartUpTick("stat_Insiders", 4, 600);
+                    StartUpTick("stat_Companies", 3, 600);
                 }
             }
             req_entities_companies.send();
@@ -52,6 +55,8 @@ function LoadStats()
 
             //Set
             document.getElementById("stat_SecFilings").innerText = stat_SecFilings.toLocaleString('en');
+        
+            StartUpTick("stat_SecFilings", 2, 800);
         }
     }
     req_filings.send();
@@ -67,6 +72,8 @@ function LoadStats()
 
             //Set
             document.getElementById("stat_Transactions").innerText = stat_Transactions.toLocaleString('en');
+
+            StartUpTick("stat_Transactions", 6, 200);
         }
     }
     req_transactions.send();
