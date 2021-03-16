@@ -17,8 +17,8 @@ body
     margin-top: 12px;
 
     display: grid;
-    grid-template-areas: "tab1 tab2 tab3 remainder farright";
-    grid-template-columns: 170px 170px 170px auto 170px;
+    grid-template-areas: "tab1 tab2 tab3 tab4";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .tab-button
@@ -29,31 +29,6 @@ body
     line-height: 55px;
     text-align: center;
     text-transform: uppercase;
-}
-
-.tab-api
-{
-    grid-area: tab1;
-}
-
-.tab-terms-of-service
-{
-    grid-area: tab2;
-}
-
-.tab-privacy-policy
-{
-    grid-area: tab3;
-}
-
-.tab-about
-{
-    grid-area: tab2;
-}
-
-.tab-loginregister
-{
-    grid-area: farright;
 }
 
 .search-desc
@@ -509,5 +484,10 @@ response-example-comment
     font-size: 14px;
     color: #a5a5a3;
     margin: 0px;
+}
+
+.no-underline
+{
+    text-decoration: none;
 }
 
