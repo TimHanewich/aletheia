@@ -575,6 +575,78 @@
                             </div>
 
                         </div>
+
+                        <!--Fundamentals-->
+                        <div style="width: 100%;">
+                            <div class="blank-space"></div>
+                            <div class="blank-space"></div>
+                            <h2 class="api-category-title">Fundamentals</h2>
+                            <p class="api-category-desc">These endpoints provide with you financial performance data for any publicly traded company. These endpoints span all three primary financial statements, including Income Statement, Balance Sheet, and State of Cash Flows.</p>
+                        
+                            <!--Common Financials-->
+                            <div class="api-ep-documentation">
+                                <h3 id="ep_CommonFinancials" class="api-title">Common Financials</h3>
+                                <p class="api-desc">Access a financial statement set for a particular company. The returned response will be a financial fact set that is presented in a commonly comparable form.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/CommonFinancials</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>id</api-param> - The CIK or trading symbol of the company you are searching for.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>period</api-param> - Specify a period type.</div>
+                                </div>
+                                <ul class="param-desc">
+                                    <li><b>0</b> = Annual (from a 10-K filing)</li>
+                                    <li><b>1</b> = Quarterly (from a 10-Q filing)</li>
+                                </ul>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>before</api-param> - Get the most recent filing before this specified date. YYYYMMDD format.</div>
+                                </div>
+                                <ul class="param-desc">
+                                    <li>If this parameter is not specified, the API will simply select the most recent financial filing that meets your criteria.</li>
+                                </ul>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/CommonFinancials?id=aapl</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/CommonFinancials?id=320193&period=1</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/CommonFinancials?id=320193&period=0&before=20150101</div> 
+                                <div class="api-sub-header">Example Response</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">
+                                        {<br>
+                                            <tabspace></tabspace>"PeriodStart": "2013-09-29T00:00:00",<br>
+                                            <tabspace></tabspace>"PeriodEnd": "2014-09-27T00:00:00",<br>
+                                            <tabspace></tabspace>"Facts": {<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"RetainedEarnings": 87152000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"OperatingIncome": 52503000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Revenue": 182795000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"SellingGeneralAndAdministrativeExpense": 11993000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ResearchAndDevelopmentExpense": 6041000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Assets": 231839000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"NetIncome": 39510000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ProceedsFromIssuanceOfDebt": 11960001000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"OperatingCashFlows": 59713000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"CurrentLiabilities": 63448000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Equity": 111547000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DividendsPaid": 11031000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Liabilities": 120292000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"CommonStockSharesOutstanding": 5866161000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"CurrentAssets": 68531000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"InvestingCashFlows": -22579000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"FinancingCashFlows": -37549000000.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Cash": 13844000000.0<br>
+                                                <tabspace></tabspace>}<br>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         
                         <!--Service Information-->
                         <div style="width: 100%;">
