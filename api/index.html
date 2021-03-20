@@ -646,6 +646,138 @@
                                     </div>
                                 </div>
                             </div>
+                        
+                            <!--Financial Fact Trend-->
+                            <div class="api-ep-documentation">
+                                <h3 id="ep_FinancialFactTrend" class="api-title">Financial Fact Trend</h3>
+                                <p class="api-desc">Examine the trend in a financial result data point for any major commonly-reported figure on an income statement, balance sheet, or statement of cash flows.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/FinancialFactTrend</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>id</api-param> - The CIK or trading symbol of the company you are searching for.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>label</api-param> - The label name of the data point you are requesting. Available data points:</div>
+                                </div>
+                                <ul class="param-desc">
+                                    <li>Income Statement Facts</li>
+                                    <ul class="param-desc">
+                                        <li>0 = Revenue</li>
+                                        <li>1 = Selling, General, and Administrative Expenses (SG&A)</li>
+                                        <li>2 = Research and Development Expenses</li>
+                                        <li>3 = Operating Income</li>
+                                        <li>4 = Net Income/Loss</li>
+                                    </ul>
+                                    <li>Balance Sheet Facts</li>
+                                    <ul class="param-desc">
+                                        <li>5 = Assets</li>
+                                        <li>6 = Liabilities</li>
+                                        <li>7 = Equity</li>
+                                        <li>8 = Cash</li>
+                                        <li>9 = Current Assets</li>
+                                        <li>10 = Current Liabilities</li>
+                                        <li>11 = Retained Earnings/Deficit</li>
+                                        <li>12 = Number of common stock shares outstanding</li>
+                                    </ul>
+                                    <li>Cash Flow Statement Facts</li>
+                                    <ul>
+                                        <li>13 = Operating Cash Flows</li>
+                                        <li>14 = Investing Cash Flows</li>
+                                        <li>15 = Financing Cash Flows</li>
+                                        <li>16 = Proceeds from Issuance of Debt</li>
+                                        <li>17 = Payments of Debt</li>
+                                        <li>18 = Dividends Paid</li>
+                                    </ul>
+                                </ul>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>period</api-param> - Specify a period type.</div>
+                                </div>
+                                <ul class="param-desc">
+                                    <li><b>0</b> = Annual (from a 10-K filing)</li>
+                                    <li><b>1</b> = Quarterly (from a 10-Q filing)</li>
+                                </ul>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>after</api-param> - Only return data points after a specific date. YYYYMMDD format.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>before</api-param> - Only return data points before a specific date. YYYYMMDD format.</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/FinancialFactTrend?id=msft&label=0&period=0</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/FinancialFactTrend?id=msft&label=8&after=20140101</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/FinancialFactTrend?id=1800&label=4&before=20150101</div>
+                                <div class="api-sub-header">Example Response</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">
+                                        [<br>
+                                            <tabspace></tabspace>{<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"PeriodStart": "2012-07-01T00:00:00",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"PeriodEnd": "2013-06-30T00:00:00",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Value": 77849000000.0<br>
+                                                <tabspace></tabspace>},<br>
+                                                <tabspace></tabspace>{<br>
+                                                    <tabspace></tabspace><tabspace></tabspace>"PeriodStart": "2015-07-01T00:00:00",<br>
+                                                    <tabspace></tabspace><tabspace></tabspace>"PeriodEnd": "2016-06-30T00:00:00",<br>
+                                                    <tabspace></tabspace><tabspace></tabspace>"Value": 85320000000.0<br>
+                                                    <tabspace></tabspace>},<br>
+                                                    <tabspace></tabspace>{<br>
+                                                        <tabspace></tabspace><tabspace></tabspace>"PeriodStart": "2009-07-01T00:00:00",<br>
+                                                        <tabspace></tabspace><tabspace></tabspace>"PeriodEnd": "2010-06-30T00:00:00",<br>
+                                                        <tabspace></tabspace><tabspace></tabspace>"Value": 62484000000.0<br>
+                                                        <tabspace></tabspace>},<br>
+                                                        <tabspace></tabspace>{<br>
+                                                            <tabspace></tabspace><tabspace></tabspace>"PeriodStart": "2011-07-01T00:00:00",<br>
+                                                            <tabspace></tabspace><tabspace></tabspace>"PeriodEnd": "2012-06-30T00:00:00",<br>
+                                                            <tabspace></tabspace><tabspace></tabspace>"Value": 73723000000.0<br>
+                                                            <tabspace></tabspace>},<br>
+                                                            <tabspace></tabspace>{<br>
+                                                                <tabspace></tabspace><tabspace></tabspace>"PeriodStart": "2019-07-01T00:00:00",<br>
+                                                                <tabspace></tabspace><tabspace></tabspace>"PeriodEnd": "2020-06-30T00:00:00",<br>
+                                                                <tabspace></tabspace><tabspace></tabspace>"Value": 143015000000.0<br>
+                                                                <tabspace></tabspace>},<br>
+                                                                <tabspace></tabspace>{<br>
+                                                                    <tabspace></tabspace><tabspace></tabspace>"PeriodStart": "2013-07-01T00:00:00",<br>
+                                                                    <tabspace></tabspace><tabspace></tabspace>"PeriodEnd": "2014-06-30T00:00:00",<br>
+                                                                    <tabspace></tabspace><tabspace></tabspace>"Value": 86833000000.0<br>
+                                                                    <tabspace></tabspace>},<br>
+                                                                    <tabspace></tabspace>{<br>
+                                                                        <tabspace></tabspace><tabspace></tabspace>"PeriodStart": "2016-07-01T00:00:00",<br>
+                                                                        <tabspace></tabspace><tabspace></tabspace>"PeriodEnd": "2017-06-30T00:00:00",<br>
+                                                                        <tabspace></tabspace><tabspace></tabspace>"Value": 89950000000.0<br>
+                                                                        <tabspace></tabspace>},<br>
+                                                                        <tabspace></tabspace>{<br>
+                                                                            <tabspace></tabspace><tabspace></tabspace>"PeriodStart": "2017-07-01T00:00:00",<br>
+                                                                            <tabspace></tabspace><tabspace></tabspace>"PeriodEnd": "2018-06-30T00:00:00",<br>
+                                                                            <tabspace></tabspace><tabspace></tabspace>"Value": 110360000000.0<br>
+                                                                            <tabspace></tabspace>},<br>
+                                                                            <tabspace></tabspace>{<br>
+                                                                                <tabspace></tabspace><tabspace></tabspace>"PeriodStart": "2014-07-01T00:00:00",<br>
+                                                                                <tabspace></tabspace><tabspace></tabspace>"PeriodEnd": "2015-06-30T00:00:00",<br>
+                                                                                <tabspace></tabspace><tabspace></tabspace>"Value": 93580000000.0<br>
+                                                                                <tabspace></tabspace>},<br>
+                                                                                <tabspace></tabspace>{<br>
+                                                                                    <tabspace></tabspace><tabspace></tabspace>"PeriodStart": "2018-07-01T00:00:00",<br>
+                                                                                    <tabspace></tabspace><tabspace></tabspace>"PeriodEnd": "2019-06-30T00:00:00",<br>
+                                                                                    <tabspace></tabspace><tabspace></tabspace>"Value": 125843000000.0<br>
+                                                                                    <tabspace></tabspace>},<br>
+                                                                                    <tabspace></tabspace>{<br>
+                                                                                        <tabspace></tabspace><tabspace></tabspace>"PeriodStart": "2010-07-01T00:00:00",<br>
+                                                                                        <tabspace></tabspace><tabspace></tabspace>"PeriodEnd": "2011-06-30T00:00:00",<br>
+                                                                                        <tabspace></tabspace><tabspace></tabspace>"Value": 69943000000.0<br>
+                                                                                        <tabspace></tabspace>}<br>
+                                        ]
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
                         <!--Service Information-->
