@@ -75,4 +75,14 @@ $("#navep_StockData").click(function()
     $("#ep_StockData")[0].scrollIntoView();
 })
 
+$("#navep_CommonFinancials").click(function()
+{
+    $("#ep_CommonFinancials")[0].scrollIntoView();
+})
+
+$("#navep_FinancialFactTrend").click(function()
+{
+    $("#ep_FinancialFactTrend")[0].scrollIntoView();
+});
+
 
