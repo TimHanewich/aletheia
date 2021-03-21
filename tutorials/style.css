@@ -61,6 +61,7 @@ body
     font-weight: lighter;
     margin: 0px;
     line-height: 40px;
+    margin-top: 10px;
 }
 
 .tutorial-desc
@@ -92,3 +93,18 @@ body
     font-size: 18px;
     text-decoration:  none;
 }
+
+.outlined-logo
+{
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(116, 39, 116);
+}
+
+.logo-desc
+{
+    text-align: center;
+    font-size: 18px;
+    color: black;
+}
+
