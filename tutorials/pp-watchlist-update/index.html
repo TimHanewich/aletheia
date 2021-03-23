@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/common.css">
+        <link rel="stylesheet" href="../../css/branding.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../../home/home.css">
+    </head>
+    <body>
+        
+        <!--Background images-->
+        <div class="bg-img-cont">
+            <!--Background image-->
+            <img class="bg-img" src="../background.png">
+
+            <!--Buzz-->
+            <img class="bg-img" src="../../home/white-buzz.png">
+        </div>
+
+
+        <!--Wordmark Title-->
+        <h2 class="page-title wordmark">Aletheia</h2>
+        <div class="single-line"></div>
+
+        
+        <div class="center-container">
+
+            <!--Page title-->
+            <h1 class="tut-title">Power Platform: End of Day Watchlist Update</h1>
+            <p class="tut-pg-desc">
+                In this tutorial you will learn how to create a simple Power Automate workflow that at the end of each day will recap the performance of your portfolio watchlist.
+            </p>
+
+            <!--Prerequisites-->
+            <h3 class="section-header">Prerequisites</h3>
+            <p class="tut-pg-desc">To complete this tutorial you will need the following.</p>
+            <ul class="tut-pg-desc">
+                <li><a href="https://flow.microsoft.com/en-us/pricing/" target="_blank">A Power Automate License</a></li>
+                <li>An Aletheia developer account. Visit the <a href="https://aletheiaapi.com/login" target="_blank">login page</a> to register for a free account.</li>
+                <li>An Excel spreadsheet containing your watchlist in a table. This spreadsheet must be located in OneDrive or OneDrive for Business.</li>
+            </ul>
+
+            <!--Prepare your watchlist-->
+            <h2 class="step">Prepare your Watchlist</h2>
+            <p class="tut-pg-desc">We will be storing a list of stocks (our "watchlist") in an Excel spreadsheet in our OneDrive. Create a new Excel spreadsheet in OneDrive that looks like the following.</p>
+            <img class="col-img" src="collateral/wl.PNG" style="width: 60%;">
+            <p class="tut-pg-desc">Please note that <b>your watchlist must be in a table</b>!  Power Automate can only read rows out of a table, so be sure to convert your watchlist to a table before moving on.</p>
+            <p class="tut-pg-desc">By storing your watchlist in an online spreadsheet like this, you can dynamically change the stocks (add or remove) and the workflow we set up will always use the most up-to-date version of your watchlist.</p>
+
+            <!--Create a blank power automate workflow-->
+            <h2 class="step">Create a new Power Automate Workflow</h2>
+            <p class="tut-pg-desc">First, we need to create a new Power Automate workflow. This workflow will contain the logic that will perform on a daily basis.</p>
+            <p class="tut-pg-desc">Navigate to <a href="flow.microsoft.com">flow.microsoft.com</a> in a new browser tab and click on "Create" on the left-hand menu.</p>
+            <img src="collateral/create.PNG" class="col-img" style="width: 60%;">
+            <p class="tut-pg-desc">We want our flow to run once per day at a predetermined time. For this, we will select a <a href="https://docs.microsoft.com/en-us/power-automate/run-scheduled-tasks">Scheduled Flow</a>.</p>
+            <img src="collateral/scheduled.PNG" class="col-img" style="width: 80%;">
+            <p class="tut-pg-desc">Configure your flow to trigger with the following specifications:</p>
+            <img src="collateral/timing.PNG" class="col-img" style="width: 70%;">
+            
+            <h2 class="step">Gather resources for your workflow</h2>
+            <p class="tut-pg-desc">Click on new step to add a new step to your flow. If the spreadsheet containing your watchlist is in OneDrive for personal use, select the "Excel Online (OneDrive)" connector. If it is in OneDrive for Business, select the "Excel Online (Business)" connector.</p>
+            <p class="tut-pg-desc">Select the <b>List rows present in a table</b> action.</p>
+            <img src="collateral/listrows.PNG" class="col-img" style="width: 50%;">
+            <p class="tut-pg-desc">Fill in the details of the action with the details that pertain to your watchlist spreadsheet.</p>
+            <img src="collateral/fillout.PNG" class="col-img" style="width: 50%;">
+            <p class="tut-pg-desc">Add a new step by selectin "+ New Step" and search for "Variable". Select the "Initialize Variable" action. This variable will serve as the body of our email.</p>
+
+        </div>
+
+
+    </body>
+</html>

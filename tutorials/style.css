@@ -33,8 +33,9 @@ body
 .tut-pg-desc
 {
     font-size: 24px;
-    margin: 0px;
+    margin-top: 0px;
     line-height: 32px;
+    margin-bottom: 6px;
 }
 
 .category-title
@@ -108,3 +109,30 @@ body
     color: black;
 }
 
+.section-header
+{
+    font-size: 28px;
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    line-height: 28px;
+}
+
+.step
+{
+    font-size: 32px;
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    line-height: 32px;
+}
+
+.col-img
+{
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
