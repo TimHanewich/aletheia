@@ -22,10 +22,26 @@ function LoadTutorial(path)
     {
         if (req.readyState == 4 && req.status == 200)
         {
-            var x = req.responseText.indexOf("<body");
-            x = req.responseText.indexOf(">", x);
-            var y = req.responseText.lastIndexOf("</body>");
-            var bodyContent = req.responseText.slice(x + 1, y);
+            var ele = document.createElement("html");
+            ele.innerHTML = req.responseText;
+            var steps = ele.getElementsByClassName("step");
+            Array.from(steps).forEach(function(element)
+            {
+                var ele_step = document.createElement("div");
+                ele_step.classList.add("nav-step");
+                
+                var ele_step_block = document.createElement("div");
+                ele_step_block.classList.add("nav-step-block");
+                ele_step.appendChild(ele_step_block);
+
+                var ele_title = document.createElement("p");
+                ele_title.classList.add("nav-step-title");
+                ele_title.innerText = element.innerText;
+                ele_step.appendChild(ele_title);
+
+                document.getElementById("navigation-container").appendChild(ele_step);
+                console.log("Added");
+            });
         }
     };
     req.send();
