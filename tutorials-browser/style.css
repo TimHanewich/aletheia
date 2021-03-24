@@ -56,7 +56,6 @@ body
     height: 100%;
     width: 100%;
     grid-area: content;
-    background-color: crimson;
 }
 
 #tutorial-content
