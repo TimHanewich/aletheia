@@ -48,8 +48,27 @@
             <p class="tut-pg-desc">Fill in the details of the action with the details that pertain to your watchlist spreadsheet.</p>
             <img src="collateral/fillout.PNG" class="col-img" style="width: 50%;">
             <p class="tut-pg-desc">Add a new step by selectin "+ New Step" and search for "Variable". Select the "Initialize Variable" action. This variable will serve as the body of our email.</p>
-            </div>
+            <img src="collateral/init.PNG" class="col-img" style="width: 60%;">
+
+            <h2 class="step">Compile Stock Data</h2>
+            <p class="tut-pg-desc">We now have all of the resources required for our flow. We will now loop through each of the stocks from our watchlist, gather data, and place that in our variable which will later be sent out via email.</p>
+            <p class="tut-pg-desc">To loop through a list ("array") of objects, we will use the <b>Apply to each</b> action from the <b>Control</b> built-in connector.</p>
+            <p class="tut-pg-desc">For the <i>Select an output from previous steps</i> input, plug in the <b>value</b> from the Dynamic Content pane. You will find this property beneath the name of the action which listed the rows from the Excel table - called "List rows present in a table" in my example.</p>
+            <img class="col-img" style="width: 80%;" src="collateral/loop.PNG">
+            <p class="tut-pg-desc">Next, click on "Add an action" in the "Apply to each" control to add an action that will be carried out for each stock symbol.</p>
+            <p class="tut-pg-desc">Find the <b>Aletheia</b> connector under the Premium tab.</p>
+            <img class="col-img" style="width: 60%;" src="collateral/findaletheia.PNG">
+            <p class="tut-pg-desc">Select the <b>Get Stock Data</b> action.</p>
+            <img class="col-img" style="width: 60%;" src="collateral/stockdata.PNG">
+            <p class="tut-pg-desc">If this is your first time using the Aletheia connector, Power Automate will likely prompt you to input your API key. Enter in the API key you were supplied with when registering for an Aletheia developer account. Register for a free account at <a href="https://aletheiaapi.com/login">https://aletheiaapi.com/login</a>.</p>
+            <p class="tut-pg-desc">Give your connection to the API a name (doesn't have to be anything meaningful) and enter your API key into the "API Key" input.</p>
+            <img class="col-img" style="width: 60%;" src="collateral/create-con.PNG">
+            <p class="tut-pg-desc">After creating your new connection, plug in the value <b>My Watch List</b> into the <i>Symbol</i> input, and flip the <i>Include summary data</i> input to "Yes".</p>
+            <img class="col-img" style="width: 70%;" src="collateral/pluginstock.PNG">
+        </div>
         
+        <!--Dead space-->
+        <div style="height:60px;"></div>
 
     </body>
 </html>
