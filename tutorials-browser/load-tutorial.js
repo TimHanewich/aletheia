@@ -4,16 +4,17 @@ var tutorial_id = ThisUrl.searchParams.get("tutorial");
 
 if(tutorial_id == "pp-watchlist-update")
 {
-    LoadTutorial("../tutorials/pp-watchlist-update/index.html");
+    LoadTutorial("../tutorials/pp-watchlist-update/index.html", "Tutorial - End of Day Watchlist Summary");
 }
 else
 {
     window.alert("Tutorial '" + tutorial_id + "' not recognized.");
 }
 
-function LoadTutorial(path)
+function LoadTutorial(path, update_page_title)
 {
     document.getElementById("tutorial-content").setAttribute("src", path);
+    document.title = update_page_title;
 
     //Make the request for the content
     var req = new XMLHttpRequest();

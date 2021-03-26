@@ -43,29 +43,29 @@
                             </div>
                         </a>
 
-                        <!--Terms of Service-->
-                        <a href="terms" style="grid-area: tab2;" class="no-underline">
-                            <div id="tab_TermsOfService" class="tab-button">
-                                Terms of Service
+                        <!--Tutorials-->
+                        <a href="tutorials" style="grid-area: tab2;" class="no-underline">
+                            <div id="tab_Tutorials" class="tab-button">
+                                Tutorials
                             </div>
                         </a>
 
-                        <!--Privacy Policy-->
-                        <a href="privacy" style="grid-area: tab3;" class="no-underline">
-                            <div id="tab_PrivacyPolicy" class="tab-button">
-                                Privacy
+                        <!--Legal-->
+                        <div style="grid-area: tab3;">
+                            <div id="tab_legal" class="tab-button">
+                                Legal
                             </div>
-                        </a>
-                        
-
-                        <!--About-->
-                        <!--Disabled on 2/13/2021 because I am temporarily pasting the about page in the home page while i make an actual home page-->
-                        <!--
-                        <div id="tab_About" class="tab-button tab-about clickable">
-                            ABOUT
+                            <div id="legal-dd" class="hidden" style="z-index: 0;">
+                                <a href="terms" class="no-underline">
+                                    <div class="tab-button-dd">Terms of service</div>
+                                </a>
+                                <a href="privacy" class="no-underline">
+                                    <div class="tab-button-dd">Privacy Policy</div>
+                                </a>
+                            </div>
                         </div>
-                        -->
-
+                        
+                    
                         <!--Login/Register-->
                         <a href="login" style="grid-area: tab4;" class="no-underline">
                             <div id="tab_LoginRegister" class=" tab-button">
@@ -159,7 +159,8 @@
                 
                 <!--Project breadth-->
                 <div style="width: 100%; margin-top: 50px; margin-bottom: 50px;">
-                    <h3 class="we-have-processed">We have scanned and processed</h3>
+                    <h3 class="research-at-scale">Research at Scale</h3>
+                    <p class="we-have-processed">Our servers are always scouring the Securities Exchange Commission's EDGAR database for data, both new and old. We compile these disparate datapoints into contextual and meaningful information that is accessible through one API call. To date, we have scanned and processed...</p>
 
                     <!--service Statistics-->
                     <div class="service-stats">
@@ -247,5 +248,6 @@
         <script src="home/get-call-receive-nav-tools.js"></script>
         <script src="home/statistics-loading.js"></script>
         <script src="home/uptick.js"></script>
+        <script src="home/legal-dropdown.js"></script>
     </body>
 </html>

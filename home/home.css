@@ -183,6 +183,7 @@ body
     width: 75%;
     left: 50%;
     transform: translateX(-50%);
+    z-index: -1;
 }
 
 .splash-text
@@ -356,13 +357,22 @@ response-example-comment
     font-weight: bold;
 }
 
+.research-at-scale
+{
+    text-align: center;
+    font-weight: normal;
+    font-size: 45px;
+    margin: 0px;
+    line-height: 45px;
+}
+
 .we-have-processed
 {
-    text-align: left;
-    font-weight: normal;
-    font-size: 35px;
-    margin: 0px;
-    line-height: 30px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 8px;
+    margin-bottom: 4px;
 }
 
 .service-stats
@@ -489,5 +499,31 @@ response-example-comment
 .no-underline
 {
     text-decoration: none;
+}
+
+#legal-dd
+{
+    position: relative;
+    width: 100%;
+    background-color: #FDFDFD;
+    z-index: -2;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-color: #FFD858;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.tab-button-dd
+{
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 43px;
+    text-align: center;
+    text-transform: uppercase;
 }
 

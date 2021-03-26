@@ -48,8 +48,46 @@
             <p class="tut-pg-desc">Fill in the details of the action with the details that pertain to your watchlist spreadsheet.</p>
             <img src="collateral/fillout.PNG" class="col-img" style="width: 50%;">
             <p class="tut-pg-desc">Add a new step by selectin "+ New Step" and search for "Variable". Select the "Initialize Variable" action. This variable will serve as the body of our email.</p>
-            </div>
+            <img src="collateral/init.PNG" class="col-img" style="width: 60%;">
+
+            <h2 class="step">Compile Stock Data</h2>
+            <p class="tut-pg-desc">We now have all of the resources required for our flow. We will now loop through each of the stocks from our watchlist, gather data, and place that in our variable which will later be sent out via email.</p>
+            <p class="tut-pg-desc">To loop through a list ("array") of objects, we will use the <b>Apply to each</b> action from the <b>Control</b> built-in connector.</p>
+            <p class="tut-pg-desc">For the <i>Select an output from previous steps</i> input, plug in the <b>value</b> from the Dynamic Content pane. You will find this property beneath the name of the action which listed the rows from the Excel table - called "List rows present in a table" in my example.</p>
+            <img class="col-img" style="width: 80%;" src="collateral/loop.PNG">
+            <p class="tut-pg-desc">Next, click on "Add an action" in the "Apply to each" control to add an action that will be carried out for each stock symbol.</p>
+            <p class="tut-pg-desc">Find the <b>Aletheia</b> connector under the Premium tab.</p>
+            <img class="col-img" style="width: 60%;" src="collateral/findaletheia.PNG">
+            <p class="tut-pg-desc">Select the <b>Get Stock Data</b> action.</p>
+            <img class="col-img" style="width: 60%;" src="collateral/stockdata.PNG">
+            <p class="tut-pg-desc">If this is your first time using the Aletheia connector, Power Automate will likely prompt you to input your API key. Enter in the API key you were supplied with when registering for an Aletheia developer account. Register for a free account at <a href="https://aletheiaapi.com/login">https://aletheiaapi.com/login</a>.</p>
+            <p class="tut-pg-desc">Give your connection to the API a name (doesn't have to be anything meaningful) and enter your API key into the "API Key" input.</p>
+            <img class="col-img" style="width: 60%;" src="collateral/create-con.PNG">
+            <p class="tut-pg-desc">After creating your new connection, plug in the value <b>My Watch List</b> into the <i>Symbol</i> input, and flip the <i>Include summary data</i> input to "Yes".</p>
+            <img class="col-img" style="width: 70%;" src="collateral/pluginstock.PNG">
+            <p class="tut-pg-desc">We want to format our change percentages with a standard format, for example two trailing decimals. To do this we will use the <b>Format Number</b> action from the <b>Number Functions</b> connector.</p>
+            <p class="tut-pg-desc">Enter the following inputs into the <b>Format number</b> action:</p>
+            <img class="col-img" style="width: 70%;" src="collateral/formatnumber.PNG">
+            <p class="tut-pg-desc">Finally, we have to append this information to the string variable that we set up earlier. Click on new step and search for "variable". Select the "Append to string variable" action.</p>
+            <p class="tut-pg-desc">Append the following dynamic content chain to the string variable like so:</p>
+            <img class="col-img" style="width: 70%;" src="collateral/append.PNG">
+            <p class="tut-pg-desc">Summing up this last section, this is what you should now have inside the <b>Apply to each</b> loop:</p>
+            <img class="col-img" style="width: 60%;" src="collateral/apply-to-each.PNG">
+
+            <h2 class="step">Send the Email</h2>
+            <p class="tut-pg-desc">Our final step is to now send the email with the content that we have compiled. Up to this point, out workflow has compiled a long email body of our watchlist and each stock's price and day performance. Now we will plug this body into an email and send it.</p>
+            <p class="tut-pg-desc">Click on <b>+ New step</b> after your <b>Apply to each</b> bracket.</p>
+            <p class="tut-pg-desc">Select the <b>Mail</b> connector and then select the <b>Send an email notification</b> action.</p>
+            <img class="col-img" style="width: 60%;" src="collateral/selectmail.PNG">
+            <p class="tut-pg-desc">Address the email to yourself like this:</p>
+            <img class="col-img" style="width: 60%;" src="collateral/emailinputs.PNG">
+
+            <p class="tut-pg-desc">And that is it! Save your flow and click on "Run" to give it a try.</p>
+            
+        </div>
         
+        <!--Dead space-->
+        <div style="height:60px;"></div>
 
     </body>
 </html>
