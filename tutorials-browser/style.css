@@ -12,6 +12,16 @@ body
     top: 0px;
 }
 
+.buzzed
+{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    position: absolute;
+    top: 0px;
+}
+
+
 .bg-img-cont
 {
     z-index: -1;
@@ -19,6 +29,7 @@ body
     position: absolute;
     width: 100%;
     height: 500px;
+    background-color: blue;
 }
 
 .master-grid
