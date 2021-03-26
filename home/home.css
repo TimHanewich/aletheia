@@ -357,13 +357,22 @@ response-example-comment
     font-weight: bold;
 }
 
+.research-at-scale
+{
+    text-align: center;
+    font-weight: normal;
+    font-size: 45px;
+    margin: 0px;
+    line-height: 45px;
+}
+
 .we-have-processed
 {
-    text-align: left;
-    font-weight: normal;
-    font-size: 35px;
-    margin: 0px;
-    line-height: 30px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 8px;
+    margin-bottom: 4px;
 }
 
 .service-stats
