@@ -18,7 +18,8 @@ else if (tutorial_id == "pp-get-stock-data")
 }
 else
 {
-    window.alert("Tutorial '" + tutorial_id + "' not recognized.");
+    window.alert("Tutorial '" + tutorial_id + "' not recognized. Please select a tutorial from the Aletheia tutorials page.");
+    window.location.href = "../tutorials/";
 }
 
 function LoadTutorial(path, update_page_title, meta_description)
