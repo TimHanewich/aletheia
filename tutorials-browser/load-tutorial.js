@@ -6,7 +6,7 @@ if(tutorial_id == "pp-watchlist-update")
 {
     var path = "../tutorials/pp-watchlist-update/index.html";
     var title = "Tutorial - End of Day Watchlist Summary";
-    var desc = null;
+    var desc = "Use the Aletheia connector to create a Power Automate workflow to fetch stock prices for stocks or cryptocurrencies in your watchlist.";
     LoadTutorial(path, title, desc);
 }
 else if (tutorial_id == "pp-get-stock-data")
