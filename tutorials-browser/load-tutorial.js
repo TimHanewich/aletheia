@@ -6,6 +6,10 @@ if(tutorial_id == "pp-watchlist-update")
 {
     LoadTutorial("../tutorials/pp-watchlist-update/index.html", "Tutorial - End of Day Watchlist Summary");
 }
+else if (tutorial_id == "pp-get-stock-data")
+{
+    LoadTutorial("../tutorials/pp-get-stock-data/index.html", "Access Stock Data in Power Apps/Automate - Aletheia");
+}
 else
 {
     window.alert("Tutorial '" + tutorial_id + "' not recognized.");

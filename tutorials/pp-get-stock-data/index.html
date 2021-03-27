@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../../css/common.css">
+        <link rel="stylesheet" href="../../css/branding.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../../home/home.css">
+    </head>
+    <body>
+        <div class="center-container" style="width: 80%;">
+        
+            <!--Page title-->
+            <h1 class="tut-title">Power Platform: Get Stock Data in Power Apps or Power Automate</h1>
+            <p class="tut-pg-desc">
+                In this tutorial you will learn how to access stock data (prices, open, close, volume, P/E, etc.) for any publicly traded stock or security through the Aletheia connector in Power Apps and Power Automate.
+            </p>
+
+            <!--Prerequisites-->
+            <h3 class="section-header">Prerequisites</h3>
+            <p class="tut-pg-desc">To complete this tutorial you will need the following.</p>
+            <ul class="tut-pg-desc">
+                <li><a href="https://powerapps.microsoft.com/en-us/" target="_blank">Power Apps</a> or <a href="https://flow.microsoft.com/en-us/" target="_blank">Power Automate</a></li>
+                <li>An Aletheia developer account. Visit the <a href="https://aletheiaapi.com/login" target="_blank">login page</a> to register for a free account.</li>
+            </ul>
+
+            <!--Access through power apps-->
+            <h2 class="tutorial-section-title">In Power Apps</h2>
+
+            <!--Add the data source-->
+            <h2 class="step">Add Aletheia as a Data Source</h2>
+            <p class="tut-pg-desc">To use the Aletheia connector to access stock data, we first must add the connector as a data source for our app.</p>
+            <img class="col-img" style="width: 70%;" src="collateral/datasource.PNG">
+            <p class="tut-pg-desc">Select "Add data" and find the <b>Aletheia</b> connector.</p>
+            <img class="col-img" style="width: 45%;" src="collateral/findaletheia.PNG">
+            <p class="tut-pg-desc">If this is your first time using the Aletheia connector in this environment, you will be asked to input your API key. This is the API key you received when <a href="../../login/" target="_blank">registering for an Aletheia developer account</a>.</p>
+            <img class="col-img" style="width: 35%;" src="collateral/inputkey.PNG">
+
+            <!--Request data and display-->
+            <h2 class="step">Request and Display Data</h2>
+            <p class="tut-pg-desc">For this tutorial we will do a simple one-page app with a text input box where the user will enter in a stock symbol (i.e. MSFT, AAPL, GOOG, etc.) and click on a button to download and display the stock data.</p>
+            <p class="tut-pg-desc">Add a text input control and button like this:</p>
+            <img class="col-img" style="width: 70%;" src="collateral/basicinputs.PNG">
+            <p class="tut-pg-desc">Next, paste the following piece of Power Fx code into the "OnSelect" property for the button:</p>
+            <p class="code-block">Set(ThisStock, Aletheia.StockData(TextInput1.Text, {summary: true}))</p>
+            <img class="col-img" style="width: 85%;" src="collateral/getdata.PNG">
+            <p class="tut-pg-desc">Explaining the above code, this code is setting a new global variable called <b>ThisStock</b> to a stock data object. We are passing two parameters to the <b>StockData</b> action. The first parameter is the stock symbol that comes from the text content of <b>TextInput1</b>. The second is providing <b>true</b> to the <b>summary</b> parameter, indicating that we would like to access summary data about this stock (company name, price, volumes, market cap, etc).</p>
+            <p class="tut-pg-desc">Next, add a label (text label) to display data in your app.</p>
+            <p class="tut-pg-desc">Set the <b>Text</b> property of your label to:</p>
+            <p class="code-block">"$"&ThisStock.Summary.Price</p>
+            <img class="col-img" style="width: 90%;" src="collateral/displayprice.PNG">
+            <p class="tut-pg-desc">You will likely see with the Power Fx intellisense, there are many more properties you can use from the <b>Summary</b> object in the <b>ThisStock</b> variable. Add additional labels to your app to display these datapoints:</p>
+            <img class="col-img" style="width: 80%;" src="collateral/appexample.PNG">
+
+
+        </div>
+
+        <!--Dead space-->
+        <div style="width: 100%; height: 60px;"></div>
+    </body>
+</html>
