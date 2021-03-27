@@ -27,7 +27,7 @@
             <!--Prepare your watchlist-->
             <h2 class="step">Prepare your Watchlist</h2>
             <p class="tut-pg-desc">We will be storing a list of stocks (our "watchlist") in an Excel spreadsheet in our OneDrive. Create a new Excel spreadsheet in OneDrive that looks like the following.</p>
-            <img class="col-img" src="collateral/wl.PNG" style="width: 60%;">
+            <img class="col-img" src="collateral/wl.PNG" style="width: 60%;" alt="Make a watchlist in excel online">
             <p class="tut-pg-desc">Please note that <b>your watchlist must be in a table</b>!  Power Automate can only read rows out of a table, so be sure to convert your watchlist to a table before moving on.</p>
             <p class="tut-pg-desc">By storing your watchlist in an online spreadsheet like this, you can dynamically change the stocks (add or remove) and the workflow we set up will always use the most up-to-date version of your watchlist.</p>
 
@@ -35,52 +35,52 @@
             <h2 class="step">Create a new Power Automate Workflow</h2>
             <p class="tut-pg-desc">First, we need to create a new Power Automate workflow. This workflow will contain the logic that will perform on a daily basis.</p>
             <p class="tut-pg-desc">Navigate to <a href="flow.microsoft.com">flow.microsoft.com</a> in a new browser tab and click on "Create" on the left-hand menu.</p>
-            <img src="collateral/create.PNG" class="col-img" style="width: 60%;">
+            <img src="collateral/create.PNG" class="col-img" style="width: 60%;" alt="Create a new Power Automate flow">
             <p class="tut-pg-desc">We want our flow to run once per day at a predetermined time. For this, we will select a <a href="https://docs.microsoft.com/en-us/power-automate/run-scheduled-tasks">Scheduled Flow</a>.</p>
-            <img src="collateral/scheduled.PNG" class="col-img" style="width: 80%;">
+            <img src="collateral/scheduled.PNG" class="col-img" style="width: 80%;" alt="Select Scheduled for the trigger to your Power Automate flow">
             <p class="tut-pg-desc">Configure your flow to trigger with the following specifications:</p>
-            <img src="collateral/timing.PNG" class="col-img" style="width: 70%;">
+            <img src="collateral/timing.PNG" class="col-img" style="width: 70%;" alt="Set up the flow's trigger timing">
             
             <h2 class="step">Gather resources for your workflow</h2>
             <p class="tut-pg-desc">Click on new step to add a new step to your flow. If the spreadsheet containing your watchlist is in OneDrive for personal use, select the "Excel Online (OneDrive)" connector. If it is in OneDrive for Business, select the "Excel Online (Business)" connector.</p>
             <p class="tut-pg-desc">Select the <b>List rows present in a table</b> action.</p>
-            <img src="collateral/listrows.PNG" class="col-img" style="width: 50%;">
+            <img src="collateral/listrows.PNG" class="col-img" style="width: 50%;" alt="List rows from your watchlist">
             <p class="tut-pg-desc">Fill in the details of the action with the details that pertain to your watchlist spreadsheet.</p>
-            <img src="collateral/fillout.PNG" class="col-img" style="width: 50%;">
+            <img src="collateral/fillout.PNG" class="col-img" style="width: 50%;" alt="Fill out the list rows action">
             <p class="tut-pg-desc">Add a new step by selectin "+ New Step" and search for "Variable". Select the "Initialize Variable" action. This variable will serve as the body of our email.</p>
-            <img src="collateral/init.PNG" class="col-img" style="width: 60%;">
+            <img src="collateral/init.PNG" class="col-img" style="width: 60%;" alt="Make a new string variable that will serve as our email body">
 
             <h2 class="step">Compile Stock Data</h2>
             <p class="tut-pg-desc">We now have all of the resources required for our flow. We will now loop through each of the stocks from our watchlist, gather data, and place that in our variable which will later be sent out via email.</p>
             <p class="tut-pg-desc">To loop through a list ("array") of objects, we will use the <b>Apply to each</b> action from the <b>Control</b> built-in connector.</p>
             <p class="tut-pg-desc">For the <i>Select an output from previous steps</i> input, plug in the <b>value</b> from the Dynamic Content pane. You will find this property beneath the name of the action which listed the rows from the Excel table - called "List rows present in a table" in my example.</p>
-            <img class="col-img" style="width: 80%;" src="collateral/loop.PNG">
+            <img class="col-img" style="width: 80%;" src="collateral/loop.PNG" alt="Add a Apply to each loop">
             <p class="tut-pg-desc">Next, click on "Add an action" in the "Apply to each" control to add an action that will be carried out for each stock symbol.</p>
             <p class="tut-pg-desc">Find the <b>Aletheia</b> connector under the Premium tab.</p>
-            <img class="col-img" style="width: 60%;" src="collateral/findaletheia.PNG">
+            <img class="col-img" style="width: 60%;" src="collateral/findaletheia.PNG" alt="Find the Aletheia connector">
             <p class="tut-pg-desc">Select the <b>Get Stock Data</b> action.</p>
-            <img class="col-img" style="width: 60%;" src="collateral/stockdata.PNG">
+            <img class="col-img" style="width: 60%;" src="collateral/stockdata.PNG" alt="Select the Get Stock Data action in the Aletheia connector">
             <p class="tut-pg-desc">If this is your first time using the Aletheia connector, Power Automate will likely prompt you to input your API key. Enter in the API key you were supplied with when registering for an Aletheia developer account. Register for a free account at <a href="https://aletheiaapi.com/login">https://aletheiaapi.com/login</a>.</p>
             <p class="tut-pg-desc">Give your connection to the API a name (doesn't have to be anything meaningful) and enter your API key into the "API Key" input.</p>
-            <img class="col-img" style="width: 60%;" src="collateral/create-con.PNG">
+            <img class="col-img" style="width: 60%;" src="collateral/create-con.PNG" alt="Create your connection by providing your Aletheia API key">
             <p class="tut-pg-desc">After creating your new connection, plug in the value <b>My Watch List</b> into the <i>Symbol</i> input, and flip the <i>Include summary data</i> input to "Yes".</p>
-            <img class="col-img" style="width: 70%;" src="collateral/pluginstock.PNG">
+            <img class="col-img" style="width: 70%;" src="collateral/pluginstock.PNG" alt="Plug in stock data">
             <p class="tut-pg-desc">We want to format our change percentages with a standard format, for example two trailing decimals. To do this we will use the <b>Format Number</b> action from the <b>Number Functions</b> connector.</p>
             <p class="tut-pg-desc">Enter the following inputs into the <b>Format number</b> action:</p>
-            <img class="col-img" style="width: 70%;" src="collateral/formatnumber.PNG">
+            <img class="col-img" style="width: 70%;" src="collateral/formatnumber.PNG" alt="Format this stock's percent change">
             <p class="tut-pg-desc">Finally, we have to append this information to the string variable that we set up earlier. Click on new step and search for "variable". Select the "Append to string variable" action.</p>
             <p class="tut-pg-desc">Append the following dynamic content chain to the string variable like so:</p>
-            <img class="col-img" style="width: 70%;" src="collateral/append.PNG">
+            <img class="col-img" style="width: 70%;" src="collateral/append.PNG" alt="Append this stock data to your variable">
             <p class="tut-pg-desc">Summing up this last section, this is what you should now have inside the <b>Apply to each</b> loop:</p>
-            <img class="col-img" style="width: 60%;" src="collateral/apply-to-each.PNG">
+            <img class="col-img" style="width: 60%;" src="collateral/apply-to-each.PNG" alt="Your full Apply to each loop">
 
             <h2 class="step">Send the Email</h2>
             <p class="tut-pg-desc">Our final step is to now send the email with the content that we have compiled. Up to this point, out workflow has compiled a long email body of our watchlist and each stock's price and day performance. Now we will plug this body into an email and send it.</p>
             <p class="tut-pg-desc">Click on <b>+ New step</b> after your <b>Apply to each</b> bracket.</p>
             <p class="tut-pg-desc">Select the <b>Mail</b> connector and then select the <b>Send an email notification</b> action.</p>
-            <img class="col-img" style="width: 60%;" src="collateral/selectmail.PNG">
+            <img class="col-img" style="width: 60%;" src="collateral/selectmail.PNG" alt="Select the Email connector">
             <p class="tut-pg-desc">Address the email to yourself like this:</p>
-            <img class="col-img" style="width: 60%;" src="collateral/emailinputs.PNG">
+            <img class="col-img" style="width: 60%;" src="collateral/emailinputs.PNG" alt="Plug in the email inputs">
 
             <p class="tut-pg-desc">And that is it! Save your flow and click on "Run" to give it a try.</p>
             
