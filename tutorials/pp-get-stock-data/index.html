@@ -51,7 +51,24 @@
             <p class="tut-pg-desc">You will likely see with the Power Fx intellisense, there are many more properties you can use from the <b>Summary</b> object in the <b>ThisStock</b> variable. Add additional labels to your app to display these datapoints:</p>
             <img class="col-img" style="width: 80%;" src="collateral/appexample.PNG">
 
+            <!--Access through power automate-->
+            <h2 class="tutorial-section-title" style="margin-top: 50px;">In Power Automate</h2>
 
+            <h2 class="step">Use the Aletheia Connector</h2>
+            <p class="tut-pg-desc">Add a new step to your flow. Find the <b>Aletheia</b> connector under the Premium tab:</p>
+            <img class="col-img" style="width: 60%;" src="collateral/aletheia-con.PNG">
+            <p class="tut-pg-desc">After selecting the Aletheia connector, select the <b>Get Stock Data</b> action.</p>
+            <img class="col-img" style="width: 60%;" src="collateral/get-stock-data.PNG">
+            <p class="tut-pg-desc">If this is your first time using the Aletheia connector in this environment, you may be prompted to make a new connection by inputting your Aletheia API key and connection name. Use the API key that was provided to you when <a href="../../login/" target="_blank">registering for an Aletheia account.</a></p>
+            <p class="tut-pg-desc">The <b>Get Stock Data</b> action has three input parameters: <b>Symbol</b>, <b>Include summary data</b>, and <b>Include statistical data</b>.</p>
+            <ul>
+                <li><p class="tut-pg-desc">The <b>Symbol</b> parameter is the trading symbol of the security (stock, bond, cryptocurrency, etc.).</p></li>
+                <li><p class="tut-pg-desc">The <b>Include summary data</b> parameter indicates if you are requesting summary data to be returned for this security. Summary data includes information such as company name, price, market cap, volume, and more.</p></li>
+                <li><p class="tut-pg-desc">The <b>Include statistical data</b> parameter indicates if you are requesting statistical data to be returned for this security. Statistical data includes information such as last dividend split date and factor, Price/Sales ratio, Cash per share, and more.</p></li>
+            </ul>
+            <p class="tut-pg-desc">Your can use the returned data in downstream actions in your workflow by leveraging the propeties in <b>Dynamic content</b>. All properties are well named and described.</p>
+            <img class="col-img" style="width: 45%;" src="collateral/dynamiccontent.PNG">
+        
         </div>
 
         <!--Dead space-->
