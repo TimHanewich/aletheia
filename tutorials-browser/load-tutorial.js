@@ -4,21 +4,46 @@ var tutorial_id = ThisUrl.searchParams.get("tutorial");
 
 if(tutorial_id == "pp-watchlist-update")
 {
-    LoadTutorial("../tutorials/pp-watchlist-update/index.html", "Tutorial - End of Day Watchlist Summary");
+    var path = "../tutorials/pp-watchlist-update/index.html";
+    var title = "Tutorial - End of Day Watchlist Summary";
+    var desc = null;
+    LoadTutorial(path, title, desc);
 }
 else if (tutorial_id == "pp-get-stock-data")
 {
-    LoadTutorial("../tutorials/pp-get-stock-data/index.html", "Access Stock Data in Power Apps/Automate - Aletheia");
+    var path = "../tutorials/pp-get-stock-data/index.html";
+    var title = "Access Stock Data in Power Apps/Automate - Aletheia";
+    var desc = "Use the Aletheia connector in Power Apps and Power Automate to get stock/crypto prices and other financial data including day change, opening price, volume, and more.";
+    LoadTutorial(path, title, desc);
 }
 else
 {
     window.alert("Tutorial '" + tutorial_id + "' not recognized.");
 }
 
-function LoadTutorial(path, update_page_title)
+function LoadTutorial(path, update_page_title, meta_description)
 {
-    document.getElementById("tutorial-content").setAttribute("src", path);
-    document.title = update_page_title;
+    //Set page title
+    if (update_page_title != null)
+    {
+        document.title = update_page_title;
+    }
+    
+    //Set meta description
+    if (meta_description != null)
+    {
+        document.getElementsByName("description")[0].setAttribute("content", meta_description);
+    }
+    else
+    {
+        document.getElementsByName("description")[0].remove();
+    }
+    
+    //Fill in tutorial into the iframe
+    if (update_page_title != null)
+    {
+        document.getElementById("tutorial-content").setAttribute("src", path);
+    }
 
     //Make the request for the content
     var req = new XMLHttpRequest();
