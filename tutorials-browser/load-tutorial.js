@@ -71,7 +71,6 @@ function LoadTutorial(path, update_page_title, meta_description)
                 ele_step.appendChild(ele_title);
 
                 document.getElementById("navigation-container").appendChild(ele_step);
-                console.log("Added");
             });
         }
     };
