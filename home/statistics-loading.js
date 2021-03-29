@@ -4,6 +4,8 @@ var stat_SecFilings = 0;
 var stat_Companies = 0;
 var stat_Insiders = 0;
 var stat_Transactions = 0;
+var stat_FactContexts = 0;
+var stat_FinancialFacts = 0;
 
 ///////////////////////////////////
 
@@ -77,6 +79,40 @@ function LoadStats()
         }
     }
     req_transactions.send();
+
+    //Fact Contexts
+    var req_FactContexts = new XMLHttpRequest();
+    req_FactContexts.open("get", "https://api.aletheiaapi.com/CountFactContexts");
+    req_FactContexts.onreadystatechange = function()
+    {
+        if (req_FactContexts.readyState == 4 && req_FactContexts.status == 200)
+        {
+            stat_FactContexts = parseInt(req_FactContexts.responseText);
+
+            //Set
+            document.getElementById("stat_FactContexts").innerText = stat_FactContexts.toLocaleString('en');
+
+            StartUpTick("stat_FactContexts", 3, 500);
+        }
+    }
+    req_FactContexts.send();
+
+    //Financial Facts
+    var req_FinancialFacts = new XMLHttpRequest();
+    req_FinancialFacts.open("get", "https://api.aletheiaapi.com/CountFinancialFacts");
+    req_FinancialFacts.onreadystatechange = function()
+    {
+        if (req_FinancialFacts.readyState == 4 && req_FinancialFacts.status == 200)
+        {
+            stat_FinancialFacts = parseInt(req_FinancialFacts.responseText);
+
+            //Set
+            document.getElementById("stat_FinancialFacts").innerText = stat_FinancialFacts.toLocaleString('en');
+
+            StartUpTick("stat_FinancialFacts", 5, 250);
+        }
+    }
+    req_FinancialFacts.send();
 }
 
 LoadStats();
