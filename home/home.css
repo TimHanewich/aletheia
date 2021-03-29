@@ -386,6 +386,17 @@ response-example-comment
     margin-top: 15px;
 }
 
+.service-stats2
+{
+    display: grid;
+    grid-template-areas: "stat1 stat2";
+    grid-template-columns: 50% 50%;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
 .service-stat
 {
     position: relative;
