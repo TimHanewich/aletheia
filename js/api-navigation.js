@@ -85,4 +85,13 @@ $("#navep_FinancialFactTrend").click(function()
     $("#ep_FinancialFactTrend")[0].scrollIntoView();
 });
 
+$("#navep_CountFactContexts").click(function()
+{
+    $("#ep_CountFactContexts")[0].scrollIntoView();
+})
+
+$("#navep_CountFinancialFacts").click(function()
+{
+    $("#ep_CountFinancialFacts")[0].scrollIntoView();
+});
 

@@ -113,6 +113,14 @@
                             <div class="api-verb api-verb-get">GET</div>
                             <div class="api-ep">Count Transactions</div> 
                         </div>
+                        <div id="navep_CountFactContexts" class="api-verb-ep-pair clickable">
+                            <div class="api-verb api-verb-get">GET</div>
+                            <div class="api-ep">Count Fact Contexts</div> 
+                        </div>
+                        <div id="navep_CountFinancialFacts" class="api-verb-ep-pair clickable">
+                            <div class="api-verb api-verb-get">GET</div>
+                            <div class="api-ep">Count Financial Facts</div> 
+                        </div>
 
                     </div>
 
@@ -832,6 +840,35 @@
                                     <div class="api-verb api-verb-get">GET</div>
                                     <div class="api-ep-area code-block">https://api.aletheiaapi.com/CountTransactions</div>
                                 </div>
+                            </div>
+
+                            <!--Count Fact Contexts-->
+                            <div class="api-ep-documentation">
+                                <h3 id="ep_CountFactContexts" class="api-title">Count Fact Contexts</h3>
+                                <p class="api-desc">Count the number of Fact Contexts that are available for consumption from the <b>Fundamentals</b> service category.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/CountFactContexts</div>
+                                </div>
+                            </div>
+
+                            <!--Count Financial Facts-->
+                            <div class="api-ep-documentation">
+                                <h3 id="ep_CountFinancialFacts" class="api-title">Count Financial Facts</h3>
+                                <p class="api-desc">Count the number of financial data points that have been collected and are available for consumption from the <b>Fundamentals</b> service category. You can count the number of data points in overall or narrow down to data points belonging to a specific company.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/CountFinancialFacts</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>id</api-param> - Provide the CIK or trading symbol if you would like to only count the number of datapoints that exist for a particular company.</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/CountFinancialFacts</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/CountFinancialFacts?id=MSFT</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/CountFinancialFacts?id=789019</div>
                             </div>
 
                         </div>
