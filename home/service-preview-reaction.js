@@ -33,6 +33,10 @@ $(".service-preview").mouseover(function()
         {
             descCont = "Our service scans hundreds of thousands of financial statement filings and presents these financial statements in an easily accessible and interpretable manner. Financial data between any two companies will be congruent in format to allow for direct comparison."
             bg_img_src = "home/wallpaper_background/Fundamentals.jpg";
+        
+            gcr_ToGetContent = "All of Procter & Gamble's annual revenue results since 2017";
+            gcr_YouCallContent = "api.aletheiaapi.com/FinancialFactTrend?id=PG&label=0&period=0&after=20170101";
+            gcr_AndReceiveContent = "[<br><tabspace></tabspace>{<br><tabspace></tabspace><tabspace></tabspace>\"PeriodStart\": \"2016-07-01T00:00:00\",<br><tabspace></tabspace><tabspace></tabspace>\"PeriodEnd\": \"2017-06-30T00:00:00\",<br><tabspace></tabspace><tabspace></tabspace>\"Value\": 65058000000.0<br><tabspace></tabspace>},<br><tabspace></tabspace>{<br><tabspace></tabspace><tabspace></tabspace>\"PeriodStart\": \"2017-07-01T00:00:00\",<br><tabspace></tabspace><tabspace></tabspace>\"PeriodEnd\": \"2018-06-30T00:00:00\",<br><tabspace></tabspace><tabspace></tabspace>\"Value\": 66832000000.0<br><tabspace></tabspace>},<br><tabspace></tabspace>{<br><tabspace></tabspace><tabspace></tabspace>\"PeriodStart\": \"2018-07-01T00:00:00\",<br><tabspace></tabspace><tabspace></tabspace>\"PeriodEnd\": \"2019-06-30T00:00:00\",<br><tabspace></tabspace><tabspace></tabspace>\"Value\": 67684000000.0<br><tabspace></tabspace>},<br><tabspace></tabspace>{<br><tabspace></tabspace><tabspace></tabspace>\"PeriodStart\": \"2019-07-01T00:00:00\",<br><tabspace></tabspace><tabspace></tabspace>\"PeriodEnd\": \"2020-06-30T00:00:00\",<br><tabspace></tabspace><tabspace></tabspace>\"Value\": 70950000000.0<br><tabspace></tabspace>}<br>]";
         }
         else if (ele_id == "sp_InsiderTrading")
         {
