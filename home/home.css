@@ -179,7 +179,7 @@ body
 .showcase-content
 {
     position: relative;
-    margin-top: 50px;
+    margin-top: 10px;
     width: 75%;
     left: 50%;
     transform: translateX(-50%);
@@ -536,5 +536,28 @@ response-example-comment
     line-height: 43px;
     text-align: center;
     text-transform: uppercase;
+}
+
+.pp-con-announcement
+{
+    height: 55px;
+    width: 100%;
+    background-color: rgb(116, 39, 117);
+    margin-top: 10px;
+    color: #FDFDFD;
+    font-size: 20px;
+    text-align: center;
+    line-height: 55px;
+}
+
+.party-popper
+{
+    font-size: 28px;
+    line-height: 55px;
+}
+
+.announcement-link
+{
+    color: #FDFDFD;
 }
 
