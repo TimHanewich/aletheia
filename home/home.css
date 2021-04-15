@@ -306,12 +306,14 @@ body
 
 .demo-content-title
 {
-    text-align: center;
+    text-align: left;
     font-size: 30px;
-    font-weight: bold;
     margin: 0px;
+    font-weight: lighter;
     line-height: 45px;
     color: #FDFDFD;
+    text-transform: uppercase;
+    font-size: 25px;
 }
 
 .demo-content-cont
@@ -319,27 +321,25 @@ body
     display: grid;
     grid-template-areas: "title"
     "content";
-    grid-template-rows: 45px 1fr;
+    grid-template-rows: 40px auto;
     position: relative;
+    width: 100%;
 }
 
 .demo-content
 {
     margin: 0px;
-    text-align: center;
+    text-align: left;
     font-size: 20px;
-    margin-top: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    word-wrap: break-word;
+    line-height: 24px;
+    word-wrap: unset;
     color: #FDFDFD;
-}
+    background-color: #40405E;
+    padding: 8px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #7C7C96;
 
-.colored-background
-{
-    background-color: rgba(255, 216, 88, 0.1);
-    border-radius: 20px;
-    padding: 12px;
 }
 
 .response-example-cont
