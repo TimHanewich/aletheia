@@ -323,16 +323,6 @@ body
     position: relative;
 }
 
-.get-area
-{
-    grid-area: get;
-}
-
-.call-area
-{
-    grid-area: call;
-}
-
 .demo-content
 {
     margin: 0px;
