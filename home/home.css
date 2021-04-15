@@ -189,7 +189,7 @@ body
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 50% 50%;
-    margin-top: 15px;
+    margin-top: 30px;
 }
 
 .showcase-content
