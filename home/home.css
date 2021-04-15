@@ -176,6 +176,12 @@ body
     opacity: 100%;
 }
 
+.showcase-area
+{
+    width: 100%;
+    background-color: navy;
+}
+
 .showcase-content
 {
     position: relative;
@@ -183,7 +189,7 @@ body
     width: 75%;
     left: 50%;
     transform: translateX(-50%);
-    z-index: -1;
+    z-index: 0;
 }
 
 .splash-text
