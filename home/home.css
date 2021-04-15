@@ -210,6 +210,7 @@ body
     color: #1c1c1c;
     margin: 0px;
     line-height: 56px;
+    margin-top: 30px;
 }
 
 .splash-text-desc
@@ -220,7 +221,7 @@ body
     color: #a5a5a3;
     z-index: 2;
     margin-top: 6px;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
     line-height: 30px;
     text-transform: uppercase;
 }
