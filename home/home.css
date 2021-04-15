@@ -263,6 +263,7 @@ body
     word-wrap: break-word;
     width: 85%;
     color: #FDFDFD;
+    line-height: 30px;
 }
 
 .aletheia-header
