@@ -321,9 +321,10 @@ body
     display: grid;
     grid-template-areas: "title"
     "content";
-    grid-template-rows: 40px auto;
+    grid-template-rows: 42px auto;
     position: relative;
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .demo-content
@@ -353,7 +354,7 @@ body
 
 .response-example
 {
-    max-height: 600px;  
+    max-height: 400px;  
     overflow-y: scroll; 
     overflow-x: scroll;
     white-space: nowrap;
