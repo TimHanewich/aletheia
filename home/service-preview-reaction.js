@@ -116,3 +116,6 @@ async function SwitchServiceDescription(service_desc)
 
 //Fade the get, call, receive section out because it will be blank by default when the page first loads
 $(".get-call-receive").fadeOut(1);
+
+//Start off by loading a service preview
+setTimeout(function(){document.getElementById("sp_StockData").click();}, 1000);
