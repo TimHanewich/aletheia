@@ -179,7 +179,7 @@ body
 .showcase-area
 {
     width: 100%;
-    background-color: #000354;
+    background-color: rgba(0, 3, 84, 0.2);
     overflow: auto;
 }
 
