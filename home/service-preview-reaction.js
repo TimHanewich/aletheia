@@ -85,13 +85,6 @@ $(".service-preview").mouseover(function()
     
 })
 
-$(".service-preview").mouseleave(function()
-{
-    var ele_jq = $(this)
-    ele_jq.find(".service-preview-symb")[0].classList.remove("service-preview-symb-gold");
-    ele_jq.find(".service-preview-symb")[0].classList.add("service-preview-symb-norm");
-})
-
 async function SwitchServiceBackgroundImage(img_src)
 {
     var ele_bg_img = $("#showcase-bg-img");
