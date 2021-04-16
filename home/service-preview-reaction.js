@@ -1,7 +1,9 @@
 var LastLoadedPreviewId = "";
 
-$(".service-preview").mouseover(function()
+$(".service-preview").click(function()
 {
+    RemoveAllHighlights();
+
     var ele_id = this.id;
     var ele_jq = $(this)
 
@@ -84,6 +86,12 @@ $(".service-preview").mouseover(function()
     LastLoadedPreviewId = ele_id;
     
 })
+
+function RemoveAllHighlights()
+{
+    $(".service-preview").find(".service-preview-symb").removeClass("service-preview-symb-gold");
+    $(".service-preview").find(".service-preview-symb").addClass("service-preview-symb-norm");
+}
 
 async function SwitchServiceBackgroundImage(img_src)
 {
