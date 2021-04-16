@@ -250,7 +250,7 @@ body
 
 .service-preview-symb-norm
 {
-    background-color: #FDFDFD;
+    background-color: #1c1c1c;
 }
 
 .service-preview-symb-gold
@@ -264,7 +264,7 @@ body
     line-height: 30px;
     font-size: 30px;
     display: inline;
-    color: #FDFDFD;
+    color: #1c1c1c;
 }
 
 #service-description
@@ -274,7 +274,7 @@ body
     font-size: 22px;
     word-wrap: break-word;
     width: 85%;
-    color: #FDFDFD;
+    color: #1c1c1c;
     line-height: 30px;
 }
 
@@ -310,9 +310,9 @@ body
     text-align: left;
     font-size: 30px;
     margin: 0px;
-    font-weight: lighter;
+    font-weight: normal;
     line-height: 45px;
-    color: #FDFDFD;
+    color: #1c1c1c;
     text-transform: uppercase;
     font-size: 25px;
 }
