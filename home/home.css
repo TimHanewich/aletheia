@@ -237,6 +237,7 @@ body
     margin-top: 5px;
     margin-right: 15px;
     padding-bottom: 5px;
+    cursor: pointer;
 }
 
 .service-preview-selected
