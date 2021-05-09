@@ -316,3 +316,8 @@ custom-txt
     margin-bottom: 8px;
     line-height: 22px;
 }
+
+.no-decor
+{
+    text-decoration: none;
+}
