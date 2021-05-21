@@ -118,4 +118,4 @@ async function SwitchServiceDescription(service_desc)
 $(".get-call-receive").fadeOut(1);
 
 //Start off by loading a service preview
-setTimeout(function(){document.getElementById("sp_StockData").click();}, 500);
+setTimeout(function(){document.getElementById("sp_InsiderTrading").click();}, 500);
