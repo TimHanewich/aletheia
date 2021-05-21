@@ -17,8 +17,8 @@ body
     margin-top: 12px;
 
     display: grid;
-    grid-template-areas: "tab1 tab2 tab3 tab4";
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "tab1 tab2 tab3 tab4 tab5";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .tab-button
