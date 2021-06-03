@@ -36,6 +36,7 @@
 {
     text-align: center;
     background-color: #EEEEEE;
+    font-size: 20px;
 }
 
 .table-content
@@ -52,4 +53,25 @@
 .pricing-content
 {
     font-size: 22px;
+}
+
+.t3
+{
+    background-color: #FFD858;
+}
+
+.t2
+{
+    background-color: #FFF0BE;
+}
+
+.t1
+{
+    background-color: #FDF9EB;
+}
+
+.callpermonthstat
+{
+    font-size: 20px;
+    font-weight: bold;
 }
