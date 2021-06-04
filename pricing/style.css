@@ -82,3 +82,15 @@
     line-height: 25px;
     margin-top: 0px;
 }
+
+#ContactSales
+{
+    width: 22%;
+    height: 50px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+    background-color: #FFE99F;
+    font-size: 18px;
+}
