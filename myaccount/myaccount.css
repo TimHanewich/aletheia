@@ -102,3 +102,15 @@
     color: rgb(0, 242, 0);
     border-color: rgb(0, 242, 0);
 }
+
+.api-key-details-list
+{
+    margin: 0px;
+}
+
+.api-key-details-list > li
+{
+    margin: 0px;
+    line-height: 25px;
+    font-size: 18px;
+}
