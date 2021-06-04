@@ -14,11 +14,11 @@
     </url>
     <url>
         <loc>https://aletheiaapi.com/tutorials-browser/index.html?tutorial=pp-get-stock-data</loc>
-        <priority>0.5</priority>
+        <priority>0.3</priority>
     </url>
     <url>
         <loc>https://aletheiaapi.com/tutorials-browser/index.html?tutorial=pp-watchlist-update</loc>
-        <priority>0.5</priority>
+        <priority>0.3</priority>
     </url>
     <url>
         <loc>https://aletheiaapi.com/terms/</loc>
