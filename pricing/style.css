@@ -75,3 +75,10 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+.pricing-txt
+{
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 0px;
+}
