@@ -18,8 +18,9 @@ function AddApiKey(key:string) : void
     var dtl:HTMLElement = document.createElement("ul");
     dtl.classList.add("api-key-details-list");
     AddToList(dtl, "Tier: Tier One");
-    var callsThisMonthId:string = AddToList(dtl, "Calls this month: counting...");
     AddToList(dtl, "Calls/month quota: 5,000");
+    var callsThisMonthId:string = AddToList(dtl, "Calls this month: counting...");
+    
 
 
     //Add to the div
