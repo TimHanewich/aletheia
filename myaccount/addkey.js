@@ -21,6 +21,16 @@ function AddApiKey(key) {
     document.getElementById("my-api-keys").appendChild(ele);
     //Add the detials list to the div (below the one above)
     document.getElementById("my-api-keys").appendChild(dtl);
+    //Make the call to get the calls this month count
+    var thisMonth = new Date().getMonth() + 1; //Add one because this will return a 0-based (January is 0). The API takes 1 is january.
+    var thisYear = new Date().getFullYear();
+    var req = new XMLHttpRequest();
+    req.open("get", "https://api.aletheiaapi.com/consumption?year=" + thisYear.toString() + "&month=" + thisMonth.toString());
+    req.setRequestHeader("key", key);
+    req.onreadystatechange = function () {
+        document.getElementById(callsThisMonthId).innerText = "Calls this month: " + req.responseText;
+    };
+    req.send();
 }
 function AddToList(lst, txt) {
     var li = document.createElement("li");
