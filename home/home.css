@@ -695,5 +695,61 @@ response-example-comment
     margin-bottom: 20px;
 }
 
+.follow-on-twitter-sect
+{
+    width: 100%;
+    background-color: rgb(29, 161, 242);
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
 
+.twitter-feature
+{
+    width: 70%;
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 50% 50%; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
+.twitter-feature-txt
+{
+    width: 95%;
+    display: block;
+    margin-left: auto;
+    font-family: Gotham;
+    color: #FDFDFD;
+}
+
+@font-face
+{
+    font-family: Gotham;
+    src: url(../branding/fonts/GothamLight.ttf);
+}
+
+.follow-on-twitter-h
+{
+    font-family: inherit;
+    font-size: 32px;
+    color: inherit;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.follow-on-twitter-desc
+{
+    font-family: inherit;
+    font-size: 22px;
+    color: inherit;
+    margin-top: 10px;
+}
+
+.twitter-tag
+{
+    text-decoration: underline;
+    color: inherit;
+}
