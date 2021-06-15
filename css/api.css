@@ -258,6 +258,8 @@ api-param
     overflow-wrap: break-word;
     text-overflow: clip;
     word-break: break-all;
+    font-size: 16px;
+    line-height: 18px;
 }
 
 .response-example-openclose

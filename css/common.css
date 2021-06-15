@@ -104,4 +104,5 @@ response-example-comment
     display: inline-block;
     color: red;
     font-weight: bold;
+    line-height: inherit;
 }
