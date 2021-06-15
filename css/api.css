@@ -255,11 +255,11 @@ api-param
     letter-spacing: -0.5px;
     width: 100%;
     position: relative;
-    overflow-wrap: break-word;
-    text-overflow: clip;
-    word-break: break-all;
     font-size: 16px;
     line-height: 18px;
+    overflow-x: scroll;
+    word-wrap: normal;
+    white-space: nowrap;
 }
 
 .response-example-openclose
