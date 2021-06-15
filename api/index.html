@@ -612,7 +612,13 @@
                                 <div class="code-block req-example">https://api.aletheiaapi.com/GetEntity?id=msft</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
-                                    <div class="response-example">{"Cik":66740,"Name":"3M CO","TradingSymbol":"MMM"}</div>
+                                    <div class="response-example">
+                                        {<br>
+                                            <tabspace></tabspace>"Cik":66740, <response-example-comment> - The SEC-assigned Central Index Key (CIK) of this company/person</response-example-comment><br>
+                                            <tabspace></tabspace>"Name":"3M CO", <response-example-comment> - Company/person name</response-example-comment><br>
+                                            <tabspace></tabspace>"TradingSymbol":"MMM"<response-example-comment> - If the entity is a company, the trading symbol. If a person, this will be null.</response-example-comment><br>
+                                        }
+                                    </div>
                                 </div>
                             </div>
 
@@ -641,7 +647,19 @@
                                 <div class="code-block req-example scrollable-code">https://api.aletheiaapi.com/GetFiling?url=https://www.sec.gov/Archives/edgar/data/885725/000122520815006628/0001225208-15-006628-index.htm</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
-                                    <div class="response-example">{"Id":"70ebab7c-af6e-47e2-963a-0000b688ca7e","FilingUrl":"https://www.sec.gov/Archives/edgar/data/885725/000122520815006628/0001225208-15-006628-index.htm","AccessionP1":1225208,"AccessionP2":15,"AccessionP3":6628,"FilingType":0,"ReportedOn":"2015-02-27T00:00:00","Issuer":885725,"_Issuer":null,"Owner":1533022,"_Owner":null}</div>
+                                    <div class="response-example">
+                                        {<br>
+                                            <tabspace></tabspace>"Id":"70ebab7c-af6e-47e2-963a-0000b688ca7e",<response-example-comment> - The unique ID of this filing in the Aletheia database</response-example-comment><br>
+                                            <tabspace></tabspace>"FilingUrl":"https://www.sec.gov/Archives/edgar/data/885725/000122520815006628/0001225208-15-006628-index.htm", <response-example-comment> - URL to the filing with the SEC</response-example-comment><br>
+                                            <tabspace></tabspace>"AccessionP1":1225208,<response-example-comment> - Part 1 of the accession number (SEC's ID for this filing)</response-example-comment><br>
+                                            <tabspace></tabspace>"AccessionP2":15,<response-example-comment> - Part 2 of the accession number (SEC's ID for this filing)</response-example-comment><br>
+                                            <tabspace></tabspace>"AccessionP3":6628,<response-example-comment> - Part 3 of the accession number (SEC's ID for this filing)</response-example-comment><br>
+                                            <tabspace></tabspace>"FilingType":0,<response-example-comment> - 0 = Form 4, 1 = Form 3, 2 = Form 5, 3 = 10-K, 4 = 10-Q</response-example-comment><br>
+                                            <tabspace></tabspace>"ReportedOn":"2015-02-27T00:00:00", <response-example-comment> - the date this filing was reported on</response-example-comment><br>
+                                            <tabspace></tabspace>"Issuer":885725, <response-example-comment> - The CIK (SEC-assigned ID) of the issuing company</response-example-comment><br>
+                                            <tabspace></tabspace>"Owner":1533022, <response-example-comment> - This field will only populate if applicable (it is a form 3, 4, or 5 and thus has an associated insider making the trade)</response-example-comment><br>
+                                        }
+                                    </div>
                                 </div>
                             </div>
 
