@@ -98,3 +98,10 @@ tabspace
     position: relative;
     background-color: brown;
 }
+
+response-example-comment
+{
+    display: inline-block;
+    color: red;
+    font-weight: bold;
+}
