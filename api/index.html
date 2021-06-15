@@ -734,7 +734,67 @@
                                 <div class="code-block req-example scrollable-code">https://api.aletheiaapi.com/LatestTransactions?owner=1783147&securitytype=1&transactiontype=0</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
-                                    <div class="response-example">[{"Id":"e3fd7062-5190-43a5-9aa0-26ce8ce2ddea","FromFiling":"c42b0232-45d3-48e6-8f27-b97621947d3b","EntryType":0,"QuantityOwnedFollowingTransaction":0.0,"DirectIndirect":1,"SecurityTitle":"Common Stock","SecurityType":0,"AcquiredDisposed":1,"Quantity":50.0,"PricePerSecurity":null,"TransactionDate":"2021-02-17T00:00:00","TransactionCode":1,"ConversionOrExercisePrice":null,"ExercisableDate":null,"ExpirationDate":null,"UnderlyingSecurityTitle":null,"UnderlyingSecurityQuantity":null},{"Id":"bf6b3afc-2591-48e6-8dda-0b62903fd38d","FromFiling":"01bf4617-5f19-4319-b378-c16a9d12190a","EntryType":0,"QuantityOwnedFollowingTransaction":1508.4543,"DirectIndirect":0,"SecurityTitle":"Common Stock","SecurityType":0,"AcquiredDisposed":0,"Quantity":289.0,"PricePerSecurity":null,"TransactionDate":"2021-02-05T00:00:00","TransactionCode":7,"ConversionOrExercisePrice":null,"ExercisableDate":null,"ExpirationDate":null,"UnderlyingSecurityTitle":null,"UnderlyingSecurityQuantity":null},{"Id":"d24bc278-dbc6-4d7f-a144-69bdcd81ad38","FromFiling":"d5ba901e-5002-413c-9358-b3445b66ccae","EntryType":0,"QuantityOwnedFollowingTransaction":252.47,"DirectIndirect":0,"SecurityTitle":"Common Stock","SecurityType":0,"AcquiredDisposed":0,"Quantity":252.47,"PricePerSecurity":null,"TransactionDate":"2021-02-05T00:00:00","TransactionCode":3,"ConversionOrExercisePrice":null,"ExercisableDate":null,"ExpirationDate":null,"UnderlyingSecurityTitle":null,"UnderlyingSecurityQuantity":null},{"Id":"0f73a4db-d887-4e90-bd54-7787fcc83cfd","FromFiling":"951ecf4e-b6be-405b-aef6-d474ddc01707","EntryType":0,"QuantityOwnedFollowingTransaction":50.0,"DirectIndirect":0,"SecurityTitle":"Common Stock","SecurityType":0,"AcquiredDisposed":1,"Quantity":21.0,"PricePerSecurity":null,"TransactionDate":"2021-02-05T00:00:00","TransactionCode":5,"ConversionOrExercisePrice":null,"ExercisableDate":null,"ExpirationDate":null,"UnderlyingSecurityTitle":null,"UnderlyingSecurityQuantity":null},{"Id":"8461e4a9-cd0f-48dd-beac-d3d274676b17","FromFiling":"01bf4617-5f19-4319-b378-c16a9d12190a","EntryType":0,"QuantityOwnedFollowingTransaction":1381.4543,"DirectIndirect":0,"SecurityTitle":"Common Stock","SecurityType":0,"AcquiredDisposed":1,"Quantity":127.0,"PricePerSecurity":null,"TransactionDate":"2021-02-05T00:00:00","TransactionCode":5,"ConversionOrExercisePrice":null,"ExercisableDate":null,"ExpirationDate":null,"UnderlyingSecurityTitle":null,"UnderlyingSecurityQuantity":null}]</div>
+                                    <div class="response-example">
+                                        [<br>
+                                            <tabspace></tabspace>{<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Id":"e3fd7062-5190-43a5-9aa0-26ce8ce2ddea",<response-example-comment> - The unique ID of this transaction in the Aletheia database</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"FromFiling":"c42b0232-45d3-48e6-8f27-b97621947d3b",<response-example-comment> - The unique ID of the SEC filing in the Aletheia database which this transaction stemmed from</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"EntryType":0,<response-example-comment> - 0 = Transaction, 1 = Holding (no changes, just reporting a held asset)</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"QuantityOwnedFollowingTransaction":0.0,<response-example-comment> - The quantity of securities the owner owns following this transaction</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DirectIndirect":1,<response-example-comment> - 0 = Direct ownership, 1 = Indirect ownership</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"SecurityTitle":"Common Stock",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"SecurityType":0,<response-example-comment> - 0 = non-derivative (equity based), 1 = derivative (i.e. options contract)</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"AcquiredDisposed":1,<response-example-comment> - 0 = acquired, 1 = disposed</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Quantity":50.0,<response-example-comment> - The quantity of securities acquired/disposed of</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"PricePerSecurity":null,<response-example-comment> - if applicable, the average acquisition or disposition price of the security</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"TransactionDate":"2021-02-17T00:00:00",<response-example-comment> - recorded transaction date</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"TransactionCode":1,<response-example-comment> - (see the "transactiontype" parameter above)</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ConversionOrExercisePrice":null,<response-example-comment> - if a derivative security, the exercise price of this contract</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ExercisableDate":null,<response-example-comment> - if a derivative security, the exercisable date of this contract</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ExpirationDate":null,<response-example-comment> - if a derivative security, the expiration date of this contract</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityTitle":null,<response-example-comment> - if a derivative security, the title of the contract's underlying security</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityQuantity":null<response-example-comment> - if a derivative security, the quantity of the contract's underlying security</response-example-comment><br>
+                                            <tabspace></tabspace>},<br>
+                                            <tabspace></tabspace>{<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Id":"bf6b3afc-2591-48e6-8dda-0b62903fd38d",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"FromFiling":"01bf4617-5f19-4319-b378-c16a9d12190a",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"EntryType":0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"QuantityOwnedFollowingTransaction":1508.4543,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DirectIndirect":0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"SecurityTitle":"Common Stock",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"SecurityType":0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"AcquiredDisposed":0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Quantity":289.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"PricePerSecurity":null,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"TransactionDate":"2021-02-05T00:00:00",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"TransactionCode":7,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ConversionOrExercisePrice":null,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ExercisableDate":null,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ExpirationDate":null,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityTitle":null,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityQuantity":null<br>
+                                            <tabspace></tabspace>},<br>
+                                            <tabspace></tabspace>{<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Id":"d24bc278-dbc6-4d7f-a144-69bdcd81ad38",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"FromFiling":"d5ba901e-5002-413c-9358-b3445b66ccae",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"EntryType":0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"QuantityOwnedFollowingTransaction":252.47,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DirectIndirect":0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"SecurityTitle":"Common Stock",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"SecurityType":0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"AcquiredDisposed":0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Quantity":252.47,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"PricePerSecurity":null,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"TransactionDate":"2021-02-05T00:00:00",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"TransactionCode":3,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ConversionOrExercisePrice":null,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ExercisableDate":null,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"ExpirationDate":null,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityTitle":null,<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityQuantity":null<br>
+                                            <tabspace></tabspace>},<br>
+                                        ]
+                                    </div>
                                 </div>
                             </div>
 
