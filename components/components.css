@@ -84,7 +84,6 @@
 {
     display: inline-block;
     position: relative;
-    color: #A5A5A3;
     padding: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -92,13 +91,12 @@
     margin-right: 15px;
     text-align: center;
     font-size: 19px;
-    line-height: 19px;
-    top: 50%;
-    transform: translateY(-50%);
+    line-height: 60px;
     text-transform: lowercase;
 }
 
 .no-dec-href
 {
     text-decoration: none;
+    color: #A5A5A3;
 }
