@@ -1,19 +1,25 @@
-.header-box
+.header-block
 {
     height: 60px;
     width: 100%;
+}
+
+.header-box
+{
+    height: 60px;
+    width: 95%;
     position: relative;
-    background-color: brown;
     display: grid;
     grid-template-areas: "wordmark center end";
     grid-template-columns: auto 1fr auto;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .wordmark-area
 {
     position: relative;
     height: 100%;
-    background-color: pink;
     grid-area: wordmark;
 }
 
@@ -32,18 +38,17 @@
     grid-area: end;
     width: 180px;
     height: 100%;
-    background-color: chartreuse;
 }
 
 .get-access-btn
 {
-    height: 90%;
+    height: 78%;
     top: 50%;
     position: relative;
     transform: translateY(-50%);
     border-style: solid;
     border-color: #A5A5A3;
-    border-width: 3px;
+    border-width: 2px;
     box-sizing: border-box;
     border-radius: 10px;
     background-color: #FFD858;
@@ -57,7 +62,7 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    font-weight: bold;
+    font-weight: bolder;
     color: #A5A5A3;
 }
 
@@ -66,7 +71,6 @@
     display: inline-block;
     height: 100%;
     width: max-content;
-    background-color: lime;
     grid-area: center;
     position: relative;
     left: 50%;
@@ -88,5 +92,5 @@
     line-height: 19px;
     top: 50%;
     transform: translateY(-50%);
-    text-transform: uppercase;
+    text-transform: lowercase;
 }
