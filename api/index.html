@@ -16,11 +16,8 @@
         <div class="full-page-content">
 
             <!--Top site navigation bar-->
-            <div class="top-site-nav inside-header-area">
-                <!--The branding-->
-                <div class="top-site-nav-branding">
-                    <h2 class="wordmark top-site-nav-wordmark">Aletheia</h2>
-                </div>    
+            <div id="header-cont" class="top-site-nav inside-header-area">
+                  
             </div>
             
             <!--The API page content-->
@@ -1258,6 +1255,11 @@
         
         <!--SCRIPTS-->
         <script src="../js/api-response-examples.js"></script>
+
+        <!--Add header-->
+        <script>
+            $("#header-cont").load("../components/header.html");
+        </script>
 
     </body>
 </html>
