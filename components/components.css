@@ -60,3 +60,33 @@
     font-weight: bold;
     color: #A5A5A3;
 }
+
+.center-tabs-cont
+{
+    display: inline-block;
+    height: 100%;
+    width: max-content;
+    background-color: lime;
+    grid-area: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tab
+{
+    display: inline-block;
+    position: relative;
+    color: #A5A5A3;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+    font-size: 19px;
+    line-height: 19px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-transform: uppercase;
+}
