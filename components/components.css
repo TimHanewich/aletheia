@@ -1,0 +1,62 @@
+.header-box
+{
+    height: 60px;
+    width: 100%;
+    position: relative;
+    background-color: brown;
+    display: grid;
+    grid-template-areas: "wordmark center end";
+    grid-template-columns: auto 1fr auto;
+}
+
+.wordmark-area
+{
+    position: relative;
+    height: 100%;
+    background-color: pink;
+    grid-area: wordmark;
+}
+
+.header-wordmark
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 45px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.end
+{
+    grid-area: end;
+    width: 180px;
+    height: 100%;
+    background-color: chartreuse;
+}
+
+.get-access-btn
+{
+    height: 90%;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-color: #A5A5A3;
+    border-width: 3px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #FFD858;
+}
+
+.get-access-btn-txt
+{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: #A5A5A3;
+}
