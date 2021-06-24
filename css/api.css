@@ -339,3 +339,23 @@ custom-txt
     border-left-width: 0px;
     border-right-width: 0px;
 }
+
+ul
+{
+    color: inherit;
+}
+
+li
+{
+    color: inherit;
+}
+
+a
+{
+    color: inherit;
+}
+
+b
+{
+    color: inherit;
+}
