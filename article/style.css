@@ -25,3 +25,32 @@
     background-color: pink;
     grid-area: body;
 }
+
+.center-cont
+{
+    margin-top: 40px;
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    background-color: powderblue;
+    height: 400px;
+}
+
+#article-title
+{
+    margin: 0px;
+    font-size: 52px;
+    line-height: 52px;
+    font-weight: bold;
+}
+
+#article-published-on
+{
+    margin-top: 10px;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
