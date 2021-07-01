@@ -4,5 +4,89 @@
 <!--Published on-->
 <h2 class="article-published-on">July 1, 2021</h2>
 
-<p class="btxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p class="btxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p class="btxt">This past week I brought <a href="../../docs/index.html#insider-trading-webhook">Aletheia's new Insider Trading Webhook service</a> to general availability. This webhook provides any developer of any technology the ability to register their unique URL endpoint and receive notifications of new insider trades as soon as they are reported to the Securities Exchange Commission. The service is free to use! In this article I will be covering this new webhook and it's abilities.</p>
+
+<h3>Specific Subscription Registration</h3>
+<p class="btxt">The new Insider Trading webhook provides you the ability to specify what types of insider trading activity you would like to be notified of. </p>
+<p class="btxt">Insider trades only within Facebook ($FB)? Buys only? Publicly traded common stock or derivative contracts? Stock grants? Or a combination of all criteria? All of this is possible with Aletheia's flexible webhook subscription process. You can be as specific as you want, or simply ask to be notified of <b>all</b> insider trades at <b>any</b> company.</p>
+<p class="btxt">As a developer, you probably know that the first step in subscribing to a webhook is to provide your URL endpoint to the service.  You will specify these details during the <b>webhook registration</b> step.</p>
+
+<p class="cb">
+    POST https://api.aletheiaapi.com/SubscribeToInsiderTradingWebhook<br>
+    {<br>
+        <tabspace></tabspace>"endpoint":"https://www.myservice.net/myendpoint",<br>
+        <tabspace></tabspace>"issuer": "MSFT",<br>
+        <tabspace></tabspace>"owner": 1513142,<br>
+        <tabspace></tabspace>"transactionType": 1,<br>
+        <tabspace></tabspace>"securityType": 0<br>
+    }
+</p>
+
+<p class="btxt">The code snippet above depicts the POST call you will make to the Aletheia API to subscribe to the webhook. The *endpoint* property is your unique endpoint that will be called when new trades arrive. As seen above, you can easily specify what trades you would like to be notified of. The above body is asking for trades of <b>Microsoft ($MSFT)</b> stock by <b>Satya Nadella</b>, the company's CEO, (SEC-assigned CIK ID 1513142), and only <b>sales</b> of <b>equity-based</b> securities.</p>
+<p class="btxt">If you don't want to be as narrow as any of these specifications, simply set the property values as <b>null</b> or just <b>omit them entirely</b>. For example, if you omit the *issuer* property, you will get insider transaction notifications for any transaction, regardless of what company it is for.</p>
+<p class="btxt">The available <i>transactionType</i> and <i>securityType</i> values can be found <a href="../../docs/index.html#latest-transactions">here</a>.</p>
+
+<h3>Detailed Insider Trading Data Payload</h3>
+<p class="btxt">Following registration, you will start receiving calls from the Aletheia webhook when insider trades occur that meet your subscription criteria. Below is an example the data payload that would be supplied to you:</p>
+<p class="cb">
+    {<br>
+        <tabspace></tabspace>"SecEntities": [<br>
+        <tabspace></tabspace><tabspace></tabspace>{<br>
+            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Cik": 6845,<br>
+            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "APOGEE ENTERPRISES, INC.",<br>
+            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "APOG"<br>
+        <tabspace></tabspace><tabspace></tabspace>},<br>
+        <tabspace></tabspace><tabspace></tabspace>{<br>
+            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Cik": 1159191,<br>
+            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "JOHNSON GARY ROBERT",<br>
+            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": null<br>
+            <tabspace></tabspace><tabspace></tabspace>}<br>
+        <tabspace></tabspace>],<br>
+        <tabspace></tabspace>"SecFilings": [<br>
+            <tabspace></tabspace><tabspace></tabspace>{<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "de3bc575-5aca-45d7-9b30-f26551a789e4",<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"FilingUrl": "https://www.sec.gov/Archives/edgar/data/1159191/000120919121043441/0001209191-21-043441-index.htm",<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"AccessionP1": 1209191,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"AccessionP2": 21,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"AccessionP3": 43441,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"FilingType": 0,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"ReportedOn": "2021-06-25T00:00:00",<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Issuer": 6845,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"_Issuer": null,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Owner": 1159191,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"_Owner": null<br>
+            <tabspace></tabspace><tabspace></tabspace>}<br>
+        <tabspace></tabspace>],<br>
+        <tabspace></tabspace>"HeldOfficerPositions": [<br>
+            <tabspace></tabspace><tabspace></tabspace>{<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "a2eefaeb-848d-4b62-84ba-9e27c63738e7",<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Officer": 1159191,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Company": 6845,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"PositionTitle": "Treasurer & Sr Vice President",<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"ObservedOn": "de3bc575-5aca-45d7-9b30-f26551a789e4"<br>
+            <tabspace></tabspace><tabspace></tabspace>}<br>
+        <tabspace></tabspace>],<br>
+        <tabspace></tabspace>"SecurityTransactionHoldings": [<br>
+            <tabspace></tabspace><tabspace></tabspace>{<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "904207c6-5f6a-4e82-a7dc-0a4972b86e25",<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"FromFiling": "de3bc575-5aca-45d7-9b30-f26551a789e4",<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"_FromFiling": null,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EntryType": 0,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"QuantityOwnedFollowingTransaction": 41294,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"DirectIndirect": 0,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SecurityTitle": "Common Stock",<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SecurityType": 0,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"AcquiredDisposed": 1,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Quantity": 2430,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"PricePerSecurity": 41.9792,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TransactionDate": "2021-06-25T00:00:00",<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TransactionCode": 1,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"ConversionOrExercisePrice": null,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"ExercisableDate": null,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"ExpirationDate": null,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityTitle": null,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityQuantity": null<br>
+            <tabspace></tabspace><tabspace></tabspace>}<br>
+        <tabspace></tabspace>]<br>
+      }
+</p>

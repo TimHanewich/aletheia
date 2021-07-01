@@ -26,6 +26,7 @@
     height: 100%;
     width: 100%;
     grid-area: body;
+    overflow-y: scroll;
 }
 
 #center-cont
@@ -66,4 +67,26 @@
     margin-bottom: 16px;
     font-size: 19px;
     line-height: 22px;
+}
+
+h3
+{
+    font-size: 27px;
+    line-height: 27px;
+    margin-top: 30px;
+    margin-bottom: 8px;
+}
+
+/* short for "code block" */
+.cb
+{
+    width: 100%;
+    text-align: left;
+    background-color: #EEEEEE;
+    line-height: 21px;
+    vertical-align: middle;
+    font-size: 18px;
+    border-radius: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
 }
