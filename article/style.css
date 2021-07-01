@@ -38,7 +38,7 @@
     height: 400px;
 }
 
-#article-title
+.article-title
 {
     margin: 0px;
     font-size: 52px;
@@ -46,7 +46,7 @@
     font-weight: bold;
 }
 
-#article-published-on
+.article-published-on
 {
     margin-top: 10px;
     font-size: 25px;
