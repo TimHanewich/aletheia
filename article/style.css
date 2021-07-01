@@ -1,3 +1,8 @@
+*
+{
+    color: #1C1C1C;
+}
+
 .page-canvas
 {
     height: 100%;
@@ -44,13 +49,25 @@
     font-size: 52px;
     line-height: 52px;
     font-weight: bold;
+    color: #1C1C1C;
 }
 
 .article-published-on
 {
     margin-top: 10px;
+    margin-bottom: 30px;
     font-size: 25px;
     line-height: 25px;
     font-weight: lighter;
     text-transform: uppercase;
+    color: #A5A5A3;
+}
+
+/* Primary body text */
+.btxt
+{
+    margin-top: 0px;
+    margin-bottom: 16px;
+    font-size: 19px;
+    line-height: 22px;
 }
