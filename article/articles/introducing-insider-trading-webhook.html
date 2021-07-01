@@ -90,3 +90,31 @@
         <tabspace></tabspace>]<br>
       }
 </p>
+
+<ul>
+    <li class="btxt">The SecEntities property lists the entities related in these transactions. This will contain the company (with a trading symbol) and insider that made this transaction.</li>
+    <li class="btxt">The SecFilings property lists the SEC filings that these insider transactions originated from. This way you can go back to the SEC filing yourself!</li>
+    <li class="btxt">The HeldOfficerPositions property will list the titles (if any) that are carried by the insider. For example, if the insider were titled "CEO" in the filing document, you would see that held title here.</li>
+    <li class="btxt">The SecurityTransactionHoldings lists the insider trades (or reported transactions) that that were reported in the filing and therefore triggered your webhook subscription.</li>
+</ul>
+
+<p class="btxt">The ID properties provide you the ability to trace back an associate between a transaction and an SEC filing, an owner and a position title, a relationship between SEC filing and a person/company, etc.</p>
+
+<h3>Easily Unsubscribe</h3>
+<p class="btxt">It is extremely easy to formerly unsubscribe your endpoint from the webhook! When you subscribed to the webhook, a URL that is specific to your endpoint will be provided in the headers. This property is labeled "Location" and will look like this:</p>
+<p class="cb">https://api.aletheiaapi.com/UnsubscribeWebhook?id=dd150c44-c42a-4cdd-92f5-b78a23b36c72</p>
+<p class="btxt">Simply make a <b>DELETE</b> call to this specified URL to have your webhook subscription removed.</p>
+<p class="btxt">Lost that request? No problem! Make a call to the same endpoint but instead provide your subscribed URL to the <i>endpoint</i> property. For example:</p>
+<p class="cb">https://api.aletheiaapi.com/UnsubscribeWebhook?endpoint=https://www.myservice.net/myendpoint</p>
+
+<h3>Instantaneous Notifications</h3>
+<p class="btxt">This service is guaranteed to give you an edge when it comes to being in the know about insider trading activity. Our notifications of insider trading is near-instantaneous. You will be notified of new insider trades within seconds of the trades being reported to the Securities Exchange Commission.</p>
+
+<h3>The service is <b>FREE</b></h3>
+<p class="btxt">You can use this webhook service at no cost. You can register for a developer account <a href="../../login/">here</a> and start consuming <a href="../../docs/">Aletheia's API service</a> for free within minutes.</p>
+
+<h3>Air-Tight Documentation</h3>
+<p class="btxt">Aletheia also provides descriptive documentation for each endpoint service, and that includes the Insider Trading Webhook. You can find the documentation for the insider trading webhook <a href="../../docs/#insider-trading-webhook">here</a>. The documentation describes the three steps to using the service and provides sample payloads.</p>
+
+<!--Dead area-->
+<div style="height: 60px;"></div>
