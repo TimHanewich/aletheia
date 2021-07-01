@@ -1,0 +1,27 @@
+.page-canvas
+{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: aqua;
+    display: grid;
+    grid-template-areas: "header"
+    "body";
+    grid-template-rows: 60px 1fr;
+}
+
+.header-area
+{
+    height: 100%;
+    width: 100%;
+    background-color: blue;
+    grid-area: header;
+}
+
+.body-area
+{
+    height: 100%;
+    width: 100%;
+    background-color: pink;
+    grid-area: body;
+}
