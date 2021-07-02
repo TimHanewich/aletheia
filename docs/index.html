@@ -569,7 +569,7 @@
                                 <div class="body-example">
                                     {<br>
                                         <tabspace></tabspace>"endpoint":"<custom-txt>https://www.myservice.net/myendpoint</custom-txt>",<br>
-                                        <tabspace></tabspace>"issuer": <custom-txt>789019</custom-txt>,<br>
+                                        <tabspace></tabspace>"issuer": "<custom-txt>MSFT</custom-txt>",<br>
                                         <tabspace></tabspace>"owner": <custom-txt>1513142</custom-txt>,<br>
                                         <tabspace></tabspace>"transactionType": <custom-txt>1</custom-txt>,<br>
                                         <tabspace></tabspace>"securityType": <custom-txt>0</custom-txt><br>
@@ -577,7 +577,7 @@
                                 </div>
                                 <ul>
                                     <li>The <b>endpoint</b> property is <b>mandatory</b>! This is where you will specify the endpoint of <i style="color: inherit;">your</i> API service that Aletheia will call.</li>
-                                    <li>The <b>issuer</b> property is the CIK (Central Index Key, a key assigned to each company by the SEC) of the company you <i style="color: inherit;">only</i> want to receive insider trading notifications for. Microsoft is the specified company (CIK 789019) in this example. <b>This property is optional.</b></li>
+                                    <li>The <b>issuer</b> property specifies the company you <i style="color: inherit;">only</i> want to receive insider trading notifications for. Microsoft is the specified company (CIK 789019) in this example. You can either provide the trading symbol of the company ("MSFT" in this example) or <b>the CIK of the company</b>. Provide the CIK for faster performance. <b>This property is optional.</b></li>
                                     <li>The <b>owner</b> property is the CIK of the person you only want to receive insider trading notifications on. In this example we have it set to 1513142 which is the CIK of Satya Nadella, the CEO of Microsoft <b>This property is optional.</b></li>
                                     <li>The <b>transactionType</b> property specifies the the transaction type you only want to be notified of. Please see the <a href="#latest-transactions">transaction type property from the Latest Transactions endpoint</a> to see the list of transaction type ID's. <b>This property is optional.</b></li>
                                     <li>The <b>securityType</b> property specifies the security type that you only want to be notified on. This means that you will only be notified of transactions involving either non-derivative (equity) securities or derivative securities. 0 = non-derivative, 1 = derivative. <b>This property is optional.</b></li>
