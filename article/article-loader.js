@@ -18,6 +18,9 @@ else {
     if (idstr == "introducing-insider-trading-webhook") {
         load_contents("introducing-insider-trading-webhook.html");
     }
+    else if (idstr == "insider-trading-api") {
+        load_contents("aletheia-insider-trading-api.html");
+    }
     else {
         console.log("ID '" + idstr + "' not recognized.");
     }
