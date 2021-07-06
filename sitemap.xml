@@ -36,4 +36,8 @@
         <loc>https://aletheiaapi.com/article/index.html?id=introducing-insider-trading-webhook</loc>
         <priority>0.4</priority>
     </url>
+    <url>
+        <loc>https://aletheiaapi.com/article/index.html?id=insider-trading-api</loc>
+        <priority>0.4</priority>
+    </url>
 </urlset>
