@@ -4,3 +4,153 @@
 <p class="btxt">Insider trading is the trading of a public company's stock or other securities based on material, nonpublic information about the company. In the eyes of the Securities Exchange Commission (SEC), an *insider* is considered a director, officer, or major shareholder (greater than 10% ownership).</p>
 <p class="btxt">Since insider trading gives insiders a decisive competitive edge over comparatively non-informed traders, there are laws and regulations in place to prevent abuse. In the United States, the Securities Exchange Commission is the governing body who regulates and enforces these anti-manipulation laws. One of the primary methods the SEC uses to regulate insider trading is requiring every insider to report their trades (buys, sells, grants, transfers, etc.) to the SEC through <a href="https://www.sec.gov/files/forms-3-4-5.pdf">Form 3, Form 4, and Form 5 filings</a>.</p>
 <p class="btxt">Thousands of insider transactions are reported to the SEC each day. These filings are publicly available at the <a href="https://www.sec.gov/edgar/searchedgar/companysearch.html">SEC's website</a> but are obscure, difficult to access, and not the easiest to interpret.</p>
+
+<h3>Programmatic Access to Insider Trading Data</h3>
+<p class="btxt">I created <a href="/">Aletheia</a>  to collect these SEC filings, extract the transaction data, organize it into a meaningful structure, and provide access through a universally accessible web API ("Application Programming Interface").</p>
+<img src="/article/resources/AletheiaInsiderTradingFlow.png" style="width: 45%; display: block; margin-left: auto; margin-right: auto;">
+<p class="btxt">The diagram above depicts how Aletheia's servers perform the acquisition of data, processing of data, storing, and making it available through the REST API.</p>
+<p class="btxt">Full documentation for Aletheia's Insider Trading endpoints can be found <a href="/docs/">on the documentation page</a>.</p>
+<p class="btxt">I will be highlighting the primary features of Aletheia's <a href="/docs/#latest-transactions">Latest Transactions</a> endpoint, which is the service that provides on-demand insider trading data.</p>
+
+<h3>JSON Format</h3>
+<p class="btxt">All of Aletheia's endpoints provides data in JSON (JavaScript Object Notation) format, including the Insider Trading endpoint <b>Latest Transactions</b>. This commonly used format makes it very easy for developers to manipulate data and use it in their application.</p>
+<p class="btxt">The following is an example response:</p>
+<p class="cb">
+    [<br>
+        <tabspace></tabspace>{<br>
+            <tabspace></tabspace><tabspace></tabspace>"Id":"e3fd7062-5190-43a5-9aa0-26ce8ce2ddea",    // The unique ID of this transaction in the Aletheia database<br>
+            <tabspace></tabspace><tabspace></tabspace>"FromFiling":"c42b0232-45d3-48e6-8f27-b97621947d3b",    // The unique ID of the SEC filing in the Aletheia database which this transaction stemmed from<br>
+            <tabspace></tabspace><tabspace></tabspace>"EntryType":0,  // 0 = Transaction, 1 = Holding (no changes, just reporting a held asset)<br>
+            <tabspace></tabspace><tabspace></tabspace>"QuantityOwnedFollowingTransaction":0.0,    // The quantity of securities the owner owns following this transaction<br>
+            <tabspace></tabspace><tabspace></tabspace>"DirectIndirect":1,     // 0 = Direct ownership, 1 = Indirect ownership<br>
+            <tabspace></tabspace><tabspace></tabspace>"SecurityTitle":"Common Stock",<br>
+            <tabspace></tabspace><tabspace></tabspace>"SecurityType":0,   // 0 = non-derivative (equity based), 1 = derivative (i.e. options contract)<br>
+            <tabspace></tabspace><tabspace></tabspace>"AcquiredDisposed":1,   // 0 = acquired, 1 = disposed<br>
+            <tabspace></tabspace><tabspace></tabspace>"Quantity":50.0,    // The quantity of securities acquired/disposed of<br>
+            <tabspace></tabspace><tabspace></tabspace>"PricePerSecurity":null,    // if applicable, the average acquisition or disposition price of the security<br>
+            <tabspace></tabspace><tabspace></tabspace>"TransactionDate":"2021-02-17T00:00:00",    // recorded transaction date<br>
+            <tabspace></tabspace><tabspace></tabspace>"TransactionCode":1,    // (see the "transactiontype" parameter above)<br>
+            <tabspace></tabspace><tabspace></tabspace>"ConversionOrExercisePrice":null,   // if a derivative security, the exercise price of this contract<br>
+            <tabspace></tabspace><tabspace></tabspace>"ExercisableDate":null,     // if a derivative security, the exercisable date of this contract<br>
+            <tabspace></tabspace><tabspace></tabspace>"ExpirationDate":null,     // if a derivative security, the expiration date of this contract<br>
+            <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityTitle":null,     // if a derivative security, the title of the contract's underlying security<br>
+            <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityQuantity":null   // if a derivative security, the quantity of the contract's underlying security<br>
+        <tabspace></tabspace>},<br>
+        <tabspace></tabspace>{<br>
+            <tabspace></tabspace><tabspace></tabspace>"Id":"bf6b3afc-2591-48e6-8dda-0b62903fd38d",<br>
+            <tabspace></tabspace><tabspace></tabspace>"FromFiling":"01bf4617-5f19-4319-b378-c16a9d12190a",<br>
+            <tabspace></tabspace><tabspace></tabspace>"EntryType":0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"QuantityOwnedFollowingTransaction":1508.4543,<br>
+            <tabspace></tabspace><tabspace></tabspace>"DirectIndirect":0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"SecurityTitle":"Common Stock",<br>
+            <tabspace></tabspace><tabspace></tabspace>"SecurityType":0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"AcquiredDisposed":0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"Quantity":289.0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"PricePerSecurity":null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"TransactionDate":"2021-02-05T00:00:00",<br>
+            <tabspace></tabspace><tabspace></tabspace>"TransactionCode":7,<br>
+            <tabspace></tabspace><tabspace></tabspace>"ConversionOrExercisePrice":null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"ExercisableDate":null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"ExpirationDate":null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityTitle":null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityQuantity":null<br>
+        <tabspace></tabspace>},<br>
+        <tabspace></tabspace>{<br>
+            <tabspace></tabspace><tabspace></tabspace>"Id":"d24bc278-dbc6-4d7f-a144-69bdcd81ad38",<br>
+            <tabspace></tabspace><tabspace></tabspace>"FromFiling":"d5ba901e-5002-413c-9358-b3445b66ccae",<br>
+            <tabspace></tabspace><tabspace></tabspace>"EntryType":0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"QuantityOwnedFollowingTransaction":252.47,<br>
+            <tabspace></tabspace><tabspace></tabspace>"DirectIndirect":0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"SecurityTitle":"Common Stock",<br>
+            <tabspace></tabspace><tabspace></tabspace>"SecurityType":0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"AcquiredDisposed":0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"Quantity":252.47,<br>
+            <tabspace></tabspace><tabspace></tabspace>"PricePerSecurity":null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"TransactionDate":"2021-02-05T00:00:00",<br>
+            <tabspace></tabspace><tabspace></tabspace>"TransactionCode":3,<br>
+            <tabspace></tabspace><tabspace></tabspace>"ConversionOrExercisePrice":null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"ExercisableDate":null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"ExpirationDate":null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityTitle":null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityQuantity":null<br>
+        <tabspace></tabspace>},<br>
+    ]
+</p>
+
+<h3>Scope to a Company or Insider</h3>
+<p class="btxt">You can request insider trades for any company or any individual. This means that you can request data that meets the following scenarios, for example:</p>
+<ul>
+    <li><b>All insider trades of Microsoft ($MSFT) common stock</b> - This will return trades of Microsoft stock by <i>any</i> insider.</li>
+    <li><b>All insider trades of Microsoft ($MSFT) common stock by CEO Satya Nadella</b></li>
+    <li><b>All insider trades of Elon Musk (CIK 1494730)</b> - This will result in Elon Musk's trades of any company he is considered an insider of.</li>
+</ul>
+<p class="btxt">As you can see from the examples above, you can make your request company-centric, insider-centric, or a combination of both!</p>
+<p class="btxt">Use the <i>issuer</i> and <i>owner</i> parameters of the <i>Latest Transactions</i> endpoint to filter to transactions only occuring for a specific company or insider.</p>
+
+<h3>Filter to a Particular Date</h3>
+<p class="btxt">Since it became mandatory to report insider trading to the SEC, each company has amassed thousands of filings reporting these events. On average, 1,162 insider transactions per company in the S&P 500 from 2010-2019. Aletheia allows you to focus on transactions during a specific date in time.</p>
+<p class="btxt">Use the <i>before</i> parameter of the <i>Latest Transactions</i> endpoint to filter to transactions only occuring before a certain date.</p>
+
+<h3>Filter to a Security Type</h3>
+<p class="btxt">Insiders are required to report transactions of both equity-based and derivative-based securities. Aletheia provides the ability to filter to only one type of security. This is convenient as investors are more commonly interested in the equity-based securities (common stock).</p>
+<p class="btxt">Use the <i>securitytype</i> parameter of the <i>Latest Transactions</i> endpoint to filter to a particular security type.</p>
+
+<h3>Filter to a Transaction Type</h3>
+<p class="btxt">There are twenty different transaction types that insiders can report. Ranging from an open market purchase to a exercise of out-of-the-money derivative, there seems to be no shortage of ways an insider can acquire or dispose of securities.</p>
+<p class="btxt">You can filter the returned response to transactions of only a certain type - for example, only purchases on the public market. Or perhaps you have interest in stock sales. Or perhaps a stock grant or award that was given to the insider by the company? You can easily narrow down the results to specifically what you are interested in seeing.</p>
+<p class="btxt">Use the <i>transactiontype</i> parameter of the <i>Latest Transactions</i> endpoint to filter to a specific transaction type.</p>
+
+<h3>Receive All Contextual Data in One Request</h3>
+<p class="btxt">There is no shortage of peripheral data related to each transaction - the full name of the insider making the trade, name of the company, company's trading symbol, any associated title that the insider holds at the company, etc. </p>
+<p class="btxt">You can request all of this information from Aletheia and have this returned to you <i>in the same call</i>.</p>
+<p class="btxt">Example response with all contextual data included (Elon Musk purchasing $TSLA stock):</p>
+<p class="cb">
+    [<br>
+        <tabspace></tabspace>{<br>
+            <tabspace></tabspace><tabspace></tabspace>"Id": "54fc3cf0-edf2-44a1-8cca-7fdeab9fbebb",<br>
+            <tabspace></tabspace><tabspace></tabspace>"FromFiling": "19025d3c-0858-400a-bfad-675f759e1ce1",<br>
+            <tabspace></tabspace><tabspace></tabspace>"_FromFiling": {<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "19025d3c-0858-400a-bfad-675f759e1ce1",<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"FilingUrl": "https://www.sec.gov/Archives/edgar/data/1318605/000149473020000001/0001494730-20-000001-index.htm",<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"AccessionP1": 1494730,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"AccessionP2": 20,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"AccessionP3": 1,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"FilingType": 0,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"ReportedOn": "2020-02-14T00:00:00",<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Issuer": 1318605,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"_Issuer": {<br>
+                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Cik": 1318605,<br>
+                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "TESLA MOTORS INC",<br>
+                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "TSLA"<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>},<br>
+            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Owner": 1494730,<br>
+            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"_Owner": {<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Cik": 1494730,<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Musk Elon",<br>
+                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": null<br>
+            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+        <tabspace></tabspace><tabspace></tabspace>},<br>
+            <tabspace></tabspace><tabspace></tabspace>"EntryType": 0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"QuantityOwnedFollowingTransaction": 34098596.0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"DirectIndirect": 1,<br>
+            <tabspace></tabspace><tabspace></tabspace>"SecurityTitle": "Common Stock",<br>
+            <tabspace></tabspace><tabspace></tabspace>"SecurityType": 0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"AcquiredDisposed": 0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"Quantity": 13037.0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"PricePerSecurity": null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"TransactionDate": "2020-02-14T00:00:00",<br>
+            <tabspace></tabspace><tabspace></tabspace>"TransactionCode": 0,<br>
+            <tabspace></tabspace><tabspace></tabspace>"ConversionOrExercisePrice": null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"ExercisableDate": null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"ExpirationDate": null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityTitle": null,<br>
+            <tabspace></tabspace><tabspace></tabspace>"UnderlyingSecurityQuantity": null<br>
+        <tabspace></tabspace>}<br>
+    ]<br>
+</p>
+
+<p class="btxt">Use the <i>cascade</i> parameter of the <i>Latest Transactions</i> endpoint to return all contextual data in the same response.</p>
+
+<h3>It is FREE!</h3>
+<p class="btxt">You can use all of Aletheia's API services for absolutely no cost. </p>
+<p class="btxt">Set up a <a href="/login/">free developer account</a> to begin using the service today. Visit Aletheia's <a href="/docs/">API documentation page</a> to quickly get up and running with the service.</p>
