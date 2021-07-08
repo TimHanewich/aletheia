@@ -3,7 +3,7 @@
     display: grid;
     grid-template-areas: "header"
     "content";
-    grid-template-rows: 70px 1fr;
+    grid-template-rows: 60px 1fr;
     position: fixed;
     height: 100%;
     width: 100%;
