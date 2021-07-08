@@ -306,37 +306,11 @@
             <!--What's new?-->
             <h3 id="whats-new" class="home-section-title" style="margin-top: 30px; margin-bottom: 20px;">What's new?</h3>
             <div class="center-container" style="width: 65%;">
-                <div class="news">
-                    <p class="whats-new-title">Insider Trading API Article</p>
-                    <p class="whats-new-desc">New article detailing how the insider trading service works, key features, and how to get started: <a href="./article/index.html?id=insider-trading-api">Aletheia's Insider Trading API</a>.</p>
-                    <p class="whats-new-date">July 6, 2021</p>
-                </div>
-                <div class="news">
-                    <p class="whats-new-title">Introducing the Insider Trading Webhook</p>
-                    <p class="whats-new-desc">The Insider Trading Webhook is now publicly available! Check it out here: <a href="./article/index.html?id=introducing-insider-trading-webhook">Introducing Aletheia's Insider Trading Webhook</a></p>
-                    <p class="whats-new-date">July 1, 2021</p>
-                </div>
-                <div class="news">
-                    <p class="whats-new-title">Official pricing page now available</p>
-                    <p class="whats-new-desc">Check out our <a href="pricing/">official pricing page</a>.</p>
-                    <p class="whats-new-date">June 3, 2021</p>
-                </div>
-                <div class="news">
-                    <p class="whats-new-title">Usage metric endpoints now available</p>
-                    <p class="whats-new-desc">Developers can now monitor their consumption of the Aletheia API service with the <a href="api/index.html#consumption">Consumption</a> and <a href="api/index.html#my-calls">My Calls</a> endpoints.</p>
-                    <p class="whats-new-date">May 21, 2021</p>
-                </div>
-                <div class="news">
-                    <p class="whats-new-title">'Send daily stock performance update' Power Automate template published</p>
-                    <p class="whats-new-desc">Check out our new Power Automate template to learn how to send a daily stock performance to yourself: <a href="https://flow.microsoft.com/en-us/galleries/public/templates/37c22a34d3c1433799e74b4ce6c86834/send-daily-stock-performance-update/">Send daily stock performance update</a></p>
-                    <p class="whats-new-date">May 19, 2021</p>
-                </div>
-                <div class="news">
-                    <p class="whats-new-title">Fundamentals-based endpoints now available in the Power Apps and Power Automate</p>
-                    <p class="whats-new-desc">Users of Microsoft's Power Platform can now leverage the <a href="api/index.html#common-financials">Common Financials</a> and <a href="api/index.html#financial-fact-trend">Financial Fact Trend</a> endpoints with the <a href="https://docs.microsoft.com/en-us/connectors/aletheia/#get-financial-fact-trend">Get Financial Fact Trend</a> and <a href="https://docs.microsoft.com/en-us/connectors/aletheia/#get-common-financials">Get Common Financials</a> actions in their Power Apps and Power Automate flows.</p>
-                    <p class="whats-new-date">May 11, 2021</p>
-                </div>
 
+                <div id="news-container" style="width: 100%;">
+
+                </div>
+                
                 <!--Read more news-->
                 <p style="font-size: 18px;"><a href="/news/">Read more...</a></p>
             </div>
@@ -367,5 +341,7 @@
         <script src="home/statistics-loading.js"></script>
         <script src="home/uptick.js"></script>
         <script src="home/legal-dropdown.js"></script>
+        <script src="news/news.js"></script>
+        <script src="home/inject-news.js"></script>
     </body>
 </html>

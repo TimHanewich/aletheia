@@ -39,11 +39,33 @@ var News = /** @class */ (function () {
         ToReturn.push(n2);
         //News 1
         var n1 = new News();
-        n1.Title = "Fundamentals-based endpoints now available in the Power Apps and Power Automate";
+        n1.Title = "Fundamentals-based endpoints now available in Power Apps and Power Automate";
         n1.Description = "Users of Microsoft's Power Platform can now leverage the <a href=\"/docs/#common-financials\">Common Financials</a> and <a href=\"/docs/#financial-fact-trend\">Financial Fact Trend</a> endpoints with the <a href=\"https://docs.microsoft.com/en-us/connectors/aletheia/#get-financial-fact-trend\">Get Financial Fact Trend</a> and <a href=\"https://docs.microsoft.com/en-us/connectors/aletheia/#get-common-financials\">Get Common Financials</a> actions in their Power Apps and Power Automate flows.";
         n1.PublishedAt = "MAY 11, 2021";
         ToReturn.push(n1);
         return ToReturn;
+    };
+    News.prototype.InjectIntoHtmlElement = function (element_id) {
+        var ele = document.createElement("div");
+        ele.classList.add("news");
+        //Title
+        var ele_title = document.createElement("p");
+        ele_title.classList.add("whats-new-title");
+        ele_title.innerHTML = this.Title;
+        ele.append(ele_title);
+        //Description
+        var ele_description = document.createElement("p");
+        ele_description.classList.add("whats-new-desc");
+        ele_description.innerHTML = this.Description;
+        ele.append(ele_description);
+        //Published at
+        var ele_publishedat = document.createElement("p");
+        ele_publishedat.classList.add("whats-new-date");
+        ele_publishedat.innerHTML = this.PublishedAt;
+        ele.append(ele_publishedat);
+        //Add the element to the container on the page
+        var cont = document.getElementById(element_id);
+        cont.append(ele);
     };
     return News;
 }());

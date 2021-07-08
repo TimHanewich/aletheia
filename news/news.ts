@@ -59,4 +59,32 @@ class News
 
         return ToReturn;
     }
+
+    public InjectIntoHtmlElement(element_id:string):void
+    {
+        var ele:HTMLElement = document.createElement("div");
+        ele.classList.add("news");
+        
+        //Title
+        var ele_title:HTMLElement = document.createElement("p");
+        ele_title.classList.add("whats-new-title");
+        ele_title.innerHTML = this.Title;
+        ele.append(ele_title);
+
+        //Description
+        var ele_description:HTMLElement = document.createElement("p");
+        ele_description.classList.add("whats-new-desc");
+        ele_description.innerHTML = this.Description;
+        ele.append(ele_description);
+
+        //Published at
+        var ele_publishedat:HTMLElement = document.createElement("p");
+        ele_publishedat.classList.add("whats-new-date");
+        ele_publishedat.innerHTML = this.PublishedAt;
+        ele.append(ele_publishedat);
+
+        //Add the element to the container on the page
+        var cont:HTMLElement = document.getElementById(element_id) as HTMLElement;
+        cont.append(ele);
+    }
 }
