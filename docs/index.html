@@ -1166,6 +1166,52 @@
                                     </div>
                                 </div>
                             </div>
+
+
+                            <!--Earnings Call Highlights-->
+                            <div class="api-ep-documentation">
+                                <h3 id="earnings-call-highlights" class="api-title">Earnings Call Highlights</h3>
+                                <p class="api-desc">Aletheia analyzes each earnings call and extracts the meaningful words, phrases, and financial figures from the calls. You can use the <b>Earnings Call Highlights</b> endpoint to directly request the most important remarks from the call. You can even filter this further and request the most important remarks involving a particular financial category (i.e. important remarks related to revenue, earnings per share, guidance, financial figures, etc).</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/EarningsCallHighlights</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>company</api-param> - The trading symbol of the of the company.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>year</api-param> - The fiscal year of the earnings call you are requesting.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>quarter</api-param> - What fiscal quarter you are requesting an earnings call for. Provide either 'q1', 'q2', 'q3', or 'q4'.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>category</api-param> - This parameter provides you the ability to request the highlights for a particular financial category. For example, by using this parameter you can request the highlight remarks that mention <i>earnings per share</i>.</div>
+                                </div>
+                                <ul class="param-desc">
+                                    <li><b>0</b> - Revenue</li>
+                                    <li><b>1</b> - Earnings</li>
+                                    <li><b>2</b> - Cash Flow</li>
+                                    <li><b>3</b> - Other</li>
+                                    <li><b>4</b> - Growth</li>
+                                    <li><b>5</b> - Financial Figure</li>
+                                    <li><b>6</b> - Volume</li>
+                                    <li><b>7</b> - Guidance</li>
+                                    <li><b>8</b> - Management Perception of the Situation</li>
+                                </ul>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>top</api-param> - The number of highlights to return in the response. Default (if not specified) is 5, maxiumum is 12.</div>
+                                </div>
+                            </div>
+
+
+
                         </div>
 
                         <!--SEC Filings-->
