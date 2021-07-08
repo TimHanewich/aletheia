@@ -1003,6 +1003,169 @@
                             <div class="blank-space"></div>
                             <h2 class="api-category-title">Earnings Calls</h2>
                             <p class="api-category-desc">Aletheia continuously processes new earnings calls for many publicly traded companies on a daily basis. You can use these endpoints for accessing earnings call content and highlights from the call.</p>
+                        
+                            <!--Earnings Call-->
+                            <div class="api-ep-documentation">
+                                <h3 id="earnings-call" class="api-title">Earnings Call</h3>
+                                <p class="api-desc">Access contextual information and spoken content for a publicly traded company's earnings call.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/EarningsCall</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>company</api-param> - The trading symbol of the of the company.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>year</api-param> - The fiscal year of the earnings call you are requesting.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>quarter</api-param> - What fiscal quarter you are requesting an earnings call for. Provide either 'q1', 'q2', 'q3', or 'q4'.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>begin</api-param> - The earnings call is arranged into a series of remarks in order of sequence spoken. With the <i>begin</i> and <i>end</i> parameter, you can select a series of remarks from the call to be returned.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>end</api-param> - The sequence number for the final spoken remark which you are requesting. Please note that <i>the maximum number of remarks that can be requested in one call is 20</i>.</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/EarningsCall?company=DLTR&year=2019&quarter=q4&begin=0&end=10</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/EarningsCall?company=DLTR&year=2019&quarter=q4&begin=11&end=20</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/EarningsCall?company=AAPL&year=2020&quarter=q1</div>
+                                <div class="api-sub-header">Example Response</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">
+                                        {<br>
+                                            <tabspace></tabspace>"Id": "d78ef856-bd63-4a7a-928b-0015d770d9be",<br>
+                                            <tabspace></tabspace>"Year": 2019,<br>
+                                            <tabspace></tabspace>"Period": 3,<br>
+                                            <tabspace></tabspace>"Company": {<br>
+                                            <tabspace></tabspace><tabspace></tabspace>"Id": "b80ad0f3-ecbe-4f18-b33b-3951cc049d3a",<br>
+                                            <tabspace></tabspace><tabspace></tabspace>"Name": "Dollar Tree Inc",<br>
+                                            <tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "DLTR"<br>
+                                            <tabspace></tabspace>},<br>
+                                            <tabspace></tabspace>"Remarks": [<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 0,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "Good day, and welcome to the Dollar Tree Incorporated Fourth Quarter Earnings Conference Call. Today's conference is being recorded. At this time, I would like to turn the conference over to Mr. Randy Guiler, Vice President, Investor Relations. Please go ahead, sir.",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "bc18a561-7a1e-427e-be39-c2644eda4a11",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Operator",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Operator",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace><tabspace></tabspace>},<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 1,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "Thank you, Britney. Good morning, and welcome to our call to discuss Dollar Tree's performance for the fourth fiscal quarter and fiscal year 2019. On today's call will be CEO, Gary Philbin; Enterprise President, Mike Witynski; and CFO, Kevin Wampler.",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "8d2f9fec-edf0-494c-b21b-7b11f28ea557",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Randy Guiler",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Vice President, Investor Relations",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace><tabspace></tabspace>},<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 2,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "Before we begin, I would like to remind everyone that various remarks that we will make about future expectations, plans and prospects for the Company constitute forward-looking statements for the purposes of the Safe Harbor provisions under the Private Securities Litigation Reform Act of 1995. Actual results may differ materially from those indicated by these forward-looking statements as a result of various important factors included in our most recent press release, most recent 8-K, 10-Q and Annual Report, which are on file with the SEC. We have no obligation to update our forward-looking statements and you should not expect us to do so.",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "8d2f9fec-edf0-494c-b21b-7b11f28ea557",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Randy Guiler",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Vice President, Investor Relations",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace><tabspace></tabspace>},<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 3,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "In the fourth quarter, the Company incurred several discrete charges as described below: a $313 million non-cash charge for goodwill impairment, a $24.6 million reduction in tax expense for the reversal of a valuation allowance related to the Company's foreign net operating loss carry-forwards, an $18 million charge to the litigation reserve, and a $0.3 million acceleration in non-cash deferred financing cost associated with a debt prepayment. These items are detailed in the reconciliation of non-GAAP financial measures in today's press release. Unless otherwise noted, all margin, net income, and earnings comparisons presented today exclude the impact of these discrete charges from the fourth quarter and fiscal year.",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "8d2f9fec-edf0-494c-b21b-7b11f28ea557",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Randy Guiler",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Vice President, Investor Relations",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace><tabspace></tabspace>},<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 4,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "At the end of our prepared remarks, we will open the call to your questions. Please limit your questions to one and one follow-up if necessary.",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "8d2f9fec-edf0-494c-b21b-7b11f28ea557",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Randy Guiler",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Vice President, Investor Relations",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace><tabspace></tabspace>},<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 5,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "Now, I will turn the call over to Gary Philbin, Dollar Tree's Chief Executive Officer.",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "8d2f9fec-edf0-494c-b21b-7b11f28ea557",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Randy Guiler",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Vice President, Investor Relations",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace><tabspace></tabspace>},<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 6,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "Thank you, Randy. Good morning, everyone. I'm proud of our team's accomplishments in fiscal 2019, including the successful consolidation of our store support centers, the material acceleration of the Family Dollar store optimization program and the initial launch of our Dollar TreePlus! initiative. For Q4, despite the compressed holiday shopping season with six fewer days between Thanksgiving, Christmas, we delivered positive same-store sales for the enterprise, while managing margins and costs effectively to deliver adjusted EPS of $1.79, near the top end of our guidance range.",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "6a13165c-0cc1-4fd6-a378-fac7a05a4649",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Gary M. Philbin",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chief Executive Officer",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace><tabspace></tabspace>},<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 7,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "Fiscal 2019 was an important year for our organization, as we further developed the foundation and fundamentals to grow and improve our business. Accomplishments for 2019 include the following: first, consolidation of our store support center brought the Family Dollar and Dollar Tree teams together in one building. This was a major project and announced in September of 2018 and completed this past July. Our working in one space has increased the energy, benefited our culture and driven collaboration, efficiency and teamwork that will enable us to provide even better support to our stores as we move through 2020.",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "6a13165c-0cc1-4fd6-a378-fac7a05a4649",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Gary M. Philbin",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chief Executive Officer",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace><tabspace></tabspace>},<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 8,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "Our store support consolidation allowed us to organize our management around the key processes within the company and flattened our organization to accomplish the speed and focus we need to have on key initiatives this year. We made significant progress on the Family Dollar store optimization program, including closing more than 400 stores, rebannering 200 Family Dollar stores to Dollar Trees and renovating more than 1,100 mature stores at Family Dollar into the H2 format.",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "6a13165c-0cc1-4fd6-a378-fac7a05a4649",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Gary M. Philbin",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chief Executive Officer",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace><tabspace></tabspace>},<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 9,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "Third, the Dollar TreePlus! was introduced around mid-year. Mike will provide an update on the initiative, including the details of our Dollar TreePlus! 2.0 that's being implemented into our test stores this month. Fourth, we repurchased $200 million in shares during 2019. In recent years, we have made significant process [Phonetic] in paying down debt. We have a scheduled debt payment for $250 million in April 2020, and we currently have an $800 million authorization remaining on our Board repurchase plan.",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "6a13165c-0cc1-4fd6-a378-fac7a05a4649",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Gary M. Philbin",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chief Executive Officer",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace><tabspace></tabspace>},<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 10,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "Our merchant teams traveled overseas for their annual post-holiday buying trip in January. This trip was led by our Enterprise Chief Merchant. The teams continue to work directly with a diverse group of qualified factories. In fact, we had vendors from eight other Asian countries attend our qualifying Open Buying Day. We consider this to be one of our most successful buying trips. We were pleased with the continued support we are receiving from our extended vendor group, and we're able to buy the value in key items and departments for both banners for the 2020 holiday season. Importantly, all returned from China healthy and safe just prior to the news regarding the outbreak of the coronavirus.",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "6a13165c-0cc1-4fd6-a378-fac7a05a4649",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Gary M. Philbin",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chief Executive Officer",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace>]<br>
+                                            }<br>                                            
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <!--SEC Filings-->
