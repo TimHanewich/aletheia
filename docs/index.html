@@ -1209,7 +1209,145 @@
                                     <div class="api-ep"><api-param>top</api-param> - The number of highlights to return in the response. Default (if not specified) is 5, maxiumum is 12.</div>
                                 </div>
                             </div>
+                            <h4 class="api-sub-header">Example Requests</h4>
+                            <div class="code-block req-example">https://api.aletheiaapi.com/EarningsCallHighlights?company=DLTR&year=2019&quarter=q4</div>
+                            <div class="code-block req-example">https://api.aletheiaapi.com/EarningsCallHighlights?company=DLTR&year=2019&quarter=q4&category=0</div>
+                            <div class="code-block req-example">https://api.aletheiaapi.com/EarningsCallHighlights?company=AAPL&year=2020&quarter=q1&category=5&top=3</div>
+                            <div class="api-sub-header">Example Response</div>
+                            <div class="response-example-cont">
+                                <div class="response-example-openclose">+ Example Response</div>
+                                <div class="response-example scrollable-code">
+                                    [<br>
+                                    <tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"Id": "423a379d-a22c-4340-b8f5-40abe350a301",<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"Remark": "For the first quarter, we are forecasting total sales to range from $5.89 billion to $5.99 billion and diluted earnings per share in the range of $1.00 to $1.09. These estimates are based on a low-single digit increase in same-store sales and year-over-year square footage growth of 1.5%. For fiscal 2020, we are forecasting total sales to range between $24.21 billion and $24.66 billion based on a low-single digit same-store sales increase and approximately 3.1% selling square footage growth. The Company anticipates GAAP net income per diluted share for fiscal 2020 will range between $4.80 and $5.15.",<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "1215ce14-86db-45de-b033-4bff1e0ea72b",<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Rick Matros",<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chairman of the Board, President and Chief Executive Officer",<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                    <tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"Highlights": [   <response-example-comment>The response will include the start position and end position of each keyword or phrase that was recognized being of interest</response-example-comment><br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 85,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 89,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 5,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 4.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 146,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 150,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 5,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 4.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 460,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 463,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 5,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 4.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 283,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 286,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 5,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 4.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 373,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 378,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 5,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 4.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                    <tabspace></tabspace><tabspace></tabspace>]<br>
+                                    <tabspace></tabspace>},<br>
+                                    <tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"Id": "f5d98c26-e11c-4855-b655-38045f25350e",<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"Remark": "And looking at our 2020 outlook when compared to 2019 performance, the upper end of our 2020 guidance is $5.15. Adding back the impact of $47 million or $0.15 per share in incremental tariffs in 2020 and $28.6 million or $0.12 per share for the equalization of tax rates for both years brings the adjusted EPS for 2020 at the high-end to $5.42. When compared to the 2019 adjusted earnings per share of $4.76, 2020 adjusted earnings of $5.42 would be a 14% increase year-over-year.",<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "1215ce14-86db-45de-b033-4bff1e0ea72b",<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Rick Matros",<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chairman of the Board, President and Chief Executive Officer",<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                    <tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"Highlights": [<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 93,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 100,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 7,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 6.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 204,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 208,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 5,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 4.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 338,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 338,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 5,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 4.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 452,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 454,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 5,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 4.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 105,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 105,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 5,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 4.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                    <tabspace></tabspace><tabspace></tabspace>]<br>
+                                    <tabspace></tabspace>},<br>
+                                    <tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"Id": "957bb7b1-dec2-4136-abfa-1e3e2beaf582",<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"Remark": "For the fourth quarter on a GAAP basis, the Company had net income of $123 million or $0.52 per diluted share. This compared to a GAAP net loss of $2.3 billion or a loss of $9.69 per share in the prior year's quarter. On an adjusted basis, diluted earnings per share for Q4 2019 were $1.79. Please refer to the reconciliation of non-GAAP financial measures in today's press release.",<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "1215ce14-86db-45de-b033-4bff1e0ea72b",<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Rick Matros",<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chairman of the Board, President and Chief Executive Officer",<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+                                    <tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"Highlights": [<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 135,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 142,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 1,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 5.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 86,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 90,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 5,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 4.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 284,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 284,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 5,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 4.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 147,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 150,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 5,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 4.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>},<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 248,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 265,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 1,<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 4.0<br>
+                                    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+                                    <tabspace></tabspace><tabspace></tabspace>]<br>
+                                    <tabspace></tabspace>}<br>
+                                    ]<br>
 
+                                </div>
+                            </div>
 
 
                         </div>
