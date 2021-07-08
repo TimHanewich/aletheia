@@ -997,106 +997,6 @@
                             </div>
                         </div>
 
-
-                        <!--Usage Metrics (consumption)-->
-                        <div style="width: 100%;">
-                            <div class="blank-space"></div>
-                            <div class="blank-space"></div>
-                            <h2 class="api-category-title">Usage Metrics</h2>
-                            <p class="api-category-desc">You can use these endpoints to monitor your consumtion of the Aletheia API service.</p>
-
-                            <!--Consumption-->
-                            <div class="api-ep-documentation">
-                                <h3 id="consumption" class="api-title">Consumption</h3>
-                                <p class="api-desc">Count the number of API calls you have made or have been made to you (via webhook) for any time window or for a particular month.</p>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/consumption</div>
-                                </div>
-                                <h4 class="api-sub-header">Parameters</h4>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>begin</api-param> - If requesting consumption during a window, the beginning date of the window you are requesting.</div>
-                                </div>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>end</api-param> - If requesting consumption during a window, the ending date of the window you are requesting.</div>
-                                </div>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>year</api-param> - If requesting consumption for a particular month, the year that contains the month you are requesting.</div>
-                                </div>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>month</api-param> - If requesting consumption for a particular month, the month you are requesting (1-12).</div>
-                                </div>
-                                <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://api.aletheiaapi.com/consumption?begin=20210101&end=20210501</div>
-                                <div class="code-block req-example">https://api.aletheiaapi.com/consumption?begin=20210401&end=20210501</div>
-                                <div class="code-block req-example">https://api.aletheiaapi.com/consumption?year=2021&month=5</div>
-                                <div class="api-sub-header">Example Response</div>
-                                <div class="response-example-cont">
-                                    <div class="response-example-openclose">+ Example Response</div>
-                                    <div class="response-example">
-                                        4837
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <!--My Calls-->
-                            <div style="width: 100%;">
-                                <h3 id="my-calls" class="api-title">My Calls</h3>
-                                <p class="api-desc">Retrieve history of the most recent calls you have made.</p>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/mycalls</div>
-                                </div>
-                                <h4 class="api-sub-header">Parameters</h4>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>last</api-param> - The number of transactions to retrieve. Minimum: 1, Maximum: 100</div>
-                                </div>
-                                <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://api.aletheiaapi.com/mycalls?last=5</div>
-                                <div class="code-block req-example">https://api.aletheiaapi.com/mycalls?last=75</div>
-                                <div class="api-sub-header">Example Response</div>
-                                <div class="response-example-cont">
-                                    <div class="response-example-openclose">+ Example Response</div>
-                                    <div class="response-example">
-                                        [<br>
-                                            <tabspace></tabspace>{<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Endpoint": "Financials",<response-example-comment> - the title of the endpoint you called</response-example-comment><br>
-                                                <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:22:28",<response-example-comment> - the date and time you made the API call</response-example-comment><br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<response-example-comment> - If you called the service, "Request". If a webhook called your endpoint, "Push"</response-example-comment><br>
-                                                <tabspace></tabspace>},<br>
-                                                <tabspace></tabspace>{<br>
-                                                    <tabspace></tabspace><tabspace></tabspace>"Endpoint": "EntityFilings",<br>
-                                                    <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:22:21",<br>
-                                                    <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<br>
-                                                    <tabspace></tabspace>},<br>
-                                                    <tabspace></tabspace>{<br>
-                                                        <tabspace></tabspace><tabspace></tabspace>"Endpoint": "Consumption",<br>
-                                                        <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:11:47",<br>
-                                                        <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<br>
-                                                        <tabspace></tabspace>},<br>
-                                                        <tabspace></tabspace>{<br>
-                                                            <tabspace></tabspace><tabspace></tabspace>"Endpoint": "OpenForm4",<br>
-                                                            <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:11:37",<br>
-                                                            <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<br>
-                                                            <tabspace></tabspace>},<br>
-                                                            <tabspace></tabspace>{<br>
-                                                                <tabspace></tabspace><tabspace></tabspace>"Endpoint": "OpenCommonFinancials",<br>
-                                                                <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:03:54",<br>
-                                                                <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<br>
-                                                                <tabspace></tabspace>}<br>
-                                        ]
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
                         <!--SEC Filings-->
                         <div style="width: 100%;">
                             <div class="blank-space"></div>
@@ -1321,6 +1221,107 @@
                             </div>
 
                         </div>
+
+                        <!--Usage Metrics (consumption)-->
+                        <div style="width: 100%;">
+                            <div class="blank-space"></div>
+                            <div class="blank-space"></div>
+                            <h2 class="api-category-title">Usage Metrics</h2>
+                            <p class="api-category-desc">You can use these endpoints to monitor your consumtion of the Aletheia API service.</p>
+
+                            <!--Consumption-->
+                            <div class="api-ep-documentation">
+                                <h3 id="consumption" class="api-title">Consumption</h3>
+                                <p class="api-desc">Count the number of API calls you have made or have been made to you (via webhook) for any time window or for a particular month.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/consumption</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>begin</api-param> - If requesting consumption during a window, the beginning date of the window you are requesting.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>end</api-param> - If requesting consumption during a window, the ending date of the window you are requesting.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>year</api-param> - If requesting consumption for a particular month, the year that contains the month you are requesting.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>month</api-param> - If requesting consumption for a particular month, the month you are requesting (1-12).</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/consumption?begin=20210101&end=20210501</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/consumption?begin=20210401&end=20210501</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/consumption?year=2021&month=5</div>
+                                <div class="api-sub-header">Example Response</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">
+                                        4837
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--My Calls-->
+                            <div style="width: 100%;">
+                                <h3 id="my-calls" class="api-title">My Calls</h3>
+                                <p class="api-desc">Retrieve history of the most recent calls you have made.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/mycalls</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>last</api-param> - The number of transactions to retrieve. Minimum: 1, Maximum: 100</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/mycalls?last=5</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/mycalls?last=75</div>
+                                <div class="api-sub-header">Example Response</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">
+                                        [<br>
+                                            <tabspace></tabspace>{<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Endpoint": "Financials",<response-example-comment> - the title of the endpoint you called</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:22:28",<response-example-comment> - the date and time you made the API call</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<response-example-comment> - If you called the service, "Request". If a webhook called your endpoint, "Push"</response-example-comment><br>
+                                                <tabspace></tabspace>},<br>
+                                                <tabspace></tabspace>{<br>
+                                                    <tabspace></tabspace><tabspace></tabspace>"Endpoint": "EntityFilings",<br>
+                                                    <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:22:21",<br>
+                                                    <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<br>
+                                                    <tabspace></tabspace>},<br>
+                                                    <tabspace></tabspace>{<br>
+                                                        <tabspace></tabspace><tabspace></tabspace>"Endpoint": "Consumption",<br>
+                                                        <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:11:47",<br>
+                                                        <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<br>
+                                                        <tabspace></tabspace>},<br>
+                                                        <tabspace></tabspace>{<br>
+                                                            <tabspace></tabspace><tabspace></tabspace>"Endpoint": "OpenForm4",<br>
+                                                            <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:11:37",<br>
+                                                            <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<br>
+                                                            <tabspace></tabspace>},<br>
+                                                            <tabspace></tabspace>{<br>
+                                                                <tabspace></tabspace><tabspace></tabspace>"Endpoint": "OpenCommonFinancials",<br>
+                                                                <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:03:54",<br>
+                                                                <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<br>
+                                                                <tabspace></tabspace>}<br>
+                                        ]
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        
                         
                         
                         <!--Service Information-->
