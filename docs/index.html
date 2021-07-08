@@ -345,230 +345,7 @@
                         
                         </div>
 
-                        <!--SEC Filings-->
-                        <div style="width: 100%;">
-                            <div class="blank-space"></div>
-                            <div class="blank-space"></div>
-                            <h2 class="api-category-title">SEC Filings</h2>
-                            <p class="api-category-desc">Access and monitor filings with the Securities Exchange Commission's EDGAR database.</p>
                         
-                            <!--Latest Filings (Hook)-->
-                            <div class="api-ep-documentation">
-                                <h3 id="new-filings" class="api-title">New SEC Filings (Webhook)</h3>
-                                <p class="api-desc">You can subscribe your application or web service to be notified of new SEC filings with this webhook.</p>
-                                
-                                <p class="api-sub-instruction-title">Step 1 - Subscribe Your Endpoint</p>
-                                <p class="api-desc">First you must subscribe your endpoint to the new filings webhook service.</p>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-post">POST</div>
-                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/SubscribeToNewFilingsWebhook</div>
-                                </div>
-                                <div class="api-desc">The body must contain the URL endpoint of your API service. The body must be in JSON format with your endpoint stored in the "endpoint" property. Example:</div>
-                                <div class="body-example">{"endpoint": "<custom-txt>https://www.myservice.net/myendpoint</custom-txt>"}</div>
-                                <div class="api-desc">The subscription endpoint will return a 201 created response. This response will include a "Location" header. The value of this header will be used to unsubscribe from this webhook, so save this for later.</div>
-                            
-                                <p class="api-sub-instruction-title">Step 2 - Receive New Filings!</p>
-                                <p class="api-desc">After subscribing your endpoint to the webhook with step 1, your endpoint will begin to receive HTTP POST requests when a new SEC filing is available.</p>
-                                <p class="api-desc">The following is an example of the POST request that will be sent to your registered endpoint:</p>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-post">POST</div>
-                                    <div class="api-ep-area code-block">(your registered endpoint)</div>
-                                </div>
-                                <div class="body-example">{<br>&nbsp;&nbsp;&nbsp;&nbsp;"EntityTitle":"BlackRock Capital Investment Corp",<br>&nbsp;&nbsp;&nbsp;&nbsp;"EntityCik":1326003,<br>&nbsp;&nbsp;&nbsp;&nbsp;"Filing":"4",<br>&nbsp;&nbsp;&nbsp;&nbsp;"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/1326003/000120919121008361/0001209191-21-008361-index.htm",<br>&nbsp;&nbsp;&nbsp;&nbsp;"Description":"Statement of changes in beneficial ownership of securities Accession Number: 0001209191-21-008361  Size: 9 KB\n",<br>&nbsp;&nbsp;&nbsp;&nbsp;"FilingDate":"2021-02-05T00:00:00"<br>}</div>
-                            
-                                <p class="api-sub-instruction-title">Step 3 - Unsubscribe from the webhook when finished</p>
-                                <p class="api-desc">When you wish to stop receiving posts from this webhook, be sure to formally unsubscribe your endpoint.</p>
-                                <p class="api-desc">When you originally registered your endpoint in step 1, the returned 201 created response contained a "Location" header. The value of this header contains the endpoint that will unsubscribe your endpoint via a DELETE call. The unsubscribe endpoint will look something like this:</p>
-                                <div class="body-example">https://api.aletheiaapi.com/UnsubscribeFromNewFilingsWebhookById?id=dd150c44-c42a-4cdd-92f5-b78a23b36c72</div>
-                                <p class="api-desc">To unsubscribe your endpoint from this webhook, call this provided value via a DELETE call.</p>
-                                <p class="api-desc">If you no longer have the provided unsubscribe URL from the original subscription step, you can also unsubscribe by providing your registered endpoint to the 'UnsubscribeFromNewFilingsWebhookByEndpoint' api. For example, see below:</p>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-delete">DELETE</div>
-                                    <div class="api-ep-area code-block" style="font-size: 13px;">https://api.aletheiaapi.com/UnsubscribeFromNewFilingsWebhookByEndpoint?endpoint=<custom-txt>https://www.myservice.net/myendpoint</custom-txt></div>
-                                </div>
-                            </div>
-                        
-                            <!--Entity Filings-->
-                            <div class="api-ep-documentation">
-                                <h3 id="entity-filings" class="api-title">Entity Filings</h3>
-                                <p class="api-desc">Query the latest SEC filings for a particular company or person.</p>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/EntityFilings</div>
-                                </div>
-                                <h4 class="api-sub-header">Parameters</h4>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-required">Required</div>
-                                    <div class="api-ep"><api-param>id</api-param> - The CIK or trading symbol of the company or person you are searching for</div>
-                                </div>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>filing</api-param> - Filing type filter. For example, 10-K or 10-Q</div>
-                                </div>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>before</api-param> - Filter to filings only before a particular date, in YYYYMMDD format</div>
-                                </div>
-                                <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://api.aletheiaapi.com/EntityFilings?id=msft&filing=10-k</div>
-                                <div class="code-block req-example">https://api.aletheiaapi.com/EntityFilings?id=0000050863&before=20180101</div>
-                                <div class="code-block req-example">https://api.aletheiaapi.com/EntityFilings?id=pg&filing=4&before=20160701</div>
-                                <div class="response-example-cont">
-                                    <div class="response-example-openclose">+ Example Response</div>
-                                    <div class="response-example">
-                                        [<br>
-                                            <tabspace></tabspace>{<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001564590-20-034944&xbrl_type=v",<response-example-comment> - Quick view of extracted data</response-example-comment><br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Filing":"10-K",<response-example-comment> - filing type</response-example-comment><br>
-                                                <tabspace></tabspace><tabspace></tabspace>"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000156459020034944/0001564590-20-034944-index.htm", <response-example-comment> - URL to filing</response-example-comment><br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Description":"Annual report [Section 13 and 15(d), not S-K Item 405] Acc-no: 0001564590-20-034944&nbsp;(34 Act)&nbsp; Size: 27 MB", <response-example-comment> - filing description</response-example-comment><br>
-                                                <tabspace></tabspace><tabspace></tabspace>"FilingDate":"2020-07-30T00:00:00" <response-example-comment> - Date the SEC received the filing</response-example-comment><br>
-                                                <tabspace></tabspace>},<br>
-                                            <tabspace></tabspace>{<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001564590-19-027952&xbrl_type=v",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Filing":"10-K",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000156459019027952/0001564590-19-027952-index.htm",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Description":"Annual report [Section 13 and 15(d), not S-K Item 405] Acc-no: 0001564590-19-027952&nbsp;(34 Act)&nbsp; Size: 26 MB",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"FilingDate":"2019-08-01T00:00:00"<br>
-                                            <tabspace></tabspace>},<br>
-                                            <tabspace></tabspace>{<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001564590-18-019062&xbrl_type=v",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Filing":"10-K",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000156459018019062/0001564590-18-019062-index.htm",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Description":"Annual report [Section 13 and 15(d), not S-K Item 405] Acc-no: 0001564590-18-019062&nbsp;(34 Act)&nbsp; Size: 29 MB",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"FilingDate":"2018-08-03T00:00:00"<br>
-                                            <tabspace></tabspace>},<br>
-                                            <tabspace></tabspace>{<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001564590-17-014900&xbrl_type=v",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Filing":"10-K",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000156459017014900/0001564590-17-014900-index.htm",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Description":"Annual report [Section 13 and 15(d), not S-K Item 405] Acc-no: 0001564590-17-014900&nbsp;(34 Act)&nbsp; Size: 28 MB",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"FilingDate":"2017-08-02T00:00:00"<br>
-                                            <tabspace></tabspace>},<br>
-                                            <tabspace></tabspace>{<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001193125-16-662209&xbrl_type=v",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Filing":"10-K",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312516662209/0001193125-16-662209-index.htm",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Description":"Annual report [Section 13 and 15(d), not S-K Item 405] Acc-no: 0001193125-16-662209&nbsp;(34 Act)&nbsp; Size: 13 MB",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"FilingDate":"2016-07-28T00:00:00"<br>
-                                            <tabspace></tabspace>},<br>
-                                            <tabspace></tabspace>{<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001193125-15-272806&xbrl_type=v",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Filing":"10-K",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312515272806/0001193125-15-272806-index.htm",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Description":"Annual report [Section 13 and 15(d), not S-K Item 405] Acc-no: 0001193125-15-272806&nbsp;(34 Act)&nbsp; Size: 14 MB",<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"FilingDate":"2015-07-31T00:00:00"<br>
-                                            <tabspace></tabspace>}<br>
-                                        ]
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--Open form 4-->
-                            <div class="api-ep-documentation">
-                                <h3 id="open-form-4" class="api-title">Open Form 4</h3>
-                                <p class="api-desc">Open a statement of change in beneficial ownership (form 4) to reveal details of insider trading</p>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/OpenForm4</div>
-                                </div>
-                                <h4 class="api-sub-header">Parameters</h4>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-required">Required</div>
-                                    <div class="api-ep"><api-param>filingurl</api-param> - the URL of the form 4 filing with the SEC</div>
-                                </div>
-                                <ul>
-                                    <li>Tip: Use the filing url of a form 4 filing that was returned via the "EntityFilings" endpoint (see above)</li>
-                                </ul>
-                                <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example scrollable-code">https://api.aletheiaapi.com/OpenForm4?filingurl=https://www.sec.gov/Archives/edgar/data/50863/000112760221003952/0001127602-21-003952-index.htm</div>
-                                <div class="code-block req-example scrollable-code">https://api.aletheiaapi.com/OpenForm4?filingurl=https://www.sec.gov/Archives/edgar/data/1318605/000179056521000001/0001790565-21-000001-index.htm</div>
-                                <div class="response-example-cont">
-                                    <div class="response-example-openclose">+ Example Response</div>
-                                    <div class="response-example">
-                                        {<br>
-                                            <tabspace></tabspace>"SchemaVersion":"X0306",<response-example-comment> - Schema of the XBRL used in this report</response-example-comment><br>
-                                            <tabspace></tabspace>"PeriodOfReport":"2021-02-02T00:00:00",<br>
-                                            <tabspace></tabspace>"IssuerCik":"0000050863",<response-example-comment> - The Central Index Key (ID) of the issuing company</response-example-comment><br>
-                                            <tabspace></tabspace>"IssuerName":"INTEL CORP",<response-example-comment> - Issuing company name</response-example-comment><br>
-                                            <tabspace></tabspace>"IssuerTradingSymbol":"INTC",<response-example-comment> - Issuing company trading symbol</response-example-comment><br>
-                                            <tabspace></tabspace>"OwnerName":"McBride Kevin Thomas",<response-example-comment> - Name of the insider making the trade</response-example-comment><br>
-                                            <tabspace></tabspace>"OwnerCik":"0001723374",<response-example-comment> - The Central Index Key (ID) of the insider making the trade</response-example-comment><br>
-                                            <tabspace></tabspace>"OwnerStreet1":"C/O INTEL CORPORATION",<br>
-                                            <tabspace></tabspace>"OwnerStreet2":"2200 MISSION COLLEGE BLVD",<br>
-                                            <tabspace></tabspace>"OwnerCity":"SANTA CLARA",<br>
-                                            <tabspace></tabspace>"OwnerStateCode":"CA",<br>
-                                            <tabspace></tabspace>"OwnerZipCode":"95054",<br>
-                                            <tabspace></tabspace>"OwnerIsOfficer":true,<br>
-                                            <tabspace></tabspace>"OwnerOfficerTitle":"VP Finance, Corp. Controller",<br>
-                                            <tabspace></tabspace>"NonDerivativeTransactions":[<response-example-comment> - Equity (non-derivative) trades</response-example-comment><br>
-                                            <tabspace></tabspace><tabspace></tabspace>{<br>
-                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SecurityTitle":"Common Stock",<br>
-                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SecuritiesOwnedFollowingTransaction":14214.0,<br>
-                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"DirectOrIndirectOwnership":0,<br>
-                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TransactionDate":"2021-02-02T00:00:00",<br>
-                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TransactionCode":1,<br>
-                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TransactionQuantity":589.0,<br>
-                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TransactionPricePerSecurity":57.17,<br>
-                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"AcquiredOrDisposed":1<br>
-                                                <tabspace></tabspace><tabspace></tabspace>}<br>
-                                            <tabspace></tabspace>],<br>
-                                            <tabspace></tabspace>"DerivativeTransactions":null<response-example-comment> - Derivative trades (similar format to above)</response-example-comment><br>
-                                        }
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--Open common financials-->
-                            <div class="api-ep-documentation">
-                                <h3 id="open-common-financials" class="api-title">Open Common Financials</h3>
-                                <p class="api-desc">Open a financial report document (10-K or 10-Q) filing to a financial statement.</p>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/OpenCommonFinancials</div>
-                                </div>
-                                <h4 class="api-sub-header">Parameters</h4>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-required">Required</div>
-                                    <div class="api-ep"><api-param>filingurl</api-param> - the URL of the 10-K or 10-Q with the SEC. Note: This <b>must</b> be a 10-K or 10-Q.</div>
-                                </div>
-                                <ul>
-                                    <li>Tip: Use the filing url of a 10-K/10-Q filing that was returned via the "EntityFilings" endpoint (see above)</li>
-                                </ul>
-                                <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example scrollable-code">https://api.aletheiaapi.com/OpenCommonFinancials?filingurl=https://www.sec.gov/Archives/edgar/data/789019/000156459020034944/0001564590-20-034944-index.htm</div>
-                                <div class="code-block req-example scrollable-code">https://api.aletheiaapi.com/OpenCommonFinancials?filingurl=https://www.sec.gov/Archives/edgar/data/1326801/000132680120000084/0001326801-20-000084-index.htm</div>
-                                <div class="response-example-cont">
-                                    <div class="response-example-openclose">+ Example Response</div>
-                                    <div class="response-example">
-                                        {<br>
-                                            <tabspace></tabspace>"PeriodStart":"2019-07-01T00:00:00",<br>
-                                            <tabspace></tabspace>"PeriodEnd":"2020-06-30T00:00:00",<br>
-                                            <tabspace></tabspace>"Revenue":1.43015E+11,<br>
-                                            <tabspace></tabspace>"SellingGeneralAndAdministrativeExpense":null,<br>
-                                            <tabspace></tabspace>"ResearchAndDevelopmentExpense":1.9269E+10,<br>
-                                            <tabspace></tabspace>"OperatingIncome":5.2959E+10,<br>
-                                            <tabspace></tabspace>"NetIncome":4.4281E+10,<br>
-                                            <tabspace></tabspace>"Assets":3.01311E+11,<br>
-                                            <tabspace></tabspace>"Liabilities":1.83007E+11,<br>
-                                            <tabspace></tabspace>"Equity":1.18304E+11,<br>
-                                            <tabspace></tabspace>"Cash":1.3575999E+10,<br>
-                                            <tabspace></tabspace>"CurrentAssets":1.81915E+11,<br>
-                                            <tabspace></tabspace>"CurrentLiabilities":7.231E+10,<br>
-                                            <tabspace></tabspace>"RetainedEarnings":3.4566E+10,<br>
-                                            <tabspace></tabspace>"CommonStockSharesOutstanding":7570999808,<br>
-                                            <tabspace></tabspace>"OperatingCashFlows":6.0675E+10,<br>
-                                            <tabspace></tabspace>"InvestingCashFlows":-1.2223E+10,<br>
-                                            <tabspace></tabspace>"FinancingCashFlows":-4.6031E+10,<br>
-                                            <tabspace></tabspace>"ProceedsFromIssuanceOfDebt":0.0,<br>
-                                            <tabspace></tabspace>"PaymentsOfDebt":5.518E+09,<br>
-                                            <tabspace></tabspace>"DividendsPaid":1.5137E+10<br>
-                                         }
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
                       
                         <!--Insider Transactions-->
                         <div style="width: 100%;">
@@ -1320,6 +1097,230 @@
 
                         </div>
 
+                        <!--SEC Filings-->
+                        <div style="width: 100%;">
+                            <div class="blank-space"></div>
+                            <div class="blank-space"></div>
+                            <h2 class="api-category-title">SEC Filings</h2>
+                            <p class="api-category-desc">Access and monitor filings with the Securities Exchange Commission's EDGAR database.</p>
+                        
+                            <!--Latest Filings (Hook)-->
+                            <div class="api-ep-documentation">
+                                <h3 id="new-filings" class="api-title">New SEC Filings (Webhook)</h3>
+                                <p class="api-desc">You can subscribe your application or web service to be notified of new SEC filings with this webhook.</p>
+                                
+                                <p class="api-sub-instruction-title">Step 1 - Subscribe Your Endpoint</p>
+                                <p class="api-desc">First you must subscribe your endpoint to the new filings webhook service.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-post">POST</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/SubscribeToNewFilingsWebhook</div>
+                                </div>
+                                <div class="api-desc">The body must contain the URL endpoint of your API service. The body must be in JSON format with your endpoint stored in the "endpoint" property. Example:</div>
+                                <div class="body-example">{"endpoint": "<custom-txt>https://www.myservice.net/myendpoint</custom-txt>"}</div>
+                                <div class="api-desc">The subscription endpoint will return a 201 created response. This response will include a "Location" header. The value of this header will be used to unsubscribe from this webhook, so save this for later.</div>
+                            
+                                <p class="api-sub-instruction-title">Step 2 - Receive New Filings!</p>
+                                <p class="api-desc">After subscribing your endpoint to the webhook with step 1, your endpoint will begin to receive HTTP POST requests when a new SEC filing is available.</p>
+                                <p class="api-desc">The following is an example of the POST request that will be sent to your registered endpoint:</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-post">POST</div>
+                                    <div class="api-ep-area code-block">(your registered endpoint)</div>
+                                </div>
+                                <div class="body-example">{<br>&nbsp;&nbsp;&nbsp;&nbsp;"EntityTitle":"BlackRock Capital Investment Corp",<br>&nbsp;&nbsp;&nbsp;&nbsp;"EntityCik":1326003,<br>&nbsp;&nbsp;&nbsp;&nbsp;"Filing":"4",<br>&nbsp;&nbsp;&nbsp;&nbsp;"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/1326003/000120919121008361/0001209191-21-008361-index.htm",<br>&nbsp;&nbsp;&nbsp;&nbsp;"Description":"Statement of changes in beneficial ownership of securities Accession Number: 0001209191-21-008361  Size: 9 KB\n",<br>&nbsp;&nbsp;&nbsp;&nbsp;"FilingDate":"2021-02-05T00:00:00"<br>}</div>
+                            
+                                <p class="api-sub-instruction-title">Step 3 - Unsubscribe from the webhook when finished</p>
+                                <p class="api-desc">When you wish to stop receiving posts from this webhook, be sure to formally unsubscribe your endpoint.</p>
+                                <p class="api-desc">When you originally registered your endpoint in step 1, the returned 201 created response contained a "Location" header. The value of this header contains the endpoint that will unsubscribe your endpoint via a DELETE call. The unsubscribe endpoint will look something like this:</p>
+                                <div class="body-example">https://api.aletheiaapi.com/UnsubscribeFromNewFilingsWebhookById?id=dd150c44-c42a-4cdd-92f5-b78a23b36c72</div>
+                                <p class="api-desc">To unsubscribe your endpoint from this webhook, call this provided value via a DELETE call.</p>
+                                <p class="api-desc">If you no longer have the provided unsubscribe URL from the original subscription step, you can also unsubscribe by providing your registered endpoint to the 'UnsubscribeFromNewFilingsWebhookByEndpoint' api. For example, see below:</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-delete">DELETE</div>
+                                    <div class="api-ep-area code-block" style="font-size: 13px;">https://api.aletheiaapi.com/UnsubscribeFromNewFilingsWebhookByEndpoint?endpoint=<custom-txt>https://www.myservice.net/myendpoint</custom-txt></div>
+                                </div>
+                            </div>
+                        
+                            <!--Entity Filings-->
+                            <div class="api-ep-documentation">
+                                <h3 id="entity-filings" class="api-title">Entity Filings</h3>
+                                <p class="api-desc">Query the latest SEC filings for a particular company or person.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/EntityFilings</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>id</api-param> - The CIK or trading symbol of the company or person you are searching for</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>filing</api-param> - Filing type filter. For example, 10-K or 10-Q</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>before</api-param> - Filter to filings only before a particular date, in YYYYMMDD format</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/EntityFilings?id=msft&filing=10-k</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/EntityFilings?id=0000050863&before=20180101</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/EntityFilings?id=pg&filing=4&before=20160701</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">
+                                        [<br>
+                                            <tabspace></tabspace>{<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001564590-20-034944&xbrl_type=v",<response-example-comment> - Quick view of extracted data</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Filing":"10-K",<response-example-comment> - filing type</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000156459020034944/0001564590-20-034944-index.htm", <response-example-comment> - URL to filing</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Description":"Annual report [Section 13 and 15(d), not S-K Item 405] Acc-no: 0001564590-20-034944&nbsp;(34 Act)&nbsp; Size: 27 MB", <response-example-comment> - filing description</response-example-comment><br>
+                                                <tabspace></tabspace><tabspace></tabspace>"FilingDate":"2020-07-30T00:00:00" <response-example-comment> - Date the SEC received the filing</response-example-comment><br>
+                                                <tabspace></tabspace>},<br>
+                                            <tabspace></tabspace>{<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001564590-19-027952&xbrl_type=v",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Filing":"10-K",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000156459019027952/0001564590-19-027952-index.htm",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Description":"Annual report [Section 13 and 15(d), not S-K Item 405] Acc-no: 0001564590-19-027952&nbsp;(34 Act)&nbsp; Size: 26 MB",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"FilingDate":"2019-08-01T00:00:00"<br>
+                                            <tabspace></tabspace>},<br>
+                                            <tabspace></tabspace>{<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001564590-18-019062&xbrl_type=v",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Filing":"10-K",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000156459018019062/0001564590-18-019062-index.htm",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Description":"Annual report [Section 13 and 15(d), not S-K Item 405] Acc-no: 0001564590-18-019062&nbsp;(34 Act)&nbsp; Size: 29 MB",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"FilingDate":"2018-08-03T00:00:00"<br>
+                                            <tabspace></tabspace>},<br>
+                                            <tabspace></tabspace>{<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001564590-17-014900&xbrl_type=v",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Filing":"10-K",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000156459017014900/0001564590-17-014900-index.htm",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Description":"Annual report [Section 13 and 15(d), not S-K Item 405] Acc-no: 0001564590-17-014900&nbsp;(34 Act)&nbsp; Size: 28 MB",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"FilingDate":"2017-08-02T00:00:00"<br>
+                                            <tabspace></tabspace>},<br>
+                                            <tabspace></tabspace>{<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001193125-16-662209&xbrl_type=v",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Filing":"10-K",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312516662209/0001193125-16-662209-index.htm",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Description":"Annual report [Section 13 and 15(d), not S-K Item 405] Acc-no: 0001193125-16-662209&nbsp;(34 Act)&nbsp; Size: 13 MB",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"FilingDate":"2016-07-28T00:00:00"<br>
+                                            <tabspace></tabspace>},<br>
+                                            <tabspace></tabspace>{<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"InteractiveDataUrl":"https://www.sec.gov/cgi-bin/viewer?action=view&cik=789019&accession_number=0001193125-15-272806&xbrl_type=v",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Filing":"10-K",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"DocumentsUrl":"https://www.sec.gov/Archives/edgar/data/789019/000119312515272806/0001193125-15-272806-index.htm",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"Description":"Annual report [Section 13 and 15(d), not S-K Item 405] Acc-no: 0001193125-15-272806&nbsp;(34 Act)&nbsp; Size: 14 MB",<br>
+                                                <tabspace></tabspace><tabspace></tabspace>"FilingDate":"2015-07-31T00:00:00"<br>
+                                            <tabspace></tabspace>}<br>
+                                        ]
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Open form 4-->
+                            <div class="api-ep-documentation">
+                                <h3 id="open-form-4" class="api-title">Open Form 4</h3>
+                                <p class="api-desc">Open a statement of change in beneficial ownership (form 4) to reveal details of insider trading</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/OpenForm4</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>filingurl</api-param> - the URL of the form 4 filing with the SEC</div>
+                                </div>
+                                <ul>
+                                    <li>Tip: Use the filing url of a form 4 filing that was returned via the "EntityFilings" endpoint (see above)</li>
+                                </ul>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example scrollable-code">https://api.aletheiaapi.com/OpenForm4?filingurl=https://www.sec.gov/Archives/edgar/data/50863/000112760221003952/0001127602-21-003952-index.htm</div>
+                                <div class="code-block req-example scrollable-code">https://api.aletheiaapi.com/OpenForm4?filingurl=https://www.sec.gov/Archives/edgar/data/1318605/000179056521000001/0001790565-21-000001-index.htm</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">
+                                        {<br>
+                                            <tabspace></tabspace>"SchemaVersion":"X0306",<response-example-comment> - Schema of the XBRL used in this report</response-example-comment><br>
+                                            <tabspace></tabspace>"PeriodOfReport":"2021-02-02T00:00:00",<br>
+                                            <tabspace></tabspace>"IssuerCik":"0000050863",<response-example-comment> - The Central Index Key (ID) of the issuing company</response-example-comment><br>
+                                            <tabspace></tabspace>"IssuerName":"INTEL CORP",<response-example-comment> - Issuing company name</response-example-comment><br>
+                                            <tabspace></tabspace>"IssuerTradingSymbol":"INTC",<response-example-comment> - Issuing company trading symbol</response-example-comment><br>
+                                            <tabspace></tabspace>"OwnerName":"McBride Kevin Thomas",<response-example-comment> - Name of the insider making the trade</response-example-comment><br>
+                                            <tabspace></tabspace>"OwnerCik":"0001723374",<response-example-comment> - The Central Index Key (ID) of the insider making the trade</response-example-comment><br>
+                                            <tabspace></tabspace>"OwnerStreet1":"C/O INTEL CORPORATION",<br>
+                                            <tabspace></tabspace>"OwnerStreet2":"2200 MISSION COLLEGE BLVD",<br>
+                                            <tabspace></tabspace>"OwnerCity":"SANTA CLARA",<br>
+                                            <tabspace></tabspace>"OwnerStateCode":"CA",<br>
+                                            <tabspace></tabspace>"OwnerZipCode":"95054",<br>
+                                            <tabspace></tabspace>"OwnerIsOfficer":true,<br>
+                                            <tabspace></tabspace>"OwnerOfficerTitle":"VP Finance, Corp. Controller",<br>
+                                            <tabspace></tabspace>"NonDerivativeTransactions":[<response-example-comment> - Equity (non-derivative) trades</response-example-comment><br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SecurityTitle":"Common Stock",<br>
+                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SecuritiesOwnedFollowingTransaction":14214.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"DirectOrIndirectOwnership":0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TransactionDate":"2021-02-02T00:00:00",<br>
+                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TransactionCode":1,<br>
+                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TransactionQuantity":589.0,<br>
+                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TransactionPricePerSecurity":57.17,<br>
+                                                <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"AcquiredOrDisposed":1<br>
+                                                <tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace>],<br>
+                                            <tabspace></tabspace>"DerivativeTransactions":null<response-example-comment> - Derivative trades (similar format to above)</response-example-comment><br>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Open common financials-->
+                            <div class="api-ep-documentation">
+                                <h3 id="open-common-financials" class="api-title">Open Common Financials</h3>
+                                <p class="api-desc">Open a financial report document (10-K or 10-Q) filing to a financial statement.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/OpenCommonFinancials</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>filingurl</api-param> - the URL of the 10-K or 10-Q with the SEC. Note: This <b>must</b> be a 10-K or 10-Q.</div>
+                                </div>
+                                <ul>
+                                    <li>Tip: Use the filing url of a 10-K/10-Q filing that was returned via the "EntityFilings" endpoint (see above)</li>
+                                </ul>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example scrollable-code">https://api.aletheiaapi.com/OpenCommonFinancials?filingurl=https://www.sec.gov/Archives/edgar/data/789019/000156459020034944/0001564590-20-034944-index.htm</div>
+                                <div class="code-block req-example scrollable-code">https://api.aletheiaapi.com/OpenCommonFinancials?filingurl=https://www.sec.gov/Archives/edgar/data/1326801/000132680120000084/0001326801-20-000084-index.htm</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">
+                                        {<br>
+                                            <tabspace></tabspace>"PeriodStart":"2019-07-01T00:00:00",<br>
+                                            <tabspace></tabspace>"PeriodEnd":"2020-06-30T00:00:00",<br>
+                                            <tabspace></tabspace>"Revenue":1.43015E+11,<br>
+                                            <tabspace></tabspace>"SellingGeneralAndAdministrativeExpense":null,<br>
+                                            <tabspace></tabspace>"ResearchAndDevelopmentExpense":1.9269E+10,<br>
+                                            <tabspace></tabspace>"OperatingIncome":5.2959E+10,<br>
+                                            <tabspace></tabspace>"NetIncome":4.4281E+10,<br>
+                                            <tabspace></tabspace>"Assets":3.01311E+11,<br>
+                                            <tabspace></tabspace>"Liabilities":1.83007E+11,<br>
+                                            <tabspace></tabspace>"Equity":1.18304E+11,<br>
+                                            <tabspace></tabspace>"Cash":1.3575999E+10,<br>
+                                            <tabspace></tabspace>"CurrentAssets":1.81915E+11,<br>
+                                            <tabspace></tabspace>"CurrentLiabilities":7.231E+10,<br>
+                                            <tabspace></tabspace>"RetainedEarnings":3.4566E+10,<br>
+                                            <tabspace></tabspace>"CommonStockSharesOutstanding":7570999808,<br>
+                                            <tabspace></tabspace>"OperatingCashFlows":6.0675E+10,<br>
+                                            <tabspace></tabspace>"InvestingCashFlows":-1.2223E+10,<br>
+                                            <tabspace></tabspace>"FinancingCashFlows":-4.6031E+10,<br>
+                                            <tabspace></tabspace>"ProceedsFromIssuanceOfDebt":0.0,<br>
+                                            <tabspace></tabspace>"PaymentsOfDebt":5.518E+09,<br>
+                                            <tabspace></tabspace>"DividendsPaid":1.5137E+10<br>
+                                         }
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                         
                         
                         <!--Service Information-->
