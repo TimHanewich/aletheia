@@ -656,38 +656,6 @@ body
     font-size: 28px;
 }
 
-.whats-new-title
-{
-    text-align: left;
-    font-size: 30px;
-    line-height: 35px;
-    margin: 0px;
-    color: #1c1c1c;
-    font-weight: bold;
-}
-
-.whats-new-desc
-{
-    text-align: left;
-    font-size: 20px;
-    line-height: 25px;
-    color: #1c1c1c;
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-
-.whats-new-date
-{
-    margin: 0px;
-    color: #7C7C96;
-    text-transform: uppercase;
-}
-
-.news
-{
-    margin-bottom: 20px;
-}
-
 .follow-on-twitter-sect
 {
     width: 100%;
