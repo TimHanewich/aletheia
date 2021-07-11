@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/TimHanewich/aletheia/issues"
   },
-  "homepage": "https://github.com/TimHanewich/aletheia#readme"
+  "homepage": "https://github.com/TimHanewich/aletheia#readme",
+  "devDependencies": {
+    "@types/jquery": "^3.5.6"
+  }
 }
