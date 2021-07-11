@@ -733,7 +733,7 @@ body
     
 }
 
-.tagline-main
+#tagline-main
 {
     font-weight: bolder;
     margin-top: 20px;
@@ -741,7 +741,7 @@ body
     font-size: 40px;
 }
 
-.tagline-sub
+#tagline-sub
 {
     text-align: center;
     margin-top: 0px;
