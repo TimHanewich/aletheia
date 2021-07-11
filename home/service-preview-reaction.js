@@ -65,7 +65,7 @@ $(".service-preview").click(function()
         }
 
         //Fade out the old stuff, in the new stuff
-        SwitchServiceBackgroundImage(bg_img_src);
+        //SwitchServiceBackgroundImage(bg_img_src);
         SwitchServiceDescription(descCont);
 
         //If content data exists for the get, call, and receive content, show it. if not, hide it!
