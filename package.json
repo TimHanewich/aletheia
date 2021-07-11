@@ -1,0 +1,22 @@
+{
+  "name": "aletheia",
+  "version": "0.0.0",
+  "description": "This is the static website behind https://aletheiaapi.com",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimHanewich/aletheia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TimHanewich/aletheia/issues"
+  },
+  "homepage": "https://github.com/TimHanewich/aletheia#readme"
+}
