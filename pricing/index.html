@@ -5,12 +5,17 @@
         <link rel="stylesheet" href="../css/branding.css">
         <link rel="stylesheet" href="../css/legal.css">
         <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body style="margin: 0px;">
+
+        <!--Header-->
+        <div id="header-area" style="width: 100%; height: 60px;">
         
+        </div>
+
         <!--Wordmark Title-->
-        <h2 class="page-title wordmark" style="margin-top: 20px;">Aletheia</h2>
-        <div class="single-line"></div>
+        <div class="single-line" style="margin-top: 20px;"></div>
 
         <div class="center-container">
 
@@ -75,6 +80,11 @@
 
             <!--Dead zone-->
             <div style="width: 50%; height: 40px;"></div>
+
+            <!--Script-->
+            <script>
+                $("#header-area").load("/components/header.html");
+            </script>
 
         </div>
     </body>
