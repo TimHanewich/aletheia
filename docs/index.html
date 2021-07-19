@@ -99,6 +99,12 @@
 
                         <!--Earnings Calls-->
                         <h3 class="api-header">Earnings Calls</h3>
+                        <a href="#search-earnings-calls" class="no-decor">
+                            <div id="navep_SearchEarningsCalls" class="api-verb-ep-pair clickable">
+                                <div class="api-verb api-verb-get">GET</div>
+                                <div class="api-ep">Search Earnings Calls</div>
+                            </div>
+                        </a>
                         <a href="#earnings-call" class="no-decor">
                             <div id="navep_EarningsCall" class="api-verb-ep-pair clickable">
                                 <div class="api-verb api-verb-get">GET</div>
@@ -1004,6 +1010,136 @@
                             <h2 class="api-category-title">Earnings Calls</h2>
                             <p class="api-category-desc">Aletheia continuously processes new earnings calls for many publicly traded companies on a daily basis. You can use these endpoints for accessing earnings call content and highlights from the call.</p>
                         
+
+                            <!--Search Earnings Calls-->
+                            <div class="api-ep-documentation">
+                                <h3 id="search-earnings-calls" class="api-title">Search Earnings Calls</h3>
+                                <p class="api-desc">Search our database for available earnings call transcripts and highlights.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/SearchEarningsCalls</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>company</api-param> - The trading symbol of the of the company.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>year</api-param> - The fiscal year of the earnings call you are requesting.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>quarter</api-param> - What fiscal quarter you are requesting an earnings call for. Provide either 'q1', 'q2', 'q3', or 'q4'.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>top</api-param> - The maximum number of records to return. Max is 50, default is 15.</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/SearchEarningsCalls?company=fb&year=2020</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/SearchEarningsCalls?year=2020&quarter=q3&top=8</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/SearchEarningsCalls?company=msft&year=2021</div>
+                                <div class="api-sub-header">Example Response</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">
+                                        [<br>
+                                        <tabspace></tabspace>{<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Id": "31a7e56c-d6bb-4224-81f6-a0c3400d690b",<response-example-comment> - the unique ID of this earnings call</response-example-comment><br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Company": {<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "5372f27b-929c-45f6-8ae5-7404a59d307f",<response-example-commnt> - the unique ID of the company</response-example-commnt><br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Microsoft",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "MSFT"<br>
+                                        <tabspace></tabspace><tabspace></tabspace>},<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Period": 2,<response-example-comment> - Fiscal quarter. 0 = Q1, 1 = Q2, 2 = Q3, 3 = Q4</response-example-comment><br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Year": 2021,<response-example-comment> - the fiscal year</response-example-comment><br>
+                                        <tabspace></tabspace><tabspace></tabspace>"HeldAt": "2021-04-27T00:00:00"<response-example-comment> - date the call was held on</response-example-comment><br>
+                                        <tabspace></tabspace>},<br>
+                                        <tabspace></tabspace>{<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Id": "2cb52ca5-b8a2-4219-8cb3-7de95f40c75f",<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Company": {<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "5372f27b-929c-45f6-8ae5-7404a59d307f",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Microsoft",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "MSFT"<br>
+                                        <tabspace></tabspace><tabspace></tabspace>},<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Period": 1,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Year": 2021,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"HeldAt": "2021-01-26T00:00:00"<br>
+                                        <tabspace></tabspace>},<br>
+                                        <tabspace></tabspace>{<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Id": "3da4547a-afbe-47c0-95c8-856b71692ca2",<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Company": {<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "5372f27b-929c-45f6-8ae5-7404a59d307f",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Microsoft",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "MSFT"<br>
+                                        <tabspace></tabspace><tabspace></tabspace>},<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Period": 0,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Year": 2021,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"HeldAt": "2020-10-27T00:00:00"<br>
+                                        <tabspace></tabspace>},<br>
+                                        <tabspace></tabspace>{<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Id": "e2ee094f-e34f-48e8-ae02-332057ca6798",<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Company": {<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "5372f27b-929c-45f6-8ae5-7404a59d307f",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Microsoft",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "MSFT"<br>
+                                        <tabspace></tabspace><tabspace></tabspace>},<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Period": 3,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Year": 2020,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"HeldAt": "2020-07-22T00:00:00"<br>
+                                        <tabspace></tabspace>},<br>
+                                        <tabspace></tabspace>{<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Id": "d3dbcc49-b774-4055-840b-51e7853d7a84",<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Company": {<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "5372f27b-929c-45f6-8ae5-7404a59d307f",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Microsoft",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "MSFT"<br>
+                                        <tabspace></tabspace><tabspace></tabspace>},<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Period": 2,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Year": 2020,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"HeldAt": "2020-04-29T00:00:00"<br>
+                                        <tabspace></tabspace>},<br>
+                                        <tabspace></tabspace>{<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Id": "c1d2bba5-d502-44d5-b16d-a9bfb77cfafd",<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Company": {<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "5372f27b-929c-45f6-8ae5-7404a59d307f",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Microsoft",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "MSFT"<br>
+                                        <tabspace></tabspace><tabspace></tabspace>},<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Period": 1,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Year": 2020,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"HeldAt": "2020-01-29T00:00:00"<br>
+                                        <tabspace></tabspace>},<br>
+                                        <tabspace></tabspace>{<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Id": "c3a97166-8881-4b4c-bf5d-21b0e24e2f56",<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Company": {<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "5372f27b-929c-45f6-8ae5-7404a59d307f",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Microsoft",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "MSFT"<br>
+                                        <tabspace></tabspace><tabspace></tabspace>},<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Period": 0,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Year": 2020,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"HeldAt": "2019-10-23T00:00:00"<br>
+                                        <tabspace></tabspace>},<br>
+                                        <tabspace></tabspace>{<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Id": "9950dcc5-a3f8-4787-b4a2-fccf1afdd69b",<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Company": {<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "5372f27b-929c-45f6-8ae5-7404a59d307f",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Microsoft",<br>
+                                        <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "MSFT"<br>
+                                        <tabspace></tabspace><tabspace></tabspace>},<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Period": 3,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"Year": 2019,<br>
+                                        <tabspace></tabspace><tabspace></tabspace>"HeldAt": "2019-07-18T00:00:00"<br>
+                                        <tabspace></tabspace>}<br>
+                                        ]<br>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <!--Earnings Call-->
                             <div class="api-ep-documentation">
                                 <h3 id="earnings-call" class="api-title">Earnings Call</h3>
