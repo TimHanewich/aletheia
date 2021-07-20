@@ -94,3 +94,14 @@
     background-color: #FFE99F;
     font-size: 18px;
 }
+
+.subscription-tier-box
+{
+    height: 21vw;
+    width: 17vw;
+    border-style: solid;
+    border-color: #00058F;
+    border-width: 2px;
+    border-radius: 15px;
+    display: inline-block;
+}
