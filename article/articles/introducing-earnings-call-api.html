@@ -1,0 +1,215 @@
+<h1 class="article-title">Introducing Aletheia's Earnings Call API</h1>
+<h2 class="article-published-on">July 23, 2021</h2>
+
+<p class="btxt">Aletheia's new <b>Earnings Call</b> API service was made available for public consumption this week! In this article we will take a closer look at the service, what it can provide to you, and where it is heading.</p>
+<p class="btxt">You can find the documentation for the service on <a href="https://aletheiaapi.com/docs">Aletheia's documentation page</a>.</p>
+
+<h3>The Earnings Call Service</h3>
+<p class="btxt">The earnings call API service was built around the capability of providing 1) full earnings call transcripts in their entirety, and 2) cutting through the noise by providing you with the *most notable* quotes from each call.</p>
+<p class="btxt">As of the time of this writing, over 27,000 earnings calls are available for over 3,700 companies going back to 2017. Over 3.1 million spoken remarks have been recorded from over 86,000 executives and have been individually analyzed and extracted of notable sentiment, financial data, guidance, and more.</p>
+<p class="btxt">As mentioned above, the earnings calls are available for consumption in two formats which will be discussed below.</p>
+
+<h3>Search the Earnings Call Database</h3>
+<p class="btxt"><a href="https://aletheiaapi.com/docs/#search-earnings-calls">Documentation here</a></p>
+<p class="btxt">The first endpoint gives you the ability to search the database for earnings call transcripts that are available for consumption. For example, if you wanted to see what calls are available for Microsoft ($MSFT), you do that here.</p>
+<p class="btxt">Example: <b>GET https://api.aletheiaapi.com/SearchEarningsCalls?company=msft&year=2020&top=5</b></p>
+<p class="cb">
+[<br>
+<tabspace></tabspace>{<br>
+<tabspace></tabspace><tabspace></tabspace>"Id": "e2ee094f-e34f-48e8-ae02-332057ca6798",<br>
+<tabspace></tabspace><tabspace></tabspace>"Company": {<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "5372f27b-929c-45f6-8ae5-7404a59d307f",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Microsoft",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "MSFT"<br>
+<tabspace></tabspace><tabspace></tabspace>},<br>
+<tabspace></tabspace><tabspace></tabspace>"Period": 3,<br>
+<tabspace></tabspace><tabspace></tabspace>"Year": 2020,<br>
+<tabspace></tabspace><tabspace></tabspace>"HeldAt": "2020-07-22T00:00:00"<br>
+<tabspace></tabspace>},<br>
+<tabspace></tabspace>{<br>
+<tabspace></tabspace><tabspace></tabspace>"Id": "d3dbcc49-b774-4055-840b-51e7853d7a84",<br>
+<tabspace></tabspace><tabspace></tabspace>"Company": {<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "5372f27b-929c-45f6-8ae5-7404a59d307f",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Microsoft",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "MSFT"<br>
+<tabspace></tabspace><tabspace></tabspace>},<br>
+<tabspace></tabspace><tabspace></tabspace>"Period": 2,<br>
+<tabspace></tabspace><tabspace></tabspace>"Year": 2020,<br>
+<tabspace></tabspace><tabspace></tabspace>"HeldAt": "2020-04-29T00:00:00"<br>
+<tabspace></tabspace>},<br>
+<tabspace></tabspace>{<br>
+<tabspace></tabspace><tabspace></tabspace>"Id": "c1d2bba5-d502-44d5-b16d-a9bfb77cfafd",<br>
+<tabspace></tabspace><tabspace></tabspace>"Company": {<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "5372f27b-929c-45f6-8ae5-7404a59d307f",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Microsoft",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "MSFT"<br>
+<tabspace></tabspace><tabspace></tabspace>},<br>
+<tabspace></tabspace><tabspace></tabspace>"Period": 1,<br>
+<tabspace></tabspace><tabspace></tabspace>"Year": 2020,<br>
+<tabspace></tabspace><tabspace></tabspace>"HeldAt": "2020-01-29T00:00:00"<br>
+<tabspace></tabspace>},<br>
+<tabspace></tabspace>{<br>
+<tabspace></tabspace><tabspace></tabspace>"Id": "c3a97166-8881-4b4c-bf5d-21b0e24e2f56",<br>
+<tabspace></tabspace><tabspace></tabspace>"Company": {<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "5372f27b-929c-45f6-8ae5-7404a59d307f",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Microsoft",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "MSFT"<br>
+<tabspace></tabspace><tabspace></tabspace>},<br>
+<tabspace></tabspace><tabspace></tabspace>"Period": 0,<br>
+<tabspace></tabspace><tabspace></tabspace>"Year": 2020,<br>
+<tabspace></tabspace><tabspace></tabspace>"HeldAt": "2019-10-23T00:00:00"<br>
+<tabspace></tabspace>}<br>
+]<br>
+</p>
+
+<p class="btxt">The request above searched the database for earnings calls for Microsoft ($MSFT) in fiscal year 2020. All four quarters are available!</p>
+<p class="btxt">Now that you know what is available, you can request content for this call with the next two endpoints.</p>
+
+<h3>Earnings Call Transcript Content</h3>
+<p class="btxt"><a href="https://aletheiaapi.com/docs/#earnings-call">Documentation here</a></p>
+<p class="btxt">This endpoint provides the raw earnings call content. If your desire is to simply access raw earnings call content through an API, this is your endpoint.</p>
+<p class="btxt">Each call to this service will provide you with the earnings call contextual data (what company it corresponds to, the date of the earnings call, etc.) and a series of spoken remarks by call participants. Each spoken remark will contain contextual data about who said it, in what sequence it was spoken in, and the remark itself.</p>
+<p class="btxt">Example: GET https://api.aletheiaapi.com/EarningsCall?company=msft&year=2020&quarter=q1&begin=8&end=11</p>
+<p class="cb">
+    {<br>
+    <tabspace></tabspace>"Id": "c3a97166-8881-4b4c-bf5d-21b0e24e2f56",<br>
+    <tabspace></tabspace>"Year": 2020,<br>
+    <tabspace></tabspace>"Period": 0,<br>
+    <tabspace></tabspace>"Company": {<br>
+    <tabspace></tabspace><tabspace></tabspace>"Id": "5372f27b-929c-45f6-8ae5-7404a59d307f",<br>
+    <tabspace></tabspace><tabspace></tabspace>"Name": "Microsoft",<br>
+    <tabspace></tabspace><tabspace></tabspace>"TradingSymbol": "MSFT"<br>
+    <tabspace></tabspace>},<br>
+    <tabspace></tabspace>"Remarks": [<br>
+    <tabspace></tabspace><tabspace></tabspace>{<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 8,<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "Thank you, Mike. And thanks to everyone on the phone for joining. We are off to a strong start in fiscal 2020, delivering $33 billion in revenue this quarter. Our Commercial Cloud business continues to grow at scale, as we work alongside the world's leading companies to help them build their own digital capability. Microsoft provides a differentiated technology stack spanning application infrastructure, data and AI, developer tools and services, security and compliance, business process, productivity, and collaboration.",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "d1956458-ac06-4c74-89fa-0f499d4faeb5",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Satya Nadella",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chief Executive Officer",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+    <tabspace></tabspace><tabspace></tabspace>},<br>
+    <tabspace></tabspace><tabspace></tabspace>{<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 9,<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "For each of these areas -- first, each of these areas represents secular long-term growth opportunity. Second, we are delivering best-in-class innovation and openness in each layer. And third, we offer unparalleled integration and architectural coherence across the entire stack to meet the real world needs of our customers.",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "d1956458-ac06-4c74-89fa-0f499d4faeb5",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Satya Nadella",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chief Executive Officer",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+    <tabspace></tabspace><tabspace></tabspace>},<br>
+    <tabspace></tabspace><tabspace></tabspace>{<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 10,<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "Now I'll briefly highlight how we are accelerating our progress in innovation, starting with Azure. Organizations today need a distributed computing fabric to meet their real world operational sovereignty and regulatory needs. This quarter, we opened new datacenter regions in Germany and Switzerland, and in India, we are bringing the power of Microsoft Cloud to millions of small businesses through our partnership with Jio, one of the largest mobile carriers in the country.",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "d1956458-ac06-4c74-89fa-0f499d4faeb5",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Satya Nadella",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chief Executive Officer",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+    <tabspace></tabspace><tabspace></tabspace>},<br>
+    <tabspace></tabspace><tabspace></tabspace>{<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SequenceNumber": 11,<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Remark": "Every Fortune 500 customer today is on a cloud migration journey, and we are making it faster and easier. Just this week, we announced an extensive go-to market partnership with SAP making Azure the preferred destination for every SAP customer. And our partnerships with VMware and Oracle also bring these ecosystems to our Cloud. We are extending beyond the cloud to the edge, enabling customers to get real-time insights where data is generated, while ensuring security and privacy. And we are seeing traction in every industry from Azure Sphere securely connecting Starbucks coffee machines to Azure Stack enabling scenarios from smart factories and modern compliant banking to mobile healthcare in remote areas.",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "d1956458-ac06-4c74-89fa-0f499d4faeb5",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Satya Nadella",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chief Executive Officer",<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+    <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+    <tabspace></tabspace><tabspace></tabspace>}<br>
+    <tabspace></tabspace>]<br>
+    }<br>        
+</p>
+
+<p class="btxt">The above example is requesting spoken remarks #8 through #11 (four total) of Microsoft's Q1 earnings call from Fiscal Year 2020. By manipulating the <i>begin</i> and <i>end</i> parameters of the request, you can paginate through the earnings call to access the full transcript.</p>
+
+<h3>Earnings Call Highlights</h3>
+<p class="btxt"><a href="https://aletheiaapi.com/docs/#earnings-call-highlights">Documentation here</a></p>
+<p class="btxt">The final endpoint is for those who want to cut through the noise of the earnings call and see the remarks that specifically are the most notable or important. At the time of transcript processing, Aletheia scans and analyzes every spoken remark and highlights the notable pieces for multiple categories. This means that you can request the most notable remarks regarding <i>revenue</i>, <i>cash flow</i>, <i>guidance</i>, <i>EPS</i>, and more.</p>
+<p class="btxt">Example: <b>GET https://api.aletheiaapi.com/EarningsCallHighlights?company=msft&year=2020&quarter=q1&category=7</b></p>
+<p class="cb">
+[<br>
+<tabspace></tabspace>{<br>
+<tabspace></tabspace><tabspace></tabspace>"Id": "94a6a131-2717-4dec-a1d4-cc8a2b3a06f0",<br>
+<tabspace></tabspace><tabspace></tabspace>"Remark": "Now back to overall company guidance. We expect COGS of $12.45 billion to $12.65 billion, and operating expenses of $10.8 billion to $10.9 billion. Other income and expense should be approximately $50 million, as interest income is partially offset by interest and finance lease expense. And finally, we expect our Q2 effective tax rate to be slightly above the full year rate of 17%.",<br>
+<tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "e1481a76-0bdb-4c38-939d-dec0e8c7d39f",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Amy E. Hood",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chief Financial Officer",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+<tabspace></tabspace><tabspace></tabspace>},<br>
+<tabspace></tabspace><tabspace></tabspace>"Highlights": [<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 28,<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 35,<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 7,<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 6.0<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+<tabspace></tabspace><tabspace></tabspace>]<br>
+<tabspace></tabspace>},<br>
+<tabspace></tabspace>{<br>
+<tabspace></tabspace><tabspace></tabspace>"Id": "90d960a6-1f7f-4a11-8578-9c6a18e1b186",<br>
+<tabspace></tabspace><tabspace></tabspace>"Remark": "Now to segment guidance. In Productivity and Business Processes, we expect revenue between $11.3 billion and $11.5 billion, driven by double-digit growth across Office Commercial, Dynamics and LinkedIn. For Intelligent Cloud, we expect revenue between $11.25 billion and $11.45 billion.",<br>
+<tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "e1481a76-0bdb-4c38-939d-dec0e8c7d39f",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Amy E. Hood",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chief Financial Officer",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+<tabspace></tabspace><tabspace></tabspace>},<br>
+<tabspace></tabspace><tabspace></tabspace>"Highlights": [<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 15,<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 22,<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 7,<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 6.0<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+<tabspace></tabspace><tabspace></tabspace>]<br>
+<tabspace></tabspace>},<br>
+<tabspace></tabspace>{<br>
+<tabspace></tabspace><tabspace></tabspace>"Id": "d759b58b-8cdc-420f-b189-2e9aee48f61d",<br>
+<tabspace></tabspace><tabspace></tabspace>"Remark": "And I think that's probably the unifying theme, quite frankly, of all the questions so far, which is what's next. What's next for us is in the apps and infra go from perhaps first innings to second innings. For data and AI to start the first innings. When it comes to security, compliance, we never participated in this. Guess what, we get to participate in a fairly competitive way now. We've Build, something that didn't even exist a few years ago, which is the workflow cloud. That's a huge opportunity for us. Biz Apps, we are a very competitive and growing footprint. Even when we think about something like Microsoft 365, we never participated in spite of our past success with all the first-line work, and now we get to participate in it. So I see long-term secular growth opportunities and we are going to stay focused on making sure our innovation is competitive in all those layers, we talked about.",<br>
+<tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "d1956458-ac06-4c74-89fa-0f499d4faeb5",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Satya Nadella",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chief Executive Officer",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+<tabspace></tabspace><tabspace></tabspace>},<br>
+<tabspace></tabspace><tabspace></tabspace>"Highlights": [<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 583,<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 590,<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 7,<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 1.0<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+<tabspace></tabspace><tabspace></tabspace>]<br>
+<tabspace></tabspace>},<br>
+<tabspace></tabspace>{<br>
+<tabspace></tabspace><tabspace></tabspace>"Id": "a706520e-10d2-4e03-997a-44f14365b819",<br>
+<tabspace></tabspace><tabspace></tabspace>"Remark": "One is the hybrid benefits. That is increasingly what is getting customers excited about the Azure choice and the fact that they can renew, knowing that they have the flexibility of both the cloud and the edge, that's definitely driving growth. Second is, we are also gaining share. When you think about what's happening even with the edge, some of the -- our data center addition products are very competitive in the marketplace. And so you see both of those effects but architecturally, we feel well placed. In fact at our Ignite Conference, you will see us even take the next leap forward even in terms of how we think about the architecture inclusive of the application models, programming models on what distributed computing looks like going forward. So we feel well positioned there.",<br>
+<tabspace></tabspace><tabspace></tabspace>"SpokenBy": {<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Id": "d1956458-ac06-4c74-89fa-0f499d4faeb5",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Name": "Satya Nadella",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Title": "Chief Executive Officer",<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"IsExternal": false<br>
+<tabspace></tabspace><tabspace></tabspace>},<br>
+<tabspace></tabspace><tabspace></tabspace>"Highlights": [<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>{<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"BeginPosition": 613,<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"EndPosition": 620,<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Category": 7,<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"Rating": 1.0<br>
+<tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>}<br>
+<tabspace></tabspace><tabspace></tabspace>]<br>
+<tabspace></tabspace>}<br>
+]<br>
+</p>
+
+<p class="btxt">In the above call we are requesting the most notable quotes related to <b>guidance</b> from Microsoft's Q1 2020 earnings call. Aletheia will provide the quote, the speaker details, and a list of highlights from that spoken remark. Each highlight indicates the beginning position and ending position of the notable portion of the remark. Each highlight will also contain a <i>Rating</i> property; this property serves as a rating of <i>how strongly</i> the language processing model believes this to be relevant to the category. </p>
+<p class="btxt">The <b>category</b> parameter is an integer-based ID that represents a category of topics. You can find the categories <a href="https://aletheiaapi.com/docs/#earnings-call-highlights">on the documentation page</a>.</p>
+
+<h3>Free and Available over REST API</h3>
+<p class="btxt">The service is free to use for private developers and is available over a REST API, meaning it is accessible from virtually any programming language or development stack. <a href="https://aletheiaapi.com/login/">Register for an account</a> to start using the service now!</p>
