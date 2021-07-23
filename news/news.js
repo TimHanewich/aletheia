@@ -7,6 +7,12 @@ var News = /** @class */ (function () {
     }
     News.GetNews = function () {
         var ToReturn = [];
+        //News 7
+        var n7 = new News();
+        n7.Title = "Earnings Call Endpoints Now Available for Consumption";
+        n7.Description = "Three new endpoints are now avaialble for consumption! You can now <a href=\"/article/index.html?id=earnings-call-api\">receive earnings call transcripts or just get the highlights</a>!";
+        n7.PublishedAt = "JULY 23, 2021";
+        ToReturn.push(n7);
         //News 6
         var n6 = new News();
         n6.Title = "Insider Trading API Article";
