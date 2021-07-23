@@ -21,6 +21,9 @@ else {
     else if (idstr == "insider-trading-api") {
         load_contents("aletheia-insider-trading-api.html");
     }
+    else if (idstr == "earnings-call-api") {
+        load_contents("introducing-earnings-call-api.html");
+    }
     else {
         console.log("ID '" + idstr + "' not recognized.");
     }
