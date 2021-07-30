@@ -153,3 +153,19 @@
     color: #A5A5A3;
 }
 
+.section-title
+{
+    text-align: left;
+    font-size: 38px;
+    line-height: 38px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-style: solid;
+    border-color: #1c1c1c;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 2px;
+    padding-bottom: 10px;
+}
+
