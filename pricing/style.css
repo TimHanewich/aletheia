@@ -95,6 +95,16 @@
     font-size: 18px;
 }
 
+.tier-container
+{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: aqua;
+    width: min-content;
+}
+
 .subscription-tier-box
 {
     height: 21vw;
@@ -103,5 +113,52 @@
     border-color: #1C1C1C;
     border-width: 2px;
     border-radius: 15px;
+    margin: 12px;
     display: inline-block;
+    overflow-y: hidden;
+    position: relative;
+    background-color: #FFF5D3;
 }
+
+.subscription-text-cont
+{
+    margin: 0px;
+    position: relative;
+    display: block;
+    overflow-y: hidden;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sub-call-ct
+{
+    font-size: 28px;
+    color: #1C1C1C;
+    text-align: center;
+    overflow-y: hidden;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+
+.sub-price
+{
+    font-size: 42px;
+    color: #1C1C1C;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    line-height: 42px;
+}
+
+.tier-item
+{
+    margin: 0px;
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    color: #A5A5A3;
+}
+
