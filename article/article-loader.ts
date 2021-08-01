@@ -31,6 +31,10 @@ else
     {
         load_contents("introducing-earnings-call-api.html");
     }
+    else if (idstr == "pp-insider-trading-trigger")
+    {
+        load_contents("pp-insider-trading-trigger.html");
+    }
     else
     {
         console.log("ID '" + idstr + "' not recognized.");
