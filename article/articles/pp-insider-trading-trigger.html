@@ -1,5 +1,26 @@
 <h1 class="article-title">Insider Trading Trigger Now Available in Power Automate</h1>
 <h2 class="article-published-on">August 1, 2021</h2>
 
-<p class="btxt">Aletheia's <a href="/docs/#insider-trading-webhook">Insider Trading Webhook</a> is now available as a <b>trigger</b> in Power Automate!</p>
+<p class="btxt">Aletheia's <a href="/docs/#insider-trading-webhook">Insider Trading Webhook</a> is now available as a <a href="https://docs.microsoft.com/en-us/connectors/aletheia/#when-a-new-insider-trade-is-reported-to-the-sec" target="_blank"><b>trigger</b> in Power Automate</a>!</p>
 <img src="/article/resources/insider-trading-trigger.PNG" style="width: 60%; display: block; margin-left: auto; margin-right: auto;">
+<p class="btxt" style="margin-top: 20px;">This trigger will allow you to have automated flows that are automatically triggered when an insider trade of a company of interest is reported to the SEC. Your flow will be triggered within seconds of the trade being made publicly available.</p>
+
+<img src="/article/resources/insider-trading-trigger-params.PNG" style="width: 70%; display: block; margin-left: auto; margin-right: auto">
+<p class="btxt">As seen above, the trigger has four parameters:</p>
+<ul class="btxt">
+    <li>Company - Narrow your trigger down to a particular company. For example, if you specify "FB", your flow will only be triggered from insider trades in Facebook.</li>
+    <li>Owner - If you only want to be alerted of insider trades by the CEO of the company (or any role), you can specify the individual you would like to be notified of by providing their CIK value (an SEC-assigned unique identifier for the individual). To find the CIK of any insider, use the <a href="/docs/#search-entities">Search Entities endpoint</a>.</li>
+    <li>Transaction Type - Specify a certain type of transaction you would like to be notified of. A purchase? A sale? A grant or award from the company? And much more. See the <a href="https://aletheiaapi.com/docs/#insider-trading-webhook">insider trading webhook documentation</a> for a full list.</li>
+    <li>Security type - Insiders can trade both equity-based (common stock) and derivative contracts (stock options). You can filter to which you would like to be notified of if you'd like.</li>
+</ul>
+
+<img src="/article/resources/insider-trading-trigger-configured.PNG" style="width: 70%; display: block; margin-right: auto; margin-left: auto;">
+<p class="btxt">For example, the above configuration will trigger your flow when a <b>purchase</b> of <b>Apple ($AAPL)</b> <b>common stock</b> is made and reported by <b>Tim Cook (CIK 1214156)</b>, Apple's CEO.</p>
+
+<p class="btxt">Keep in mind that you can also choose to <i>not</i> specify any of the above parameters. In doing this, the triggers to your workflow will not be constrained to the company, insider, transaction type, or security type. For example:</p>
+<img src="/article/resources/insider-trading-trigger-params-2.PNG" style="width: 70%; display: block; margin-left: auto; margin-right: auto;">
+<p class="btxt">The <b>Owner</b> and <b>Transaction Type</b> parameters are omitted in the above configuration. As such, your workflow will now be triggered by any insider trade of <b>common stock (equity-based)</b> of Apple stock.</p>
+<p class="btxt">You could just as easily remove the trading symbol or security type to be notified of insider trading for <b>any company</b> of <b>any security type</b>.</p>
+
+<!--Dead area-->
+<div style="width: 50%; display: block; margin-left: auto; margin-right: auto; height: 80px;"></div>
