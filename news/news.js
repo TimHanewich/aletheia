@@ -7,6 +7,12 @@ var News = /** @class */ (function () {
     }
     News.GetNews = function () {
         var ToReturn = [];
+        //News 8
+        var n8 = new News();
+        n8.Title = "Insider Trading Trigger Now Available in Power Automate";
+        n8.Description = "The Aletheia connector for the Power Platform received an additional trigger for triggering Power Automate flows when a new insider trading transaction is reported and made publicly available by the Securities Exchange Commission! <a href=\"/article/index.html?id=pp-insider-trading-trigger\">Read more here</a>.";
+        n8.PublishedAt = "August 1, 2021";
+        ToReturn.push(n8);
         //News 7
         var n7 = new News();
         n7.Title = "Earnings Call Endpoints Now Available for Consumption";
