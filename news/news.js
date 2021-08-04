@@ -7,6 +7,12 @@ var News = /** @class */ (function () {
     }
     News.GetNews = function () {
         var ToReturn = [];
+        //News 9
+        var n9 = new News();
+        n9.Title = "Insider Trading API Demo Video";
+        n9.Description = "See the insider trading service in action in this tutorial demonstration video, now available on YouTube: <a href=\"https://youtu.be/4KwdATNSW0E\">Insider Trading API - Aletheia Demo</a>";
+        n9.PublishedAt = "August 4, 2021";
+        ToReturn.push(n9);
         //News 8
         var n8 = new News();
         n8.Title = "Insider Trading Trigger Now Available in Power Automate";
