@@ -7,6 +7,12 @@ var News = /** @class */ (function () {
     }
     News.GetNews = function () {
         var ToReturn = [];
+        //News 10
+        var n10 = new News();
+        n10.Title = "Crypto Quotes Now Available via API";
+        n10.Description = "You can now request quotes and activity data for virtually any cryptocurrency with Aletheia's new <b>Crypto Quote</b> endpoint. Check it out in the documentation here: <a href=\"/docs/#crypto-quote\">Crypto Quote Documentation</a>.";
+        n10.PublishedAt = "August 4, 2021";
+        ToReturn.push(n10);
         //News 9
         var n9 = new News();
         n9.Title = "Insider Trading API Demo Video";

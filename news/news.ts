@@ -15,6 +15,13 @@ class News
     {
         var ToReturn:Array<News> = [];
 
+        //News 10
+        var n10:News = new News();
+        n10.Title = "Crypto Quotes Now Available via API";
+        n10.Description = "You can now request quotes and activity data for virtually any cryptocurrency with Aletheia's new <b>Crypto Quote</b> endpoint. Check it out in the documentation here: <a href=\"/docs/#crypto-quote\">Crypto Quote Documentation</a>.";
+        n10.PublishedAt = "August 4, 2021";
+        ToReturn.push(n10);
+
         //News 9
         var n9:News = new News();
         n9.Title = "Insider Trading API Demo Video";
