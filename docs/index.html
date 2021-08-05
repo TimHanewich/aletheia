@@ -360,6 +360,54 @@
                         
                         </div>
 
+
+                        <!--Crypto-->
+                        <div style="width: 100%;">
+                            <div class="blank-space"></div>
+                            <div class="blank-space"></div>
+                            <h2 class="api-category-title">Crypto</h2>
+                            <p class="api-category-desc">Use these endpoints to access real-time data about cryptocurrencies.</p>
+
+                            <!--Cyrpto Quote (data)-->
+                            <div class="api-ep-documentation">
+                                <h3 id="crypto-quote" class="api-title">Crypto Quote</h3>
+                                <p class="api-desc">Access pricing and trading activity data for virtually any cryptocurrency.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/Crypto</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>symbol</api-param> - the trading symbol of the cryptocurrency. For example, "BTC" for Bitcoin.</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/Crypto?symbol=BTC</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/Crypto?symbol=DOGE</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/Crypto?symbol=XRP</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">
+                                        {<br>
+                                        <tabspace></tabspace>"Symbol": "BTC",<br>
+                                        <tabspace></tabspace>"Name": "Bitcoin",<br>
+                                        <tabspace></tabspace>"Price": 39799.31,<br>
+                                        <tabspace></tabspace>"DollarChange": 1357.82,<br>
+                                        <tabspace></tabspace>"PercentChange": 0.0353,<br>
+                                        <tabspace></tabspace>"DayLow": 39350.46,<br>
+                                        <tabspace></tabspace>"DayHigh": 39831.87,<br>
+                                        <tabspace></tabspace>"YearLow": 9916.49,<br>
+                                        <tabspace></tabspace>"YearHigh": 64863.1,<br>
+                                        <tabspace></tabspace>"MarketCap": 747286036480.0,<br>
+                                        <tabspace></tabspace>"Volume": 25329145856,<br>
+                                        <tabspace></tabspace>"DataCollected": "2021-08-05T01:20:47.2696749+00:00"<br>
+                                        }<br>                                            
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
                         
                       
                         <!--Insider Transactions-->
