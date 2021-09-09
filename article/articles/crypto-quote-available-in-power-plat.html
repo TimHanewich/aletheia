@@ -1,0 +1,45 @@
+<h1 class="article-title">Crypto Quotes Now Available in Power Apps & Power Automate via the Aletheia Connector</h1>
+<h2 class="article-published-at">September 8, 2021</h2>
+
+<p class="btxt">This week, the Power Platform (Microsoft Power Apps and Power Automate) added the out-of-the-box capability of retrieving prices and day trading data for cryptocurrencies. You can now get quotes and live market data for your favorite coins like Bitcoin, Ethereum, and Dogecoin!</p>
+
+<h3>Use the Aletheia Connector</h3>
+<p class="btxt">The Aletheia API service is available for free use in the Power Platform via the <a href="https://docs.microsoft.com/en-us/connectors/aletheia/">official connector</a>. In the sample below, we are selecting it in Power Apps:</p>
+
+<img src="/article/resources/crypto/aletheia-connector.PNG" style="width: 30%; display: block; margin-left: auto; margin-right: auto;">
+
+<h3>Provide your Aletheia API Key</h3>
+<p class="btxt">Register for an account with Aletheia (free) at <a href="/login">https://aletheiaapi.com/login</a> to get an API key that you will use with Power Apps/Automate to begin using the service.</p>
+<img src="/article/resources/crypto/add-key.PNG" style="width: 40%; display: block; margin-left: auto; margin-right: auto;">
+
+<h3>Use Aletheia's "CryptoQuote" Action to Request a Crypto Quote</h3>
+<b class="btxt">Provide the symbol of cryptocurrency to the <b>CryptoQuote</b> action. In this example we are providing it via a string value, but you can also reference the content of a text input so, for example, a user would be able to dynamically change it.</b>
+<img src="/article/resources/crypto/formula.PNG" style="width: 60%; display: block; margin-right: auto; margin-left: auto;">
+<p class="btxt">Examples of symbols you can request:</p>
+<ul class="btxt">
+    <li>BTC - Bitcoin</li>
+    <li>ETH - Ethereum</li>
+    <li>DOGE - Dogecoin</li>
+    <li>LTC - Litecoin</li>
+    <li>XRP</li>
+    <li>SHIB - Shiba Inu Coin</li>
+</ul>
+<p class="btxt">The above list is in no way exhaustive. There are plenty more you can request data for!</p>
+
+<h3>Reference the Quote Properties in the App/Flow</h3>
+<p class="btxt">The formula above saved the quote data to an object variable named "MyCryptoQuote". To reference the data in the quote elsewhere in the app, do it as such:</p>
+<img src="/article/resources/crypto/symbol.PNG" style="width: 70%; display: block; margin-left: auto; margin-right: auto;">
+<p class="btxt"><i>Please note that the price of every cryptocurrency is in US Dollars</i></p>
+
+<h3>Use all of the Data!</h3>
+<p class="btxt">Aletheia provides us with plenty of contextual data about the cryptocurrency we are requesting data for. Access the price, today's high and low, the year high and low, today's volume, and more.</p>
+<p class="btxt">Example with Bitcoin ("BTC"):</p>
+<img src="/article/resources/crypto/BTC.PNG" style="width: 40%; display: block; margin-left: auto; margin-right: auto;">
+<p class="btxt">Example with Dogecoin ("DOGE"):</p>
+<img src="/article/resources/crypto/DOGE.PNG" style="width: 40%; display: block; margin-left: auto; margin-right: auto;">
+
+<h3>Get Started!</h3>
+<p class="btxt">Visit Aletheia's <a href="/login/">login page</a> to start pulling crypto quotes in Power Apps and Power Automate for free!</p>
+
+<!--Dead area-->
+<div style="width: 70%; height: 100px;"></div>

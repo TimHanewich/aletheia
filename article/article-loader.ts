@@ -35,6 +35,10 @@ else
     {
         load_contents("pp-insider-trading-trigger.html");
     }
+    else if (idstr == "power-platform-crypto")
+    {
+        load_contents("crypto-quote-available-in-power-plat.html");
+    }
     else
     {
         console.log("ID '" + idstr + "' not recognized.");
