@@ -7,6 +7,12 @@ var News = /** @class */ (function () {
     }
     News.GetNews = function () {
         var ToReturn = [];
+        //News 11
+        var n11 = new News();
+        n11.Title = "Crypto Quotes Now Available in Power Apps & Power Automate via the Aletheia Connector";
+        n11.Description = "This week, the Power Platform (Microsoft Power Apps and Power Automate) added the out-of-the-box capability of retrieving prices and day trading data for cryptocurrencies via the Aletheia connector! <a href=\"/article/index.html?id=power-platform-crypto\">Read more.</a>";
+        n11.PublishedAt = "September 8, 2021";
+        ToReturn.push(n11);
         //News 10
         var n10 = new News();
         n10.Title = "Crypto Quotes Now Available via API";
