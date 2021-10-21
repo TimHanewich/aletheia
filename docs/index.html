@@ -131,7 +131,7 @@
 
                         <!--Death Cross-->
                         <h3 class="api-header">Death Cross</h3>
-                        <a href="#subscribe-to-death-cross-webhook" class="no-decor">
+                        <a href="#death-cross-webhook" class="no-decor">
                             <div id="navep_SubscribeToDeathCrossWebhook" class="api-verb-ep-pair clickable">
                                 <div class="api-verb api-verb-hook">HOOK</div>
                                 <div class="api-ep">Death Cross</div>
@@ -547,7 +547,7 @@
                                     <li><b>SecurityTransactionHolding</b> from the <a href="#latest-transactions">Latest Transactions endpoint</a></li>    
                                 </ul>
                             
-                                <p class="api-sub-instruction-title">Step 3 - Unsubscribe from the webhook when finished</p>
+                                <p class="api-sub-instruction-title" id="unsubscribe-webhook">Step 3 - Unsubscribe from the webhook when finished</p>
                                 <p class="api-desc">When you wish to stop receiving posts from this webhook, be sure to formally unsubscribe your endpoint.</p>
                                 <p class="api-desc">When you originally registered your endpoint in step 1, the returned 201 created response contained a "Location" header. The value of this header contains the endpoint that will unsubscribe your endpoint via a DELETE call. The unsubscribe endpoint will look something like this:</p>
                                 <div class="body-example">https://api.aletheiaapi.com/UnsubscribeWebhook?id=dd150c44-c42a-4cdd-92f5-b78a23b36c72</div>
@@ -1554,6 +1554,62 @@
                             </div>
 
 
+                        </div>
+
+
+                        <!--Death Cross-->
+                        <div style="width: 100%;">
+                            <div class="blank-space"></div>
+                            <div class="blank-space"></div>
+                            <h2 class="api-category-title">Death Cross</h2>
+                            <p class="api-category-desc">The <b>"death cross"</b> is a technical chart pattern indicating the potential for a major sell-off of a stock or security. The death cross appears on a chart when a stock's 50-day moving average crosses it's 200-day moving average. Use Aletheia's Death Cross service to be notified of or research historical death cross events.</p>
+                        
+                            <!--Death cross hook-->
+                            <div class="api-ep-documentation">
+                                <h3 id="death-cross-webhook" class="api-title">Death Cross (Webhook)</h3>
+                                <p class="api-desc">You can subscribe your application or web service to be notified of death cross events via this webhook service. This service will notify you of both <i>bearish</i> events in which the 50-day moving average sinks below the 200-day moving average, and <i>bullish</i> events in which the 50-day moving average once again rose above the 200-day moving average.</p>
+                            
+                            
+                                <p class="api-sub-instruction-title">Step 1 - Subscribe Your Endpoint</p>
+                                <p class="api-desc">First you must subscribe your endpoint to the death cross webhook service.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-post">POST</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/SubscribeToDeathCrossWebhook</div>
+                                </div>
+                                <div class="api-desc">The body of the post HTTP request must be in JSON format. For example:</div>
+                                <div class="body-example">
+                                    {<br>
+                                        <tabspace></tabspace>"endpoint": "https://example.com/my-endpoint",<br>
+                                        <tabspace></tabspace>"stock": "TSLA",<br>
+                                        <tabspace></tabspace>"crossType": 0<br>
+                                    }<br>
+                                </div>
+                                <div class="api-desc">The <b>endpoint</b> property is the only required property to include; this is your own endpoint which you would like to have called upon a death cross event occuring.</div>
+                                <div class="api-desc">If you would only like to subscribe to death cross events of a specific stock, you can specify the stock's trading symbol via the <b>stock</b> property. The example above specifies Tesla (<b>TSLA</b>).</div>
+                                <div class="api-desc">This service is capable of detecting both <i>bearish</i> and <i>bullish</i> death cross events. A bullish event is when the 50-day moving average sinks below the 200-day moving average. A bearish event occurs when the 50-day moving average rises above the 200-day moving average. Setting the <b>crossType</b> property to <b>0</b> means you will only be notified of <b>bearish</b> death crosses, while a value of <b>1</b> filters to only <b>bullish</b> death crosses.</div>
+                                <div class="api-desc">The subscription endpoint will return a 201 created response. This response will include a "Location" header. The value of this header will be used to unsubscribe from this webhook, so save this for later.</div>
+                            
+                                <p class="api-sub-instruction-title">Step 2 - Receive death cross events!</p>
+                                <p class="api-desc">After subscribing your endpoint to the webhook with step 1, your endpoint will begin to receive HTTP POST requests when a qualifying death cross event occurs.</p>
+                                <p class="api-desc">The following is an example of the POST request that will be sent to your registered endpoint:</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-post">POST</div>
+                                    <div class="api-ep-area code-block">(your registered endpoint)</div>
+                                </div>
+                                <div class="body-example">
+                                    {<br>
+                                        <tabspace></tabspace>"Stock": "ALLE",<br>
+                                        <tabspace></tabspace>"CrossType": 0<br>
+                                    }<br>
+                                </div>
+                                <div class="api-desc">The <b>Stock</b> property of the payload indicates the stock which made the death cross. The <b>CrossType</b> indicates the cross type - 0 = bearish, 1 = bullish (see above for what these mean).</div>
+                            
+                                <p class="api-sub-instruction-title">Step 3 - Unsubscribe frim the webhook when finished</p>
+                                <p class="api-desc">When you initially subscribed to the death cross webhook service, a header labeled <i>Location</i> should have been included in the 201 (Created) response. Simply send a <b>DELETE</b> request to this URL to unsubscribe your endpoint. Alternatively, you can follow the same <a href="#unsubscribe-webhook">unsubscribe instructions from the New Filings webhook</a> to unsubscribe if you no longer have this value.</p>
+                            
+                            
+                            
+                            </div>
                         </div>
 
                         <!--SEC Filings-->
