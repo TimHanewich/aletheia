@@ -7,6 +7,12 @@ var News = /** @class */ (function () {
     }
     News.GetNews = function () {
         var ToReturn = [];
+        //News 12
+        var n12 = new News();
+        n12.Title = "Death Cross Webhook Now Available for Use";
+        n12.Description = "You can now subscribe your web service or application to the <b>Death Cross Webhook</b> to receive notifications when a death cross occurs for any stock or a stock of your choosing. <a href=\"/docs/#death-cross-webhook\">Read more.</a>";
+        n12.PublishedAt = "October 20, 2021";
+        ToReturn.push(n12);
         //News 11
         var n11 = new News();
         n11.Title = "Crypto Quotes Now Available in Power Apps & Power Automate via the Aletheia Connector";
