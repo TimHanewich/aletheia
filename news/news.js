@@ -7,6 +7,12 @@ var News = /** @class */ (function () {
     }
     News.GetNews = function () {
         var ToReturn = [];
+        //News 13
+        var n13 = new News();
+        n13.Title = "New Version of the <a href=\"docs/#stock-data\">Stock Data Endpoint (v2)</a> Now Available";
+        n13.Description = "Version 2 of the Stock Data endpoint is now available for consumption with drastically reduced response times";
+        n13.PublishedAt = "December 6, 2021";
+        ToReturn.push(n13);
         //News 12
         var n12 = new News();
         n12.Title = "Death Cross Webhook Now Available for Use";
