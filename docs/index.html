@@ -263,7 +263,7 @@
                             
                             <!--Stock Data-->
                             <div class="api-ep-documentation">
-                                <h3 id="stock-data" class="api-title">Stock Data</h3>
+                                <h3 id="stock-data" class="api-title">Stock Data (v1)</h3>
                                 <p class="api-desc">Access summary or statistical data for stocks, bonds, options, crypto, and more.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
@@ -378,6 +378,116 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
+                            <!--Stock data v2-->
+                            <div class="api-ep-documentation">
+                                <h3 id="stock-data" class="api-title">Stock Data (v2)</h3>
+                                <p class="api-desc">Access summary or statistical data for stocks, bonds, options, crypto, and more. To specify you would like to consume version 2 of this endpoint, set the <b>Accept-Version</b> header to <b>2</b>. See <a href="#versioning">the versioning instructions</a> for more information.</p>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-get">GET</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/StockData</div>
+                                </div>
+                                <h4 class="api-sub-header">Parameters</h4>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-ep"><api-param>symbol</api-param> - the symbol of the security you are requesting data for.</div>
+                                </div>
+                                <div class="api-verb-ep-pair">
+                                    <div class="api-verb api-verb-optional">Optional</div>
+                                    <div class="api-ep"><api-param>fields</api-param> - If you would only like specific fields to be returned to you (i.e. to save bandwidth, set this to the field names separated by comma. If left blank, all available data fields will be returned by default. For a complete list of available data fields, please see the example response below.</div>
+                                </div>
+                                <h4 class="api-sub-header">Example Requests</h4>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/StockData?symbol=msft</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/StockData?symbol=msft&fields=Price,MarketCap,DayHigh,DayLow</div>
+                                <div class="code-block req-example">https://api.aletheiaapi.com/StockData?symbol=pg&fields=Price</div>
+                                <div class="response-example-cont">
+                                    <div class="response-example-openclose">+ Example Response</div>
+                                    <div class="response-example">
+                                        {<br>
+                                        <tabspace></tabspace>"Symbol": "PG",<br>
+                                        <tabspace></tabspace>"FullTimeEmployees": 101000,<br>
+                                        <tabspace></tabspace>"Sector": "Consumer Defensive",<br>
+                                        <tabspace></tabspace>"Industry": "Household & Personal Products",<br>
+                                        <tabspace></tabspace>"Open": 150.19,<br>
+                                        <tabspace></tabspace>"AverageVolume90Day": 6912683,<br>
+                                        <tabspace></tabspace>"Exchange": "NYQ",<br>
+                                        <tabspace></tabspace>"DayHigh": 152.385,<br>
+                                        <tabspace></tabspace>"ShortName": "Procter & Gamble Company (The)",<br>
+                                        <tabspace></tabspace>"LongName": "The Procter & Gamble Company",<br>
+                                        <tabspace></tabspace>"Change": 2.26999,<br>
+                                        <tabspace></tabspace>"PreviousClose": 149.88,<br>
+                                        <tabspace></tabspace>"Price": 152.15,<br>
+                                        <tabspace></tabspace>"Currency": "USD",<br>
+                                        <tabspace></tabspace>"Volume": 11935078,<br>
+                                        <tabspace></tabspace>"MarketCap": 368195400000.0,<br>
+                                        <tabspace></tabspace>"ChangePercent": 0.0151454,<br>
+                                        <tabspace></tabspace>"DayLow": 150.27,<br>
+                                        <tabspace></tabspace>"BidPrice": 152.2,<br>
+                                        <tabspace></tabspace>"BidQuantity": 900,<br>
+                                        <tabspace></tabspace>"AskPrice": 152.2,<br>
+                                        <tabspace></tabspace>"AskQuantity": 900.0,<br>
+                                        <tabspace></tabspace>"AverageVolume10Day": 8056980,<br>
+                                        <tabspace></tabspace>"YearLow": 121.54,<br>
+                                        <tabspace></tabspace>"YearHigh": 152.385,<br>
+                                        <tabspace></tabspace>"Beta": 0.422337,<br>
+                                        <tabspace></tabspace>"PriceEarningsRatio": 27.80519,<br>
+                                        <tabspace></tabspace>"EarningsPerShare": 5.472,<br>
+                                        <tabspace></tabspace>"EarningsDate": "2022-01-18T00:00:00",<br>
+                                        <tabspace></tabspace>"ForwardDividend": 3.48,<br>
+                                        <tabspace></tabspace>"ForwardDividendYield": 0.0232,<br>
+                                        <tabspace></tabspace>"ExDividendDate": "2021-10-21T00:00:00",<br>
+                                        <tabspace></tabspace>"YearTargetEstimate": 152.93,<br>
+                                        <tabspace></tabspace>"LastFiscalYearEnd": "2021-06-30T00:00:00",<br>
+                                        <tabspace></tabspace>"LastFiscalQuarterEnd": "2021-09-30T00:00:00",<br>
+                                        <tabspace></tabspace>"ProfitMargin": 0.18332,<br>
+                                        <tabspace></tabspace>"OperatingMargin": 0.23948,<br>
+                                        <tabspace></tabspace>"ReturnOnAssets": 0.09639,<br>
+                                        <tabspace></tabspace>"ReturnOnEquity": 0.29837,<br>
+                                        <tabspace></tabspace>"Revenue": 77138000000.0,<br>
+                                        <tabspace></tabspace>"RevenuePerShare": 31.468,<br>
+                                        <tabspace></tabspace>"QuarterlyRevenueGrowth": 0.053,<br>
+                                        <tabspace></tabspace>"GrossProfit": 39144000000.0,<br>
+                                        <tabspace></tabspace>"EDBITDA": 21248000000.0,<br>
+                                        <tabspace></tabspace>"NetIncomeAvailableToCommon": 13866000000.0,<br>
+                                        <tabspace></tabspace>"QuarterlyEarningsGrowth": -0.039,<br>
+                                        <tabspace></tabspace>"Cash": 10370000000.0,<br>
+                                        <tabspace></tabspace>"CashPerShare": 4.285,<br>
+                                        <tabspace></tabspace>"Debt": 32547000000.0,<br>
+                                        <tabspace></tabspace>"DebtToEquityRatio": 70.132,<br>
+                                        <tabspace></tabspace>"CurrentRatio": 0.665,<br>
+                                        <tabspace></tabspace>"BookValuePerShare": 18.7,<br>
+                                        <tabspace></tabspace>"OperatingCashFlow": 18275000000.0,<br>
+                                        <tabspace></tabspace>"LeveredFreeCashFlow": 12529750000.0,<br>
+                                        <tabspace></tabspace>"YearChangePercent": 0.0856936,<br>
+                                        <tabspace></tabspace>"SP500YearChangePercent": 0.22585726,<br>
+                                        <tabspace></tabspace>"MovingAverage50Day": 144.0168,<br>
+                                        <tabspace></tabspace>"MovingAverage200Day": 138.4587,<br>
+                                        <tabspace></tabspace>"SharesOutstanding": 2419950000.0,<br>
+                                        <tabspace></tabspace>"Float": 2417237500.0,<br>
+                                        <tabspace></tabspace>"PercentHeldByInsiders": 0.0010800001,<br>
+                                        <tabspace></tabspace>"PercentHeldByInstitutions": 0.65568,<br>
+                                        <tabspace></tabspace>"SharesShort": 15019257.0,<br>
+                                        <tabspace></tabspace>"ShortRatio": 2.28,<br>
+                                        <tabspace></tabspace>"ShortPercentOfFloat": 0.0062,<br>
+                                        <tabspace></tabspace>"ShortPercentOfSharesOutstanding": 0.0062,<br>
+                                        <tabspace></tabspace>"ForwardAnnualDividend": 3.48,<br>
+                                        <tabspace></tabspace>"ForwardAnnualDividendYield": 0.0232,<br>
+                                        <tabspace></tabspace>"TrailingAnnualDividend": 3.321,<br>
+                                        <tabspace></tabspace>"TrailingAnnualDividendYield": 0.022157727,<br>
+                                        <tabspace></tabspace>"FiveYearAverageDividendYield": 2.78,<br>
+                                        <tabspace></tabspace>"DividendPayoutRatio": 0.606,<br>
+                                        <tabspace></tabspace>"DividendDate": "2021-11-15T00:00:00",<br>
+                                        <tabspace></tabspace>"LastSplitFactor": "2:1",<br>
+                                        <tabspace></tabspace>"LastSplitDate": "2004-06-21T00:00:00"<br>
+                                        }<br>                                            
+                                    </div>
+                                </div>
+                            </div>
+
+
+
                         
                         </div>
 
