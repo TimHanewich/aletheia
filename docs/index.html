@@ -1340,13 +1340,14 @@
                                 </div>
                                 <h4 class="api-sub-header">Parameters</h4>
                                 <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-verb api-verb-optional">Optional</div>
                                     <div class="api-ep"><api-param>id</api-param> - The ID of the earnings call transcript you are requesting (which you would find via the <a href="#search-earnings-calls">Search Earnings Call</a> service).</div>
                                 </div>
                                 <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-required">Required</div>
+                                    <div class="api-verb api-verb-optional">Optional</div>
                                     <div class="api-ep"><api-param>company</api-param> - The trading symbol of the of the company.</div>
                                 </div>
+                                <p class="api-desc-please-note">! While the <b>company</b> parameter is marked as optional above, it <i style="color: inherit;">must</i> be specified if the <b>id</b> parameter is NOT specified.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-optional">Optional</div>
                                     <div class="api-ep"><api-param>year</api-param> - The fiscal year of the earnings call you are requesting. If the year and quarter parameter are not specified, the most recent earnings call will be selected by default.</div>
