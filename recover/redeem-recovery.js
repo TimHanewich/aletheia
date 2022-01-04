@@ -26,3 +26,61 @@ else
     //Show the redeem steps
     document.getElementById("recovery-redemption").style.display = 'none';
 }
+
+
+
+//REDEMPTION
+var URL = "https://aletheia.azurewebsites.net/RedeemAccountRecovery";
+function Redeem()
+{
+    var pass1 = document.getElementById("input-li-password1").value;
+    var pass2 = document.getElementById("input-li-password2").value;
+
+    //Check if we are ready to submit this
+    var ReadyToSubmit = false;
+    if (pass1 != "" && pass2 != "")
+    {
+        if (pass1 == pass2)
+        {
+            ReadyToSubmit = true;
+        }
+    }
+
+    //If not ready to submit, post an error msg
+    if (ReadyToSubmit == false)
+    {
+        UpdateRedeemMsg("There was a validation error with your new password. Please try again.");
+        return;
+    }
+
+    //Try to return!
+    var payload = {"id": id, "password": pass1};
+    var req = new XMLHttpRequest();
+    req.open("post", URL);
+    req.onreadystatechange = function()
+    {
+        if (req.readyState == 4)
+        {
+            if (req.status == 200) //The password reset was successful
+            {
+                HideRedeemBtn();
+                UpdateRedeemMsg("Your password has successfully reset! Please proceed to the login page to log in with your new password.");
+            }
+            else
+            {
+                ShowRedeemBtn();
+                UpdateRedeemMsg("Password reset failed with code " + req.status.toString() + ": " + req.responseText);
+            }
+        }
+    }
+
+    //Send the request
+    req.send(JSON.stringify(payload));
+
+    //After sending the request, show what is happening
+    UpdateRedeemMsg("Processing account recovery...");
+    HideRedeemBtn();
+}
+
+//Set up the listener
+document.getElementById("redeem-button").addEventListener("click", Redeem);
