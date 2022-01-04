@@ -20,17 +20,45 @@
             <h2 class="page-title wordmark">Aletheia</h2>
             <div class="single-line" style="width: 100%;"></div>
 
-            <!--description-->
-            <p class="desc">If you've forgotten the password to your Aletheia account, you can recover your account through a password reset here. Please enter in the email that your Aletheia account is registered to to begin recovery.</p>
+            <!--Recovery initiation-->
+            <div id="recovery-initiation" style="width: 100%;">
+                <!--description-->
+                <p class="desc">If you've forgotten the password to your Aletheia account, you can recover your account through a password reset here. Please enter in the email that your Aletheia account is registered to to begin recovery.</p>
 
-            <!--Email field-->
-            <div style="width: 60%; margin-left: auto; margin-right: auto;">
-                <p class="txt-box-label">Email</p>
-                <input id="input-li-email" type="text" class="txt-box">
+                <!--Email field-->
+                <div style="width: 60%; margin-left: auto; margin-right: auto;">
+                    <p class="txt-box-label">Email</p>
+                    <input id="input-li-email" type="text" class="txt-box">
+                </div>
+
+                <p id="reset-msg" class="ri-error-msg" style="margin-top: 3px; color: black;">(msg)</p>
+                <button id="reset-button" class="ri-submit-btn" style="margin-top: 5px;">Reset</button>  
             </div>
 
-            <p id="reset-msg" class="ri-error-msg" style="margin-top: 3px; color: black;">(msg)</p>
-            <button id="reset-button" class="ri-submit-btn" style="margin-top: 5px;">Reset</button>
+            <!--Recovery redeem-->
+            <div id="recovery-redemption" style="width: 100%;">
+                <p class="desc">You are completing the final step of the account recovery process. Please input what you would like your new password to be below.</p>
+            
+                <!--Password 1-->
+                <div style="width: 60%; margin-left: auto; margin-right: auto;">
+                    <p class="txt-box-label">New Password</p>
+                    <input id="input-li-password1" type="password" class="txt-box">
+                </div>
+
+                <!--Password 2-->
+                <div style="width: 60%; margin-left: auto; margin-right: auto;">
+                    <p class="txt-box-label">Please Confirm Your New Password</p>
+                    <input id="input-li-password2" type="password" class="txt-box">
+                </div>
+
+                <p id="redeem-msg" class="ri-error-msg" style="margin-top: 3px; color: black;">(msg)</p>
+                <button id="redeem-button" class="ri-submit-btn" style="margin-top: 5px;">Complete Recovery</button>
+            </div>
+
+
+
+            
+            
         </div>
 
 
