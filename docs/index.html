@@ -1718,7 +1718,7 @@
                             <!--Death cross/golden cross hook-->
                             <div class="api-ep-documentation">
                                 <h3 id="death-cross-webhook" class="api-title">Death Cross/Golden Cross (Webhook)</h3>
-                                <p class="api-desc">You can subscribe your application or web service to be notified of death cross and golden cross events via this webhook service. This service will notify you of both <i>bearish</i> events in which the 50-day moving average sinks below the 200-day moving average ("death cross"), and <i>bullish</i> events in which the 50-day moving average once again rose above the 200-day moving average ("golden cross").</p>
+                                <p class="api-desc">You can subscribe your application or web service to be notified of death cross and golden cross events via this webhook service. This service will notify you of both <i style="color: inherit">bearish</i> events in which the 50-day moving average sinks below the 200-day moving average ("death cross"), and <i style="color: inherit">bullish</i> events in which the 50-day moving average once again rose above the 200-day moving average ("golden cross").</p>
                             
                             
                                 <p class="api-sub-instruction-title">Step 1 - Subscribe Your Endpoint</p>
@@ -1737,7 +1737,7 @@
                                 </div>
                                 <div class="api-desc">The <b>endpoint</b> property is the only required property to include; this is your own endpoint which you would like to have called upon a death cross event occuring.</div>
                                 <div class="api-desc">If you would only like to subscribe to death cross events of a specific stock, you can specify the stock's trading symbol via the <b>stock</b> property. The example above specifies Tesla (<b>TSLA</b>).</div>
-                                <div class="api-desc">This service is capable of detecting both <i>death cross</i> and <i>golden cross</i> events. A bullish event is when the 50-day moving average sinks below the 200-day moving average. A bearish event occurs when the 50-day moving average rises above the 200-day moving average. Setting the <b>crossType</b> property to <b>0</b> means you will only be notified of <b>death crosses</b>, while a value of <b>1</b> filters to only <b>golden crosses</b>.</div>
+                                <div class="api-desc">This service is capable of detecting both <i style="color: inherit">death cross</i> and <i style="color: inherit">golden cross</i> events. A bullish event is when the 50-day moving average sinks below the 200-day moving average. A bearish event occurs when the 50-day moving average rises above the 200-day moving average. Setting the <b>crossType</b> property to <b>0</b> means you will only be notified of <b>death crosses</b>, while a value of <b>1</b> filters to only <b>golden crosses</b>.</div>
                                 <div class="api-desc">The subscription endpoint will return a 201 created response. This response will include a "Location" header. The value of this header will be used to unsubscribe from this webhook, so save this for later.</div>
                             
                                 <p class="api-sub-instruction-title">Step 2 - Receive death/golden cross events!</p>
