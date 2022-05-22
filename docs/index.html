@@ -1387,6 +1387,59 @@
                                     <div class="api-verb api-verb-optional">Optional</div>
                                     <div class="api-ep"><api-param>countremarks</api-param> - either 'true' or 'false'. Specify 'true' to have the total number of remarks available for this specific call returned in the response as property 'RemarksCount'.</div>
                                 </div>
+
+                                <h4 class="api-sub-header">KPI Response Structure</h4>
+                                <p class="api-desc">If you do use the <b>KPI</b> feature of this endpoint by including it in the <i>include</i> parameter, each spoken remark will include a property titled <i>KeyPerformanceIndicators</i>. Below an example:</p>
+                                <div class="code-block" style="text-align: left; font-size: 11pt; line-height: 18px; padding: 10px">
+                                    "KeyPerformanceIndicators": [<br>
+                                    <tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"subject": "revenue",<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"status": "0",<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"value": 49400000000.0,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"valueIsPercent": false,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"subjectOffset": 62,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"subjectLength": 7,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"statusOffset": 70,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"statusLength": 3,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"valueOffset": 74,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"valueLength": 13<br>
+                                    <tabspace></tabspace>},<br>
+                                    <tabspace></tabspace>{<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"subject": "earnings per share",<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"status": "0",<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"value": 2.22,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"valueIsPercent": false,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"subjectOffset": 126,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"subjectLength": 18,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"statusOffset": 145,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"statusLength": 3,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"valueOffset": 149,<br>
+                                    <tabspace></tabspace><tabspace></tabspace>"valueLength": 5<br>
+                                    <tabspace></tabspace>}<br>
+                                    ]<br>
+                                </div>
+                                <ul>
+                                    <li>The <b>subject</b> property contains the plain text of the subject that was refered to during the call.</li>
+                                    <li><b>status</b> - code indicating the action/what happened to the subject.
+                                        <ul>
+                                            <li>0 = "equals", "is", etc. For example, "revenue <b>is</b> $500,000."</li>
+                                            <li>1 = "increased"</li>
+                                            <li>2 = "decreased"</li>
+                                            <li>3 = "Is greater than", "surprassed", "exceeded", "passed", etc.</li>
+                                            <li>4 = "Is less than", "fell below", "sunk below"</li>
+                                            <li>5 = "produced", "generated", "created", "caused". For example, "iPad <b>contributed</b> $100M in revenue."</li>
+                                        </ul>
+                                    </li>
+                                    <li><b>value</b> - the dollar figure, percentage, quantity, that is mentioned. If a percentage is mentioned, it will be in a percentage format (i.e. 55% would be 0.55).</li>
+                                    <li><b>valueIsPercent</b> - if the value is a percentage, this will be <i>true</i>. If not, this will be <i>false</i>.</li>
+                                    <li><b>subjectOffset</b> - start location of the subject in the spoken remark.</li>
+                                    <li><b>subjectLength</b> - length (number of characters) of the subject.</li>
+                                    <li><b>statusOffset</b> - start location of the phrase that determined the <b>status</b> property in the spoken remark.</li>
+                                    <li><b>statusLength</b> - length of the phrase that determined the <b>status</b> property in the spoken remark.</li>
+                                    <li><b>valueOffset</b> - start location of the figure (number or percentage) that determined the <b>value</b> property in the spoken remark.</li>
+                                    <li><b>valueLength</b> - length of the figure (number or percentage) that determined the <b>value</b> property in the spoken remark.</li>
+                                </ul>
+
                                 <h4 class="api-sub-header">Example Requests</h4>
                                 <div class="code-block req-example">https://api.aletheiaapi.com/EarningsCall?company=DLTR&year=2019&quarter=q4&begin=0&end=10</div>
                                 <div class="code-block req-example">https://api.aletheiaapi.com/EarningsCall?company=DLTR&year=2019&quarter=q4&begin=11&end=20&include=kpi</div>
