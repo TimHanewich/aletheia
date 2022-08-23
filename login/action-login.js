@@ -51,8 +51,16 @@ $("#login-button").click(function()
                 var account_obj = JSON.parse(req.responseText);
                 StoreAccountToCookie(account_obj);
 
-                //Now navigate to the user account page
-                window.location.href = "../myaccount/index.html";
+                //Navigate to referal?
+                if (window.location.href.includes("ref=subscribe"))
+                {
+                    window.location.href = "../subscribe/"
+                }
+                else //If there isn't a referal, just do the default... go to the account page
+                {
+                    //Now navigate to the user account page
+                    window.location.href = "../myaccount/index.html";
+                }
             }
             else
             {
