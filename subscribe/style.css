@@ -9,7 +9,21 @@
     margin-top: 20px;
 }
 
+.txt-area
+{
+    width: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+}
+
 .pp
 {
     width: 100%;
+}
+
+.desc
+{
+    font-size: 18px;
+    line-height: 26px;
 }
