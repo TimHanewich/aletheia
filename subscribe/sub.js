@@ -7,5 +7,5 @@ if (account != null)
 }
 else
 {
-    window.location.replace("../login/")
+    window.location.replace("../login/index.html?ref=subscribe")
 }
