@@ -1,0 +1,15 @@
+.mid-cont
+{
+    height: 200px;
+    width: 40%;
+    transform: translateX(-50%);
+    left:50%;
+    position: relative;
+    background-color: aqua;
+    margin-top: 20px;
+}
+
+.pp
+{
+    width: 100%;
+}

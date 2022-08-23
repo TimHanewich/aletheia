@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aletheia API | Subscribe</title>
+        <link rel="icon" href="../assets/designs/Icon/Aletheia-Icon-Inverted-Circle-144x144.png">
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/branding.css">
+        <link rel="stylesheet" href="../home/home.css">
+        <link rel="stylesheet" href="../news/style.css">
+        <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+
+        <!--Wordmark Title-->
+        <h2 class="page-title wordmark">Aletheia</h2>
+        <div class="single-line"></div>
+
+        
+        <!--Middle container-->
+        <div class="mid-cont">
+            <div id="paypal-button-container-P-5FB49724Y8757201GMMCBL5Q" class="pp"></div>
+            <script src="https://www.paypal.com/sdk/js?client-id=AWyFEA-OsoR9r3sZ-ExNUwIOSFRZyUIebSvya33jD638rmwQ2g6Zoj3oAlm77TMAWTa9VSqeZNDBpo2w&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+            <script>
+            paypal.Buttons({
+                style: {
+                    shape: 'rect',
+                    color: 'gold',
+                    layout: 'vertical',
+                    label: 'subscribe'
+                },
+                createSubscription: function(data, actions) {
+                    return actions.subscription.create({
+                    /* Creates the subscription */
+                    plan_id: 'P-5FB49724Y8757201GMMCBL5Q'
+                    });
+                },
+                onApprove: function(data, actions) {
+                    alert(data.subscriptionID); // You can add optional success message for the subscriber here
+                }
+            }).render('#paypal-button-container-P-5FB49724Y8757201GMMCBL5Q'); // Renders the PayPal button
+            </script>
+        </div>
+        
+
+        
+
+    </body>
+</html>
