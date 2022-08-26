@@ -52,9 +52,13 @@ $("#login-button").click(function()
                 StoreAccountToCookie(account_obj);
 
                 //Navigate to referal?
-                if (window.location.href.includes("ref=subscribe"))
+                if (window.location.href.includes("ref=subscribe-t1"))
                 {
-                    window.location.href = "../subscribe/"
+                    window.location.href = "../subscribe/index.html?tier=1"
+                }
+                else if (window.location.href.includes("ref=subscribe-t2"))
+                {
+                    window.location.href = "../subscribe/index.html?tier=2"
                 }
                 else //If there isn't a referal, just do the default... go to the account page
                 {
