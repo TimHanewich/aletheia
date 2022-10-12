@@ -23,8 +23,33 @@
         </div>
         
 
+        <!--Middle container: Tier 1-->
+        <div class="mid-cont">
+            <div id="paypal-button-container-P-8FV50576LC119164XMMETQSA"></div>
+            <script src="https://www.paypal.com/sdk/js?client-id=AWyFEA-OsoR9r3sZ-ExNUwIOSFRZyUIebSvya33jD638rmwQ2g6Zoj3oAlm77TMAWTa9VSqeZNDBpo2w&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+            <script>
+            paypal.Buttons({
+                style: {
+                    shape: 'rect',
+                    color: 'gold',
+                    layout: 'vertical',
+                    label: 'subscribe'
+                },
+                createSubscription: function(data, actions) {
+                    return actions.subscription.create({
+                    /* Creates the subscription */
+                    plan_id: 'P-8FV50576LC119164XMMETQSA'
+                    });
+                },
+                onApprove: function(data, actions) {
+                    alert(data.subscriptionID); // You can add optional success message for the subscriber here
+                }
+            }).render('#paypal-button-container-P-8FV50576LC119164XMMETQSA'); // Renders the PayPal button
+            </script>
+        </div>
+
         
-        <!--Middle container-->
+        <!--Middle container: Tier 2-->
         <div class="mid-cont">
 
             <div id="paypal-button-container-P-5FB49724Y8757201GMMCBL5Q"></div>
