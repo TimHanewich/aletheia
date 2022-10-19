@@ -790,3 +790,46 @@ body
     margin-top: 40px;
     margin-bottom: 0px;
 }
+
+.trusted
+{
+    width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    margin-left: 0px;
+    margin-top: 10px;
+    width: fit-content;
+    height: 60px;
+    display: flex;
+}
+
+.trusted-title
+{
+    text-align: center;
+    font-weight: normal;
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+.trusted-gallery-item
+{
+    display: inline-block;
+    max-height: 100%;
+    max-width: 200px;   
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 25px;
+}
+
+.trusted-more
+{
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    font-size: 12pt;
+    color: gray;
+}
