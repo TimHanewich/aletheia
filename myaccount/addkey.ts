@@ -15,11 +15,11 @@ function AddApiKey(key:string) : void
     ele.appendChild(ele_copybtn);
 
     //Build out the detai llist below it
-    var dtl:HTMLElement = document.createElement("ul");
-    dtl.classList.add("api-key-details-list");
-    AddToList(dtl, "Tier: Tier One");
-    AddToList(dtl, "Calls/month quota: 5,000");
-    var callsThisMonthId:string = AddToList(dtl, "Calls this month: counting...");
+    //var dtl:HTMLElement = document.createElement("ul");
+    //dtl.classList.add("api-key-details-list");
+    //AddToList(dtl, "Tier: Tier One");
+    //AddToList(dtl, "Calls/month quota: 5,000");
+    //var callsThisMonthId:string = AddToList(dtl, "Calls this month: counting...");
     
 
 
@@ -27,20 +27,20 @@ function AddApiKey(key:string) : void
     (document.getElementById("my-api-keys") as HTMLDivElement).appendChild(ele);
 
     //Add the detials list to the div (below the one above)
-    (document.getElementById("my-api-keys") as HTMLElement).appendChild(dtl);
+    //(document.getElementById("my-api-keys") as HTMLElement).appendChild(dtl);
 
 
     //Make the call to get the calls this month count
-    var thisMonth:number = new Date().getMonth() + 1; //Add one because this will return a 0-based (January is 0). The API takes 1 is january.
-    var thisYear:number = new Date().getFullYear();
-    var req:XMLHttpRequest = new XMLHttpRequest();
-    req.open("get", "https://api.aletheiaapi.com/consumption?year=" + thisYear.toString() + "&month=" + thisMonth.toString());
-    req.setRequestHeader("key", key);
-    req.onreadystatechange = function()
-    {
-        (document.getElementById(callsThisMonthId) as HTMLElement).innerText = "Calls this month: " + req.responseText;
-    }
-    req.send();
+    //var thisMonth:number = new Date().getMonth() + 1; //Add one because this will return a 0-based (January is 0). The API takes 1 is january.
+    //var thisYear:number = new Date().getFullYear();
+    //var req:XMLHttpRequest = new XMLHttpRequest();
+    //req.open("get", "https://api.aletheiaapi.com/consumption?year=" + thisYear.toString() + "&month=" + thisMonth.toString());
+    //req.setRequestHeader("key", key);
+    //req.onreadystatechange = function()
+    //{
+    //    (document.getElementById(callsThisMonthId) as HTMLElement).innerText = "Calls this month: " + req.responseText;
+    //}
+    //req.send();
 }
 
 function AddToList(lst:HTMLElement, txt:string) : string
