@@ -2080,37 +2080,35 @@
                             <!--Consumption-->
                             <div class="api-ep-documentation">
                                 <h3 id="consumption" class="api-title">Consumption</h3>
-                                <p class="api-desc">Count the number of API calls you have made or have been made to you (via webhook) for any time window or for a particular month.</p>
+                                <p class="api-desc">Count the number of API calls you have made or have been made to you (via webhook) in the current month, broken out by service. See the example below. The <b>id</b> property defines the ID number of the service used, the <b>name</b> property is the name of the service (endpoint), and the <b>calls</b> is the number of calls that have been made to (or from) that service in the current month. Finally, the total number of calls consumed during this month across all services is summed at the root level as property <b>calls</b>.</p>
                                 <div class="api-verb-ep-pair">
                                     <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/consumption</div>
+                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/v2/consumption</div>
                                 </div>
-                                <h4 class="api-sub-header">Parameters</h4>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>begin</api-param> - If requesting consumption during a window, the beginning date of the window you are requesting.</div>
-                                </div>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>end</api-param> - If requesting consumption during a window, the ending date of the window you are requesting.</div>
-                                </div>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>year</api-param> - If requesting consumption for a particular month, the year that contains the month you are requesting.</div>
-                                </div>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>month</api-param> - If requesting consumption for a particular month, the month you are requesting (1-12).</div>
-                                </div>
-                                <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://api.aletheiaapi.com/consumption?begin=20210101&end=20210501</div>
-                                <div class="code-block req-example">https://api.aletheiaapi.com/consumption?begin=20210401&end=20210501</div>
-                                <div class="code-block req-example">https://api.aletheiaapi.com/consumption?year=2021&month=5</div>
                                 <div class="api-sub-header">Example Response</div>
                                 <div class="response-example-cont">
                                     <div class="response-example-openclose">+ Example Response</div>
                                     <div class="response-example">
-                                        4837
+                                        {<br>
+                                            <tabspace></tabspace>"calls": 537265,<br>
+                                            <tabspace></tabspace>"endpoints": [<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"id": 11,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"name": "StockData",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"calls": 522748<br>
+                                            <tabspace></tabspace><tabspace></tabspace>},<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"id": 23,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"name": "Crypto",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"calls": 10934<br>
+                                            <tabspace></tabspace><tabspace></tabspace>},<br>
+                                            <tabspace></tabspace><tabspace></tabspace>{<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"id": 4,<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"name": "Financials",<br>
+                                            <tabspace></tabspace><tabspace></tabspace><tabspace></tabspace>"calls": 3583<br>
+                                            <tabspace></tabspace><tabspace></tabspace>}<br>
+                                            <tabspace></tabspace>]<br>
+                                            }
                                     </div>
                                 </div>
                             </div>
