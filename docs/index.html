@@ -177,12 +177,6 @@
                                 <div class="api-ep">Consumption</div>
                             </div>
                         </a>
-                        <a href="#my-calls" class="no-decor">
-                            <div id="navep_MyCalls" class="api-verb-ep-pair clickable">
-                                <div class="api-verb api-verb-get">GET</div>
-                                <div class="api-ep">My Calls</div>
-                            </div>
-                        </a>
 
                         <div class="blank-space"></div>
 
@@ -2121,61 +2115,6 @@
                                 </div>
                             </div>
 
-
-                            <!--My Calls-->
-                            <div style="width: 100%;">
-                                <h3 id="my-calls" class="api-title">My Calls</h3>
-                                <p class="api-desc">Retrieve history of the most recent calls you have made.</p>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-get">GET</div>
-                                    <div class="api-ep-area code-block">https://api.aletheiaapi.com/mycalls</div>
-                                </div>
-                                <h4 class="api-sub-header">Parameters</h4>
-                                <div class="api-verb-ep-pair">
-                                    <div class="api-verb api-verb-optional">Optional</div>
-                                    <div class="api-ep"><api-param>last</api-param> - The number of transactions to retrieve. Minimum: 1, Maximum: 100</div>
-                                </div>
-                                <h4 class="api-sub-header">Example Requests</h4>
-                                <div class="code-block req-example">https://api.aletheiaapi.com/mycalls?last=5</div>
-                                <div class="code-block req-example">https://api.aletheiaapi.com/mycalls?last=75</div>
-                                <div class="api-sub-header">Example Response</div>
-                                <div class="response-example-cont">
-                                    <div class="response-example-openclose">+ Example Response</div>
-                                    <div class="response-example">
-                                        [<br>
-                                            <tabspace></tabspace>{<br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Endpoint": "Financials",<response-example-comment> - the title of the endpoint you called</response-example-comment><br>
-                                                <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:22:28",<response-example-comment> - the date and time you made the API call</response-example-comment><br>
-                                                <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<response-example-comment> - If you called the service, "Request". If a webhook called your endpoint, "Push"</response-example-comment><br>
-                                                <tabspace></tabspace>},<br>
-                                                <tabspace></tabspace>{<br>
-                                                    <tabspace></tabspace><tabspace></tabspace>"Endpoint": "EntityFilings",<br>
-                                                    <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:22:21",<br>
-                                                    <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<br>
-                                                    <tabspace></tabspace>},<br>
-                                                    <tabspace></tabspace>{<br>
-                                                        <tabspace></tabspace><tabspace></tabspace>"Endpoint": "Consumption",<br>
-                                                        <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:11:47",<br>
-                                                        <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<br>
-                                                        <tabspace></tabspace>},<br>
-                                                        <tabspace></tabspace>{<br>
-                                                            <tabspace></tabspace><tabspace></tabspace>"Endpoint": "OpenForm4",<br>
-                                                            <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:11:37",<br>
-                                                            <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<br>
-                                                            <tabspace></tabspace>},<br>
-                                                            <tabspace></tabspace>{<br>
-                                                                <tabspace></tabspace><tabspace></tabspace>"Endpoint": "OpenCommonFinancials",<br>
-                                                                <tabspace></tabspace><tabspace></tabspace>"CalledAtUtc": "2021-05-21T23:03:54",<br>
-                                                                <tabspace></tabspace><tabspace></tabspace>"Direction": "Request"<br>
-                                                                <tabspace></tabspace>}<br>
-                                        ]
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        
                         
                         
                         <!--Service Information-->
