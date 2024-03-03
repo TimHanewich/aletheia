@@ -730,6 +730,7 @@ body
 
 #tagline-main
 {
+    text-align: center;
     font-weight: bolder;
     margin-top: 20px;
     margin-bottom: 0px;
