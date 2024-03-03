@@ -6,3 +6,4 @@ This is the static website behind https://aletheiaapi.com
     - Deprecation notice on most endpoints
     - Replace pricing page
     - Disabling dynamic loading of facts/companies/etc numbers on home page
+- `609acfc1d0ccdf271b2cb1f39e44fe22766aaf3c` - site before I gutted a lot of things.
