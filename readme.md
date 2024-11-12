@@ -7,3 +7,4 @@ This is the static website behind https://aletheiaapi.com
     - Replace pricing page
     - Disabling dynamic loading of facts/companies/etc numbers on home page
 - `609acfc1d0ccdf271b2cb1f39e44fe22766aaf3c` - site before I gutted a lot of things.
+- `f4720db0da3bd13c504952bbc919febaff34064f` - before removing the capability of logging in/creating a new account.
